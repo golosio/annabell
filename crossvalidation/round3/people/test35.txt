@@ -1,0 +1,99 @@
+
+#? does Mum like flower -s
+#.cx
+#
+? does Dad like comic -s
+.cx
+
+? does Susan like book -s
+.cx
+
+? does Letizia like doll -s
+.cx
+
+? does Susan like chocolate
+.cx
+
+? does Dad like music
+.cx
+
+? does Mum like music
+.cx
+
+? does Letizia like candy -s
+.cx
+
+#do not like
+#? does Mum like comic -s
+#.cx
+#
+? does Dad like flower -s
+.cx
+
+? does Susan like doll -s
+.cx
+
+? does Letizia like book -s
+.cx
+
+? does Dad like candy -s
+.cx
+
+? does Letizia like soup
+.cx
+
+? does Susan like sport
+.cx
+
+? does Mum like sport
+.cx
+
+#? does your mother like flower -s
+#.cx
+#
+? does your father like comic -s
+.cx
+
+? does your sister like book -s
+.cx
+
+? does your friend like doll -s
+.cx
+
+? does your sister like chocolate
+.cx
+
+? does your father like music
+.cx
+
+? does your mother like music
+.cx
+
+? does your friend like candy -s
+.cx
+
+#do not like
+#? does your mother like comic -s
+#.cx
+#
+? does your father like flower -s
+.cx
+
+? does your sister like doll -s
+.cx
+
+? does your friend like book -s
+.cx
+
+? does your father like candy -s
+.cx
+
+? does your friend like soup
+.cx
+
+? does your sister like sport
+.cx
+
+? does your mother like sport
+.cx
+

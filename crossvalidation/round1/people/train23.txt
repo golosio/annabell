@@ -1,0 +1,6 @@
+
+? what is your father 's name
+.ph /your father/Dad is your father//
+.po* /Dad/the possessive pronoun for Dad is his/his/
+.o /your father/your father 's name is Bruce/name is Bruce/
+

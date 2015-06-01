@@ -1,0 +1,11 @@
+
+? how many sister -s do you have 
+.ph /sister/you have one sister//
+.po* /you have//I have/
+.o one sister
+
+? how many aunt -s do you have 
+.ph /aunt/you have two aunt -s//
+.po* /you have//I have/
+.o two aunt -s
+

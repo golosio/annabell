@@ -1,0 +1,13 @@
+
+? what can you do with your hand -s
+.cx
+
+#? what can you do with your leg -s
+#.cx
+#
+? what can you do with your eye -s
+.cx
+
+? what can you do with your ear -s
+.cx
+

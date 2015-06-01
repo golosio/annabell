@@ -1,0 +1,125 @@
+4,8d3
+< a pet is a little animal
+< baby -s do not go to the school
+< baby -s often cry
+< because you can go to the sea
+< Ben
+10d4
+< Ben is a male person
+13,14d6
+< Carol
+< Carol is a female person
+25d16
+< Dad is a male person
+35d25
+< Dad like -s to watch tv
+39,40d28
+< Dad 's name is Bruce
+< Daniel and
+43d30
+< Daniel is a male person
+45d31
+< Daniel is the brother
+53,54d38
+< George is a little boy
+< George is a male person
+57d40
+< Grace is a female person
+59d41
+< Grace is a little girl
+62,63d43
+< Grandma is a female person
+< Grandma is a woman
+66,68d45
+< Grandpa is a male person
+< Grandpa is a man
+< Grandpa Steven is a doctor
+70d46
+< Grandpa Steven work -s in the hospital
+72d47
+< Kate is a female person
+74d48
+< Kate is a little girl
+78,79d51
+< Kevin is a little boy
+< Kevin is a male person
+81d52
+< Laura and
+83d53
+< Laura is a female person
+90d59
+< Letizia is a female person
+96d64
+< Lisa and
+98d65
+< Lisa is a female person
+100c67
+< Lisa is your father 's sister
+---
+> Lisa is your aunt
+102d68
+< Matt
+104d69
+< Matt is a male person
+106d70
+< Matt is the brother
+109d72
+< Misty is a female person
+111d73
+< Misty is a little girl
+113d74
+< Mum cook -s
+119d79
+< Mum is a female person
+130d89
+< Mum 's name is Cindy
+132,133d90
+< of your father
+< of your mother
+139d95
+< Oliver is a male person
+148,149d103
+< Sally
+< Sally is a female person
+152,153c106
+< Sally is Daniel 's wife
+< Steven and
+---
+> Sally is your aunt
+155d107
+< Steven is a male person
+165,166d116
+< Susan has an umbrella
+< Susan is a female person
+176,177c126
+< the builder build -s the house -s
+< the doctor work -s in the hospital
+---
+> the builder build -s the house -s 
+190,191d138
+< Tom is a little boy
+< Tom is a male person
+199d145
+< Vivian is a female person
+206,207d151
+< when you are sick you go to the doctor
+< when you were little you were a baby
+211d154
+< you are afraid of the dark
+213d155
+< you are a little girl
+215d156
+< you can go on the bike -s with train -ing wheel -s
+217d157
+< you do not have a brother
+220a161
+> you do not have - check if and how it is used
+235d175
+< you have no brother -s
+263d202
+< your aunt 's name -s are
+270,271d208
+< your Grandma 's name -s are
+< your Grandpa 's name -s are
+275d211
+< your uncle 's name -s are

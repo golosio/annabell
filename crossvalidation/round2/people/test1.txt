@@ -1,0 +1,34 @@
+
+? do you have any aunt -s
+.cx
+
+? do you have any uncle -s
+.cx
+
+#? do you have any Grandma -s
+#.cx
+#
+#? do you have any Grandpa -s
+#.cx
+#
+? do you have any friend -s
+.cx
+
+? do you have any sister -s
+.cx
+
+? do you have any book -s
+.cx
+
+? do you have any toy -s
+.cx
+
+? do you have any cousin -s
+.cx
+
+? do you have any cartoon -s
+.cx
+
+? do you have any photo_album -s
+.cx
+

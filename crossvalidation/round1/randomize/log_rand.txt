@@ -1,0 +1,745 @@
+.time
+Elapsed time: 1.21178
+StActMem->act_time: 0
+StActMem->as_time: 0
+ElActfSt->act_time: 0
+ElActfSt->as_time: 0
+RemPh->act_time: 0
+RemPh->as_time: 0
+RemPhfWG->act_time: 0
+RemPhfWG->as_time: 0
+ElActfSt neurons: 48290
+ElActfSt links: 0
+
+ >>> End context
+? what is your father 's favorite music
+.cx
+ -> his
+ ... -> favorite music is classical music
+.
+his favorite music is classical music
+
+ >>> End context
+? do you like to eat candy -s
+.cx
+ -> yes I do
+.
+yes I do
+
+ >>> End context
+? how old is Misty
+.cx
+ -> she
+ ...  -> is three year -s old
+.
+she is three year -s old
+
+ >>> End context
+? what are the palm -s
+.cx
+ -> they are
+ ... -> the inside
+ ... ->  part -s of the hand -s
+.
+they are the inside part -s of the hand -s
+
+ >>> End context
+tell me a mammal
+.xr
+ -> horse
+.
+horse
+
+ >>> End context
+? is your sister old -er than you
+.cx
+ -> no
+ ...  -> she
+ ...  -> is
+ ...  -> old -er
+.
+no she is old -er
+
+ >>> End context
+? is Tom young -er than you
+.cx
+ -> yes
+ ...  -> he
+ ...  -> is
+ ...  -> young -er
+.
+yes he is young -er
+
+ >>> End context
+? how old is Grandpa Ben
+.cx
+ -> he
+ ...  -> is a man
+.
+he is a man
+
+ >>> End context
+? do you have any Grandpa -s
+.cx
+ -> yes I have
+ ...  -> two Grandpa -s
+.
+yes I have two Grandpa -s
+
+ >>> End context
+? is Susan old -er than you
+.cx
+ -> no
+ ...  -> she
+ ...  -> is
+ ...  -> old -er
+.
+no she is old -er
+
+ >>> End context
+? what game -s do children like to play
+.cx
+ -> they
+ ... -> like to play
+ ... ->  hide_and_seek
+ ... ->  tag
+ ... ->  to play with videogame -s
+ ... ->  football
+.
+they like to play hide_and_seek tag to play with videogame -s football
+
+ >>> End context
+? what are the elbow -s
+.cx
+ -> they are
+ ... -> the joint -s
+ ... ->  between the upper and lower arm -s
+.
+they are the joint -s between the upper and lower arm -s
+
+ >>> End context
+? who is old -er Kate or Misty
+.cx
+ -> Kate
+ ...  -> is old -er
+.
+Kate is old -er
+
+ >>> End context
+? what is your sister 's favorite game
+.cx
+ -> her
+ ... -> favorite game is Pictionary
+.
+her favorite game is Pictionary
+
+ >>> End context
+? does Susan like to eat vegetable -s
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? what are the ankle -s
+.cx
+ -> they are
+ ... -> the joint -s
+ ... ->  between the feet and the leg -s
+.
+they are the joint -s between the feet and the leg -s
+
+ >>> End context
+? is Vivian young -er than you
+.cx
+ -> no
+ ...  -> she
+ ...  -> is
+ ...  -> old -er
+.
+no she is old -er
+
+ >>> End context
+? what book -s do women like to read
+.cx
+ -> they
+ ... -> like to read
+ ... ->  novel -s
+ ... ->  love storie -s
+.
+they like to read novel -s love storie -s
+
+ >>> End context
+? where are the arm -s
+.cx
+ -> they are
+ ... -> attach -ed
+ ... ->  to the shoulder -s
+.
+they are attach -ed to the shoulder -s
+
+ >>> End context
+? how many book -s do you have
+.cx
+ -> I have
+ ...  -> many book -s
+.
+I have many book -s
+
+ >>> End context
+? does Letizia like soup
+.cx
+
+
+ >>> End context
+? who is old -er Letizia or Oliver
+.cx
+Exploitation number of updates >= 4000
+
+
+ >>> End context
+? what is the pike
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a fish
+.
+a fish
+
+ >>> End context
+? what is the shark
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a fish
+.
+a fish
+
+ >>> End context
+? what is the kangaroo
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a mammal
+.
+a mammal
+
+ >>> End context
+? what is the shoulder
+.cx
+ -> it is
+ ... -> the part
+ ... ->  of the body
+ ... ->  between the neck and the upper arm
+.
+it is the part of the body between the neck and the upper arm
+
+ >>> End context
+? is Grace old -er than you
+.cx
+ -> no
+ ...  -> she
+ ...  -> is
+ ...  -> young -er
+.
+no she is young -er
+
+ >>> End context
+? what is the ant
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a insect
+.
+a insect
+
+ >>> End context
+? what is the nose
+.cx
+ -> it is
+ ... -> the part
+ ... ->  of the body
+ ... ->  that allow -s us to smell thing -s
+.
+it is the part of the body that allow -s us to smell thing -s
+
+ >>> End context
+? how old is Oliver
+.cx
+ -> he
+ ...  -> is thirteen year -s old
+.
+he is thirteen year -s old
+
+ >>> End context
+? who is Matt
+.cx
+ -> he
+ ...  -> is
+ ...  -> my
+ ...  -> uncle
+.
+he is my uncle
+
+ >>> End context
+? what is the ladybug
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a insect
+.
+a insect
+
+ >>> End context
+? do you have any pet -s
+.cx
+ -> no I do not
+ ...  -> have a pet
+.
+no I do not have a pet
+
+ >>> End context
+? is Sally a man or a woman
+.cx
+ -> she
+ ...  -> is a woman
+.
+she is a woman
+
+ >>> End context
+? does Mum like flower -s
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? what is the herring
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a fish
+.
+a fish
+
+ >>> End context
+? does your sister like to play the piano
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? is your father young -er than you
+.cx
+ -> no
+ ...  -> he
+ ...  -> is
+ ...  -> old -er
+.
+no he is old -er
+
+ >>> End context
+? what is Dad 's favorite movie
+.cx
+ -> his
+ ... -> favorite movie is The Hunter
+.
+his favorite movie is The Hunter
+
+ >>> End context
+? who is old -er Misty or Kate
+.cx
+ -> they are the same age
+.
+they are the same age
+
+ >>> End context
+? is Tom old -er than you
+.cx
+ -> no
+ ...  -> he
+ ...  -> is
+ ...  -> young -er
+.
+no he is young -er
+
+ >>> End context
+? does your sister like chocolate
+.cx
+Exploitation number of updates >= 4000
+
+
+ >>> End context
+? where are the finger -s
+.cx
+ -> they are
+ ... -> attach -ed
+ ... ->  to the hand -s
+.
+they are attach -ed to the hand -s
+
+ >>> End context
+? does your father like to read book -s
+.cx
+ -> no
+ ...  -> he
+ ...  -> does not
+.
+no he does not
+
+ >>> End context
+? what is your mother 's favorite movie
+.cx
+ -> her
+ ... -> favorite movie is Pretty Woman
+.
+her favorite movie is Pretty Woman
+
+ >>> End context
+? is Kate a boy or a girl
+.cx
+ -> she
+ ...  -> is a girl
+.
+she is a girl
+
+ >>> End context
+? is Vivian a girl
+.cx
+ -> yes
+ ...  -> she
+ ...  -> is a girl
+.
+yes she is a girl
+
+ >>> End context
+? is Steven a man or a woman
+.cx
+ -> he
+ ...  -> is a man
+.
+he is a man
+
+ >>> End context
+? what is the cricket
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a insect
+.
+a insect
+
+ >>> End context
+? where are the cheek -s
+.cx
+ -> they are
+ ... -> at the side -s
+ ... ->  of the mouth
+.
+they are at the side -s of the mouth
+
+ >>> End context
+? what is the gull
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a bird
+.
+a bird
+
+ >>> End context
+? how many brother -s do you have
+.cx
+ -> I do not
+ ...  -> have a brother
+.
+I do not have a brother
+
+ >>> End context
+? what is the termite
+.cx
+ -> it is
+ ...  -> a animal
+.
+it is a animal
+? what kind of animal
+.x
+ -> a insect
+.
+a insect
+
+ >>> End context
+? is Mum a woman
+.cx
+ -> yes
+ ...  -> she
+ ...  -> is a woman
+.
+yes she is a woman
+
+ >>> End context
+? what is your friend 's name
+.cx
+ -> her
+ ...  -> name is Letizia
+.
+her name is Letizia
+
+ >>> End context
+.bx 20 tell me a fast mammal
+Trying n. 0 -> whale
+Trying n. 1 -> elephant
+Trying n. 2 -> tiger
+Trying n. 3 -> elephant
+Trying n. 4 -> horse
+Trying n. 5 -> sheep
+Trying n. 6Trying n. 7 -> bear
+Trying n. 8 -> lion
+Trying n. 9 -> horse
+Trying n. 10 -> sheep
+Trying n. 11 -> sheep
+Trying n. 12 -> mouse
+Trying n. 13 -> sheep
+Trying n. 14 -> bear
+Trying n. 15 -> horse
+Trying n. 16 -> dog
+Trying n. 17 -> fox
+Trying n. 18 -> whale
+Trying n. 19 -> tiger
+tiger
+
+ >>> End context
+? does your mother like sport
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? does your sister like to read book -s
+.cx
+ -> yes
+ ...  -> she
+ ...  -> does
+.
+yes she does
+
+ >>> End context
+? does Susan like book -s
+.cx
+ -> yes
+ ...  -> she
+ ...  -> does
+.
+yes she does
+
+ >>> End context
+? does your friend like doll -s
+.cx
+ -> yes
+ ...  -> she
+ ...  -> does
+.
+yes she does
+
+ >>> End context
+? do you like cat -s
+.cx
+ -> yes I do
+.
+yes I do
+
+ >>> End context
+? what are the eye -s
+.cx
+ -> they are
+ ... -> the organ -s
+ ... ->  of sight
+.
+they are the organ -s of sight
+
+ >>> End context
+? does Susan have a umbrella
+.cx
+ -> yes
+ ...  -> she
+ ...  -> does
+.
+yes she does
+
+ >>> End context
+? what is your sister 's favorite cartoon
+.cx
+ -> her
+ ... -> favorite cartoon is Candy Candy
+.
+her favorite cartoon is Candy Candy
+
+ >>> End context
+? is Daniel a man
+.cx
+ -> yes
+ ...  -> he
+ ...  -> is a man
+.
+yes he is a man
+
+ >>> End context
+? does Mum like to answer the phone
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? is Grace a girl
+.cx
+ -> yes
+ ...  -> she
+ ...  -> is a girl
+.
+yes she is a girl
+
+ >>> End context
+? does Letizia like to play videogame -s
+.cx
+ -> no
+ ...  -> she
+ ...  -> does not
+.
+no she does not
+
+ >>> End context
+? is Ben a man
+.cx
+ -> yes
+ ...  -> he
+ ...  -> is a man
+.
+yes he is a man
+
+ >>> End context
+? what is the knee
+.cx
+ -> it is
+ ... -> the joint
+ ... ->  between the thigh
+ ... ->  and the lower leg
+.
+it is the joint between the thigh and the lower leg
+
+ >>> End context
+? do you like ice_cream -s
+.cx
+ -> yes I do
+.
+yes I do
+
+ >>> End context
+? what can you do with your mouth
+.cx
+ -> with
+ ...  -> my
+ ...  -> mouth
+ ...  -> I
+ ... -> can speak
+ ... ->  and eat
+.
+with my mouth I can speak and eat
+
+ >>> End context
+? do you like to eat tomato -s
+.cx
+ -> no I do not
+.
+no I do not
+
+ >>> End context
+? do you have any photo_album -s
+.cx
+ -> yes I have
+ ...  -> some photo_album -s
+.
+yes I have some photo_album -s
+
+ >>> End context
+? does Susan like chocolate
+.cx
+Exploitation number of updates >= 4000
+
+
+ >>> End context
+? what is the face
+.cx
+ -> it is
+ ... -> the front part
+ ... ->  of the head
+.
+it is the front part of the head
+
+ >>> End context
+? is Letizia young -er than you
+.cx
+ -> no
+ ...  -> she
+ ...  -> is
+ ...  -> old -er
+.
+no she is old -er
+
+ >>> End context
+? what is your favorite cartoon
+.cx
+ -> my
+ ... -> favorite cartoon is Peppa Pig
+.
+my favorite cartoon is Peppa Pig
+
+ >>> End context
+? who is old -er Misty or Letizia
+.cx
+Exploitation number of updates >= 4000
+

@@ -1,0 +1,40 @@
+
+? what is the head
+.cx
+
+? what is the neck
+.cx
+
+? what is the shoulder
+.cx
+
+? what is the arm
+.cx
+
+? what is the forearm
+.cx
+
+? what is the thigh
+.cx
+
+#? what is the hip
+#.cx
+#
+? what is the waist
+.cx
+
+? what is the leg
+.cx
+
+? what is the foot
+.cx
+
+? what is the nose
+.cx
+
+? what is the ear
+.cx
+
+? what is the cheek
+.cx
+

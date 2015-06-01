@@ -1,0 +1,6 @@
+
+? how many brother -s do you have
+.ph /brother/you do not have a brother//
+.po* /you do not//I do not/
+.o have a brother
+

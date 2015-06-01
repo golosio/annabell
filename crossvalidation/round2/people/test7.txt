@@ -1,0 +1,13 @@
+
+? does your friend have a cat
+.cx
+
+? does your mother have a brother
+.cx
+
+? does your sister have an umbrella
+.cx
+
+#? does your father have a car
+#.cx
+#

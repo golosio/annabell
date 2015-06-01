@@ -1,0 +1,12 @@
+
+? what does your father do
+.ph /your father/Dad is your father//
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /Dad/Dad is a teacher/is a teacher/
+
+? what does your father do
+.ph /your father/Dad is your father//
+.po* /Dad/the personal pronoun for Dad is he/he/
+.ph /Dad/Dad is a man//
+.o /Dad/Dad is a teacher/is a teacher/
+

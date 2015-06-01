@@ -1,0 +1,39 @@
+
+? does Dad like comic -s
+.pg /Dad & comic -s/Dad like -s comic -s/like -s/
+.po* /like -s//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Dad like flower -s
+.pg /Dad & flower -s/Dad does not like flower -s/does not like/
+.po* /does not like//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg does not
+.drop_goal
+.rw
+
+? does your father like comic -s
+.pg comic -s
+.rip
+.wg /your father/Dad is your father/Dad/
+.ph //Dad like -s comic -s/like -s/
+.po* /like -s//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your father like flower -s
+.pg flower -s
+.rip
+.wg /your father/Dad is your father/Dad/
+.ph //Dad does not like flower -s/does not like/
+.po* /does not like//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg does not
+.drop_goal
+.rw
+

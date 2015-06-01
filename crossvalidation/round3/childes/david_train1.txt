@@ -1,0 +1,59 @@
+
+you , me
+
+you play , I play -ed
+
+at , to
+
+? did you , yes I
+
+? did you , no I did not
+
+win , won
+
+tell me about you play -ing bowl -s
+.pg /bowl/you play bowl -s//
+.sctx Dad brought you here
+.po Dad brought
+.po /you//me/
+.rip
+.ph /bowl/you play bowl -s//
+.sctx you are at the central park
+.po* /at//to/
+.o the central park
+#
+.ggp
+.po* /you play//I play -ed/
+.o bowl -s
+#
+? did you win
+.ggp
+.ph /bowl/you play bowl -s//
+.ph you win
+.pg you win
+.rip
+.po* /? did you//yes I/
+.drop_goal
+.o /win//won/
+
+? did you play other game -s
+.po /you play//I play -ed/
+.ggp
+.ph /bowl/you play bowl -s//
+.sctx you play hide_and_seek
+.wg hide_and_seek
+.drop_goal
+.push_goal
+.rw
+#
+? did you win
+.ggp
+.ph /hide_and_seek/you play hide_and_seek//
+.ph you do not win
+.wg do not win
+.push_goal
+.rip
+.po* /? did you//no I did not/
+.drop_goal
+.o win
+

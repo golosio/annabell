@@ -1,0 +1,11 @@
+
+what is , it is
+
+? what is the tuna
+.po* /what is//it is/
+.ph /tuna/the tuna is a fish//
+.o /a fish/a fish is an animal/an animal/
+? what kind of animal
+.sctx ? what is the tuna
+.o /tuna/the tuna is a fish/a fish/
+

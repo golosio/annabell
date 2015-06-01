@@ -1,0 +1,152 @@
+#####
+#body
+#####
+# 18 parts
+#head
+#face
+#hair
+#shoulder -s
+#chest
+#arm
+#elbow
+#umbilical
+#forearm
+#wrist
+#palm
+#knee
+#thigh
+#hip
+#waist
+#leg
+#ankle
+#foot
+
+#1)
+#is the part
+
+? what is the head
+
+? what is the face
+
+? what is the neck
+
+? what is the shoulder FORSE
+
+? what is the arm FORSE
+
+? what is the forearm
+
+? what is the thigh
+
+? what is the hip
+
+? what is the waist
+
+? what is the leg FORSE
+
+? what is the foot FORSE
+
+--
+
+? what is the nose
+
+? what is the ear
+
+? what is the cheek
+
+------------------------------
+are the part -s
+
+? what are the shoulder -s
+
+? what are the arm -s
+
+? what are the leg -s
+
+? what are the ear -s
+
+? what are the cheek -s
+
+--------------------------------------
+is the joint
+
+? what is the elbow
+
+? what is the wrist
+
+? what is the knee
+
+? what is the ankle
+
+
+--------------------------------------
+are the joint -s ?
+
+? what are the elbow -s
+
+? what are the wrist -s
+
+? what are the knee -s
+
+? what are the ankle -s
+
+-----------------------------------------------
+is the xxx part
+
+? what is the chest
+
+? what is the face FORSE
+
+? what is the palm
+
+--
+? what is the forehead
+
+? what is the chin
+
+-----------------------------------------------
+is the
+
+? what is the eyebrow
+
+? what is the the eyelash
+
+? what is the the eyelid
+
+? what is the the eye
+
+? what is the the mouth
+
+? what is the the tongue
+
+? what is the the gum
+
+? what is the the palate
+
+------------------------------------------------------------------
+are the
+
+? what are the eyebrow -s
+
+? what are the eyelash -es
+
+? what are the eyelid -s
+
+? what are the eye -s
+
+? what are the lip -s
+
+--------------------------------------------------------------------
+Left out
+
+the hair is something
+that grow -s on our head
+
+the tooth is one
+of the hard
+white thing -s in our mouth
+
+ATTENZIONE manca la -s!!!:
+>>the teeth are the hard
+white thing -s in our mouth
+>>? what are the feet

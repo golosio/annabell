@@ -1,0 +1,39 @@
+
+? does Mum like to play the piano
+.pg /Mum & to play the piano/Mum like -s to play the piano/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Susan like to play the piano
+.pg /Susan & to play the piano/Susan does not like to play the piano/does not like/
+.po* /does not like//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg does not
+.drop_goal
+.rw
+
+? does your mother like to play the piano
+.pg to play the piano
+.rip
+.wg /your mother/Mum is your mother/Mum/
+.ph //Mum like -s to play the piano/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your sister like to play the piano
+.pg to play the piano
+.rip
+.wg /your sister/Susan is your sister/Susan/
+.ph //Susan does not like to play the piano/does not like/
+.po* /does not like//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg does not
+.drop_goal
+.rw
+

@@ -1,0 +1,99 @@
+
+? does Dad like to drive the car
+.cx
+
+? does Susan like to read book -s
+.cx
+
+#? does Mum like to watch the tv
+#.cx
+#
+? does Mum like to play the piano
+.cx
+
+? does Dad like to watch the tv
+.cx
+
+? does Letizia like to play with doll -s
+.cx
+
+? does Letizia like to eat candy -s
+.cx
+
+? does Susan like to watch cartoon -s
+.cx
+
+#do not like
+? does Mum like to drive the car
+.cx
+
+? does Dad like to read book -s
+.cx
+
+#? does Letizia like to watch the tv
+#.cx
+#
+? does Susan like to play the piano
+.cx
+
+? does Letizia like to play videogame -s
+.cx
+
+? does Mum like to answer the phone
+.cx
+
+? does Susan like to eat vegetable -s
+.cx
+
+? does Dad like to cook
+.cx
+
+? does your father like to drive the car
+.cx
+
+? does your sister like to read book -s
+.cx
+
+#? does your mother like to watch the tv
+#.cx
+#
+? does your mother like to play the piano
+.cx
+
+? does your father like to watch the tv
+.cx
+
+? does your friend like to play with doll -s
+.cx
+
+? does your friend like to eat candy -s
+.cx
+
+? does your sister like to watch cartoon -s
+.cx
+
+#do not like
+? does your mother like to drive the car
+.cx
+
+? does your father like to read book -s
+.cx
+
+#? does your friend like to watch the tv
+#.cx
+#
+? does your sister like to play the piano
+.cx
+
+? does your friend like to play videogame -s
+.cx
+
+? does your mother like to answer the phone
+.cx
+
+? does your sister like to eat vegetable -s
+.cx
+
+? does your father like to cook
+.cx
+

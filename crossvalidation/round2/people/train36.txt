@@ -1,0 +1,9 @@
+
+? do you like to watch cartoon -s
+.ph /watch cartoon -s/you like to watch cartoon -s//
+.o /like//yes I do/
+
+? do you like to watch movie -s 
+.ph /watch movie -s/you do not like to watch movie -s//
+.o /do not like//no I do not/
+

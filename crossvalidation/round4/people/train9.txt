@@ -1,0 +1,10 @@
+
+? is Mum a man
+.pg /Mum/Mum is a woman/a woman/
+.rip
+.po* /? is//no/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.ggp
+.drop_goal
+.o is a woman
+

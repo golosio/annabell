@@ -1,0 +1,7 @@
+
+? how old is your uncle
+.ph /uncle/you have two uncle -s//
+.rip
+.po* /your//? which/
+.o uncle
+

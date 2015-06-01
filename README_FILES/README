@@ -1,0 +1,143 @@
+//////////////////////////////////////////////////////////////////////
+CROSS VALIDATION
+TRAINING:
+maybe put in a script train.sh
+cd crossvalidation/round1
+./train_all_rand.sh &> log_train_all_rand.txt &
+cd ../round2
+./train_all_rand.sh &> log_train_all_rand.txt &
+cd ../round3
+./train_all_rand.sh &> log_train_all_rand.txt &
+cd ../round4
+./train_all_rand.sh &> log_train_all_rand.txt &
+
+TEST:
+maybe put in a script test.sh
+cd crossvalidation/round1
+./test_all_rand.sh &> log_test_all_rand.txt &
+cd ../round2
+./test_all_rand.sh &> log_test_all_rand.txt &
+cd ../round3
+./test_all_rand.sh &> log_test_all_rand.txt &
+cd ../round4
+./test_all_rand.sh &> log_test_all_rand.txt &
+
+DISPLAY RESULTS:
+cd crossvalidation/round1/randomize_check
+./check.sh
+cd ../../round2/randomize_check
+./check.sh
+cd ../../round3/randomize_check
+./check.sh
+cd ../../round4/randomize_check
+./check.sh
+
+CHILDES RESULTS:
+in the directories:
+round1/childes, round2/childes, round3/childes, round4/childes
+compare log_all.txt with log_all.txt.correct
+
+//////////////////////////////////////////////////////////////////////
+VIRTUAL ENVIRONMENT INCREMENTAL RESULTS:
+TRAINING:
+cd crossvalidation/template/virtual_incremental_update/train_bring_run
+./run.sh
+
+TEST:
+cd crossvalidation/template/virtual_incremental_update/test_bring_check
+./run.sh
+
+DISPLAY RESULTS:
+cd crossvalidation/template/virtual_incremental_update/test_bring_check
+./stat.sh
+
+//////////////////////////////////////////////////////////////////////
+WORDS AND SENTENCES STATISTICS:
+UPDATE SENTENCES DATABASE:
+if necessary:
+cd crossvalidation/round1/sentences
+./input_sentences.sh
+copy the sentences to the directory fix:
+./cp.sh
+and fix them following the note:
+crossvalidation/round1/sentences/fix/note.txt
+(the sentences that are splitted in more than one line must be rewritten
+in a single line. The repeated questions in body_test_questions.txt must been removed manually)
+
+INPUT SENTENCES:
+cd crossvalidation/round1/stat_input
+edit the file README and follow the instructions
+
+OUPUT SENTENCES:
+cd crossvalidation/round1/stat_ouput
+edit the file README and follow the instructions
+
+SIMULATED CHILDES OUTPUT SENTENCES:
+cd crossvalidation/round1/stat_childes
+edit the file README and follow the instructions
+
+REAL CHILDES OUTPUT SENTENCES:
+cd crossvalidation/round1/stat_real_child
+edit the file README and follow the instructions
+edit the file README2 and follow the instructions
+
+//////////////////////////////////////////////////////////////////////
+QUESTION TYPES AND SENTENCES TABLES:
+cd crossvalidation/round1/sentences/
+edit the file README and follow the instructions
+
+cd crossvalidation/round1/stat_output/output_sentences_table
+edit the file README and follow the instructions
+
+//////////////////////////////////////////////////////////////////////
+PARAMETERS OPTIMIZATION:
+Have a look at the file optimization.txt
+
+//////////////////////////////////////////////////////////////////////
+ANSWER TIME:
+cd crossvalidation/round1/
+./train_all_autosave_links.sh &> log_train_all_autosave_links.txt &
+when the train is complete, copy the incremental links to the directory
+autosave_links:
+mv people/links_?.dat autosave_links/
+mv people/links_??.dat autosave_links/
+mv body/links_?.dat autosave_links/
+mv body/links_??.dat autosave_links/
+and the same for skills, childes and virtual
+
+in a CPU machine:
+modify answer_time.sh: in the loop, put the correct number for the autosaved link files
+run it:
+./answer_time.sh
+plot the file: answer_time_sample.dat
+./test_answer_time.sh &> log_test_answer_time.txt &
+tail -30 randomize/log_rand.txt
+have a look at the total time
+evaluate the average time for a single question by dividing the total time for the number of questions in the first three sessions (503?)
+correct the times in answer_time_sample.dat by the ratio
+between the average time and the last time in the file
+
+in a GPU machine:
+modify answer_time_cuda.sh: in the loop, put the correct number for the autosaved link files
+run it:
+./answer_time_cuda.sh
+plot the file: answer_time_cuda.dat
+./test_answer_time_cuda.sh &> log_test_answer_time_cuda.txt &
+tail -30 randomize/log_rand.txt
+have a look at the total time
+evaluate the average time for a single question by dividing the total time for the number of questions in the first three sessions (503?)
+correct the times in answer_time_cuda.dat by the ratio
+between the average time and the last time in the file
+
+RESULTS:
+for blade009 and for the amazon GPU instance
+have a look at the results in the directory
+answer_time/
+
+//////////////////////////////////////////////////////////////////////
+DATABASE:
+Have a look at the directories:
+database_check/people
+database_check/body
+
+//////////////////////////////////////////////////////////////////////

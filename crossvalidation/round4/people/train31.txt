@@ -1,0 +1,20 @@
+
+? is your friend old -er than you
+.ph /your friend/Letizia is your friend//
+.pg /Letizia/Letizia is five year -s old/five/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /? is//yes/
+.ph /your friend/Letizia is your friend//
+.po /Letizia/the personal pronoun for Letizia is she/she/
+.rip
+.po is
+.wg old -er
+.drop_goal
+.rw
+

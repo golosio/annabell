@@ -1,0 +1,14 @@
+
+? where is the face
+.cx
+
+? where is the chest
+.cx
+
+#? where is the ear
+#.cx
+#
+? where is the cheek
+.cx
+
+

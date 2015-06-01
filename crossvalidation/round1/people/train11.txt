@@ -1,0 +1,5 @@
+
+? is Carol a man or a woman
+.po* /Carol/the personal pronoun for Carol is she/she/
+.o /Carol/Carol is a woman/is a woman/
+

@@ -1,0 +1,36 @@
+? what does Lisa do
+.po* /Lisa/the personal pronoun for Lisa is she/she/
+.o /Lisa/Lisa is a clerk/is a clerk/
+
+? what does Lisa do
+.po* /Lisa/the personal pronoun for Lisa is she/she/
+.ph /Lisa/Lisa is a woman//
+.o /Lisa/Lisa is a clerk/is a clerk/
+
+? what does Steven do
+.po* /Steven/the personal pronoun for Steven is he/he/
+.o /Steven/Steven is a doctor/is a doctor/
+
+? what does Steven do
+.po* /Steven/the personal pronoun for Steven is he/he/
+.ph /Steven/Steven is a man//
+.o /Steven/Steven is a doctor/is a doctor/
+
+? what does Susan do
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o /Susan/Susan go -es to the school/go -es to the school/
+
+? what does Susan do
+.po* /Susan/the personal pronoun for Susan is she/she/
+.ph /Susan/Susan is a girl//
+.o /Susan/Susan go -es to the school/go -es to the school/
+
+? what does Oliver do
+.po* /Oliver/the personal pronoun for Oliver is he/he/
+.o /Oliver/Oliver go -es to the school/go -es to the school/
+
+? what does Oliver do
+.po* /Oliver/the personal pronoun for Oliver is he/he/
+.ph /Oliver/Oliver is a boy//
+.o /Oliver/Oliver go -es to the school/go -es to the school/
+

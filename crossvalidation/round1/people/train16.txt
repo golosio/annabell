@@ -1,0 +1,10 @@
+
+? is Susan a girl
+.pg /Susan/Susan is a girl/a girl/
+.rip
+.po* /? is//yes/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.ggp
+.drop_goal
+.o is a girl
+

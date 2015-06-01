@@ -1,0 +1,6 @@
+
+? what movie -s do women like to watch
+.po* /women/the personal pronoun for women is they/they/
+.wg /like to watch/women like to watch/women/
+.snto
+

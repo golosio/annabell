@@ -1,0 +1,1366 @@
+
+you are in the room_0
+to the east there is the room_1
+to the south there is the room_5
+you see nothing
+? what do you want to do
+
+you are in the room_1
+to the east there is the room_2
+to the west there is the room_0
+to the south there is the room_6
+you see nothing
+? what do you want to do
+
+you are in the room_2
+to the east there is the room_3
+to the west there is the room_1
+to the south there is the room_7
+you see some object6 -s
+? what do you want to do
+
+you are in the room_3
+to the east there is the room_4
+to the west there is the room_2
+to the south there is the room_8
+you see nothing
+? what do you want to do
+
+you are in the room_4
+to the west there is the room_3
+to the south there is the room_9
+you see nothing
+? what do you want to do
+
+you are in the room_5
+to the east there is the room_6
+to the north there is the room_0
+to the south there is the room_10
+you see nothing
+? what do you want to do
+
+you are in the room_6
+to the east there is the room_7
+to the north there is the room_1
+to the west there is the room_5
+you see some object2 -s
+? what do you want to do
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+you see nothing
+? what do you want to do
+
+you are in the room_8
+to the east there is the room_9
+to the north there is the room_3
+to the south there is the room_13
+you see some object1 -s
+? what do you want to do
+
+you are in the room_9
+to the north there is the room_4
+to the west there is the room_8
+to the south there is the room_14
+you see nothing
+? what do you want to do
+
+you are in the room_10
+to the east there is the room_11
+to the north there is the room_5
+to the south there is the room_15
+you see some object7 -s
+? what do you want to do
+
+you are in the room_11
+to the east there is the room_12
+to the west there is the room_10
+you see nothing
+? what do you want to do
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+you see nothing
+? what do you want to do
+
+you are in the room_14
+to the north there is the room_9
+to the west there is the room_13
+to the south there is the room_19
+you see some object5 -s
+? what do you want to do
+
+you are in the room_15
+to the east there is the room_16
+to the north there is the room_10
+to the south there is the room_20
+you see nothing
+? what do you want to do
+
+you are in the room_16
+to the east there is the room_17
+to the west there is the room_15
+to the south there is the room_21
+you see some object3 -s
+? what do you want to do
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+
+you are in the room_18
+to the east there is the room_19
+to the west there is the room_17
+to the south there is the room_23
+you see some object4 -s
+? what do you want to do
+
+you are in the room_19
+to the north there is the room_14
+to the west there is the room_18
+to the south there is the room_24
+you see nothing
+? what do you want to do
+
+you are in the room_20
+to the east there is the room_21
+to the north there is the room_15
+you see nothing
+? what do you want to do
+
+you are in the room_21
+to the east there is the room_22
+to the north there is the room_16
+to the west there is the room_20
+you see nothing
+? what do you want to do
+
+you are in the room_22
+to the east there is the room_23
+to the north there is the room_17
+to the west there is the room_21
+you see some object8 -s
+? what do you want to do
+
+you are in the room_23
+to the east there is the room_24
+to the north there is the room_18
+to the west there is the room_22
+you see nothing
+? what do you want to do
+
+you are in the room_24
+to the north there is the room_19
+to the west there is the room_23
+you see nothing
+? what do you want to do
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object8 to John
+.wg object8
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object8
+.ph you see some object8 -s
+.sctx you are in the room_22
+.wg room_22
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx you see nothing
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the south there is the room_22
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the south there is the room_22
+.wg south
+.rw
+
+you are in the room_22
+to the east there is the room_23
+to the north there is the room_17
+to the west there is the room_21
+you see some object8 -s
+? what do you want to do
+.sctx you are in the room_22
+.drop_goal
+.sctx you see some object8 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object8
+.rw
+you take an object8
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_22
+.wg you are in the room_22
+.sctx you see some object8 -s
+.wg
+.sctx to the east there is the room_23
+.wg room_23
+.ph you are in the room_23
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_23
+.wg
+.ph to the north there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the north there is the room_12
+.push_goal
+.rip
+.sctx to the north there is the room_17
+.wg north
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the north there is the room_12
+.wg north
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object8 to John
+.rw
+you give the object8 to John
+.drop_goal
+.rw
+
+.save links_bring_2_1.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object7 to John
+.wg object7
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object7
+.ph you see some object7 -s
+.sctx you are in the room_10
+.wg room_10
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx to the west there is the room_10
+.push_goal
+.rip
+.sctx to the west there is the room_11
+.wg west
+.drop_goal
+.rw
+
+you are in the room_11
+to the east there is the room_12
+to the west there is the room_10
+you see nothing
+? what do you want to do
+.sctx you are in the room_11
+.wg you are in the room_11
+.sctx to the west there is the room_10
+.wg west
+.rw
+
+you are in the room_10
+to the east there is the room_11
+to the north there is the room_5
+to the south there is the room_15
+you see some object7 -s
+? what do you want to do
+.sctx you are in the room_10
+.drop_goal
+.sctx you see some object7 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object7
+.rw
+you take an object7
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_10
+.wg you are in the room_10
+.sctx you see some object7 -s
+.wg
+.sctx to the east there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx to the east there is the room_12
+.push_goal
+.rip
+.sctx to the east there is the room_11
+.wg east
+.drop_goal
+.rw
+
+you are in the room_11
+to the east there is the room_12
+to the west there is the room_10
+you see nothing
+? what do you want to do
+.sctx you are in the room_11
+.wg you are in the room_11
+.sctx to the east there is the room_12
+.wg east
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object7 to John
+.rw
+you give the object7 to John
+.drop_goal
+.rw
+
+.save links_bring_2_2.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object6 to John
+.wg object6
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object6
+.ph you see some object6 -s
+.sctx you are in the room_2
+.wg room_2
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the north there is the room_2
+.push_goal
+.rip
+.sctx to the north there is the room_7
+.wg north
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the north there is the room_2
+.wg north
+.rw
+
+you are in the room_2
+to the east there is the room_3
+to the west there is the room_1
+to the south there is the room_7
+you see some object6 -s
+? what do you want to do
+.sctx you are in the room_2
+.drop_goal
+.sctx you see some object6 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object6
+.rw
+you take an object6
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_2
+.wg you are in the room_2
+.sctx you see some object6 -s
+.wg
+.sctx to the east there is the room_3
+.wg room_3
+.ph you are in the room_3
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_3
+.wg
+.ph to the west there is the room_1
+.wg room_1
+.ph you are in the room_1
+.sctx you see nothing
+.rip
+.sctx to the west there is the room_1
+.wg
+.ph to the south there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the south there is the room_12
+.push_goal
+.rip
+.sctx to the south there is the room_7
+.wg south
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the south there is the room_12
+.wg south
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object6 to John
+.rw
+you give the object6 to John
+.drop_goal
+.rw
+
+.save links_bring_2_3.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object1 to John
+.wg object1
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object1
+.ph you see some object1 -s
+.sctx you are in the room_8
+.wg room_8
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the north there is the room_8
+.push_goal
+.rip
+.sctx to the east there is the room_13
+.wg east
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the north there is the room_8
+.wg north
+.rw
+
+you are in the room_8
+to the east there is the room_9
+to the north there is the room_3
+to the south there is the room_13
+you see some object1 -s
+? what do you want to do
+.sctx you are in the room_8
+.drop_goal
+.sctx you see some object1 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object1
+.rw
+you take an object1
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_8
+.wg you are in the room_8
+.sctx you see some object1 -s
+.wg
+.sctx to the east there is the room_9
+.wg room_9
+.ph you are in the room_9
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_9
+.wg
+.ph to the north there is the room_3
+.wg room_3
+.ph you are in the room_3
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_3
+.wg
+.ph to the south there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the west there is the room_12
+.push_goal
+.rip
+.sctx to the south there is the room_13
+.wg south
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the west there is the room_12
+.wg west
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object1 to John
+.rw
+you give the object1 to John
+.drop_goal
+.rw
+
+.save links_bring_2_4.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object3 to John
+.wg object3
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object3
+.ph you see some object3 -s
+.sctx you are in the room_16
+.wg room_16
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx you see nothing
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the west there is the room_16
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the west there is the room_16
+.wg west
+.rw
+
+you are in the room_16
+to the east there is the room_17
+to the west there is the room_15
+to the south there is the room_21
+you see some object3 -s
+? what do you want to do
+.sctx you are in the room_16
+.drop_goal
+.sctx you see some object3 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object3
+.rw
+you take an object3
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_16
+.wg you are in the room_16
+.sctx you see some object3 -s
+.wg
+.sctx to the east there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the north there is the room_12
+.push_goal
+.rip
+.sctx to the east there is the room_17
+.wg east
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the north there is the room_12
+.wg north
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object3 to John
+.rw
+you give the object3 to John
+.drop_goal
+.rw
+
+.save links_bring_2_5.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object4 to John
+.wg object4
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object4
+.ph you see some object4 -s
+.sctx you are in the room_18
+.wg room_18
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx you see nothing
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the east there is the room_18
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the east there is the room_18
+.wg east
+.rw
+
+you are in the room_18
+to the east there is the room_19
+to the west there is the room_17
+to the south there is the room_23
+you see some object4 -s
+? what do you want to do
+.sctx you are in the room_18
+.drop_goal
+.sctx you see some object4 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object4
+.rw
+you take an object4
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_18
+.wg you are in the room_18
+.sctx you see some object4 -s
+.wg
+.sctx to the east there is the room_19
+.wg room_19
+.ph you are in the room_19
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_19
+.wg
+.ph to the west there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the north there is the room_12
+.push_goal
+.rip
+.sctx to the west there is the room_17
+.wg west
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+you see nothing
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the north there is the room_12
+.wg north
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object4 to John
+.rw
+you give the object4 to John
+.drop_goal
+.rw
+
+.save links_bring_2_6.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object5 to John
+.wg object5
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object5
+.ph you see some object5 -s
+.sctx you are in the room_14
+.wg room_14
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the east there is the room_14
+.push_goal
+.rip
+.sctx to the east there is the room_13
+.wg east
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the east there is the room_14
+.wg east
+.rw
+
+you are in the room_14
+to the north there is the room_9
+to the west there is the room_13
+to the south there is the room_19
+you see some object5 -s
+? what do you want to do
+.sctx you are in the room_14
+.drop_goal
+.sctx you see some object5 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object5
+.rw
+you take an object5
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_14
+.wg you are in the room_14
+.sctx you see some object5 -s
+.wg
+.sctx to the north there is the room_9
+.wg room_9
+.ph you are in the room_9
+.sctx you see nothing
+.rip
+.sctx to the north there is the room_9
+.wg
+.ph to the west there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the west there is the room_12
+.push_goal
+.rip
+.sctx to the west there is the room_13
+.wg west
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the west there is the room_12
+.wg west
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object5 to John
+.rw
+you give the object5 to John
+.drop_goal
+.rw
+
+.save links_bring_2_7.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+bring an object2 to John
+.wg object2
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg object2
+.ph you see some object2 -s
+.sctx you are in the room_6
+.wg room_6
+.push_goal
+.rip
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx you see nothing
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx you see nothing
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the west there is the room_6
+.push_goal
+.rip
+.sctx to the north there is the room_7
+.wg north
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the west there is the room_6
+.wg west
+.rw
+
+you are in the room_6
+to the east there is the room_7
+to the north there is the room_1
+to the west there is the room_5
+you see some object2 -s
+? what do you want to do
+.sctx you are in the room_6
+.drop_goal
+.sctx you see some object2 -s
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx take the object
+.wg take the
+.prw
+.ggp
+.wg object2
+.rw
+you take an object2
+.ggp
+.wg John
+.drop_goal
+.push_goal
+.rip
+.sctx ? what do you want to do
+.ggp
+.wg John
+.ph John is here
+.sctx you are in the room_12
+.wg room_12
+.push_goal
+.rip
+.sctx you are in the room_6
+.wg you are in the room_6
+.sctx you see some object2 -s
+.wg
+.sctx to the east there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the south there is the room_12
+.push_goal
+.rip
+.sctx to the east there is the room_7
+.wg east
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+you see nothing
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the south there is the room_12
+.wg south
+.rw
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+you see nothing
+John is here
+? what do you want to do
+.sctx you are in the room_12
+.drop_goal
+.sctx John is here
+.ggp
+.wg bring
+.ph to bring an object to a person
+.sctx and give the object to the person
+.wg give the
+.prw
+.ggp
+.wg object2 to John
+.rw
+you give the object2 to John
+.drop_goal
+.rw
+
+.save links_bring_2_8.dat

@@ -1,0 +1,7 @@
+
+? does Dad have a boat
+.ph /a boat & Dad/Dad does not have a boat//
+.po* /does not//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o does not have a boat
+

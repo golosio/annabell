@@ -1,0 +1,101 @@
+.f people.txt
+
+.f pronouns.txt
+
+.f people_howto.txt
+
+.f train1.txt
+
+.f train2.txt
+
+.f train3.txt
+
+.f train4.txt
+
+.f train5.txt
+
+.f train6.txt
+
+.f train7.txt
+
+.f train8.txt
+
+.f train9.txt
+
+.f train10.txt
+
+.f train11.txt
+
+.f train12.txt
+
+.f train13.txt
+
+.f train14.txt
+
+.f train15.txt
+
+.f train16.txt
+
+.f train17.txt
+
+.f train18.txt
+
+.f train19.txt
+
+.f train20.txt
+
+.f train21.txt
+
+.f train22.txt
+
+.f train23.txt
+
+.f train24.txt
+
+.f train25.txt
+
+.f train26.txt
+
+.f train27.txt
+
+.f train28.txt
+
+.f train29.txt
+
+.f train30.txt
+
+.f train31.txt
+
+.f train32.txt
+
+.f train33.txt
+
+.f train34.txt
+
+.f train35.txt
+
+.f train36.txt
+
+.f train37.txt
+
+.f train38.txt
+
+.f train39.txt
+
+.f train40.txt
+
+.f train41.txt
+
+.f train42.txt
+
+.f train43.txt
+
+.f train44.txt
+
+.f train45.txt
+
+.f train46.txt
+
+.save links_people.txt
+
+.time

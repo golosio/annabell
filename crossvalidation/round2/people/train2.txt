@@ -1,0 +1,6 @@
+
+? do you have any pet -s
+.ph /pet/you do not have a pet//
+.po* /you do not//no I do not/
+.o have a pet
+

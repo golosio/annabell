@@ -1,0 +1,33 @@
+
+tell me a big bird
+.pg big
+.rip
+.ph /bird/the volture is a bird//
+.ph /volture/the volture is big//
+.drop_goal
+.rw
+
+tell me a domestic bird
+.pg domestic
+.rip
+.ph /bird/the chicken is a bird//
+.ph /chicken/the chicken is domestic//
+.drop_goal
+.rw
+
+tell me a fast bird
+.pg fast
+.rip
+.ph /bird/the ostrich is a bird//
+.ph /ostrich/the ostrich is fast//
+.drop_goal
+.rw
+
+tell me a small bird
+.pg small
+.rip
+.ph /bird/the hummingbird is a bird//
+.ph /hummingbird/the hummingbird is small//
+.drop_goal
+.rw
+

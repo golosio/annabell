@@ -1,0 +1,5 @@
+
+? is Ben a man or a woman
+.po* /Ben/the personal pronoun for Ben is he/he/
+.o /Ben/Ben is a man/is a man/
+

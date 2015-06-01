@@ -1,0 +1,273 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	7
+<table>
+Table1	30	2	6/6/14 12:43 PM
+geometry	0	0	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel		2
+<data>
+</data>
+</table>
+<table>
+wk	5	2	6/6/14 3:02 PM
+geometry	445	0	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel	/home/golosio/sllm/devel/v_cu_5.60/README_FILES/optimization/wk.dat	2
+<data>
+0	1	85.849
+1	2	85.997
+2	3	86.544
+3	4	85.451
+4	5	84.21
+</data>
+</table>
+<table>
+wg	5	2	6/6/14 3:42 PM
+geometry	549	477	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel	/home/golosio/sllm/devel/v_cu_5.60/README_FILES/optimization/wg.dat	2
+<data>
+0	3	84.806
+1	4	86.047
+2	5	86.544
+3	6	85.6
+4	7	84.905
+</data>
+</table>
+<table>
+K	7	2	6/6/14 3:47 PM
+geometry	994	477	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel	/home/golosio/sllm/devel/v_cu_5.60/README_FILES/optimization/K.dat	2
+<data>
+0	1	86.544
+1	2	86.544
+2	3	86.544
+3	4	86.544
+4	5	86.544
+5	6	86.544
+6	7	86.544
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	6/6/14 3:03 PM
+geometry	890	-1	549	477	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	531	414
+<PageGeometry>0.00924214	0.011655	0.981516	0.965035</PageGeometry>
+PlotTitle	Percentage of correct answers vs parameter W<sub>1<sub>	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	W<sub>1</sub>	Correct answers (%)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	14	75	0	0	0
+ScaleFont0	Ubuntu	12	75	0	0	0
+ScaleFont1	Ubuntu	12	75	0	0	0
+ScaleFont2	Ubuntu	12	75	0	0	0
+ScaleFont3	Ubuntu	12	75	0	0	0
+AxisFont0	Ubuntu	12	50	0	0	0
+AxisFont1	Ubuntu	12	50	0	0	0
+AxisFont2	Ubuntu	12	50	0	0	0
+AxisFont3	Ubuntu	12	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#1f1c1b	#1f1c1b	#1f1c1b	#1f1c1b
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	wk_1	wk_2	2	1	#ff0000	0	1	7	2	#000000	#000000	0	#000000	14	1	2	0	0	4	1
+scale	0	82	88	0	7	5	0	0
+scale	1	82	88	0	7	5	0	0
+scale	2	0	6	0	7	5	0	0
+scale	3	0	6	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Graph2	1	1	6/6/14 3:42 PM
+geometry	52	163	549	477	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	531	414
+<PageGeometry>0.00924214	0.011655	0.981516	0.965035</PageGeometry>
+PlotTitle	Percentage of correct answers vs parameter W<sub>2<sub>	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	W<sub>2</sub>	Correct answers (%)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	14	75	0	0	0
+ScaleFont0	Ubuntu	12	75	0	0	0
+ScaleFont1	Ubuntu	12	75	0	0	0
+ScaleFont2	Ubuntu	12	75	0	0	0
+ScaleFont3	Ubuntu	12	75	0	0	0
+AxisFont0	Ubuntu	12	50	0	0	0
+AxisFont1	Ubuntu	12	50	0	0	0
+AxisFont2	Ubuntu	12	50	0	0	0
+AxisFont3	Ubuntu	12	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#1f1c1b	#1f1c1b	#1f1c1b	#1f1c1b
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	wg_1	wg_2	2	1	#ff0000	0	1	7	2	#000000	#000000	0	#000000	14	1	2	0	0	4	1
+scale	0	82	88	0	7	5	0	0
+scale	1	82	88	0	7	5	0	0
+scale	2	2	8	0	7	5	0	0
+scale	3	2	8	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Graph3	1	1	6/6/14 3:47 PM
+geometry	413	27	549	477	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	531	414
+<PageGeometry>0.00924214	0.011655	0.981516	0.965035</PageGeometry>
+PlotTitle	Percentage of correct answers vs parameter K	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	K	Correct answers (%)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	14	75	0	0	0
+ScaleFont0	Ubuntu	12	75	0	0	0
+ScaleFont1	Ubuntu	12	75	0	0	0
+ScaleFont2	Ubuntu	12	75	0	0	0
+ScaleFont3	Ubuntu	12	75	0	0	0
+AxisFont0	Ubuntu	12	50	0	0	0
+AxisFont1	Ubuntu	12	50	0	0	0
+AxisFont2	Ubuntu	12	50	0	0	0
+AxisFont3	Ubuntu	12	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#1f1c1b	#1f1c1b	#1f1c1b	#1f1c1b
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	K_1	K_2	2	1	#ff0000	0	1	7	2	#000000	#000000	0	#000000	14	1	2	0	0	6	1
+scale	0	82	88	0	7	5	0	0
+scale	1	82	88	0	7	5	0	0
+scale	2	0	8	0	9	5	0	0
+scale	3	0	8	0	9	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>

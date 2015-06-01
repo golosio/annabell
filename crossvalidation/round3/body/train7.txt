@@ -1,0 +1,6 @@
+
+? what are the eye -s 
+.po* /what are//they are/
+.wg /eye -s/the eye -s are the organ -s/the eye -s are/
+.snto
+

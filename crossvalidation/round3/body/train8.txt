@@ -1,0 +1,6 @@
+
+? where is the cheek
+.po* /where is//it is/
+.wg /cheek/the cheek is at the side/the cheek is/
+.snto
+

@@ -1,0 +1,9 @@
+
+? do you like chip -s
+.ph /chip -s/you like chip -s//
+.o /like//yes I do/
+
+? do you like videogame -s
+.ph /videogame -s/you do not like videogame -s//
+.o /do not like//no I do not/
+

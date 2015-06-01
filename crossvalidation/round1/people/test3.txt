@@ -1,0 +1,29 @@
+
+? how many aunt -s do you have
+.cx
+
+#? how many uncle -s do you have
+#.cx
+#
+? how many Grandma -s do you have
+.cx
+
+? how many Grandpa -s do you have
+.cx
+
+? how many friend -s do you have
+.cx
+
+? how many sister -s do you have
+.cx
+
+? how many book -s do you have
+.cx
+
+#? how many toy -s do you have
+#.cx
+#
+
+? how many cousin -s do you have
+.cx
+

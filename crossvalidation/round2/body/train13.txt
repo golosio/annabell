@@ -1,0 +1,6 @@
+
+? where are the arm -s 
+.po* /where are//they are/
+.wg /arm -s/the arm -s are at the side -s/the arm -s are/
+.snto
+

@@ -1,0 +1,39 @@
+
+? does Susan like book -s
+.pg /Susan & book -s/Susan like -s book -s/like -s/
+.po* /like -s//yes/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Susan like doll -s
+.pg /Susan & doll -s/Susan does not like doll -s/does not like/
+.po* /does not like//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg does not
+.drop_goal
+.rw
+
+? does your sister like book -s
+.pg book -s
+.rip
+.wg /your sister/Susan is your sister/Susan/
+.ph //Susan like -s book -s/like -s/
+.po* /like -s//yes/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your sister like doll -s
+.pg doll -s
+.rip
+.wg /your sister/Susan is your sister/Susan/
+.ph //Susan does not like doll -s/does not like/
+.po* /does not like//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.wg does not
+.drop_goal
+.rw
+

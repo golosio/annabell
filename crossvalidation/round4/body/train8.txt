@@ -1,0 +1,6 @@
+
+? where is the chest
+.po* /where is//it is/
+.wg /chest/the chest is at the front/the chest is/
+.snto
+

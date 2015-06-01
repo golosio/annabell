@@ -1,0 +1,6 @@
+
+? where is the bellybutton
+.po* /where is//it is/
+.wg /bellybutton/the bellybutton is in the middle/the bellybutton is/
+.snto
+

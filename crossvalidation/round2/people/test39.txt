@@ -1,0 +1,37 @@
+
+? what is Susan 's favorite game
+.cx
+
+? what is Susan 's favorite cartoon
+.cx
+
+? what is Dad 's favorite music
+.cx
+
+#? what is Dad 's favorite movie
+#.cx
+#
+? what is Mum 's favorite singer
+.cx
+
+? what is Oliver 's favorite game
+.cx
+
+? what is Oliver 's favorite sport
+.cx
+
+? what is Vivian 's favorite game
+.cx
+
+? what is Vivian 's favorite cartoon
+.cx
+
+? what is Letizia 's favorite color
+.cx
+
+? what is Mum 's favorite movie
+.cx
+
+? what is Letizia 's favorite cartoon
+.cx
+

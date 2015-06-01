@@ -1,0 +1,39 @@
+
+? does Dad like to drive the car
+.pg /Dad & to drive the car/Dad like -s to drive the car/like -s/
+.po* /like -s//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Dad like to drive the car
+.pg /Dad & to drive the car/Dad does not like to drive the car/does not like/
+.po* /does not like//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg does not
+.drop_goal
+.rw
+
+? does your father like to drive the car
+.pg to drive the car
+.rip
+.wg /your father/Dad is your father/Dad/
+.ph //Dad like -s to drive the car/like -s/
+.po* /like -s//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your father like to drive the car
+.pg to drive the car
+.rip
+.wg /your father/Dad is your father/Dad/
+.ph //Dad does not like to drive the car/does not like/
+.po* /does not like//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.wg does not
+.drop_goal
+.rw
+

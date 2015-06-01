@@ -1,0 +1,6 @@
+
+? what is the ankle
+.po* /what is//it is/
+.wg /ankle/the ankle is the joint/the ankle is/
+.snto
+

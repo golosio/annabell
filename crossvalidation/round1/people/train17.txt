@@ -1,0 +1,5 @@
+
+? is Misty a boy or a girl
+.po* /Misty/the personal pronoun for Misty is she/she/
+.o /Misty/Misty is a girl/is a girl/
+

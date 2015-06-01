@@ -1,0 +1,6 @@
+
+? what is Dad 's favorite movie
+.po* /Dad/the possessive pronoun for Dad is his/his/
+.wg /favorite movie & Dad/Dad 's favorite movie is The Hunter/Dad 's/
+.snto
+

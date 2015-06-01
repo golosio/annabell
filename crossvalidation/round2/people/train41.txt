@@ -1,0 +1,36 @@
+? what does Sally do
+.po* /Sally/the personal pronoun for Sally is she/she/
+.o /Sally/Sally is a secretary/is a secretary/
+
+? what does Sally do
+.po* /Sally/the personal pronoun for Sally is she/she/
+.ph /Sally/Sally is a woman//
+.o /Sally/Sally is a secretary/is a secretary/
+
+? what does Ben do
+.po* /Ben/the personal pronoun for Ben is he/he/
+.o /Ben/Ben is a businessman/is a businessman/
+
+? what does Ben do
+.po* /Ben/the personal pronoun for Ben is he/he/
+.ph /Ben/Ben is a man//
+.o /Ben/Ben is a businessman/is a businessman/
+
+? what does Vivian do
+.po* /Vivian/the personal pronoun for Vivian is she/she/
+.o /Vivian/Vivian go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Vivian do
+.po* /Vivian/the personal pronoun for Vivian is she/she/
+.ph /Vivian/Vivian is a girl//
+.o /Vivian/Vivian go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Tom do
+.po* /Tom/the personal pronoun for Tom is he/he/
+.o /Tom/Tom go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Tom do
+.po* /Tom/the personal pronoun for Tom is he/he/
+.ph /Tom/Tom is a boy//
+.o /Tom/Tom go -es to the kindergarten/go -es to the kindergarten/
+

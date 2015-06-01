@@ -1,0 +1,9 @@
+so
+? when will you wear your letter man dress
+.cx
+I think you wear it
+? May the third
+.x
+? May the twelfth
+.x
+.drop_goal

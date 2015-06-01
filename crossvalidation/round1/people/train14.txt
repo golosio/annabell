@@ -1,0 +1,5 @@
+
+? is Dad a man or a woman
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /Dad/Dad is a man/is a man/
+

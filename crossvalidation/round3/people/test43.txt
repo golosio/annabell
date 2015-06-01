@@ -1,0 +1,13 @@
+
+? who work -s in the hospital
+.cx
+
+#? who write -s in the newspaper
+#.cx
+#
+? who teach -es in the school
+.cx
+
+? who work -s in the boat
+.cx
+

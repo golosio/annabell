@@ -1,0 +1,22 @@
+
+? what is the chin
+.po* /what is//it is/
+.wg /chin/the chin is the bottom part/the chin is/
+.snto
+
+.wg what is
+.ph to answer to the question what is
+.sctx you can start with it is
+.wg it is
+.prw
+.wg ? what
+.push_goal
+.rip
+.wg chin
+.ph the chin is the bottom part
+.drop_goal
+.wg the chin is
+.snto
+.wg
+.rw
+

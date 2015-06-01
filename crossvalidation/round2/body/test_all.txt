@@ -1,0 +1,37 @@
+.time
+.logfile log_all.txt
+
+.f test1.txt
+
+.f test2.txt
+
+.f test3.txt
+
+.f test4.txt
+
+.f test5.txt
+
+.f test6.txt
+
+.f test7.txt
+
+.f test8.txt
+
+.f test9.txt
+
+.f test10.txt
+
+.f test11.txt
+
+.f test12.txt
+
+.f test13.txt
+
+.f test14.txt
+
+.f test15.txt
+
+.f test16.txt
+
+.time
+.logfile off

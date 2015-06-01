@@ -1,0 +1,5 @@
+
+? is Lisa a man or a woman
+.po* /Lisa/the personal pronoun for Lisa is she/she/
+.o /Lisa/Lisa is a woman/is a woman/
+

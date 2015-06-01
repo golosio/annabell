@@ -1,0 +1,5 @@
+
+? how old is Grandpa Steven
+.po* /Grandpa/the personal pronoun for Grandpa is he/he/
+.o /Grandpa Steven/Grandpa Steven is fifty_nine year -s old/is fifty_nine year -s old/
+

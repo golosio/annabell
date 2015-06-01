@@ -1,0 +1,11 @@
+
+what is , it is
+
+? what is the python
+.po* /what is//it is/
+.ph /python/the python is a reptile//
+.o /a reptile/a reptile is an animal/an animal/
+? what kind of animal
+.sctx ? what is the python
+.o /python/the python is a reptile/a reptile/
+

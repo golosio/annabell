@@ -1,0 +1,28 @@
+
+? where is the neck
+.cx
+
+? where is the chest
+.cx
+
+? where is the elbow
+.cx
+
+? where is the forearm
+.cx
+
+? where is the wrist
+.cx
+
+? where is the knee
+.cx
+
+#? where is the hip
+#.cx
+#
+? where is the ankle
+.cx
+
+? where is the forehead
+.cx
+

@@ -1,0 +1,36 @@
+? what does Mum do
+.po* /Mum/the personal pronoun for Mum is she/she/
+.o /Mum/Mum is a journalist/is a journalist/
+
+? what does Mum do
+.po* /Mum/the personal pronoun for Mum is she/she/
+.ph /Mum/Mum is a woman//
+.o /Mum/Mum is a journalist/is a journalist/
+
+? what does Dad do
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /Dad/Dad is a teacher/is a teacher/
+
+? what does Dad do
+.po* /Dad/the personal pronoun for Dad is he/he/
+.ph /Dad/Dad is a man//
+.o /Dad/Dad is a teacher/is a teacher/
+
+? what does Letizia do
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o /Letizia/Letizia go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Letizia do
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.ph /Letizia/Letizia is a girl//
+.o /Letizia/Letizia go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Tom do
+.po* /Tom/the personal pronoun for Tom is he/he/
+.o /Tom/Tom go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Tom do
+.po* /Tom/the personal pronoun for Tom is he/he/
+.ph /Tom/Tom is a boy//
+.o /Tom/Tom go -es to the kindergarten/go -es to the kindergarten/
+

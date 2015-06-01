@@ -1,0 +1,9 @@
+
+? what can you do with your ear -s
+.po* with
+.po* /your//my/
+.po* ear -s
+.po* /you//I/
+.wg /with your ear/with your ear -s you can hear/you/
+.snto
+

@@ -1,0 +1,7 @@
+
+? does Susan have an umbrella
+.ph /an umbrella & Susan/Susan has an umbrella//
+.po* /has//yes/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o /has//does/
+

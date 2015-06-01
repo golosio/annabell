@@ -1,0 +1,153 @@
+#forehead
+#eyebrow
+#eyelash
+#eye
+#nose
+#ear
+#cheek
+#mouth
+#lip
+#chin
+#tooth/teeth
+#tongue
+#gum
+#palate
+
+
+the face include -s
+forehead
+eyebrow -s
+eyelash -es
+eye -s
+nose
+ear -s
+cheek -s
+mouth
+lip -s
+chin
+
+the mouth include -s
+teeth
+tongue
+gum -s
+palate
+
+the forehead is the upper part
+of the face
+
+the forehead is between the eyebrow -s
+and the hair line
+
+the forehead is above the eyebrow -s
+
+the eyebrow is the stripe
+of hair over the eye
+
+the eyebrow -s are the stripe -s
+of hair over the eye -s
+
+the eyebrow -s are above the eye -s
+
+the eyelash is the hair
+that grow -s at the edge of the eyelid -s
+
+the eyelash -es are the hair -s
+that grow at the edge of the eyelid -s
+
+the eyelash -es are at the edge
+of the eyelid -s
+
+the eyelid is the piece
+of skin that cover -s the eye
+
+the eyelid -s are the piece -s
+of skin that cover the eye -s
+
+the eyelid is on the eye
+
+the eyelid -s are on the eye -s
+
+the eye is the organ
+of sight
+
+the eye -s are the organ -s
+of sight
+
+the eye is in the face
+
+the nose is the part
+of the body
+that allow -s us to smell thing -s
+
+the nose is in the face
+
+the ear is the part
+of the body
+that allow -s us to hear
+
+the ear -s are the part -s
+of the body
+that allow -s us to hear
+
+the ear -s are at the side -s
+of the head
+
+the ear is at the side
+of the head
+
+the cheek is the part
+of the face
+at the side of the mouth
+
+the cheek -s are the part -s
+of the face
+at the side -s of the mouth
+
+the cheek is at the side
+of the mouth
+
+the cheek -s are at the side -s
+of the mouth
+
+the mouth is the hole
+in the face
+through which we talk and eat
+
+the mouth is in the face
+
+the lip -s are the edge -s
+of the mouth
+
+the lip -s are around the mouth
+
+the chin is the bottom part
+of the face
+
+the chin is under the mouth
+
+the tooth is one
+of the hard
+white thing -s in our mouth
+
+the teeth are the hard
+white thing -s in our mouth
+
+the tooth is inside the mouth
+
+the teeth are inside the mouth
+
+the tongue is the fleshy muscle
+inside the mouth
+
+the tongue is inside the mouth
+
+the gum is the flesh
+at the base of the teeth
+
+the gum is inside the mouth
+
+the palate is the roof
+of the mouth
+
+the palate is inside the mouth
+

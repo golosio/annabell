@@ -1,0 +1,33 @@
+
+tell me a big reptile
+.pg big
+.rip
+.ph /reptile/the crocodile is a reptile//
+.ph /crocodile/the crocodile is big//
+.drop_goal
+.rw
+
+tell me a dangerous reptile
+.pg dangerous
+.rip
+.ph /reptile/the cobra is a reptile//
+.ph /cobra/the cobra is dangerous//
+.drop_goal
+.rw
+
+tell me a fast reptile
+.pg fast
+.rip
+.ph /reptile/the lizard is a reptile//
+.ph /lizard/the lizard is fast//
+.drop_goal
+.rw
+
+tell me a small reptile
+.pg small
+.rip
+.ph /reptile/the lizard is a reptile//
+.ph /lizard/the lizard is small//
+.drop_goal
+.rw
+

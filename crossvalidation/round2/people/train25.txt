@@ -1,0 +1,32 @@
+
+? is Misty young -er than you
+.pg /Misty/Misty is three year -s old/three/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx three
+.ggp
+.rip
+.po* /? is//yes/
+.po* /Misty/the personal pronoun for Misty is she/she/
+.po* is
+.drop_goal
+.wg young -er
+.drop_goal
+.rw
+
+? is Grace young -er than you
+.pg /Grace/Grace is two year -s old/two/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx two
+.ggp
+.rip
+.po* /? is//yes/
+.po* /Grace/the personal pronoun for Grace is she/she/
+.po* is
+.wg young -er
+.drop_goal
+.rw
+

@@ -1,0 +1,9 @@
+
+? what is your friend 's favorite cartoon
+.pg /your friend/Letizia is your friend/Letizia/
+.po //the possessive pronoun for Letizia is her/her/
+.rip
+.wg /favorite cartoon/Letizia 's favorite cartoon is Peppa Pig/Letizia 's/
+.drop_goal
+.snto
+

@@ -1,0 +1,25 @@
+
+? what is Mum do -ing
+.cx
+#Mum is write -ing an article
+
+? what is Dad do -ing
+.cx
+#Dad is prepare -ing the lesson
+
+? what is Susan do -ing
+.cx
+#Susan is read -ing a book
+
+? what is Letizia do -ing
+.cx
+#Letizia is play -ing with the doll
+
+#? what is Oliver do -ing
+#.cx
+#Oliver is go -ing to school
+#
+? what is Vivian do -ing
+.cx
+#Vivian is watch -ing the tv
+

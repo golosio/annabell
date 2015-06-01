@@ -1,0 +1,6 @@
+
+? what are the shoulder -s 
+.po* /what are//they are/
+.wg /shoulder -s/the shoulder -s are the part -s/the shoulder -s are/
+.snto
+

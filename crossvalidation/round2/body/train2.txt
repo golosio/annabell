@@ -1,0 +1,6 @@
+
+? what are the leg -s 
+.po* /what are//they are/
+.wg /leg -s/the leg -s are the part -s/the leg -s are/
+.snto
+

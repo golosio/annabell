@@ -1,0 +1,5 @@
+
+? how old is Kate
+.po* /Kate/the personal pronoun for Kate is she/she/
+.o /Kate/Kate is two year -s old/is two year -s old/
+

@@ -1,0 +1,45 @@
+> Carol is a clerk
+add to what does Carol do
+
+relationships
+> Carol is your Grandma
+> Daniel is your uncle
+> Laura is your Grandma
+> Lisa is your aunt
+> Matt is your uncle
+> Sally is your aunt
+> Steven is your Grandpa
+
+like
+> Dad does not like candy -s
+does Dad like
+does your father like
+> Letizia does not like soup
+> Letizia like -s candy -s
+
+like to
+> Letizia like -s to eat candy -s
+> Letizia like -s to play with doll -s
+> Mum does not like to answer the phone
+> Susan like -s to watch cartoon -s
+
+favorite
+> Letizia 's favorite color is yellow
+> Mum 's favorite movie is Pretty Woman
+
+age
+> Daniel is forty_four year -s old
+> Lisa is forty year -s old
+> Matt is twenty_eight year -s old
+> Sally is twenty_six year -s old
+
+have
+> Letizia has a cat
+
+you
+> you have some cartoon -s
+> you have some photo_album -s
+
+> you like dog -s
+> you like ice_cream -s
+> you do not like to visit your relative -s

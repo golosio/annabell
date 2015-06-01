@@ -1,0 +1,10 @@
+
+? is Vivian a boy
+.pg /Vivian/Vivian is a girl/a girl/
+.rip
+.po* /? is//no/
+.po* /Vivian/the personal pronoun for Vivian is she/she/
+.ggp
+.drop_goal
+.o is a girl
+

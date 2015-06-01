@@ -1,0 +1,5 @@
+
+? is Steven a man or a woman
+.po* /Steven/the personal pronoun for Steven is he/he/
+.o /Steven/Steven is a man/is a man/
+

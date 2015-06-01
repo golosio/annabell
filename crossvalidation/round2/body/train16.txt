@@ -1,0 +1,9 @@
+
+? what can you do with your teeth
+.po* with
+.po* /your//my/
+.po* teeth
+.po* /you//I/
+.wg /with your teeth/with your teeth you can smile/you/
+.snto
+

@@ -1,0 +1,10 @@
+
+? is Ben a woman
+.pg /Ben/Ben is a man/a man/
+.rip
+.po* /? is//no/
+.po* /Ben/the personal pronoun for Ben is he/he/
+.ggp
+.drop_goal
+.o is a man
+

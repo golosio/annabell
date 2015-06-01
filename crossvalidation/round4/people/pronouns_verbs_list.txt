@@ -1,0 +1,61 @@
+
+Tim is a male person
+
+Tim is a student
+
+Tim is read -ing a book
+
+John is a male person
+
+John is a pianist
+
+John is play -ing the piano
+
+Alfred is a male person
+
+Alfred is a professor
+
+Alfred is prepare -ing the lesson
+
+Jim is a male person
+
+Jim is a journalist
+
+Jim is write -ing an article
+
+Max is a male person
+
+Max is an actor
+
+Max is go -ing to the theater
+
+Sue is a female person
+
+Sue is a doctor
+
+Sue is go -ing to the hospital
+
+Elisabeth is a female person
+
+Elisabeth is a secretary
+
+Elisabeth is write -ing a letter
+
+Mary is a female person
+
+Mary is a teacher
+
+Mary is go -ing to school
+
+Clara is a female person
+
+Clara is a psychologist
+
+Clara is watch -ing the tv
+
+Helen is a female person
+
+Helen is an archaeologist
+
+Helen is watch -ing the star -s
+

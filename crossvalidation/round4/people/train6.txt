@@ -1,0 +1,7 @@
+
+? does Letizia have a videogame
+.ph /a videogame & Letizia/Letizia does not have a videogame//
+.po* /does not//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o does not have a videogame
+

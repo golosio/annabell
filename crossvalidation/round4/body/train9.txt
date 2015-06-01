@@ -1,0 +1,6 @@
+
+? where is the palm
+.po* /where is//it is/
+.wg /palm/the palm is in the hand/the palm is/
+.snto
+

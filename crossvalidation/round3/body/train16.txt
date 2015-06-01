@@ -1,0 +1,9 @@
+
+? what can you do with your mouth
+.po* with
+.po* /your//my/
+.po* mouth
+.po* /you//I/
+.wg /with your mouth/with your mouth you can speak/you/
+.snto
+

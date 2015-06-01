@@ -1,0 +1,17 @@
+the turtle is a reptile
+the eagle is a bird
+the dog is a mammal
+the shark is a fish
+fish -es live in the water
+reptile -s have cold blood
+the turtle is slow
+#
+tell me a mammal
+.o /mammal/the dog is a mammal/dog/
+#
+tell me a reptile
+.xr
+tell me a bird
+.xr
+tell me a fish
+.xr

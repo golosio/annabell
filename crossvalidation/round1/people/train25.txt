@@ -1,0 +1,32 @@
+
+? is George young -er than you
+.pg /George/George is two year -s old/two/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx two
+.ggp
+.rip
+.po* /? is//yes/
+.po* /George/the personal pronoun for George is he/he/
+.po* is
+.drop_goal
+.wg young -er
+.drop_goal
+.rw
+
+? is Kevin young -er than you
+.pg /Kevin/Kevin is three year -s old/three/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx three
+.ggp
+.rip
+.po* /? is//yes/
+.po* /Kevin/the personal pronoun for Kevin is he/he/
+.po* is
+.wg young -er
+.drop_goal
+.rw
+

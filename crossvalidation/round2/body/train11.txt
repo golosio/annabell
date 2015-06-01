@@ -1,0 +1,6 @@
+
+? where are the leg -s 
+.po* /where are//they are/
+.wg /leg -s/the leg -s are attach -ed/the leg -s are/
+.snto
+

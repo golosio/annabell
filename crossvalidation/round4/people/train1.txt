@@ -1,0 +1,11 @@
+
+? do you have any toy -s
+.ph /toy/you have many toy -s//
+.po* /you have//yes I have/
+.o many toy -s
+
+? do you have any friend -s
+.ph /friend/you have one friend//
+.po* /you have//yes I have/
+.o one friend
+

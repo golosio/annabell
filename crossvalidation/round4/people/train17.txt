@@ -1,0 +1,5 @@
+
+? is Vivian a boy or a girl
+.po* /Vivian/the personal pronoun for Vivian is she/she/
+.o /Vivian/Vivian is a girl/is a girl/
+

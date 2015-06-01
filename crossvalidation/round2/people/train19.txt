@@ -1,0 +1,7 @@
+
+? how old is your friend
+.ph /friend/you have one friend//
+.ph /friend/Letizia is your friend//
+.po /Letizia/the personal pronoun for Letizia is she/she/
+.o  /Letizia/Letizia is five year -s old/is five year -s old/
+

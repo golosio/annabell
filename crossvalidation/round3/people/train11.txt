@@ -1,0 +1,5 @@
+
+? is Laura a man or a woman
+.po* /Laura/the personal pronoun for Laura is she/she/
+.o /Laura/Laura is a woman/is a woman/
+

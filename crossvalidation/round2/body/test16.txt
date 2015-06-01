@@ -1,0 +1,13 @@
+
+? what can you do with your feet
+.cx
+
+? what can you do with your nose
+.cx
+
+? what can you do with your mouth
+.cx
+
+#? what can you do with your teeth
+#.cx
+#

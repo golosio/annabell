@@ -1,0 +1,5 @@
+
+? is Kate a boy or a girl
+.po* /Kate/the personal pronoun for Kate is she/she/
+.o /Kate/Kate is a girl/is a girl/
+

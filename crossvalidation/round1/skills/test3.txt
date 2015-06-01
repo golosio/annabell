@@ -1,0 +1,47 @@
+.logfile log3.txt
+
+.bx 20 tell me a big mammal
+
+.bx 20 tell me a big bird
+
+#.bx 20 tell me a big fish
+#
+.bx 20 tell me a big reptile
+
+.bx 20 tell me a dangerous mammal
+
+#.bx 20 tell me a dangerous fish
+#
+.bx 20 tell me a dangerous reptile
+
+.bx 20 tell me a dangerous insect
+
+.bx 20 tell me a domestic mammal
+
+.bx 20 tell me a domestic bird
+
+#.bx 20 tell me a domestic fish
+#
+.bx 20 tell me a fast mammal
+
+.bx 20 tell me a fast bird
+
+#.bx 20 tell me a fast fish
+#
+.bx 20 tell me a fast reptile
+
+.bx 20 tell me a fast insect
+
+.bx 20 tell me a small mammal
+
+.bx 20 tell me a small bird
+
+#.bx 20 tell me a small fish
+#
+.bx 20 tell me a small amphibian
+
+.bx 20 tell me a small reptile
+
+.bx 20 tell me a small insect
+
+.logfile off

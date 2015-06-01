@@ -1,0 +1,35 @@
+the personal pronoun for a male person is he
+the personal pronoun for a female person is she
+#
+Susan is a female name
+Susan is a doctor
+Susan is drive -ing the car
+Tim is a male name
+Tim is a student
+Tim is read -ing a book
+Elisabeth is a female name
+Elisabeth is a secretary
+Elisabeth is write -ing a letter
+Max is a male name
+Max is an actor
+Max is go -ing to the theater
+#
+? what is Max do -ing
+.wg Max
+.ph Max is a male name
+.wg male
+.ph the personal pronoun for a male person is he
+.wg he
+.prw
+.rip
+.wg Max
+.ph Max is go -ing to the theater
+.wg is go -ing to the theater
+.rw
+#
+? what is Tim do -ing
+.x
+? what is Elisabeth do -ing
+.x
+? what is Susan do -ing
+.x

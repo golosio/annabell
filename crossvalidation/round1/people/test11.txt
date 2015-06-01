@@ -1,0 +1,16 @@
+
+? is Lisa a man or a woman
+.cx
+
+? is Mum a man or a woman
+.cx
+
+#? is Carol a man or a woman
+#.cx
+#
+? is Laura a man or a woman
+.cx
+
+? is Sally a man or a woman
+.cx
+

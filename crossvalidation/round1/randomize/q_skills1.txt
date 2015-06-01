@@ -1,0 +1,5 @@
+tell me a mammal
+tell me a fish
+tell me an amphibian
+tell me a reptile
+tell me an insect

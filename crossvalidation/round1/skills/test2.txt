@@ -1,0 +1,313 @@
+.logfile log2.txt
+
+? what is the dog
+.cx
+? what kind of animal
+.x
+
+? what is the cat
+.cx
+? what kind of animal
+.x
+
+? what is the bear
+.cx
+? what kind of animal
+.x
+
+? what is the horse
+.cx
+? what kind of animal
+.x
+
+? what is the dolphin
+.cx
+? what kind of animal
+.x
+
+? what is the whale
+.cx
+? what kind of animal
+.x
+
+? what is the kangaroo
+.cx
+? what kind of animal
+.x
+
+? what is the lion
+.cx
+? what kind of animal
+.x
+
+? what is the tiger
+.cx
+? what kind of animal
+.x
+
+? what is the elephant
+.cx
+? what kind of animal
+.x
+
+? what is the sheep
+.cx
+? what kind of animal
+.x
+
+? what is the mouse
+.cx
+? what kind of animal
+.x
+
+? what is the fox
+.cx
+? what kind of animal
+.x
+
+? what is the pelican
+.cx
+? what kind of animal
+.x
+
+? what is the cormorant
+.cx
+? what kind of animal
+.x
+
+? what is the flamingo
+.cx
+? what kind of animal
+.x
+
+? what is the vulture
+.cx
+? what kind of animal
+.x
+
+? what is the hawk
+.cx
+? what kind of animal
+.x
+
+? what is the eagle
+.cx
+? what kind of animal
+.x
+
+? what is the gull
+.cx
+? what kind of animal
+.x
+
+? what is the pigeon
+.cx
+? what kind of animal
+.x
+
+? what is the parrot
+.cx
+? what kind of animal
+.x
+
+? what is the ostrich
+.cx
+? what kind of animal
+.x
+
+? what is the chicken
+.cx
+? what kind of animal
+.x
+
+? what is the dove
+.cx
+? what kind of animal
+.x
+
+? what is the hummingbird
+.cx
+? what kind of animal
+.x
+
+? what is the shark
+.cx
+? what kind of animal
+.x
+
+? what is the cod
+.cx
+? what kind of animal
+.x
+
+? what is the tuna
+.cx
+? what kind of animal
+.x
+
+? what is the salmon
+.cx
+? what kind of animal
+.x
+
+? what is the trout
+.cx
+? what kind of animal
+.x
+
+? what is the carp
+.cx
+? what kind of animal
+.x
+
+? what is the bream
+.cx
+? what kind of animal
+.x
+
+? what is the catfish
+.cx
+? what kind of animal
+.x
+
+? what is the pike
+.cx
+? what kind of animal
+.x
+
+? what is the herring
+.cx
+? what kind of animal
+.x
+
+? what is the sardine
+.cx
+? what kind of animal
+.x
+
+? what is the swordfish
+.cx
+? what kind of animal
+.x
+
+? what is the goldfish
+.cx
+? what kind of animal
+.x
+
+? what is the frog
+.cx
+? what kind of animal
+.x
+
+? what is the toad
+.cx
+? what kind of animal
+.x
+
+? what is the salamander
+.cx
+? what kind of animal
+.x
+
+? what is the newt
+.cx
+? what kind of animal
+.x
+
+? what is the crocodile
+.cx
+? what kind of animal
+.x
+
+? what is the lizard
+.cx
+? what kind of animal
+.x
+
+? what is the turtle
+.cx
+? what kind of animal
+.x
+
+#? what is the python
+#.cx
+#? what kind of animal
+#.x
+#
+? what is the cobra
+.cx
+? what kind of animal
+.x
+
+? what is the rattlesnake
+.cx
+? what kind of animal
+.x
+
+? what is the alligator
+.cx
+? what kind of animal
+.x
+
+? what is the viper
+.cx
+? what kind of animal
+.x
+
+? what is the fly
+.cx
+? what kind of animal
+.x
+
+? what is the ant
+.cx
+? what kind of animal
+.x
+
+? what is the ladybug
+.cx
+? what kind of animal
+.x
+
+? what is the termite
+.cx
+? what kind of animal
+.x
+
+? what is the butterfly
+.cx
+? what kind of animal
+.x
+
+? what is the bee
+.cx
+? what kind of animal
+.x
+
+? what is the cricket
+.cx
+? what kind of animal
+.x
+
+? what is the cicada
+.cx
+? what kind of animal
+.x
+
+? what is the grasshopper
+.cx
+? what kind of animal
+.x
+
+? what is the wasp
+.cx
+? what kind of animal
+.x
+
+? what is the cockchafer
+.cx
+? what kind of animal
+.x 
+
+.logfile off

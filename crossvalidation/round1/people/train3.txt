@@ -1,0 +1,11 @@
+
+? how many toy -s do you have 
+.ph /toy/you have many toy -s//
+.po* /you have//I have/
+.o many toy -s
+
+? how many uncle -s do you have 
+.ph /uncle/you have two uncle -s//
+.po* /you have//I have/
+.o two uncle -s
+

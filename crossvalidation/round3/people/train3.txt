@@ -1,0 +1,11 @@
+
+? how many book -s do you have 
+.ph /book/you have many book -s//
+.po* /you have//I have/
+.o many book -s
+
+? how many Grandpa -s do you have 
+.ph /Grandpa/you have two Grandpa -s//
+.po* /you have//I have/
+.o two Grandpa -s
+

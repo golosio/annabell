@@ -1,0 +1,5 @@
+
+? how old is Tom
+.po* /Tom/the personal pronoun for Tom is he/he/
+.o /Tom/Tom is three year -s old/is three year -s old/
+

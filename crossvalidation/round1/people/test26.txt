@@ -1,0 +1,13 @@
+
+? is Susan old -er than you
+.cx
+
+? is Letizia old -er than you
+.cx
+
+#? is Vivian old -er than you
+#.cx
+#
+? is Oliver old -er than you
+.cx
+

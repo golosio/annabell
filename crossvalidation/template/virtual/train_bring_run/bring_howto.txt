@@ -1,0 +1,7 @@
+
+to bring an object to a person
+first find the object
+take the object
+than find the person
+and give the object to the person
+

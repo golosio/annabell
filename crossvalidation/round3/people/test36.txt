@@ -1,0 +1,37 @@
+#? do you like to eat chip -s
+#.cx
+#
+? do you like to play with doll -s
+.cx
+
+? do you like to watch cartoon -s
+.cx
+
+? do you like to eat candy -s
+.cx
+
+? do you like to eat ice_cream
+.cx
+
+? do you like to eat chocolate
+.cx
+
+#do not like
+#? do you like to eat vegetable -s
+#.cx
+#
+? do you like to play with videogame -s
+.cx
+
+? do you like to watch movie -s
+.cx
+
+? do you like to eat tomato -s
+.cx
+
+? do you like to visit your relative -s
+.cx
+
+? do you like to eat salad
+.cx
+

@@ -1,0 +1,6 @@
+
+? where is the elbow
+.po* /where is//it is/
+.wg /elbow/the elbow is between the upper/the elbow is/
+.snto
+

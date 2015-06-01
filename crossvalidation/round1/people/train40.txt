@@ -1,0 +1,9 @@
+
+? what is your father 's favorite movie
+.pg /your father/Dad is your father/Dad/
+.po //the possessive pronoun for Dad is his/his/
+.rip
+.wg /favorite movie/Dad 's favorite movie is The Hunter/Dad 's/
+.drop_goal
+.snto
+

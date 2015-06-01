@@ -1,0 +1,7 @@
+
+? does Mum have a brother
+.ph /a brother & Mum/Mum has a brother//
+.po* /has//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.o /has//does/
+

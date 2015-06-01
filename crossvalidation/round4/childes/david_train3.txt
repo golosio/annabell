@@ -1,0 +1,87 @@
+the past of use is use -ed
+
+the past of place is place -ed
+
+tell me what Susan put in her toy_box
+.pg her toy_box
+.rip
+.ph /Susan put/Susan put -s a doll_dress in her toy_box//
+.sctx Susan put -s a doll in her toy_box
+.wg a doll
+.ggp
+.drop_goal
+.push_goal
+.rw
+a doll
+.ggp
+.ph /her toy_box/Susan put -s a doll in her toy_box//
+.ph Susan put -s a doll_house in her toy_box
+.wg a doll_house
+.ggp
+.drop_goal
+.push_goal
+.rw
+right
+.ggp
+.ph /her toy_box/Susan put -s a doll_house in her toy_box//
+.ph Susan put -s a doll_dress in her toy_box
+.wg a doll_dress
+.ggp
+.drop_goal
+.push_goal
+.rw
+ok
+.ggp
+.ph /her toy_box/Susan put -s a doll_dress in her toy_box//
+.ph Susan put -s a toy_horse in her toy_box
+.wg a toy_horse
+.ggp
+.drop_goal
+.push_goal
+.rw
+a toy_horse
+.ggp
+.ph /her toy_box/Susan put -s a toy_horse in her toy_box//
+.ph Susan put -s a toy_dog in her toy_box
+.wg a toy_dog
+.ggp
+.drop_goal
+.push_goal
+.rw
+a toy_dog
+.ggp
+.ph /her toy_box/Susan put -s a toy_dog in her toy_box//
+.ph Susan put -s a puppet in her toy_box
+.wg a puppet
+.ggp
+.drop_goal
+.push_goal
+.rw
+good
+.ggp
+.ph /her toy_box/Susan put -s a puppet in her toy_box//
+.ph Susan has done put -ing thing -s
+.wg
+.rw
+#
+? what kind of puppet was that
+.ggp
+.wg her toy_box
+.rip
+.ph /puppet/Susan put -s a puppet in her toy_box//
+.sctx the puppet is a white cat
+.o a white cat
+#
+? how about those book -s
+.ph /book -s/Susan place -s some book -s//
+.po Susan
+.rip
+.ph /book -s/Susan place -s some book -s//
+.po /place/the past of place is place -ed/place -ed/
+.rip
+.ph /book -s/Susan place -s some book -s//
+.wg Susan place -s
+.snto
+.rw
+.drop_goal
+

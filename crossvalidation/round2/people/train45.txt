@@ -1,0 +1,8 @@
+
+? who is Dad
+.po* /Dad/the personal pronoun for Dad is he/he/
+.ph /Dad/Dad is your father//
+.po* is
+.po* /your//my/
+.o father
+

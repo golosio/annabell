@@ -1,0 +1,7 @@
+
+? how old is your aunt
+.ph /aunt/you have two aunt -s//
+.rip
+.po* /your//? which/
+.o aunt
+

@@ -1,0 +1,13 @@
+
+? what is your sister 's name
+.cx
+
+? what is your father 's name
+.cx
+
+#? what is your mother 's name
+#.cx
+#
+? what is your friend 's name
+.cx
+

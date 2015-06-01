@@ -1,0 +1,39 @@
+
+? does Letizia like doll -s
+.pg /Letizia & doll -s/Letizia like -s doll -s/like -s/
+.po* /like -s//yes/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Letizia like book -s
+.pg /Letizia & book -s/Letizia does not like book -s/does not like/
+.po* /does not like//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg does not
+.drop_goal
+.rw
+
+? does your friend like doll -s
+.pg doll -s
+.rip
+.wg /your friend/Letizia is your friend/Letizia/
+.ph //Letizia like -s doll -s/like -s/
+.po* /like -s//yes/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your friend like book -s
+.pg book -s
+.rip
+.wg /your friend/Letizia is your friend/Letizia/
+.ph //Letizia does not like book -s/does not like/
+.po* /does not like//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg does not
+.drop_goal
+.rw
+

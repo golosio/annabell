@@ -1,0 +1,7 @@
+
+? does Letizia have a cat
+.ph /a cat & Letizia/Letizia has a cat//
+.po* /has//yes/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o /has//does/
+

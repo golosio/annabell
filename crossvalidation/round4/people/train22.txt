@@ -1,0 +1,5 @@
+
+? how old is Grandpa Ben
+.po* /Grandpa/the personal pronoun for Grandpa is he/he/
+.o /Grandpa Ben/Grandpa Ben is sixty_seven year -s old/is sixty_seven year -s old/
+

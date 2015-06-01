@@ -1,0 +1,97 @@
+.time
+.logfile log_all.txt
+
+.f test1.txt
+
+.f test2.txt
+
+.f test3.txt
+
+.f test4.txt
+
+.f test5.txt
+
+.f test6.txt
+
+.f test7.txt
+
+.f test8.txt
+
+.f test9.txt
+
+.f test10.txt
+
+.f test11.txt
+
+.f test12.txt
+
+.f test13.txt
+
+.f test14.txt
+
+.f test15.txt
+
+.f test16.txt
+
+.f test17.txt
+
+.f test18.txt
+
+.f test19.txt
+
+.f test20.txt
+
+.f test21.txt
+
+.f test22.txt
+
+.f test23.txt
+
+.f test24.txt
+
+.f test25.txt
+
+.f test26.txt
+
+.f test27.txt
+
+.f test28.txt
+
+.f test29.txt
+
+.f test30.txt
+
+.f test31.txt
+
+.f test32.txt
+
+.f test33.txt
+
+.f test34.txt
+
+.f test35.txt
+
+.f test36.txt
+
+.f test37.txt
+
+.f test38.txt
+
+.f test39.txt
+
+.f test40.txt
+
+.f test41.txt
+
+.f test42.txt
+
+.f test43.txt
+
+.f test44.txt
+
+.f test45.txt
+
+.f test46.txt
+
+.time
+.logfile off

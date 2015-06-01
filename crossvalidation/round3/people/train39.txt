@@ -1,0 +1,6 @@
+
+? what is Oliver 's favorite sport
+.po* /Oliver/the possessive pronoun for Oliver is his/his/
+.wg /favorite sport & Oliver/Oliver 's favorite sport is football/Oliver 's/
+.snto
+

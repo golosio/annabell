@@ -1,0 +1,22 @@
+tell me what Mum put on your shirt
+.cx
+a sticker
+.x
+ok
+.x
+right
+.x
+a necklace
+.x
+a shoestring
+.x
+a ring
+.x
+right
+.x
+? what kind of j@l was that
+.x 
+? how about those safety_pin -s
+.x
+.drop_goal
+

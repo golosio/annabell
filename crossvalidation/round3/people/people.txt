@@ -1,0 +1,417 @@
+
+you have two aunt -s
+
+you have one sister
+
+you have one father
+
+you have two Grandma -s
+
+you have two Grandpa -s
+
+you have one mother
+
+you have one friend
+
+you have two cousin -s
+
+you have two uncle -s
+
+Lisa is a woman
+
+Sally is a woman
+
+Susan is a girl
+
+Dad is a man
+
+Laura is a woman
+
+Carol is a woman
+
+Steven is a man
+
+Ben is a man
+
+Mum is a woman
+
+Letizia is a girl
+
+Oliver is a boy
+
+Vivian is a girl
+
+Daniel is a man
+
+Matt is a man
+
+Grace is a girl
+
+Tom is a boy
+
+George is a boy
+
+Kate is a girl
+
+Kevin is a boy
+
+Misty is a girl
+
+Mum is a journalist
+
+Dad is a teacher
+
+Susan go -es to the school
+
+Letizia go -es to the kindergarten
+
+Laura is a doctor
+
+Steven is a doctor
+
+Ben is a businessman
+
+Lisa is a clerk
+
+Sally is a secretary
+
+Matt is a fireman
+
+Daniel is a driver
+
+Oliver go -es to the school
+
+Vivian go -es to the kindergarten
+
+Misty go -es to the kindergarten
+
+Tom go -es to the kindergarten
+
+Kevin go -es to the kindergarten
+
+Carol is a clerk
+
+Mum is your mother
+
+Dad is your father
+
+Susan is your sister
+
+Letizia is your friend
+
+Laura is your Grandma
+
+Carol is your Grandma
+
+Steven is your Grandpa
+
+Ben is your Grandpa
+
+Lisa is your aunt
+
+Sally is your aunt
+
+Matt is your uncle
+
+Daniel is your uncle
+
+Oliver is your cousin
+
+Vivian is your cousin
+
+Dad has a car
+
+Mum has a brother
+
+Susan has an umbrella
+
+Letizia has a cat
+
+Mum does not have a car
+
+Susan does not have a bike
+
+Dad does not have a boat
+
+Letizia does not have a videogame
+
+your sister 's name is Susan
+
+your father 's name is Bruce
+
+your mother 's name is Cindy
+
+your friend 's name is Letizia
+
+Susan like -s chocolate
+
+Dad like -s music
+
+Mum like -s music
+
+Mum like -s flower -s
+
+Dad like -s comic -s
+
+Susan like -s book -s
+
+Letizia like -s doll -s
+
+Letizia like -s candy -s
+
+Susan like -s to read book -s
+
+Dad like -s to watch the tv
+
+Mum like -s to play the piano
+
+Dad like -s to drive the car
+
+Mum like -s to watch the tv
+
+Letizia like -s to play with doll -s
+
+Letizia like -s to eat candy -s
+
+Susan like -s to watch cartoon -s
+
+Susan does not like sport
+
+Mum does not like sport
+
+Dad does not like flower -s
+
+Mum does not like comic -s
+
+Letizia does not like book -s
+
+Susan does not like doll -s
+
+Dad does not like candy -s
+
+Letizia does not like soup
+
+Mum does not like to drive the car
+
+Dad does not like to read book -s
+
+Dad does not like to cook
+
+Susan does not like to eat vegetable -s
+
+Susan does not like to play the piano
+
+Letizia does not like to play videogame -s
+
+Letizia does not like to watch the tv
+
+Mum does not like to answer the phone
+
+Susan is seven year -s old
+
+Dad is forty_two year -s old
+
+Grandma Laura is fifty_three year -s old
+
+Grandma Carol is sixty_four year -s old
+
+Grandpa Steven is fifty_nine year -s old
+
+Grandpa Ben is sixty_seven year -s old
+
+Mum is thirty_three year -s old
+
+Letizia is five year -s old
+
+Oliver is thirteen year -s old
+
+Vivian is five year -s old
+
+Grace is two year -s old
+
+Tom is three year -s old
+
+George is two year -s old
+
+Kate is two year -s old
+
+Kevin is three year -s old
+
+Misty is three year -s old
+
+Lisa is forty year -s old
+
+Sally is twenty_six year -s old
+
+Matt is twenty_eight year -s old
+
+Daniel is forty_four year -s old
+
+Susan 's favorite game is Pictionary
+
+Susan 's favorite cartoon is Candy Candy
+
+Dad 's favorite music is classical music
+
+Dad 's favorite movie is The Hunter
+
+Mum 's favorite singer is Bryan Adams
+
+Oliver 's favorite game is football
+
+Oliver 's favorite sport is football
+
+Vivian 's favorite game is hide_and_seek
+
+Vivian 's favorite cartoon is Heidi
+
+Letizia 's favorite cartoon is Peppa Pig
+
+Mum 's favorite movie is Pretty Woman
+
+Letizia 's favorite color is yellow
+
+the doctor work -s in the hospital
+
+the fireman extinguish -es the fire
+
+the journalist write -s in the newspaper
+
+the teacher teach -es in the school
+
+the builder build -s the house -s
+
+the sailor work -s in the boat
+
+the driver drive -s the bus
+
+the hairdresser cut -s the hair
+
+you are a girl
+
+your name is Annabell
+
+you are four year -s old
+
+you like animal -s
+
+you like cat -s
+
+you like dog -s
+
+you like ice_cream -s
+
+you like chip -s
+
+you like candy -s
+
+you like to play with doll -s
+
+you like to watch cartoon -s
+
+you like to eat ice_cream
+
+you like to eat chip -s
+
+you like to eat chocolate
+
+you like to eat candy -s
+
+you do not like sport
+
+you do not like vegetable -s
+
+you do not like salad
+
+you do not like tomato -s
+
+you do not like mushroom -s
+
+you do not like videogame -s
+
+you do not like to eat vegetable -s
+
+you do not like to eat salad
+
+you do not like to play with videogame -s
+
+you do not like to watch movie -s
+
+you do not like to eat tomato -s
+
+you do not like to visit your relative -s
+
+your favorite tale is Sleeping Beauty
+
+your favorite game is hide_and_seek
+
+your favorite toy is Barbie
+
+your favorite cartoon is Peppa Pig
+
+you have many book -s
+
+you have many toy -s
+
+you have some cartoon -s
+
+you have some photo_album -s
+
+you do not have a pet
+
+you do not have a videogame
+
+you do not have a bike
+
+you do not have a brother
+
+your age is four
+
+boy -s like to play
+football
+to play with car -s
+to play with videogame -s
+to play with superhero -s
+to play cops and robbers
+
+girl -s like to play
+with doll -s
+
+men like to watch
+detective movie -s
+action movie -s
+western movie -s
+thriller -s
+
+women like to watch
+comedie -s
+romance -s
+drama -s
+
+children like to watch
+animation movie -s
+fantasy movie -s
+adventure movie -s
+
+children like to play
+hide_and_seek
+tag
+to play with videogame -s
+football
+
+women like to read
+novel -s
+love storie -s
+
+Mum is write -ing an article
+
+Dad is prepare -ing the lesson
+
+Susan is read -ing a book
+
+Letizia is play -ing with the doll
+
+Oliver is go -ing to school
+
+Vivian is watch -ing the tv
+

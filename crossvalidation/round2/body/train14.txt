@@ -1,0 +1,6 @@
+
+? where is the palate
+.po* /where is//it is/
+.wg /palate/the palate is inside the mouth/the palate is/
+.snto
+

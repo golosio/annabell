@@ -1,0 +1,114 @@
+
+you are in the kitchen
+to the south there is the living_room
+you see nothing
+? what do you want to do
+
+you are in the library
+to the south there is the hall
+you see nothing
+? what do you want to do
+
+you are in the bathroom
+to the south there is the corridor
+you see nothing
+? what do you want to do
+
+you are in the veranda
+to the east there is the living_room
+you see some book -s
+? what do you want to do
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+you see nothing
+? what do you want to do
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+you see nothing
+Alfred is here
+? what do you want to do
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+you see nothing
+? what do you want to do
+
+you are in the bedroom
+to the west there is the corridor
+you see nothing
+? what do you want to do
+
+you are in the garden
+to the north there is the hall
+to the south there is the street
+you see nothing
+? what do you want to do
+
+you are in the studio
+to the north there is the corridor
+you see nothing
+? what do you want to do
+
+you are in the street
+to the north there is the garden
+you see nothing
+? what do you want to do
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+you see nothing
+Alfred is here
+? what do you want to do
+bring a book to Alfred
+.x
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+you see nothing
+? what do you want to do
+.x
+
+you are in the veranda
+to the east there is the living_room
+you see some book -s
+? what do you want to do
+.x
+you take a book
+.x
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+you see nothing
+? what do you want to do
+.x
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+you see nothing
+Alfred is here
+? what do you want to do
+.x
+you give the book to Alfred
+.x
+
+.q

@@ -1,0 +1,10 @@
+
+? is Daniel a man
+.pg /Daniel/Daniel is a man/a man/
+.rip
+.po* /? is//yes/
+.po* /Daniel/the personal pronoun for Daniel is he/he/
+.ggp
+.drop_goal
+.o is a man
+

@@ -1,0 +1,38 @@
+
+? do you like animal -s
+.cx
+
+? do you like cat -s
+.cx
+
+? do you like candy -s
+.cx
+
+#? do you like chip -s
+#.cx
+#
+? do you like dog -s
+.cx
+
+? do you like ice_cream -s
+.cx
+
+#do not like
+? do you like vegetable -s
+.cx
+
+? do you like tomato -s
+.cx
+
+? do you like mushroom -s
+.cx
+
+#? do you like videogame -s
+#.cx
+#
+? do you like sport
+.cx
+
+? do you like salad
+.cx
+

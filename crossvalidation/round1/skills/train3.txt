@@ -1,0 +1,41 @@
+
+tell me a big fish
+.pg big
+.rip
+.ph /fish/the shark is a fish//
+.ph /shark/the shark is big//
+.drop_goal
+.rw
+
+tell me a dangerous fish
+.pg dangerous
+.rip
+.ph /fish/the shark is a fish//
+.ph /shark/the shark is dangerous//
+.drop_goal
+.rw
+
+tell me a domestic fish
+.pg domestic
+.rip
+.ph /fish/the goldfish is a fish//
+.ph /goldfish/the goldfish is domestic//
+.drop_goal
+.rw
+
+tell me a fast fish
+.pg fast
+.rip
+.ph /fish/the swordfish is a fish//
+.ph /swordfish/the swordfish is fast//
+.drop_goal
+.rw
+
+tell me a small fish
+.pg small
+.rip
+.ph /fish/the goldfish is a fish//
+.ph /goldfish/the goldfish is small//
+.drop_goal
+.rw
+

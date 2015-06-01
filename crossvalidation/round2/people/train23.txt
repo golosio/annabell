@@ -1,0 +1,6 @@
+
+? what is your friend 's name
+.ph /your friend/Letizia is your friend//
+.po* /Letizia/the possessive pronoun for Letizia is her/her/
+.o /your friend/your friend 's name is Letizia/name is Letizia/
+

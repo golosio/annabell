@@ -1,0 +1,6 @@
+
+? where are the cheek -s 
+.po* /where are//they are/
+.wg /cheek -s/the cheek -s are at the side -s/the cheek -s are/
+.snto
+

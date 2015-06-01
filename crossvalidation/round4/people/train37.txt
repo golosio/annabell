@@ -1,0 +1,9 @@
+
+? do you like cat -s
+.ph /cat -s/you like cat -s//
+.o /like//yes I do/
+
+? do you like tomato -s
+.ph /tomato -s/you do not like tomato -s//
+.o /do not like//no I do not/
+

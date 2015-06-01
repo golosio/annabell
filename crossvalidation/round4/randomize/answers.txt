@@ -1,0 +1,443 @@
+1 yes I have two aunt -s
+2 yes I have two uncle -s
+3 yes I have two Grandma -s
+4 yes I have two Grandpa -s
+5 yes I have one sister
+6 yes I have many book -s
+7 yes I have two cousin -s
+8 yes I have some cartoon -s
+9 yes I have some photo_album -s
+10 no I do not have a brother
+11 no I do not have a pet
+12 no I do not have a bike
+13 I have two aunt -s
+14 I have two uncle -s
+15 I have two Grandpa -s
+16 I have one sister
+17 I have many book -s
+18 I have many toy -s
+19 I have two cousin -s
+20 I do not have a pet
+21 I do not have a bike
+22 I do not have a videogame
+23 yes she does
+24 yes she does
+25 yes he does
+26 no she does not have a car
+27 no he does not have a boat
+28 no she does not have a bike
+29 yes she does
+30 yes she does
+31 yes he does
+32 no she does not have a car
+33 no he does not have a boat
+34 no she does not have a bike
+35 she is a woman
+36 she is a woman
+37 she is a woman
+38 she is a woman
+39 yes she is a woman
+40 yes she is a woman
+41 yes she is a woman
+42 yes she is a woman
+43 she is a woman
+44 she is a woman
+45 she is a woman
+46 she is a woman
+47 no he is a man
+48 no he is a man
+49 no he is a man
+50 no he is a man
+51 he is a man
+52 he is a man
+53 he is a man
+54 he is a man
+55 he is a man
+56 he is a man
+57 he is a man
+58 he is a man
+59 he is a man
+60 she is a girl
+61 she is a girl
+62 she is a girl
+63 she is a girl
+64 she is a girl
+65 yes she is a girl
+66 yes she is a girl
+67 yes she is a girl
+68 yes she is a girl
+69 yes she is a girl
+70 she is a girl
+71 she is a girl
+72 she is a girl
+73 she is a girl
+74 she is a girl
+75 they like to play hide_and_seek tag to play with videogame -s football
+76 they like to watch comedie -s romance -s drama -s
+77 they like to watch detective movie -s action movie -s western movie -s thriller -s
+78 they like to read novel -s love storie -s
+79 he is forty_two year -s old
+80 she is five year -s old
+81 she is thirty_three year -s old
+82 which aunt
+83 which Grandma
+84 which Grandpa
+85 which cousin
+86 she is seven year -s old
+87 he is thirteen year -s old
+88 he is forty_two year -s old
+89 she is thirty_three year -s old
+90 she is five year -s old
+91 he is three year -s old
+92 she is two year -s old
+93 she is three year -s old
+94 he is forty_four year -s old
+95 she is forty year -s old
+96 he is twenty_eight year -s old
+97 she is twenty_six year -s old
+98 he is three year -s old
+99 she is two year -s old
+100 he is two year -s old
+101 she is fifty_three year -s old
+102 she is sixty_four year -s old
+103 he is fifty_nine year -s old
+104 his name is Bruce
+105 her name is Cindy
+106 her name is Letizia
+107 no she is old -er
+108 no she is old -er
+109 no he is old -er
+110 yes he is young -er
+111 yes she is young -er
+112 yes she is young -er
+113 yes she is young -er
+114 yes he is young -er
+115 yes she is old -er
+116 yes she is old -er
+117 yes he is old -er
+118 no he is young -er
+119 no he is young -er
+120 no she is young -er
+121 no she is young -er
+122 no he is young -er
+123 she is old -er
+124 she is old -er
+125 she is old -er
+126 he is young -er
+127 she is young -er
+128 she is young -er
+129 she is young -er
+130 he is young -er
+131 no she is old -er
+132 no she is old -er
+133 no she is old -er
+134 yes she is old -er
+135 yes he is old -er
+136 yes she is old -er
+137 Susan is old -er
+138 Oliver is old -er
+139 Letizia is old -er
+140 Misty is old -er
+141 Susan is old -er
+142 Oliver is old -er
+143 Letizia is old -er
+144 Misty is old -er
+145 they are the same age
+146 they are the same age
+147 they are the same age
+148 they are the same age
+149 yes she does
+150 yes she does
+151 yes she does
+152 yes he does
+153 yes she does
+154 yes she does
+155 yes she does
+156 no he does not
+157 no she does not
+158 no she does not
+159 no she does not
+160 no she does not
+161 no she does not
+162 no he does not
+163 yes she does
+164 yes she does
+165 yes she does
+166 yes he does
+167 yes she does
+168 yes she does
+169 yes she does
+170 no he does not
+171 no she does not
+172 no she does not
+173 no she does not
+174 no she does not
+175 no she does not
+176 no he does not
+177 yes she does
+178 yes he does
+179 yes she does
+180 yes she does
+181 yes he does
+182 yes she does
+183 yes she does
+184 no she does not
+185 no he does not
+186 no she does not
+187 no he does not
+188 no she does not
+189 no she does not
+190 no she does not
+191 yes she does
+192 yes he does
+193 yes she does
+194 yes she does
+195 yes he does
+196 yes she does
+197 yes she does
+198 no she does not
+199 no he does not
+200 no she does not
+201 no he does not
+202 no she does not
+203 no she does not
+204 no she does not
+205 yes I do
+206 yes I do
+207 yes I do
+208 yes I do
+209 yes I do
+210 no I do not
+211 no I do not
+212 no I do not
+213 no I do not
+214 no I do not
+215 yes I do
+216 yes I do
+217 yes I do
+218 yes I do
+219 yes I do
+220 no I do not
+221 no I do not
+222 no I do not
+223 no I do not
+224 no I do not
+225 my favorite tale is Sleeping Beauty
+226 my favorite toy is Barbie
+227 my favorite cartoon is Peppa Pig
+228 her favorite game is Pictionary
+229 her favorite cartoon is Candy Candy
+230 his favorite music is classical music
+231 his favorite movie is The Hunter
+232 her favorite singer is Bryan Adams
+233 his favorite sport is football
+234 her favorite game is hide_and_seek
+235 her favorite cartoon is Heidi
+236 her favorite color is yellow
+237 her favorite movie is Pretty Woman
+238 her favorite cartoon is Peppa Pig
+239 her favorite game is Pictionary
+240 her favorite cartoon is Candy Candy
+241 her favorite movie is Pretty Woman
+242 his favorite music is classical music
+243 his favorite movie is The Hunter
+244 her favorite singer is Bryan Adams
+245 her favorite color is yellow
+246 she is a clerk
+247 she is a journalist
+248 she is a secretary
+249 he is a doctor
+250 he is a teacher
+251 he is a businessman
+252 she go -s to the school
+253 she go -s to the kindergarten
+254 she go -s to the kindergarten
+255 he go -s to the school
+256 he go -s to the kindergarten
+257 she is a clerk
+258 she is a journalist
+259 he is a teacher
+260 she go -s to the kindergarten
+261 the journalist
+262 the teacher
+263 the sailor
+264 the fireman
+265 the builder
+266 the driver
+267 she is my mother
+268 he is my father
+269 she is my sister
+270 she is my cousin
+271 he is my cousin
+272 she is my Grandma
+273 he is my Grandpa
+274 she is my Grandma
+275 he is my Grandpa
+276 she is my aunt
+277 she is my aunt
+278 he is my uncle
+279 he is my uncle
+280 she is write -ing a article
+281 he is prepare -ing the lesson
+282 she is read -ing a book
+283 she is play -ing with the doll
+284 she is watch -ing the tv
+285 it is the part of the body where the brain is
+286 it is the part of the body that connect -s the head to the trunk
+287 it is the part of the body between the neck and the upper arm
+288 it is the part of the body that extend -s from the top of the trunk
+289 it is the part of the arm between the elbow and the wrist
+290 it is the part of the leg between the knee and the hip
+291 it is the part of the body between the waist and the top of the leg
+292 it is the part of the body where a belt is usually worn
+293 it is the part of the body used to stand and walk
+294 it is the part of the body at the end of the leg
+295 it is the part of the body that allow -s us to smell thing -s
+296 it is the part of the face at the side of the mouth
+297 they are the part -s of the body between the neck and the upper arm -s
+298 they are the part -s of the body that extend from the top of the trunk
+299 they are the part -s of the body used to stand and walk
+300 they are the part -s of the arm -s between the elbow -s and the wrist -s
+301 they are the part -s of the leg -s between the knee -s and the hip -s
+302 they are the part -s of the face at the side -s of the mouth
+303 it is the joint between the upper and lower arm
+304 it is the joint between the lower arm and the hand
+305 it is the joint between the foot and the leg
+306 they are the joint -s between the lower arm -s and the hand -s
+307 they are the joint -s between the thigh -s and the lower leg -s
+308 they are the joint -s between the feet and the leg -s
+309 it is the front part of the torso
+310 it is the front part of the head
+311 it is the inside part of the hand
+312 it is the upper part of the face
+313 it is the stripe of hair over the eye
+314 it is the hair that grow -s at the edge of the eyelid
+315 it is the piece of skin that cover -s the eye
+316 it is the hole in the face through which we talk and eat
+317 it is the fleshy muscle inside the mouth
+318 it is the flesh at the base of the teeth
+319 it is the roof of the mouth
+320 it is the edge of the mouth
+321 they are the hair -s that grow at the edge of the eyelid -s
+322 they are the piece -s of skin that cover the eye -s
+323 they are the organ -s of sight
+324 they are the edge -s of the mouth
+325 they are the inside part -s of the hand -s
+326 it is at the front of the head
+327 it is at the side of the head
+328 it is at the side of the mouth
+329 it is in the middle of the abdomen
+330 it is in the middle of the abdomen
+331 it is in the leg
+332 it is in the face
+333 it is in the face
+334 it is in the face
+335 it is between the head and the trunk
+336 it is at the front of the torso
+337 it is between the upper and lower arm
+338 it is between the elbow and the wrist
+339 it is between the lower arm and the hand
+340 it is between the thigh and the lower leg
+341 it is between the waist and the top of the leg
+342 it is between the eyebrow -s and the hair line
+343 they are attach -ed to the hand -s
+344 they are attach -ed to the hip
+345 they are attach -ed to the lower arm -s
+346 it is attach -ed to the shoulder
+347 it is attach -ed to the hand
+348 it is attach -ed to the leg
+349 it is attach -ed to the lower arm
+350 they are at the side -s of the head
+351 they are at the side -s of the mouth
+352 they are attach -ed to the shoulder -s
+353 it is inside the mouth
+354 it is inside the mouth
+355 it is inside the mouth
+356 with my hand -s I can play with toys draw write grab thing -s
+357 with my leg -s I can walk run and jump
+358 with my mouth I can speak and eat
+359 with my teeth I can smile and chew food
+360 xxx
+361 xxx
+362 xxx
+363 xxx
+364 xxx
+365 a mammal
+366 a mammal
+367 a mammal
+368 a mammal
+369 a mammal
+370 a mammal
+371 a mammal
+372 a mammal
+373 a mammal
+374 a mammal
+375 a mammal
+376 a mammal
+377 a mammal
+378 a bird
+379 a bird
+380 a bird
+381 a bird
+382 a bird
+383 a bird
+384 a bird
+385 a bird
+386 a bird
+387 a bird
+388 a bird
+389 a bird
+390 a bird
+391 a fish
+392 a fish
+393 a fish
+394 a fish
+395 a fish
+396 a fish
+397 a fish
+398 a fish
+399 a fish
+400 a fish
+401 a fish
+402 a fish
+403 a amphibian
+404 a amphibian
+405 a amphibian
+406 a amphibian
+407 a reptile
+408 a reptile
+409 a reptile
+410 a reptile
+411 a reptile
+412 a reptile
+413 a reptile
+414 a reptile
+415 a insect
+416 a insect
+417 a insect
+418 a insect
+419 a insect
+420 a insect
+421 a insect
+422 a insect
+423 a insect
+424 a insect
+425 a insect
+426 xxx
+427 xxx
+428 xxx
+429 xxx
+430 xxx
+431 xxx
+432 xxx
+433 xxx
+434 xxx
+435 xxx
+436 xxx
+437 xxx
+438 xxx
+439 xxx
+440 xxx
+441 xxx
+442 xxx
+443 xxx

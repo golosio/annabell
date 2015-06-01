@@ -1,0 +1,16 @@
+
+? what game -s do children like to play
+.cx
+
+? what movie -s do women like to watch
+.cx
+
+? what movie -s do men like to watch
+.cx
+
+? what book -s do women like to read
+.cx
+
+#? what movie -s do children like to watch
+#.cx
+#

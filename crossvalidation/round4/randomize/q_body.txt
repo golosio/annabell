@@ -1,0 +1,75 @@
+? what is the head
+? what is the neck
+? what is the shoulder
+? what is the arm
+? what is the forearm
+? what is the thigh
+? what is the hip
+? what is the waist
+? what is the leg
+? what is the foot
+? what is the nose
+? what is the cheek
+? what are the shoulder -s
+? what are the arm -s
+? what are the leg -s
+? what are the forearm -s
+? what are the thigh -s
+? what are the cheek -s
+? what is the elbow
+? what is the wrist
+? what is the ankle
+? what are the wrist -s
+? what are the knee -s
+? what are the ankle -s
+? what is the chest
+? what is the face
+? what is the palm
+? what is the forehead
+? what is the eyebrow
+? what is the eyelash
+? what is the eyelid
+? what is the mouth
+? what is the tongue
+? what is the gum
+? what is the palate
+? what is the lip
+? what are the eyelash -s
+? what are the eyelid -s
+? what are the eye -s
+? what are the lip -s
+? what are the palm -s
+? where is the face
+? where is the ear
+? where is the cheek
+? where is the umbilicus
+? where is the bellybutton
+? where is the thigh
+? where is the eye
+? where is the nose
+? where is the mouth
+? where is the neck
+? where is the chest
+? where is the elbow
+? where is the forearm
+? where is the wrist
+? where is the knee
+? where is the hip
+? where is the forehead
+? where are the finger -s
+? where are the leg -s
+? where are the hand -s
+? where is the arm
+? where is the finger
+? where is the foot
+? where is the hand
+? where are the ear -s
+? where are the cheek -s
+? where are the arm -s
+? where is the tongue
+? where is the gum
+? where is the palate
+? what can you do with your hand -s
+? what can you do with your leg -s
+? what can you do with your mouth
+? what can you do with your teeth

@@ -1,0 +1,9 @@
+
+? who is old -er Kevin or Misty
+.pg /Kevin/Kevin is three year -s old/three/
+.rip
+.ph /Misty/Misty is three year -s old//
+.wg /year -s old//they are the same age/
+.drop_goal
+.rw
+

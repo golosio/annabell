@@ -1,0 +1,9 @@
+
+? do you like animal -s
+.ph /animal -s/you like animal -s//
+.o /like//yes I do/
+
+? do you like vegetable -s
+.ph /vegetable -s/you do not like vegetable -s//
+.o /do not like//no I do not/
+

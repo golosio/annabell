@@ -1,0 +1,25 @@
+
+you are at the central park
+Dad brought you here
+#Susan and Oliver play with you
+you play hide_and_seek
+you do not win
+Susan win -s
+you play bowl -s
+you win
+you play frisbee
+you do not win
+Oliver win -s
+you play tag
+you win
+you stop play -ing
+
+you are at the bumpers junction
+Michael brought you here
+you play Space_Invaders
+you do not win
+you play Pac_Man
+you win
+you play Donkey_Kong
+you do not win
+you stop play -ing

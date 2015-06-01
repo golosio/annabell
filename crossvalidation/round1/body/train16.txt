@@ -1,0 +1,9 @@
+
+? what can you do with your nose
+.po* with
+.po* /your//my/
+.po* nose
+.po* /you//I/
+.wg /with your nose/with your nose you can smell/you/
+.snto
+

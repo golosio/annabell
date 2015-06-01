@@ -1,0 +1,10 @@
+
+? does your sister have a bike
+.pg /your sister/Susan is your sister/Susan/
+.rip
+.ph /a bike/Susan does not have a bike/does not have/
+.drop_goal
+.po* /does not//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o does not have a bike
+

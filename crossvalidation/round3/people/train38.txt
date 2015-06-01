@@ -1,0 +1,6 @@
+
+? what is your favorite tale
+.po* /your//my/
+.wg /favorite tale/your favorite tale is Sleeping Beauty/your/
+.snto
+

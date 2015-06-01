@@ -1,0 +1,20 @@
+
+? is your mother old -er than you
+.ph /your mother/Mum is your mother//
+.pg /Mum/Mum is thirty_three year -s old/thirty_three/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /? is//yes/
+.ph /your mother/Mum is your mother//
+.po /Mum/the personal pronoun for Mum is she/she/
+.rip
+.po is
+.wg old -er
+.drop_goal
+.rw
+

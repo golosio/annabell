@@ -1,0 +1,20 @@
+
+? is your father young -er than you
+.ph /your father/Dad is your father//
+.pg /Dad/Dad is forty_two year -s old/forty_two/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /? is//no/
+.ph /your father/Dad is your father//
+.po /Dad/the personal pronoun for Dad is he/he/
+.rip
+.po is
+.wg /young -er//old -er/
+.drop_goal
+.rw
+

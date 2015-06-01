@@ -1,0 +1,12 @@
+
+? what does your friend do
+.ph /your friend/Letizia is your friend//
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o /Letizia/Letizia go -es to the kindergarten/go -es to the kindergarten/
+
+? what does your friend do
+.ph /your friend/Letizia is your friend//
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.ph /Letizia/Letizia is a girl//
+.o /Letizia/Letizia go -es to the kindergarten/go -es to the kindergarten/
+

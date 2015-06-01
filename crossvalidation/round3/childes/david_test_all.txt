@@ -1,0 +1,17 @@
+.speaker TEA
+.period on
+.logfile log_all.txt
+
+.f david_test1.txt
+
+.f david_test2.txt
+
+.f david_test3a.txt
+
+.f david_test3.txt
+
+.f david_test4.txt
+
+.f david_test5.txt
+
+.logfile off

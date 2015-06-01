@@ -1,0 +1,6 @@
+
+? where are the finger -s 
+.po* /where are//they are/
+.wg /finger -s/the finger -s are attach -ed/the finger -s are/
+.snto
+

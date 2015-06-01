@@ -1,0 +1,49 @@
+
+? how old is Susan
+.cx
+
+? how old is Oliver
+.cx
+
+? how old is Dad
+.cx
+
+? how old is Mum
+.cx
+
+? how old is Letizia
+.cx
+
+? how old is Vivian
+.cx
+
+? how old is Tom
+.cx
+
+#? how old is Kate
+#.cx
+#
+? how old is Misty
+.cx
+
+? how old is Daniel
+.cx
+
+? how old is Lisa
+.cx
+
+? how old is Matt
+.cx
+
+? how old is Sally
+.cx
+
+? how old is Kevin
+.cx
+
+? how old is Grace
+.cx
+
+? how old is George
+.cx
+

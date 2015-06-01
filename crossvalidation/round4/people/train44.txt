@@ -1,0 +1,5 @@
+
+? who cut -s the hair
+.o /cut & the hair/the hairdresser cut -s the hair/the hairdresser/
+
+

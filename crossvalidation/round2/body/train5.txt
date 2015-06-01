@@ -1,0 +1,6 @@
+
+? what is the face
+.po* /what is//it is/
+.wg /face/the face is the front part/the face is/
+.snto
+

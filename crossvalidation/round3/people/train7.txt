@@ -1,0 +1,10 @@
+
+? does your mother have a brother
+.pg /your mother/Mum is your mother/Mum/
+.rip
+.ph /a brother/Mum has a brother//
+.drop_goal
+.po* /has//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.o /has//does/
+

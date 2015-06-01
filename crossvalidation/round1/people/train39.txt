@@ -1,0 +1,6 @@
+
+? what is Susan 's favorite cartoon
+.po* /Susan/the possessive pronoun for Susan is her/her/
+.wg /favorite cartoon & Susan/Susan 's favorite cartoon is Candy Candy/Susan 's/
+.snto
+

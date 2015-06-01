@@ -1,0 +1,16 @@
+
+? is Dad a woman
+.cx
+
+? is Steven a woman
+.cx
+
+#? is Ben a woman
+#.cx
+#
+? is Daniel a woman
+.cx
+
+? is Matt a woman
+.cx
+

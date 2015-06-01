@@ -1,0 +1,6 @@
+
+? what is your favorite game
+.po* /your//my/
+.wg /favorite game/your favorite game is hide_and_seek/your/
+.snto
+

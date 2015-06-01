@@ -1,0 +1,16 @@
+
+? is Dad a man or a woman
+.cx
+
+? is Steven a man or a woman
+.cx
+
+? is Ben a man or a woman
+.cx
+
+? is Daniel a man or a woman
+.cx
+
+? is Matt a man or a woman
+.cx
+

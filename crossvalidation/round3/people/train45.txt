@@ -1,0 +1,8 @@
+
+? who is Mum
+.po* /Mum/the personal pronoun for Mum is she/she/
+.ph /Mum/Mum is your mother//
+.po* is
+.po* /your//my/
+.o mother
+

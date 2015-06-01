@@ -1,0 +1,5 @@
+
+? is Susan a boy or a girl
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o /Susan/Susan is a girl/is a girl/
+

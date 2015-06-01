@@ -1,0 +1,125 @@
+
+the dog is a mammal
+
+the cat is a mammal
+
+the bear is a mammal
+
+the horse is a mammal
+
+the dolphin is a mammal
+
+the whale is a mammal
+
+the kangaroo is a mammal
+
+the lion is a mammal
+
+the tiger is a mammal
+
+the elephant is a mammal
+
+the sheep is a mammal
+
+the mouse is a mammal
+
+the fox is a mammal
+
+the pelican is a bird
+
+the cormorant is a bird
+
+the flamingo is a bird
+
+the vulture is a bird
+
+the hawk is a bird
+
+the eagle is a bird
+
+the gull is a bird
+
+the pigeon is a bird
+
+the parrot is a bird
+
+the ostrich is a bird
+
+the chicken is a bird
+
+the dove is a bird
+
+the hummingbird is a bird
+
+the shark is a fish
+
+the cod is a fish
+
+the tuna is a fish
+
+the salmon is a fish
+
+the trout is a fish
+
+the carp is a fish
+
+the bream is a fish
+
+the catfish is a fish
+
+the pike is a fish
+
+the herring is a fish
+
+the sardine is a fish
+
+the swordfish is a fish
+
+the goldfish is a fish
+
+the frog is an amphibian
+
+the toad is an amphibian
+
+the salamander is an amphibian
+
+the newt is an amphibian
+
+the crocodile is a reptile
+
+the lizard is a reptile
+
+the turtle is a reptile
+
+the python is a reptile
+
+the cobra is a reptile
+
+the rattlesnake is a reptile
+
+the alligator is a reptile
+
+the viper is a reptile
+
+the fly is an insect
+
+the ant is an insect
+
+the ladybug is an insect
+
+the termite is an insect
+
+the butterfly is an insect
+
+the bee is an insect
+
+the cricket is an insect
+
+the cicada is an insect
+
+the grasshopper is an insect
+
+the wasp is an insect
+
+the cockchafer is an insect
+

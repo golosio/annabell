@@ -1,0 +1,33 @@
+
+? is Kate old -er than you
+.pg /Kate/Kate is two year -s old/two/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx two
+.ggp
+.rip
+.po* /? is//no/
+.po* /Kate/the personal pronoun for Kate is she/she/
+.po* is
+.drop_goal
+.wg /old -er//young -er/
+.drop_goal
+.rw
+
+? is Kevin old -er than you
+.pg /Kevin/Kevin is three year -s old/three/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx three
+.ggp
+.rip
+.po* /? is//no/
+.po* /Kevin/the personal pronoun for Kevin is he/he/
+.po* is
+.drop_goal
+.wg /old -er//young -er/
+.drop_goal
+.rw
+

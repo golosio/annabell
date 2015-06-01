@@ -1,0 +1,13 @@
+
+#? who extinguish -es the fire
+#.cx
+#
+? who build -s the house -s
+.cx
+
+? who drive -s the bus
+.cx
+
+? who cut -s the hair
+.cx
+

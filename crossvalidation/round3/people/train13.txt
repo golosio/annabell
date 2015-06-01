@@ -1,0 +1,10 @@
+
+? is Matt a man
+.pg /Matt/Matt is a man/a man/
+.rip
+.po* /? is//yes/
+.po* /Matt/the personal pronoun for Matt is he/he/
+.ggp
+.drop_goal
+.o is a man
+

@@ -1,0 +1,442 @@
+241 ? what is your father 's favorite music
+206 ? do you like to eat candy -s
+92 ? how old is Misty
+325 ? what are the palm -s
+360 tell me a mammal
+133 ? is your sister old -er than you
+109 ? is Tom young -er than you
+102 ? how old is Grandpa Ben
+3 ? do you have any Grandpa -s
+114 ? is Susan old -er than you
+74 ? what game -s do children like to play
+306 ? what are the elbow -s
+138 ? who is old -er Kate or Misty
+238 ? what is your sister 's favorite game
+160 ? does Susan like to eat vegetable -s
+308 ? what are the ankle -s
+107 ? is Vivian young -er than you
+76 ? what book -s do women like to read
+342 ? where are the arm -s
+18 ? how many book -s do you have
+187 ? does Letizia like soup
+136 ? who is old -er Letizia or Oliver
+399 ?2 what is the pike
+391 ?2 what is the shark
+371 ?2 what is the kangaroo
+286 ? what is the shoulder
+120 ? is Grace old -er than you
+416 ?2 what is the ant
+294 ? what is the nose
+86 ? how old is Oliver
+278 ? who is Matt
+417 ?2 what is the ladybug
+11 ? do you have any pet -s
+46 ? is Sally a man or a woman
+176 ? does Mum like flower -s
+400 ?2 what is the herring
+171 ? does your sister like to play the piano
+131 ? is your father young -er than you
+229 ? what is Dad 's favorite movie
+142 ? who is old -er Misty or Kate
+117 ? is Tom old -er than you
+193 ? does your sister like chocolate
+343 ? where are the finger -s
+170 ? does your father like to read book -s
+240 ? what is your mother 's favorite movie
+72 ? is Kate a boy or a girl
+65 ? is Vivian a girl
+55 ? is Steven a man or a woman
+421 ?2 what is the cricket
+350 ? where are the cheek -s
+384 ?2 what is the gull
+20 ? how many brother -s do you have
+418 ?2 what is the termite
+40 ? is Mum a woman
+105 ? what is your friend 's name
+434 .bx 20 tell me a fast mammal
+203 ? does your mother like sport
+163 ? does your sister like to read book -s
+177 ? does Susan like book -s
+192 ? does your friend like doll -s
+215 ? do you like cat -s
+324 ? what are the eye -s
+24 ? does Susan have a umbrella
+239 ? what is your sister 's favorite cartoon
+53 ? is Daniel a man
+159 ? does Mum like to answer the phone
+68 ? is Grace a girl
+158 ? does Letizia like to play videogame -s
+52 ? is Ben a man
+305 ? what is the knee
+218 ? do you like ice_cream -s
+358 ? what can you do with your mouth
+211 ? do you like to eat tomato -s
+9 ? do you have any photo_album -s
+179 ? does Susan like chocolate
+310 ? what is the face
+106 ? is Letizia young -er than you
+226 ? what is your favorite cartoon
+141 ? who is old -er Misty or Letizia
+396 ?2 what is the carp
+224 ? what is your favorite tale
+419 ?2 what is the butterfly
+182 ? does Letizia like candy -s
+180 ? does Dad like music
+201 ? does your friend like soup
+317 ? what is the tongue
+146 ? who is old -er Tom or Kevin
+30 ? does your sister have a umbrella
+302 ? what are the cheek -s
+41 ? is Carol a woman
+132 ? is your mother young -er than you
+27 ? does Susan have a bike
+88 ? how old is Mum
+4 ? do you have any friend -s
+242 ? what is your mother 's favorite singer
+220 ? do you like tomato -s
+204 ? do you like to eat chip -s
+288 ? what is the forearm
+17 ? how many sister -s do you have
+428 .bx 20 tell me a big reptile
+304 ? what is the wrist
+209 ? do you like to eat vegetable -s
+395 ?2 what is the trout
+185 ? does Letizia like book -s
+81 ? how old is your aunt
+339 ? where is the hip
+318 ? what is the gum
+156 ? does Dad like to read book -s
+5 ? do you have any book -s
+369 ?2 what is the dolphin
+357 ? what can you do with your feet
+39 ? is Lisa a woman
+54 ? is Matt a man
+281 ? what is Dad do -ing
+382 ?2 what is the hawk
+429 .bx 20 tell me a dangerous mammal
+161 ? does Dad like to cook
+85 ? how old is Susan
+440 .bx 20 tell me a small amphibian
+372 ?2 what is the lion
+365 ?2 what is the dog
+420 ?2 what is the bee
+385 ?2 what is the pigeon
+103 ? what is your sister 's name
+93 ? how old is Daniel
+195 ? does your mother like music
+247 ? what does Laura do
+134 ? is your friend old -er than you
+210 ? do you like to watch movie -s
+307 ? what are the wrist -s
+266 ? who cut -s the hair
+377 ?2 what is the fox
+295 ? what is the ear
+394 ?2 what is the salmon
+16 ? how many friend -s do you have
+251 ? what does Letizia do
+31 ? does your father have a car
+36 ? is Mum a man
+411 ?2 what is the cobra
+283 ? what is Letizia do -ing
+108 ? is Oliver young -er than you
+427 .bx 20 tell me a big bird
+376 ?2 what is the mouse
+153 ? does Letizia like to eat candy -s
+15 ? how many Grandpa -s do you have
+393 ?2 what is the tuna
+436 .bx 20 tell me a fast reptile
+202 ? does your sister like sport
+336 ? where is the forearm
+14 ? how many Grandma -s do you have
+110 ? is Kate young -er than you
+405 ?2 what is the toad
+227 ? what is Susan 's favorite game
+64 ? is Letizia a girl
+60 ? is Vivian a boy
+1 ? do you have any aunt -s
+425 ?2 what is the cockchafer
+228 ? what is Dad 's favorite music
+287 ? what is the arm
+8 ? do you have any cartoon -s
+282 ? what is Susan do -ing
+28 ? does Letizia have a videogame
+151 ? does Dad like to watch the tv
+352 ? where is the gum
+289 ? what is the thigh
+279 ? who is Daniel
+199 ? does your friend like book -s
+207 ? do you like to eat ice_cream
+250 ? what does Matt do
+34 ? does your friend have a videogame
+359 ? what can you do with your teeth
+341 ? where is the forehead
+87 ? how old is Dad
+437 .bx 20 tell me a fast insect
+167 ? does your friend like to eat candy -s
+409 ?2 what is the lizard
+367 ?2 what is the bear
+49 ? is Ben a woman
+97 ? how old is Kevin
+320 ? what is the lip
+290 ? what is the hip
+303 ? what is the elbow
+374 ?2 what is the elephant
+75 ? what movie -s do men like to watch
+213 ? do you like to eat salad
+258 ? what does your father do
+135 ? is your mother old -er than you
+189 ? does Mum like sport
+349 ? where are the eyelash -s
+331 ? where is the palm
+277 ? who is Lisa
+122 ? is Susan young -er or old -er than you
+319 ? what is the palate
+271 ? who is Vivian
+252 ? what does Vivian do
+143 ? who is old -er Misty or Oliver
+123 ? is Letizia young -er or old -er than you
+348 ? where is the hand
+169 ? does your mother like to drive the car
+392 ?2 what is the cod
+212 ? do you like to visit your relative -s
+273 ? who is Carol
+33 ? does your sister have a bike
+119 ? is Misty old -er than you
+59 ? is Susan a boy
+398 ?2 what is the catfish
+233 ? what is Vivian 's favorite game
+10 ? do you have any brother -s
+67 ? is Kate a girl
+249 ? what does Ben do
+205 ? do you like to watch cartoon -s
+83 ? how old is your Grandpa
+267 ? who is Mum
+99 ? how old is George
+309 ? what is the chest
+145 ? who is old -er Grace or George
+222 ? do you like sport
+90 ? how old is Vivian
+337 ? where is the wrist
+190 ? does your mother like flower -s
+22 ? how many videogame -s do you have
+230 ? what is Mum 's favorite singer
+340 ? where is the ankle
+231 ? what is Oliver 's favorite game
+43 ? is Lisa a man or a woman
+439 .bx 20 tell me a small bird
+430 .bx 20 tell me a dangerous reptile
+407 ?2 what is the newt
+104 ? what is your mother 's name
+406 ?2 what is the salamander
+57 ? is Daniel a man or a woman
+112 ? is Grace young -er than you
+299 ? what are the forearm -s
+173 ? does your mother like to answer the phone
+126 ? is Kate young -er or old -er than you
+174 ? does your sister like to eat vegetable -s
+139 ? who is old -er Oliver or Misty
+329 ? where is the umbilicus
+124 ? is Oliver young -er or old -er than you
+234 ? what is Vivian 's favorite cartoon
+157 ? does Susan like to play the piano
+154 ? does Susan like to watch cartoon -s
+412 ?2 what is the rattlesnake
+264 ? who build -s the house -s
+313 ? what is the eyelash
+214 ? do you like animal -s
+82 ? how old is your Grandma
+364 tell me an insect
+84 ? how old is your uncle
+137 ? who is old -er Letizia or Misty
+297 ? what are the arm -s
+265 ? who drive -s the bus
+363 tell me a reptile
+246 ? what does Sally do
+351 ? where is the tooth
+362 tell me an amphibian
+301 ? what are the ear -s
+379 ?2 what is the cormorant
+335 ? where is the neck
+32 ? does your father have a boat
+165 ? does your father like to watch the tv
+275 ? who is Steven
+47 ? is Dad a woman
+260 ? what does your friend do
+73 ? is Grace a boy or a girl
+80 ? how old is your friend
+37 ? is Carol a man
+223 ? do you like salad
+235 ? what is Letizia 's favorite color
+368 ?2 what is the horse
+413 ?2 what is the alligator
+181 ? does Mum like music
+292 ? what is the leg
+98 ? how old is Grace
+12 ? do you have any videogame -s
+422 ?2 what is the cicada
+330 ? where is the bellybutton
+424 ?2 what is the wasp
+370 ?2 what is the whale
+311 ? what is the forehead
+347 ? where is the leg
+197 ? does your mother like comic -s
+334 ? where is the mouth
+130 ? is your friend young -er than you
+408 ?2 what is the crocodile
+291 ? what is the waist
+121 ? is Kevin old -er than you
+13 ? how many aunt -s do you have
+45 ? is Laura a man or a woman
+442 .bx 20 tell me a small insect
+248 ? what does Dad do
+44 ? is Mum a man or a woman
+323 ? what are the eyelid -s
+245 ? what does Mum do
+236 ? what is Mum 's favorite movie
+232 ? what is Oliver 's favorite sport
+150 ? does Mum like to play the piano
+175 ? does your father like to cook
+263 ? who work -s in the boat
+70 ? is Letizia a boy or a girl
+200 ? does your father like candy -s
+21 ? how many pet -s do you have
+262 ? who write -s in the newspaper
+354 ? what can you do with your hand -s
+321 ? what are the eyebrow -s
+327 ? where is the chest
+198 ? does your sister like doll -s
+328 ? where is the cheek
+284 ? what is Oliver do -ing
+100 ? how old is Grandma Laura
+403 ?2 what is the goldfish
+373 ?2 what is the tiger
+58 ? is Matt a man or a woman
+50 ? is Daniel a woman
+270 ? who is Letizia
+164 ? does your mother like to play the piano
+312 ? what is the chin
+401 ?2 what is the sardine
+375 ?2 what is the sheep
+140 ? who is old -er Oliver or Letizia
+346 ? where is the foot
+194 ? does your father like music
+397 ?2 what is the bream
+62 ? is Kate a boy
+326 ? where is the face
+345 ? where is the finger
+42 ? is Laura a woman
+423 ?2 what is the grasshopper
+191 ? does your sister like book -s
+355 ? what can you do with your leg -s
+25 ? does Dad have a car
+95 ? how old is Matt
+314 ? what is the eyelid
+6 ? do you have any toy -s
+389 ?2 what is the dove
+29 ? does your mother have a brother
+78 ? how old is your sister
+432 .bx 20 tell me a domestic mammal
+438 .bx 20 tell me a small mammal
+155 ? does Mum like to drive the car
+386 ?2 what is the parrot
+196 ? does your friend like candy -s
+261 ? who work -s in the hospital
+296 ? what is the cheek
+149 ? does Susan like to read book -s
+172 ? does your friend like to play videogame -s
+113 ? is Kevin young -er than you
+96 ? how old is Sally
+144 ? who is old -er Letizia or Vivian
+254 ? what does Tom do
+316 ? what is the mouth
+147 ? who is old -er Kevin or Misty
+300 ? what are the thigh -s
+243 ? what is your friend 's favorite cartoon
+221 ? do you like videogame -s
+414 ?2 what is the viper
+353 ? where is the palate
+26 ? does Mum have a car
+402 ?2 what is the swordfish
+166 ? does your friend like to play with doll -s
+383 ?2 what is the eagle
+280 ? what is Mum do -ing
+71 ? is Vivian a boy or a girl
+38 ? is Laura a man
+404 ?2 what is the frog
+116 ? is Oliver old -er than you
+256 ? what does Carol do
+168 ? does your sister like to watch cartoon -s
+431 .bx 20 tell me a dangerous insect
+7 ? do you have any cousin -s
+276 ? who is Sally
+188 ? does Susan like sport
+344 ? where are the leg -s
+118 ? is George old -er than you
+48 ? is Steven a woman
+129 ? is Kevin young -er or old -er than you
+219 ? do you like vegetable -s
+332 ? where is the thigh
+77 ? what movie -s do children like to watch
+125 ? is Tom young -er or old -er than you
+415 ?2 what is the fly
+268 ? who is Dad
+269 ? who is Susan
+2 ? do you have any Grandma -s
+253 ? what does Misty do
+274 ? who is Ben
+338 ? where is the knee
+63 ? is Grace a boy
+148 ? does Dad like to drive the car
+162 ? does your father like to drive the car
+89 ? how old is Letizia
+410 ?2 what is the turtle
+333 ? where is the nose
+378 ?2 what is the pelican
+315 ? what is the eye
+244 ? what is your friend 's favorite color
+19 ? how many cousin -s do you have
+293 ? what is the foot
+69 ? is Susan a boy or a girl
+259 ? what does your sister do
+366 ?2 what is the cat
+257 ? what does Daniel do
+441 .bx 20 tell me a small reptile
+381 ?2 what is the vulture
+61 ? is Misty a boy
+94 ? how old is Lisa
+380 ?2 what is the flamingo
+433 .bx 20 tell me a domestic bird
+237 ? what is Letizia 's favorite cartoon
+217 ? do you like dog -s
+216 ? do you like chip -s
+388 ?2 what is the chicken
+152 ? does Letizia like to play with doll -s
+298 ? what are the leg -s
+272 ? who is Oliver
+111 ? is Misty young -er than you
+66 ? is Misty a girl
+56 ? is Ben a man or a woman
+361 tell me a fish
+23 ? does Mum have a brother
+390 ?2 what is the hummingbird
+183 ? does Mum like comic -s
+255 ? what does Kevin do
+101 ? how old is Grandpa Steven
+356 ? what can you do with your ear -s
+285 ? what is the head
+91 ? how old is Tom
+387 ?2 what is the ostrich
+115 ? is Letizia old -er than you
+186 ? does Dad like candy -s
+225 ? what is your favorite game
+35 ? is Lisa a man
+178 ? does Letizia like doll -s
+208 ? do you like to eat chocolate
+127 ? is Misty young -er or old -er than you
+128 ? is Grace young -er or old -er than you
+322 ? what are the eyelash -s
+51 ? is Steven a man
+184 ? does Susan like doll -s
+426 .bx 20 tell me a big mammal
+79 ? how old is your father
+435 .bx 20 tell me a fast bird

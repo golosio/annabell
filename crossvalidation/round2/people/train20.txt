@@ -1,0 +1,7 @@
+
+? how old is your Grandpa
+.ph /Grandpa/you have two Grandpa -s//
+.rip
+.po* /your//? which/
+.o Grandpa
+

@@ -1,0 +1,10 @@
+
+? does your friend have a videogame
+.pg /your friend/Letizia is your friend/Letizia/
+.rip
+.ph /a videogame/Letizia does not have a videogame/does not have/
+.drop_goal
+.po* /does not//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o does not have a videogame
+

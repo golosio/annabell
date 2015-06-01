@@ -1,0 +1,16 @@
+
+? how old is your aunt
+.cx
+
+? how old is your Grandma
+.cx
+
+? how old is your Grandpa
+.cx
+
+? how old is your cousin
+.cx
+
+#? how old is your uncle
+#.cx
+#

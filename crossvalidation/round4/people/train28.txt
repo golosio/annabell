@@ -1,0 +1,16 @@
+
+? is Oliver young -er or old -er than you
+.pg /Oliver/Oliver is thirteen year -s old/thirteen/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /Oliver/the personal pronoun for Oliver is he/he/
+.po* is
+.wg old -er
+.drop_goal
+.rw
+

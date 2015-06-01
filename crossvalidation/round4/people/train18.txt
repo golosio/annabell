@@ -1,0 +1,6 @@
+
+? what movie -s do children like to watch
+.po* /children/the personal pronoun for children is they/they/
+.wg /like to watch/children like to watch/children/
+.snto
+

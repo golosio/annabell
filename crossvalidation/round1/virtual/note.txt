@@ -1,0 +1,6 @@
+train_goto.txt and train_bring.txt are extracted from
+
+   template/virtual/train_goto_files/train_goto_${round}.txt
+   template/virtual/train_bring_files/train_bring_${round}.txt
+
+using the first 3 training examples in both cases and removing link save

@@ -1,0 +1,12 @@
+
+? what does your sister do
+.ph /your sister/Susan is your sister//
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o /Susan/Susan go -es to the school/go -es to the school/
+
+? what does your sister do
+.ph /your sister/Susan is your sister//
+.po* /Susan/the personal pronoun for Susan is she/she/
+.ph /Susan/Susan is a girl//
+.o /Susan/Susan go -es to the school/go -es to the school/
+

@@ -1,0 +1,13 @@
+
+? does Mum have a car
+.cx
+
+? does Dad have a boat
+.cx
+
+? does Susan have a bike
+.cx
+
+#? does Letizia have a videogame
+#.cx
+#

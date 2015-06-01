@@ -1,0 +1,9 @@
+
+? do you like to eat candy -s
+.ph /eat candy -s/you like to eat candy -s//
+.o /like//yes I do/
+
+? do you like to eat tomato -s 
+.ph /eat tomato -s/you do not like to eat tomato -s//
+.o /do not like//no I do not/
+

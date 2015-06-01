@@ -1,0 +1,19 @@
+
+? is Tom old -er than you
+.cx
+
+? is George old -er than you
+.cx
+
+#? is Kate old -er than you
+#.cx
+#
+? is Misty old -er than you
+.cx
+
+? is Grace old -er than you
+.cx
+
+? is Kevin old -er than you
+.cx
+

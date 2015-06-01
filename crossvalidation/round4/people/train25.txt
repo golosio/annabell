@@ -1,0 +1,32 @@
+
+? is Tom young -er than you
+.pg /Tom/Tom is three year -s old/three/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx three
+.ggp
+.rip
+.po* /? is//yes/
+.po* /Tom/the personal pronoun for Tom is he/he/
+.po* is
+.drop_goal
+.wg young -er
+.drop_goal
+.rw
+
+? is Grace young -er than you
+.pg /Grace/Grace is two year -s old/two/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx two
+.ggp
+.rip
+.po* /? is//yes/
+.po* /Grace/the personal pronoun for Grace is she/she/
+.po* is
+.wg young -er
+.drop_goal
+.rw
+

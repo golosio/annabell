@@ -1,0 +1,6 @@
+
+? what are the wrist -s 
+.po* /what are//they are/
+.wg /wrist -s/the wrist -s are the joint -s/the wrist -s are/
+.snto
+

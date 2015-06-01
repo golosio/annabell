@@ -1,0 +1,6 @@
+
+? what is your mother 's name
+.ph /your mother/Mum is your mother//
+.po* /Mum/the possessive pronoun for Mum is her/her/
+.o /your mother/your mother 's name is Cindy/name is Cindy/
+

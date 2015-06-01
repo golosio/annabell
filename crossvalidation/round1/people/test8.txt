@@ -1,0 +1,13 @@
+
+#? does your mother have a car
+#.cx
+#
+? does your father have a boat
+.cx
+
+? does your sister have a bike
+.cx
+
+? does your friend have a videogame
+.cx
+

@@ -1,0 +1,9 @@
+
+? what can you do with your eye -s
+.po* with
+.po* /your//my/
+.po* eye -s
+.po* /you//I/
+.wg /with your eye/with your eye -s you can see/you/
+.snto
+

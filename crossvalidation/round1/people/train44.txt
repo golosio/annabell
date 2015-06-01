@@ -1,0 +1,5 @@
+
+? who extinguish -es the fire
+.o /extinguish & the fire/the fireman extinguish -es the fire/the fireman/
+
+

@@ -1,0 +1,443 @@
+1 ? do you have any aunt -s
+2 ? do you have any uncle -s
+3 ? do you have any Grandma -s
+4 ? do you have any Grandpa -s
+5 ? do you have any sister -s
+6 ? do you have any book -s
+7 ? do you have any cousin -s
+8 ? do you have any cartoon -s
+9 ? do you have any photo_album -s
+10 ? do you have any brother -s
+11 ? do you have any pet -s
+12 ? do you have any bike -s
+13 ? how many aunt -s do you have
+14 ? how many uncle -s do you have
+15 ? how many Grandpa -s do you have
+16 ? how many sister -s do you have
+17 ? how many book -s do you have
+18 ? how many toy -s do you have
+19 ? how many cousin -s do you have
+20 ? how many pet -s do you have
+21 ? how many bike -s do you have
+22 ? how many videogame -s do you have
+23 ? does Susan have a umbrella
+24 ? does Letizia have a cat
+25 ? does Dad have a car
+26 ? does Mum have a car
+27 ? does Dad have a boat
+28 ? does Susan have a bike
+29 ? does your friend have a cat
+30 ? does your mother have a brother
+31 ? does your father have a car
+32 ? does your mother have a car
+33 ? does your father have a boat
+34 ? does your sister have a bike
+35 ? is Lisa a man
+36 ? is Carol a man
+37 ? is Laura a man
+38 ? is Sally a man
+39 ? is Lisa a woman
+40 ? is Mum a woman
+41 ? is Carol a woman
+42 ? is Sally a woman
+43 ? is Lisa a man or a woman
+44 ? is Mum a man or a woman
+45 ? is Carol a man or a woman
+46 ? is Laura a man or a woman
+47 ? is Dad a woman
+48 ? is Steven a woman
+49 ? is Ben a woman
+50 ? is Matt a woman
+51 ? is Dad a man
+52 ? is Ben a man
+53 ? is Daniel a man
+54 ? is Matt a man
+55 ? is Dad a man or a woman
+56 ? is Steven a man or a woman
+57 ? is Ben a man or a woman
+58 ? is Daniel a man or a woman
+59 ? is Matt a man or a woman
+60 ? is Susan a boy
+61 ? is Letizia a boy
+62 ? is Misty a boy
+63 ? is Kate a boy
+64 ? is Grace a boy
+65 ? is Susan a girl
+66 ? is Vivian a girl
+67 ? is Misty a girl
+68 ? is Kate a girl
+69 ? is Grace a girl
+70 ? is Susan a boy or a girl
+71 ? is Letizia a boy or a girl
+72 ? is Misty a boy or a girl
+73 ? is Kate a boy or a girl
+74 ? is Grace a boy or a girl
+75 ? what game -s do children like to play
+76 ? what movie -s do women like to watch
+77 ? what movie -s do men like to watch
+78 ? what book -s do women like to read
+79 ? how old is your father
+80 ? how old is your friend
+81 ? how old is your mother
+82 ? how old is your aunt
+83 ? how old is your Grandma
+84 ? how old is your Grandpa
+85 ? how old is your cousin
+86 ? how old is Susan
+87 ? how old is Oliver
+88 ? how old is Dad
+89 ? how old is Mum
+90 ? how old is Letizia
+91 ? how old is Tom
+92 ? how old is Kate
+93 ? how old is Misty
+94 ? how old is Daniel
+95 ? how old is Lisa
+96 ? how old is Matt
+97 ? how old is Sally
+98 ? how old is Kevin
+99 ? how old is Grace
+100 ? how old is George
+101 ? how old is Grandma Laura
+102 ? how old is Grandma Carol
+103 ? how old is Grandpa Steven
+104 ? what is your father 's name
+105 ? what is your mother 's name
+106 ? what is your friend 's name
+107 ? is Susan young -er than you
+108 ? is Vivian young -er than you
+109 ? is Oliver young -er than you
+110 ? is George young -er than you
+111 ? is Kate young -er than you
+112 ? is Misty young -er than you
+113 ? is Grace young -er than you
+114 ? is Kevin young -er than you
+115 ? is Susan old -er than you
+116 ? is Vivian old -er than you
+117 ? is Oliver old -er than you
+118 ? is Tom old -er than you
+119 ? is George old -er than you
+120 ? is Kate old -er than you
+121 ? is Grace old -er than you
+122 ? is Kevin old -er than you
+123 ? is Susan young -er or old -er than you
+124 ? is Letizia young -er or old -er than you
+125 ? is Vivian young -er or old -er than you
+126 ? is George young -er or old -er than you
+127 ? is Kate young -er or old -er than you
+128 ? is Misty young -er or old -er than you
+129 ? is Grace young -er or old -er than you
+130 ? is Kevin young -er or old -er than you
+131 ? is your sister young -er than you
+132 ? is your friend young -er than you
+133 ? is your mother young -er than you
+134 ? is your sister old -er than you
+135 ? is your father old -er than you
+136 ? is your mother old -er than you
+137 ? who is old -er Susan or Tom
+138 ? who is old -er Letizia or Oliver
+139 ? who is old -er Letizia or Misty
+140 ? who is old -er Kate or Misty
+141 ? who is old -er Tom or Susan
+142 ? who is old -er Oliver or Letizia
+143 ? who is old -er Misty or Letizia
+144 ? who is old -er Misty or Kate
+145 ? who is old -er Letizia or Vivian
+146 ? who is old -er Grace or George
+147 ? who is old -er George or Kate
+148 ? who is old -er Tom or Kevin
+149 ? does Susan like to read book -s
+150 ? does Mum like to watch the tv
+151 ? does Mum like to play the piano
+152 ? does Dad like to watch the tv
+153 ? does Letizia like to play with doll -s
+154 ? does Letizia like to eat candy -s
+155 ? does Susan like to watch cartoon -s
+156 ? does Dad like to read book -s
+157 ? does Letizia like to watch the tv
+158 ? does Susan like to play the piano
+159 ? does Letizia like to play videogame -s
+160 ? does Mum like to answer the phone
+161 ? does Susan like to eat vegetable -s
+162 ? does Dad like to cook
+163 ? does your sister like to read book -s
+164 ? does your mother like to watch the tv
+165 ? does your mother like to play the piano
+166 ? does your father like to watch the tv
+167 ? does your friend like to play with doll -s
+168 ? does your friend like to eat candy -s
+169 ? does your sister like to watch cartoon -s
+170 ? does your father like to read book -s
+171 ? does your friend like to watch the tv
+172 ? does your sister like to play the piano
+173 ? does your friend like to play videogame -s
+174 ? does your mother like to answer the phone
+175 ? does your sister like to eat vegetable -s
+176 ? does your father like to cook
+177 ? does Mum like flower -s
+178 ? does Dad like comic -s
+179 ? does Letizia like doll -s
+180 ? does Susan like chocolate
+181 ? does Dad like music
+182 ? does Mum like music
+183 ? does Letizia like candy -s
+184 ? does Mum like comic -s
+185 ? does Dad like flower -s
+186 ? does Letizia like book -s
+187 ? does Dad like candy -s
+188 ? does Letizia like soup
+189 ? does Susan like sport
+190 ? does Mum like sport
+191 ? does your mother like flower -s
+192 ? does your father like comic -s
+193 ? does your friend like doll -s
+194 ? does your sister like chocolate
+195 ? does your father like music
+196 ? does your mother like music
+197 ? does your friend like candy -s
+198 ? does your mother like comic -s
+199 ? does your father like flower -s
+200 ? does your friend like book -s
+201 ? does your father like candy -s
+202 ? does your friend like soup
+203 ? does your sister like sport
+204 ? does your mother like sport
+205 ? do you like to eat chip -s
+206 ? do you like to play with doll -s
+207 ? do you like to watch cartoon -s
+208 ? do you like to eat ice_cream
+209 ? do you like to eat chocolate
+210 ? do you like to eat vegetable -s
+211 ? do you like to play with videogame -s
+212 ? do you like to watch movie -s
+213 ? do you like to visit your relative -s
+214 ? do you like to eat salad
+215 ? do you like animal -s
+216 ? do you like candy -s
+217 ? do you like chip -s
+218 ? do you like dog -s
+219 ? do you like ice_cream -s
+220 ? do you like vegetable -s
+221 ? do you like mushroom -s
+222 ? do you like videogame -s
+223 ? do you like sport
+224 ? do you like salad
+225 ? what is your favorite tale
+226 ? what is your favorite toy
+227 ? what is your favorite cartoon
+228 ? what is Susan 's favorite game
+229 ? what is Susan 's favorite cartoon
+230 ? what is Dad 's favorite music
+231 ? what is Dad 's favorite movie
+232 ? what is Mum 's favorite singer
+233 ? what is Oliver 's favorite sport
+234 ? what is Vivian 's favorite game
+235 ? what is Vivian 's favorite cartoon
+236 ? what is Letizia 's favorite color
+237 ? what is Mum 's favorite movie
+238 ? what is Letizia 's favorite cartoon
+239 ? what is your sister 's favorite game
+240 ? what is your sister 's favorite cartoon
+241 ? what is your mother 's favorite movie
+242 ? what is your father 's favorite music
+243 ? what is your father 's favorite movie
+244 ? what is your mother 's favorite singer
+245 ? what is your friend 's favorite color
+246 ? what does Lisa do
+247 ? what does Mum do
+248 ? what does Sally do
+249 ? what does Steven do
+250 ? what does Dad do
+251 ? what does Ben do
+252 ? what does Susan do
+253 ? what does Letizia do
+254 ? what does Vivian do
+255 ? what does Oliver do
+256 ? what does Tom do
+257 ? what does Carol do
+258 ? what does your mother do
+259 ? what does your father do
+260 ? what does your friend do
+261 ? who write -s in the newspaper
+262 ? who teach -s in the school
+263 ? who work -s in the boat
+264 ? who extinguish -s the fire
+265 ? who build -s the house -s
+266 ? who drive -s the bus
+267 ? who is Mum
+268 ? who is Dad
+269 ? who is Susan
+270 ? who is Vivian
+271 ? who is Oliver
+272 ? who is Carol
+273 ? who is Ben
+274 ? who is Laura
+275 ? who is Steven
+276 ? who is Sally
+277 ? who is Lisa
+278 ? who is Matt
+279 ? who is Daniel
+280 ? what is Mum do -ing
+281 ? what is Dad do -ing
+282 ? what is Susan do -ing
+283 ? what is Letizia do -ing
+284 ? what is Vivian do -ing
+285 ? what is the head
+286 ? what is the neck
+287 ? what is the shoulder
+288 ? what is the arm
+289 ? what is the forearm
+290 ? what is the thigh
+291 ? what is the hip
+292 ? what is the waist
+293 ? what is the leg
+294 ? what is the foot
+295 ? what is the nose
+296 ? what is the cheek
+297 ? what are the shoulder -s
+298 ? what are the arm -s
+299 ? what are the leg -s
+300 ? what are the forearm -s
+301 ? what are the thigh -s
+302 ? what are the cheek -s
+303 ? what is the elbow
+304 ? what is the wrist
+305 ? what is the ankle
+306 ? what are the wrist -s
+307 ? what are the knee -s
+308 ? what are the ankle -s
+309 ? what is the chest
+310 ? what is the face
+311 ? what is the palm
+312 ? what is the forehead
+313 ? what is the eyebrow
+314 ? what is the eyelash
+315 ? what is the eyelid
+316 ? what is the mouth
+317 ? what is the tongue
+318 ? what is the gum
+319 ? what is the palate
+320 ? what is the lip
+321 ? what are the eyelash -s
+322 ? what are the eyelid -s
+323 ? what are the eye -s
+324 ? what are the lip -s
+325 ? what are the palm -s
+326 ? where is the face
+327 ? where is the ear
+328 ? where is the cheek
+329 ? where is the umbilicus
+330 ? where is the bellybutton
+331 ? where is the thigh
+332 ? where is the eye
+333 ? where is the nose
+334 ? where is the mouth
+335 ? where is the neck
+336 ? where is the chest
+337 ? where is the elbow
+338 ? where is the forearm
+339 ? where is the wrist
+340 ? where is the knee
+341 ? where is the hip
+342 ? where is the forehead
+343 ? where are the finger -s
+344 ? where are the leg -s
+345 ? where are the hand -s
+346 ? where is the arm
+347 ? where is the finger
+348 ? where is the foot
+349 ? where is the hand
+350 ? where are the ear -s
+351 ? where are the cheek -s
+352 ? where are the arm -s
+353 ? where is the tongue
+354 ? where is the gum
+355 ? where is the palate
+356 ? what can you do with your hand -s
+357 ? what can you do with your leg -s
+358 ? what can you do with your mouth
+359 ? what can you do with your teeth
+360 tell me a mammal
+361 tell me a bird
+362 tell me an amphibian
+363 tell me a reptile
+364 tell me an insect
+365 ?2 what is the dog
+366 ?2 what is the cat
+367 ?2 what is the bear
+368 ?2 what is the horse
+369 ?2 what is the dolphin
+370 ?2 what is the whale
+371 ?2 what is the kangaroo
+372 ?2 what is the lion
+373 ?2 what is the tiger
+374 ?2 what is the elephant
+375 ?2 what is the sheep
+376 ?2 what is the mouse
+377 ?2 what is the fox
+378 ?2 what is the pelican
+379 ?2 what is the cormorant
+380 ?2 what is the flamingo
+381 ?2 what is the vulture
+382 ?2 what is the hawk
+383 ?2 what is the eagle
+384 ?2 what is the gull
+385 ?2 what is the pigeon
+386 ?2 what is the parrot
+387 ?2 what is the ostrich
+388 ?2 what is the chicken
+389 ?2 what is the dove
+390 ?2 what is the hummingbird
+391 ?2 what is the shark
+392 ?2 what is the cod
+393 ?2 what is the tuna
+394 ?2 what is the salmon
+395 ?2 what is the trout
+396 ?2 what is the carp
+397 ?2 what is the bream
+398 ?2 what is the catfish
+399 ?2 what is the pike
+400 ?2 what is the sardine
+401 ?2 what is the swordfish
+402 ?2 what is the goldfish
+403 ?2 what is the frog
+404 ?2 what is the toad
+405 ?2 what is the salamander
+406 ?2 what is the newt
+407 ?2 what is the crocodile
+408 ?2 what is the lizard
+409 ?2 what is the turtle
+410 ?2 what is the python
+411 ?2 what is the cobra
+412 ?2 what is the rattlesnake
+413 ?2 what is the alligator
+414 ?2 what is the viper
+415 ?2 what is the fly
+416 ?2 what is the ant
+417 ?2 what is the ladybug
+418 ?2 what is the termite
+419 ?2 what is the butterfly
+420 ?2 what is the bee
+421 ?2 what is the cricket
+422 ?2 what is the cicada
+423 ?2 what is the grasshopper
+424 ?2 what is the wasp
+425 ?2 what is the cockchafer
+426 .bx 20 tell me a big mammal
+427 .bx 20 tell me a big fish
+428 .bx 20 tell me a big reptile
+429 .bx 20 tell me a dangerous mammal
+430 .bx 20 tell me a dangerous fish
+431 .bx 20 tell me a dangerous reptile
+432 .bx 20 tell me a dangerous insect
+433 .bx 20 tell me a domestic mammal
+434 .bx 20 tell me a domestic fish
+435 .bx 20 tell me a fast mammal
+436 .bx 20 tell me a fast fish
+437 .bx 20 tell me a fast reptile
+438 .bx 20 tell me a fast insect
+439 .bx 20 tell me a small mammal
+440 .bx 20 tell me a small fish
+441 .bx 20 tell me a small amphibian
+442 .bx 20 tell me a small reptile
+443 .bx 20 tell me a small insect

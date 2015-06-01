@@ -1,0 +1,6 @@
+
+? what movie -s do men like to watch
+.po* /men/the personal pronoun for men is they/they/
+.wg /like to watch/men like to watch/men/
+.snto
+

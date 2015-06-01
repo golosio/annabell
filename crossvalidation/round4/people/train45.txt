@@ -1,0 +1,8 @@
+
+? who is Letizia
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.ph /Letizia/Letizia is your friend//
+.po* is
+.po* /your//my/
+.o friend
+

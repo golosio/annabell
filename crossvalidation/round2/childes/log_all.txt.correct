@@ -1,0 +1,249 @@
+
+ >>> End context
+.f david_test1.txt
+*TEA:	Ann
+*TEA:	why do not you tell
+*TEA:	tell Dad about you play -ing Pac_Man
+.cx
+ -> Michael brought
+ ...  -> me
+ ...  -> to
+ ...  -> the bumpers junction
+.
+*SYS:	Michael brought me to the bumpers junction . 
+.x
+ -> I play -ed
+ ...  -> Pac_Man
+.
+*SYS:	I play -ed Pac_Man . 
+*TEA:	? did you win
+.x
+ -> yes I
+ ...  -> won
+.
+*SYS:	yes I won . 
+
+ >>> End context
+*TEA:	? did you play other game -s
+.x
+ -> I play -ed
+ ...  -> Space_Invaders
+.
+*SYS:	I play -ed Space_Invaders . 
+*TEA:	? did you win
+.x
+ -> no I did not
+ ...  -> win
+.
+*SYS:	no I did not win . 
+
+ >>> End context
+
+ >>> End context
+.f david_test2.txt
+
+ >>> End context
+*TEA:	? how many game -s did you play
+.xm
+ -> Space_Invaders
+ ...  -> one
+.
+*SYS:	Space_Invaders one . 
+.xm
+ -> Pac_Man
+ ...  -> two
+.
+*SYS:	Pac_Man two . 
+.xm
+ -> Donkey_Kong
+ ...  -> three
+.
+*SYS:	Donkey_Kong three . 
+.xm
+ -> three
+ ...  -> game -s
+.
+*SYS:	three game -s . 
+.drop_goal
+
+ >>> End context
+
+ >>> End context
+.f david_test3a.txt
+*TEA:	I know what is better to talk about
+*TEA:	you need to
+*TEA:	tell them about jumble junkman
+.x
+ -> jumble junkman
+ ...  -> will be
+ ...  -> my
+ ...  -> letter man
+.
+*SYS:	jumble junkman will be my letter man . 
+.drop_goal
+
+ >>> End context
+*TEA:	? how about Harry hair
+.x
+ -> Harry hair
+ ...  -> will be
+ ...  -> Bob 's
+ ...  -> letter man
+.
+*SYS:	Harry hair will be Bob 's letter man . 
+.drop_goal
+
+ >>> End context
+
+ >>> End context
+.f david_test3.txt
+*TEA:	tell me what Mum put on your shirt
+.cx
+ -> a sticker
+.
+*SYS:	a sticker . 
+*TEA:	a sticker
+.x
+ -> a dress_for_doll
+.
+*SYS:	a dress_for_doll . 
+*TEA:	ok
+.x
+ -> a wheel
+.
+*SYS:	a wheel . 
+*TEA:	right
+.x
+ -> a necklace
+.
+*SYS:	a necklace . 
+*TEA:	a necklace
+.x
+ -> a shoestring
+.
+*SYS:	a shoestring . 
+*TEA:	a shoestring
+.x
+ -> a ring
+.
+*SYS:	a ring . 
+*TEA:	a ring
+.x
+ -> a bracelet
+.
+*SYS:	a bracelet . 
+*TEA:	right
+.x
+ -> a j@l
+.
+*SYS:	a j@l . 
+*TEA:	? what kind of j@l was that
+.x 
+ -> a capital j@l
+.
+*SYS:	a capital j@l . 
+*TEA:	? how about those safety_pin -s
+.x
+ -> Mum
+ ...  -> use -ed
+ ... -> some safety_pin -s
+ ... ->  to hold the thing -s on the shirt
+.
+*SYS:	Mum use -ed some safety_pin -s to hold the thing -s on the shirt . 
+.drop_goal
+
+ >>> End context
+
+ >>> End context
+.f david_test4.txt
+*TEA:	so
+*TEA:	? when will you wear your letter man dress
+.cx
+ -> May the twelfth
+.
+*SYS:	May the twelfth . 
+*TEA:	I think you wear it
+*TEA:	? May the third
+.x
+ -> no
+ ...  -> May the twelfth
+.
+*SYS:	no May the twelfth . 
+*TEA:	? May the twelfth
+.x
+ -> yes
+.
+*SYS:	yes . 
+.drop_goal
+
+ >>> End context
+.f david_test5.txt
+*TEA:	tell me the name -s of the letter men
+.cx
+ -> a@l achoo
+.
+*SYS:	a@l achoo . 
+*TEA:	? achoo
+*TEA:	and what
+*TEA:	? how about b@l
+*TEA:	...
+.x
+ -> b@l beautiful buttons
+.
+*SYS:	b@l beautiful buttons . 
+*TEA:	and
+*TEA:	tell me the rest of them
+*TEA:	...
+.x
+ -> c@l cotton candy
+.
+*SYS:	c@l cotton candy . 
+*TEA:	okay
+*TEA:	...
+.x
+ -> d@l delicious donuts
+.
+*SYS:	d@l delicious donuts . 
+*TEA:	oh
+*TEA:	I like that
+*TEA:	okay
+*TEA:	...
+.x
+ -> e@l exercise
+.
+*SYS:	e@l exercise . 
+*TEA:	right
+*TEA:	...
+.x
+ -> f@l funny feet
+.
+*SYS:	f@l funny feet . 
+*TEA:	oh
+*TEA:	like mine
+*TEA:	...
+.x
+ -> g@l gooey gum
+.
+*SYS:	g@l gooey gum . 
+*TEA:	very good
+*TEA:	...
+.x
+ -> h@l Harry hair
+.
+*SYS:	h@l Harry hair . 
+*TEA:	right
+*TEA:	...
+.x
+ -> i@l itchy itch
+.
+*SYS:	i@l itchy itch . 
+*TEA:	okay
+*TEA:	...
+.x
+ -> j@l jumble junkman
+.
+*SYS:	j@l jumble junkman . 
+.drop_goal
+
+ >>> End context
+.logfile off

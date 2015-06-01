@@ -1,0 +1,6 @@
+
+? where is the tooth
+.po* /where is//it is/
+.wg /tooth/the tooth is inside the mouth/the tooth is/
+.snto
+

@@ -1,0 +1,537 @@
+
+you are in the room_0
+to the east there is the room_1
+to the south there is the room_5
+? what do you want to do
+
+you are in the room_1
+to the east there is the room_2
+to the west there is the room_0
+to the south there is the room_6
+? what do you want to do
+
+you are in the room_2
+to the east there is the room_3
+to the west there is the room_1
+to the south there is the room_7
+? what do you want to do
+
+you are in the room_3
+to the east there is the room_4
+to the west there is the room_2
+to the south there is the room_8
+? what do you want to do
+
+you are in the room_4
+to the west there is the room_3
+to the south there is the room_9
+? what do you want to do
+
+you are in the room_5
+to the east there is the room_6
+to the north there is the room_0
+to the south there is the room_10
+? what do you want to do
+
+you are in the room_6
+to the east there is the room_7
+to the north there is the room_1
+to the west there is the room_5
+? what do you want to do
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+? what do you want to do
+
+you are in the room_8
+to the east there is the room_9
+to the north there is the room_3
+to the south there is the room_13
+? what do you want to do
+
+you are in the room_9
+to the north there is the room_4
+to the west there is the room_8
+to the south there is the room_14
+? what do you want to do
+
+you are in the room_10
+to the east there is the room_11
+to the north there is the room_5
+to the south there is the room_15
+? what do you want to do
+
+you are in the room_11
+to the east there is the room_12
+to the west there is the room_10
+? what do you want to do
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+? what do you want to do
+
+you are in the room_14
+to the north there is the room_9
+to the west there is the room_13
+to the south there is the room_19
+? what do you want to do
+
+you are in the room_15
+to the east there is the room_16
+to the north there is the room_10
+to the south there is the room_20
+? what do you want to do
+
+you are in the room_16
+to the east there is the room_17
+to the west there is the room_15
+to the south there is the room_21
+? what do you want to do
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+? what do you want to do
+
+you are in the room_18
+to the east there is the room_19
+to the west there is the room_17
+to the south there is the room_23
+? what do you want to do
+
+you are in the room_19
+to the north there is the room_14
+to the west there is the room_18
+to the south there is the room_24
+? what do you want to do
+
+you are in the room_20
+to the east there is the room_21
+to the north there is the room_15
+? what do you want to do
+
+you are in the room_21
+to the east there is the room_22
+to the north there is the room_16
+to the west there is the room_20
+? what do you want to do
+
+you are in the room_22
+to the east there is the room_23
+to the north there is the room_17
+to the west there is the room_21
+? what do you want to do
+
+you are in the room_23
+to the east there is the room_24
+to the north there is the room_18
+to the west there is the room_22
+? what do you want to do
+
+you are in the room_24
+to the north there is the room_19
+to the west there is the room_23
+? what do you want to do
+
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_8
+.wg room_8
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the north there is the room_8
+.push_goal
+.rip
+.sctx to the east there is the room_13
+.wg east
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the north there is the room_8
+.wg north
+.drop_goal
+.rw
+
+.save links_goto_1_1.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_6
+.wg room_6
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the west there is the room_6
+.push_goal
+.rip
+.sctx to the north there is the room_7
+.wg north
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the west there is the room_6
+.wg west
+.drop_goal
+.rw
+
+.save links_goto_1_2.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_14
+.wg room_14
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx to the east there is the room_14
+.push_goal
+.rip
+.sctx to the east there is the room_13
+.wg east
+.drop_goal
+.rw
+
+you are in the room_13
+to the east there is the room_14
+to the north there is the room_8
+to the west there is the room_12
+? what do you want to do
+.sctx you are in the room_13
+.wg you are in the room_13
+.sctx to the east there is the room_14
+.wg east
+.drop_goal
+.rw
+
+.save links_goto_1_3.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_16
+.wg room_16
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx ? what do you want to do
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx ? what do you want to do
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the west there is the room_16
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the west there is the room_16
+.wg west
+.drop_goal
+.rw
+
+.save links_goto_1_4.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_2
+.wg room_2
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx to the north there is the room_2
+.push_goal
+.rip
+.sctx to the north there is the room_7
+.wg north
+.drop_goal
+.rw
+
+you are in the room_7
+to the north there is the room_2
+to the west there is the room_6
+to the south there is the room_12
+? what do you want to do
+.sctx you are in the room_7
+.wg you are in the room_7
+.sctx to the north there is the room_2
+.wg north
+.drop_goal
+.rw
+
+.save links_goto_1_5.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_10
+.wg room_10
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx ? what do you want to do
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx to the west there is the room_10
+.push_goal
+.rip
+.sctx to the west there is the room_11
+.wg west
+.drop_goal
+.rw
+
+you are in the room_11
+to the east there is the room_12
+to the west there is the room_10
+? what do you want to do
+.sctx you are in the room_11
+.wg you are in the room_11
+.sctx to the west there is the room_10
+.wg west
+.drop_goal
+.rw
+
+.save links_goto_1_6.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_22
+.wg room_22
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx ? what do you want to do
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx ? what do you want to do
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the south there is the room_22
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the south there is the room_22
+.wg south
+.drop_goal
+.rw
+
+.save links_goto_1_7.dat
+you are in the room_12
+to the east there is the room_13
+to the north there is the room_7
+to the west there is the room_11
+to the south there is the room_17
+? what do you want to do
+go to the room_18
+.wg room_18
+.push_goal
+.sctx you are in the room_12
+.wg you are in the room_12
+.sctx ? what do you want to do
+.wg
+.sctx to the east there is the room_13
+.wg room_13
+.ph you are in the room_13
+.sctx ? what do you want to do
+.rip
+.sctx to the east there is the room_13
+.wg
+.ph to the north there is the room_7
+.wg room_7
+.ph you are in the room_7
+.sctx ? what do you want to do
+.rip
+.sctx to the north there is the room_7
+.wg
+.ph to the west there is the room_11
+.wg room_11
+.ph you are in the room_11
+.sctx ? what do you want to do
+.rip
+.sctx to the west there is the room_11
+.wg
+.ph to the south there is the room_17
+.wg room_17
+.ph you are in the room_17
+.sctx to the east there is the room_18
+.push_goal
+.rip
+.sctx to the south there is the room_17
+.wg south
+.drop_goal
+.rw
+
+you are in the room_17
+to the east there is the room_18
+to the north there is the room_12
+to the west there is the room_16
+to the south there is the room_22
+? what do you want to do
+.sctx you are in the room_17
+.wg you are in the room_17
+.sctx to the east there is the room_18
+.wg east
+.drop_goal
+.rw
+
+.save links_goto_1_8.dat

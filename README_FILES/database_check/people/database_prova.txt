@@ -1,0 +1,374 @@
+#people relationships
+#mother father sister friend
+#grandmas grandpas aunts uncles cousins
+#number of relationships 9
+# + other children
+
+#people
+#4 mother + father + sister + friend
+#4 grandmas + grandpas
+#4 aunts + uncles
+#2 cousins
+#6 other children:
+#Grace, Tom, George, Kate, Kevin, Misty
+# tot 20 people
+
+#close persons: Mum, Dad, sister and friend (4)
+
+#forse who is for the relationship?
+#tipo who is lisa? she is my aunt?
+#forse lasciare little boy, little girl, come relationship, o child?
+
+#1) (9, 1 for each relationship) 
+#you have <number> <relationship> -s
+#<number>: one, two, ... or many
+
+you have two aunt -s
+you have one sister
+you have one father
+you have two Grandma -s
+you have two Grandpa -s
+you have one mother
+you have one friend
+you have two cousin -s
+you have two uncle -s
+
+#2) (20, 1 for each person)
+#<person> is a woman/man/girl/boy
+
+Lisa is a woman
+Sally is a woman
+Susan is a girl
+Dad is a man
+Laura is a woman
+Carol is a woman
+Steven is a man
+Ben is a man
+Mum is a woman
+Letizia is a girl
+Oliver is a boy
+Vivian is a girl
+Daniel is a man
+Matt is a man
+Grace is a girl
+Tom is a boy
+George is a boy
+Kate is a girl
+Kevin is a boy
+Misty is a girl
+
+
+#3) 17 (1 for each person, missing 3 years old: Kate, George, Grace)
+#what does she/he do (job - go to school/kindergarten)
+#<person> is a <profession>
+#<person> go -es to the school
+#<person> go -es to the kindergarten
+
+
+Mum is a journalist
+Dad is a teacher
+Susan go -es to the school
+Letizia go -es to the kindergarten
+Laura is a doctor
+Steven is a doctor
+Ben is a businessman
+Lisa is a clerk
+Sally is a secretary
+Matt is a fireman
+Daniel is a driver
+Oliver go -es to the school
+Vivian go -es to the kindergarten
+Misty go -es to the kindergarten
+Tom go -es to the kindergarten
+Kevin go -es to the kindergarten
+Carol is a clerk
+
+#4) 14, one for each person excluding other children
+#relationship
+#<person> is your <relationship>
+
+Mum is your mother
+Dad is your father
+Susan is your sister
+Letizia is your friend
+Laura is your Grandma
+Carol is your Grandma
+Steven is your Grandpa
+Ben is your Grandpa
+Lisa is your aunt
+Sally is your aunt
+Matt is your uncle
+Daniel is your uncle
+Oliver is your cousin
+Vivian is your cousin
+
+#5) 4, one for each close person
+#<person> has a <noun>
+
+Dad has a car
+Mum has a brother
+Susan has an umbrella
+Letizia has a cat
+
+#6) 4, one for each close person
+#<person> does not have a <noun>
+
+Mum does not have a car
+Susan does not have a bike
+Dad does not have a boat
+Letizia does not have a videogame
+
+#7) 4, one for each close person
+#your <relationship> 's name is <name>
+
+your sister 's name is Susan
+your father 's name is Bruce
+your mother 's name is Cindy
+your friend 's name is Letizia
+
+#8) 8, 2 for each close persons
+#<person> like -s <noun>
+
+Susan like -s chocolate
+Dad like -s music
+Mum like -s music
+Mum like -s flower -s
+Dad like -s comic -s
+Susan like -s book -s
+Letizia like -s doll -s
+Letizia like -s candy -s
+
+#9) 8, 2 for each close person
+#<person> like -s to <action>
+
+Susan like -s to read book -s
+Dad like -s to watch the tv
+Mum like -s to play the piano
+Dad like -s to drive the car
+Mum like -s to watch the tv
+Letizia like -s to play with doll -s
+Letizia like -s to eat candy -s
+Susan like -s to watch cartoon -s
+
+#10) 8, 2 for each close person
+#<person> does not like <noun>
+
+Susan does not like sport
+Mum does not like sport
+Dad does not like flower -s
+Mum does not like comic -s
+Letizia does not like book -s
+Susan does not like doll -s
+Dad does not like candy -s
+Letizia does not like soup
+
+#11) 8, 2 for each close person
+#<person> does not like to <action>
+
+Mum does not like to drive the car
+Dad does not like to read book -s
+Dad does not like to cook
+Susan does not like to eat vegetable -s
+Susan does not like to play the piano
+Letizia does not like to play videogame -s
+Letizia does not like to watch the tv
+Mum does not like to answer the phone
+
+
+#12) 20, 1 for each person
+#<person> is <number> year -s old
+
+Susan is seven year -s old
+Dad is forty_two year -s old
+Grandma Laura is fifty_three year -s old
+Grandma Carol is sixty_four year -s old
+Grandpa Steven is fifty_nine year -s old
+Grandpa Ben is sixty_seven year -s old
+Mum is thirty_three year -s old
+Letizia is five year -s old
+Oliver is thirteen year -s old
+Vivian is five year -s old
+
+Grace is two year -s old
+Tom is three year -s old
+George is two year -s old
+Kate is two year -s old
+Kevin is three year -s old
+Misty is three year -s old
+
+Lisa is forty year -s old
+Sally is twenty_six year -s old
+Matt is twenty_eight year -s old
+Daniel is forty_four year -s old
+
+#13) 12, 2 for each close person and cousins
+#<person> 's favorite <noun1> is <noun2> ...
+
+Susan 's favorite game is Pictionary
+Susan 's favorite cartoon is Candy Candy
+Dad 's favorite music is classical music
+Dad 's favorite movie is The Hunter
+Mum 's favorite singer is Bryan Adams
+Oliver 's favorite game is football
+Oliver 's favorite sport is football
+Vivian 's favorite game is hide_and_seek
+Vivian 's favorite cartoon is Heidi
+Letizia 's favorite cartoon is Peppa Pig
+Mum 's favorite movie is Pretty Woman
+Letizia 's favorite color is yellow
+
+#14) 8
+#professions
+#the <profession> <verb> in the <noun>
+#the <profession> <verb> the <noun>
+#per la tabella meglio riassumere:
+#the <profession> <verb> <complement>
+
+the doctor work -s in the hospital
+the journalist write -s in the newspaper
+the teacher teach -es in the school
+the sailor work -s in the boat
+
+the fireman extinguish -es the fire
+the builder build -s the house -s
+the driver drive -s the bus
+the hairdresser cut -s the hair
+
+#the painter paint -s picture -s
+#the writer write -s book -s
+
+#15) 1
+#about the girl impersoned by the system
+
+you are a girl
+
+#16) 1
+your name is Annabell
+
+#17) 1
+you are four year -s old
+
+#18) 6
+#you like <noun>
+
+you like animal -s
+you like cat -s
+you like dog -s
+you like ice_cream -s
+you like chip -s
+you like candy -s
+
+#19) 6
+#you like to <action>
+
+you like to play with doll -s
+you like to watch cartoon -s
+you like to eat ice_cream
+you like to eat chip -s
+you like to eat chocolate
+you like to eat candy -s
+
+#20) 6 rendere tutti questi numeri uguali tra loro like, do not like etc.
+#you do not like <noun>
+
+you do not like sport
+you do not like vegetable -s
+you do not like salad
+you do not like tomato -s
+you do not like mushroom -s
+you do not like videogame -s
+
+#21) 6
+#you do not like to <action>
+
+you do not like to eat vegetable -s
+you do not like to eat salad
+you do not like to play with videogame -s
+you do not like to watch movie -s
+you do not like to eat tomato -s
+you do not like to visit your relative -s
+
+#22) 4
+#your favorite <noun1> is <noun2> ...
+
+your favorite tale is Sleeping Beauty
+your favorite game is hide_and_seek
+your favorite toy is Barbie
+your favorite cartoon is Peppa Pig
+
+#23) 0
+#you have a <noun>
+
+#24) 4
+#you have <number> <noun>
+#<number>: one, two, ... some or many
+
+you have many book -s
+you have many toy -s
+you have some cartoon -s
+you have some photo_album -s
+
+#24b) 4
+#you do not have a <noun>
+
+you do not have a pet
+you do not have a videogame
+you do not have a bike
+you do not have a brother
+
+#26) 1
+
+your age is four
+
+
+#100) 7
+#generic about boys, girls, women, men
+#boy/girl -s like to xxx
+
+boy -s like to play
+football
+to play with car -s
+to play with videogame -s
+to play with superhero -s
+to play cops and robbers
+
+girl -s like to play
+with doll -s
+
+men like to watch
+detective movie -s
+action movie -s
+western movie -s
+thriller -s
+
+women like to watch
+comedie -s
+romance -s
+drama -s
+
+children like to watch
+animation movie -s
+fantasy movie -s
+adventure movie -s
+
+children like to play
+hide_and_seek
+tag
+to play with videogame -s
+football
+
+women like to read
+novel -s
+love storie -s
+
+#101) 6, 1 for each close person and cousin
+#present progressive
+#<person> is <verb>-ing <complement> 
+
+Mum is write -ing an article
+Dad is prepare -ing the lesson
+Susan is read -ing a book
+Letizia is play -ing with the doll
+Oliver is go -ing to school
+Vivian is watch -ing the tv
+

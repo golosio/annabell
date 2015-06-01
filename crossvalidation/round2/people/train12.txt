@@ -1,0 +1,10 @@
+
+? is Dad a woman
+.pg /Dad/Dad is a man/a man/
+.rip
+.po* /? is//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.ggp
+.drop_goal
+.o is a man
+

@@ -1,0 +1,16 @@
+
+? who is old -er Letizia or Vivian
+.cx
+
+? who is old -er Grace or George
+.cx
+
+#? who is old -er George or Kate
+#.cx
+#
+? who is old -er Tom or Kevin
+.cx
+
+? who is old -er Kevin or Misty
+.cx
+

@@ -1,0 +1,9 @@
+
+? what is your mother 's favorite movie
+.pg /your mother/Mum is your mother/Mum/
+.po //the possessive pronoun for Mum is her/her/
+.rip
+.wg /favorite movie/Mum 's favorite movie is Pretty Woman/Mum 's/
+.drop_goal
+.snto
+

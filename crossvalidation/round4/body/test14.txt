@@ -1,0 +1,13 @@
+
+#? where is the tooth
+#.cx
+#
+? where is the tongue
+.cx
+
+? where is the gum
+.cx
+
+? where is the palate
+.cx
+

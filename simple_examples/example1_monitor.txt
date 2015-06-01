@@ -1,0 +1,42 @@
+#
+.logfile log.txt
+.monitor display mode_change on
+.monitor display Header acquire on
+.monitor display IW acquire on
+.monitor display InPhB acquire on
+.monitor display PhI acquire on
+.monitor display AcqAct acquire on
+.monitor display ElAct acquire on
+#
+.monitor display Header associate on
+.monitor display InPhB associate on
+.monitor display WkPhB associate on
+.monitor display WGB associate on
+.monitor display PhI associate on
+.monitor display WGI associate on
+.monitor display AcqAct associate on
+.monitor display ElAct associate on
+#
+the turtle is a reptile
+the eagle is a bird
+the dog is a mammal
+fish -es live in the water
+reptile -s have cold blood
+the turtle is slow
+#
+tell me a mammal
+.wg mammal
+.ph the dog is a mammal
+.wg dog
+.monitor display Header reward on
+.monitor display InPhB reward on
+.monitor display WkPhB reward on
+.monitor display WGB reward on
+.monitor display OutPhB reward on
+.monitor display StActI reward on
+.monitor display ElAct reward on
+.rw
+.monitor console off
+#
+tell me a reptile
+.xr

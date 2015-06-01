@@ -1,0 +1,16 @@
+
+? where is the arm
+.cx
+
+? where is the finger
+.cx
+
+? where is the foot
+.cx
+
+? where is the leg
+.cx
+
+#? where is the hand
+#.cx
+#

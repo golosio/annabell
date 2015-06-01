@@ -1,0 +1,9 @@
+
+? who is old -er George or Kate
+.pg /George/George is two year -s old/two/
+.rip
+.ph /Kate/Kate is two year -s old//
+.wg /year -s old//they are the same age/
+.drop_goal
+.rw
+

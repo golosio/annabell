@@ -1,0 +1,442 @@
+? what is your father 's favorite movie
+? do you like to eat candy -s
+? how old is Misty
+? what are the palm -s
+? tell me a mammal
+? is your friend old -er than you
+? is Tom young -er than you
+? how old is Grandpa Ben
+? do you have any friend -s
+? is Letizia old -er than you
+? what game -s do children like to play
+? what are the elbow -s
+? who is old -er Kate or Misty
+? what is your sister 's favorite game
+? does Susan like to eat vegetable -s
+? what are the knee -s
+? is Letizia young -er than you
+? what book -s do women like to read
+? where is the forehead
+? how many toy -s do you have
+? does Letizia like soup
+? who is old -er Susan or Tom
+? what is the herring
+? what is the shark
+? what is the kangaroo
+? what is the neck
+? is Grace old -er than you
+? what is the ant
+? what is the nose
+? how old is Oliver
+? who is Matt
+? what is the ladybug
+? do you have any bike -s
+? is Sally a man or a woman
+? does Mum like flower -s
+? what is the sardine
+? does your friend like to watch the tv
+? is your father young -er than you
+? what is Dad 's favorite music
+? who is old -er Misty or Kate
+? is George old -er than you
+? does your sister like chocolate
+? where are the arm -s
+? does your father like to read book -s
+? what is your father 's favorite music
+? is Misty a boy or a girl
+? is Letizia a girl
+? is Dad a man or a woman
+? what is the cricket
+? where are the eyelash -s
+? what is the gull
+? how many brother -s do you have
+? what is the termite
+? is Carol a woman
+? what is your mother 's name
+? bx 20 tell me a fast bird
+? does your mother like sport
+? does your sister like to read book -s
+? does Dad like comic -s
+? does your sister like book -s
+? do you like cat -s
+? what are the lip -s
+? does Susan have a umbrella
+? what is your mother 's favorite movie
+? is Ben a man
+? does Mum like to answer the phone
+? is Grace a girl
+? does Letizia like to play videogame -s
+? is Steven a man
+? what is the ankle
+? do you like ice_cream -s
+? what can you do with your feet
+? do you like to eat tomato -s
+? do you have any photo_album -s
+? does Susan like chocolate
+? what is the palm
+? is Susan young -er than you
+? what is your favorite toy
+? who is old -er Oliver or Letizia
+? what is the bream
+? what is your favorite tale
+? what is the butterfly
+? does Letizia like candy -s
+? does Dad like music
+? does your friend like soup
+? what is the tongue
+? who is old -er Tom or Kevin
+? does your mother have a brother
+? what are the cheek -s
+? is Laura a woman
+? is your mother young -er than you
+? does Dad have a boat
+? how old is Letizia
+? do you have any sister -s
+? what is your mother 's favorite singer
+? do you like tomato -s
+? do you like to eat chip -s
+? what is the forearm
+? how many book -s do you have
+? bx 20 tell me a big reptile
+? what is the knee
+? do you like to eat vegetable -s
+? what is the carp
+? does Susan like doll -s
+? how old is your aunt
+? where is the knee
+? what is the gum
+? does Dad like to read book -s
+? do you have any book -s
+? what is the dolphin
+? what can you do with your ear -s
+? is Lisa a woman
+? is Matt a man
+? what is Dad do -ing
+? what is the hawk
+? bx 20 tell me a dangerous fish
+? does Dad like to cook
+? how old is Susan
+? bx 20 tell me a small amphibian
+? what is the lion
+? what is the dog
+? what is the bee
+? what is the pigeon
+? what is your sister 's name
+? how old is Daniel
+? does your mother like music
+? what does Laura do
+? is your father old -er than you
+? do you like to play with videogame -s
+? what are the wrist -s
+? who cut -s the hair
+? what is the fox
+? what is the ear
+? what is the trout
+? how many friend -s do you have
+? what does Susan do
+? does your sister have a umbrella
+? is Mum a man
+? what is the cobra
+? what is Oliver do -ing
+? is Oliver young -er than you
+? bx 20 tell me a big fish
+? what is the mouse
+? does Letizia like to eat candy -s
+? how many Grandpa -s do you have
+? what is the salmon
+? bx 20 tell me a fast reptile
+? does your sister like sport
+? where is the elbow
+? how many Grandma -s do you have
+? is George young -er than you
+? what is the salamander
+? what is Susan 's favorite game
+? is Susan a girl
+? is Vivian a boy
+? do you have any aunt -s
+? what is the cockchafer
+? what is Susan 's favorite cartoon
+? what is the arm
+? do you have any cartoon -s
+? what is Susan do -ing
+? does Letizia have a videogame
+? does Dad like to watch the tv
+? where are the cheek -s
+? what is the thigh
+? who is Daniel
+? does your sister like doll -s
+? do you like to eat ice_cream
+? what does Matt do
+? does your friend have a videogame
+? what can you do with your mouth
+? where is the ankle
+? how old is Mum
+? bx 20 tell me a fast insect
+? does your friend like to eat candy -s
+? what is the turtle
+? what is the bear
+? is Daniel a woman
+? how old is Kevin
+? what is the lip
+? what is the hip
+? what is the wrist
+? what is the elephant
+? what movie -s do women like to watch
+? do you like to eat salad
+? what does your mother do
+? is your mother old -er than you
+? does Mum like sport
+? where is the hand
+? where is the palm
+? who is Lisa
+? is Letizia young -er or old -er than you
+? what is the palate
+? who is Oliver
+? what does Letizia do
+? who is old -er Misty or Oliver
+? is Vivian young -er or old -er than you
+? where is the leg
+? does your mother like to drive the car
+? what is the cod
+? do you like to visit your relative -s
+? who is Ben
+? does your sister have a bike
+? is Misty old -er than you
+? is Letizia a boy
+? what is the pike
+? what is Vivian 's favorite game
+? do you have any brother -s
+? is Kate a girl
+? what does Dad do
+? do you like to play with doll -s
+? how old is your cousin
+? who is Mum
+? how old is George
+? what is the chest
+? who is old -er George or Kate
+? do you like sport
+? how old is Tom
+? where is the forearm
+? does your mother like flower -s
+? how many bike -s do you have
+? what is Mum 's favorite singer
+? where is the hip
+? what is Oliver 's favorite game
+? is Mum a man or a woman
+? bx 20 tell me a small fish
+? bx 20 tell me a dangerous reptile
+? what is the crocodile
+? what is your father 's name
+? what is the newt
+? is Ben a man or a woman
+? is Grace young -er than you
+? what are the forearm -s
+? does your mother like to answer the phone
+? is George young -er or old -er than you
+? does your sister like to eat vegetable -s
+? who is old -er Oliver or Misty
+? where is the umbilicus
+? is Oliver young -er or old -er than you
+? what is Vivian 's favorite cartoon
+? does Letizia like to watch the tv
+? does Susan like to watch cartoon -s
+? what is the rattlesnake
+? who extinguish -s the fire
+? what is the eyebrow
+? do you like animal -s
+? how old is your Grandma
+? tell me a reptile
+? how old is your uncle
+? who is old -er Letizia or Oliver
+? what are the shoulder -s
+? who build -s the house -s
+? tell me an amphibian
+? what does Mum do
+? where are the ear -s
+? tell me a fish
+? what are the ear -s
+? what is the cormorant
+? where is the neck
+? does your mother have a car
+? does your father like to watch the tv
+? who is Steven
+? is Steven a woman
+? what does your sister do
+? is Grace a boy or a girl
+? how old is your mother
+? is Laura a man
+? do you like salad
+? what is Letizia 's favorite color
+? what is the horse
+? what is the alligator
+? does Mum like music
+? what is the leg
+? how old is Grace
+? do you have any videogame -s
+? what is the cicada
+? where is the bellybutton
+? what is the wasp
+? what is the whale
+? what is the forehead
+? where is the finger
+? does your mother like comic -s
+? where is the mouth
+? is your sister young -er than you
+? what is the lizard
+? what is the waist
+? is Kevin old -er than you
+? how many uncle -s do you have
+? is Laura a man or a woman
+? bx 20 tell me a small insect
+? what does Steven do
+? is Carol a man or a woman
+? what are the eye -s
+? what does Lisa do
+? what is Mum 's favorite movie
+? what is Oliver 's favorite sport
+? does Mum like to watch the tv
+? does your father like to cook
+? who teach -s in the school
+? is Letizia a boy or a girl
+? does your father like candy -s
+? how many pet -s do you have
+? who write -s in the newspaper
+? where is the tongue
+? what are the eyebrow -s
+? where is the ear
+? does your father like flower -s
+? where is the cheek
+? what is Vivian do -ing
+? how old is Grandma Carol
+? what is the frog
+? what is the tiger
+? is Daniel a man or a woman
+? is Matt a woman
+? who is Vivian
+? does your mother like to watch the tv
+? what is the chin
+? what is the swordfish
+? what is the sheep
+? who is old -er Tom or Susan
+? where is the arm
+? does your father like music
+? what is the catfish
+? is Kate a boy
+? where is the chest
+? where are the hand -s
+? is Sally a woman
+? what is the grasshopper
+? does your father like comic -s
+? where is the gum
+? does Letizia have a cat
+? how old is Matt
+? what is the eyelash
+? do you have any toy -s
+? what is the dove
+? does your friend have a cat
+? how old is your sister
+? bx 20 tell me a domestic bird
+? bx 20 tell me a small bird
+? does Mum like to drive the car
+? what is the parrot
+? does your friend like candy -s
+? who work -s in the hospital
+? what is the cheek
+? does Susan like to read book -s
+? does your friend like to play videogame -s
+? is Kevin young -er than you
+? how old is Sally
+? who is old -er Letizia or Vivian
+? what does Oliver do
+? what is the eye
+? who is old -er Kevin or Misty
+? what are the thigh -s
+? what is your friend 's favorite cartoon
+? do you like mushroom -s
+? what is the viper
+? where is the tooth
+? does Mum have a car
+? what is the goldfish
+? does your friend like to play with doll -s
+? what is the eagle
+? what is Mum do -ing
+? is Vivian a boy or a girl
+? is Sally a man
+? what is the toad
+? is Oliver old -er than you
+? what does Carol do
+? does your sister like to watch cartoon -s
+? bx 20 tell me a dangerous insect
+? do you have any cousin -s
+? who is Sally
+? does Susan like sport
+? where are the finger -s
+? is Kate old -er than you
+? is Ben a woman
+? is Kevin young -er or old -er than you
+? do you like vegetable -s
+? where is the thigh
+? what movie -s do children like to watch
+? is Tom young -er or old -er than you
+? what is the fly
+? who is Susan
+? who is Letizia
+? do you have any uncle -s
+? what does Misty do
+? who is Laura
+? where is the wrist
+? is Grace a boy
+? does Dad like to drive the car
+? does your father like to drive the car
+? how old is Vivian
+? what is the python
+? where is the eye
+? what is the pelican
+? what is the eyelid
+? what is your friend 's favorite color
+? how many cousin -s do you have
+? what is the foot
+? is Susan a boy or a girl
+? what does your father do
+? what is the cat
+? what does Daniel do
+? bx 20 tell me a small reptile
+? what is the vulture
+? is Misty a boy
+? how old is Lisa
+? what is the flamingo
+? bx 20 tell me a domestic fish
+? what is Letizia 's favorite cartoon
+? do you like dog -s
+? do you like candy -s
+? what is the chicken
+? does Letizia like to play with doll -s
+? what are the arm -s
+? who is Carol
+? is Kate young -er than you
+? is Vivian a girl
+? is Steven a man or a woman
+? tell me a bird
+? does Mum have a brother
+? what is the hummingbird
+? does Mum like comic -s
+? what does Kevin do
+? how old is Grandpa Steven
+? what can you do with your leg -s
+? what is the head
+? how old is Kate
+? what is the ostrich
+? is Vivian old -er than you
+? does Dad like candy -s
+? what is your favorite game
+? is Lisa a man
+? does Susan like book -s
+? do you like to eat chocolate
+? is Kate young -er or old -er than you
+? is Grace young -er or old -er than you
+? what are the eyelid -s
+? is Dad a man
+? does Dad like flower -s
+? bx 20 tell me a big bird
+? how old is your father
+? bx 20 tell me a fast fish

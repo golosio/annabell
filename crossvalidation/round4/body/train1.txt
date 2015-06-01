@@ -1,0 +1,6 @@
+
+? what is the ear
+.po* /what is//it is/
+.wg /ear/the ear is the part/the ear is/
+.snto
+

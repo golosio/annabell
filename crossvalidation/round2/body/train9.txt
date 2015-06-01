@@ -1,0 +1,6 @@
+
+? where is the nose
+.po* /where is//it is/
+.wg /nose/the nose is in the face/the nose is/
+.snto
+

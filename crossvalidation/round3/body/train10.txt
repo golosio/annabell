@@ -1,0 +1,6 @@
+
+? where is the hip
+.po* /where is//it is/
+.wg /hip/the hip is between the waist/the hip is/
+.snto
+

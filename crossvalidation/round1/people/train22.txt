@@ -1,0 +1,5 @@
+
+? how old is Grandma Carol
+.po* /Grandma/the personal pronoun for Grandma is she/she/
+.o /Grandma Carol/Grandma Carol is sixty_four year -s old/is sixty_four year -s old/
+

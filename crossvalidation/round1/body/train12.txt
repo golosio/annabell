@@ -1,0 +1,6 @@
+
+? where is the arm
+.po* /where is//it is/
+.wg /arm/the arm is attach -ed/the arm is/
+.snto
+

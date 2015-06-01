@@ -1,0 +1,287 @@
+#####
+#body
+#####
+# 18 parts (11 with plurals)
+#headx
+#facex
+#neckx
+#hairx
+#shoulder -sxp
+#chestx
+#arm -sxp
+#elbow -sxp
+#forearm -sxp
+#wrist -sxp
+#palm -sxp
+#knee -sxp
+#thigh -sxp
+#hipx
+#waistx
+#leg -sxp
+#ankle -sxp
+#foot/feetxp
+
+#####
+#face
+#####
+#15 parts (8 with plurals)
+#foreheadx
+#eyebrow -sxp
+#eyelash -esxp
+#eyelid -sxp
+#eye -sxp
+#nosex
+#ear -sxp
+#cheek -sxp
+#mouthx
+#lip -sxp
+#chinx
+#tooth/teethxp
+#tonguex
+#gumx
+#palatex
+
+#1) 13, 10(body) + 3(face)
+#the <part> is the part of ...
+
+the head is the part
+of the body
+where the brain is
+
+the neck is the part
+of the body
+that connect -s the head to the trunk
+
+the shoulder is the part
+of the body
+between the neck and the upper arm
+
+the arm is the part
+of the body
+that extend -s from the top of the trunk
+
+the forearm is the part
+of the arm
+between the elbow and the wrist
+
+the thigh is the part
+of the leg
+between the knee and the hip
+
+the hip is the part
+of the body
+between the waist and the top of the leg
+
+the waist is the part
+of the body
+where a belt is usually worn
+
+the leg is the part
+of the body
+used to stand and walk
+
+the foot is the part
+of the body
+at the end of the leg
+
+#face
+the nose is the part
+of the body
+that allow -s us to smell thing -s
+
+the ear is the part
+of the body
+that allow -s us to hear
+
+the cheek is the part
+of the face
+at the side of the mouth
+
+#2) 8, 5(body) + 2(face) + 1 irregular(feet)
+#the <part> are the part -s of ...
+
+the shoulder -s are the part -s
+of the body
+between the neck and the upper arm -s
+
+the arm -s are the part -s
+of the body
+that extend from the top of the trunk
+
+the leg -s are the part -s
+of the body
+used to stand and walk
+
+the forearm -s are the part -s
+of the arm -s
+between the elbow -s and the wrist -s
+
+the thigh -s are the part -s
+of the leg -s
+between the knee -s and the hip -s
+
+#face
+the ear -s are the part -s
+of the body
+that allow -s us to hear
+
+the cheek -s are the part -s
+of the face
+at the side -s of the mouth
+
+#irregular
+the feet are the part -s
+of the body
+at the end of the leg -s 
+
+#3) 4(body)
+#the <part> is the joint ...
+
+the elbow is the joint
+between the upper and lower arm
+
+the wrist is the joint
+between the lower arm and the hand
+
+the knee is the joint
+between the thigh
+and the lower leg
+
+the ankle is the joint
+between the foot and the leg
+
+
+#4) 4(body)
+#the <part> -s are the joint -s ...
+
+the elbow -s are the joint -s
+between the upper and lower arm -s
+
+the wrist -s are the joint -s
+between the lower arm -s and the hand -s
+
+the knee -s are the joint -s
+between the thigh -s
+and the lower leg -s
+
+the ankle -s are the joint -s
+between the feet and the leg -s
+
+#5) 5: 3(body) + 2(face) 
+#the <part> is the <adjective> part of ...
+
+the chest is the front part
+of the torso
+
+the face is the front part
+of the head
+
+the palm is the inside part
+of the hand
+
+#face
+the forehead is the upper part
+of the face
+
+the chin is the bottom part
+of the face
+
+#5) 9(face) 
+#the <part> is the ...
+
+the eyebrow is the stripe
+of hair over the eye
+
+the eyelash is the hair
+that grow -s at the edge of the eyelid -s
+
+the eyelid is the piece
+of skin that cover -s the eye
+
+the eye is the organ
+of sight
+
+the mouth is the hole
+in the face
+through which we talk and eat
+
+the tongue is the fleshy muscle
+inside the mouth
+
+the gum is the flesh
+at the base of the teeth
+
+the palate is the roof
+of the mouth
+
+the lip is the edge
+of the mouth
+
+#6) 7: 1(body) + 5(face) + 1 irregular (teeth)
+#the <part> -s are the ...
+
+the palm -s are the inside
+part -s of the hand -s
+
+#face
+the eyebrow -s are the stripe -s
+of hair over the eye -s
+
+the eyelash -es are the hair -s
+that grow at the edge of the eyelid -s
+
+the eyelid -s are the piece -s
+of skin that cover the eye -s
+
+the eye -s are the organ -s
+of sight
+
+the lip -s are the edge -s
+of the mouth
+
+#irregular
+the teeth are the hard
+white thing -s in our mouth
+
+#7) 2: 1(body) + 1(face)
+#other cases
+
+the hair is something
+that grow -s on our head
+
+the tooth is one
+of the hard
+white thing -s in our mouth
+
+#8) 4: 2(body) + 2(face)
+#with your <part> -s you can ...
+
+with your hand -s you can play
+with toys
+draw
+write
+grab thing -s
+
+with your leg -s you can walk
+run and
+jump
+
+with your eye -s you can see
+
+with your ear -s you can hear
+
+#8) 4: 1(body) + 3(face)
+#with your <part> you can ...
+
+with your feet you can walk
+and run
+
+with your nose you can smell
+
+with your mouth you can speak
+and eat
+
+with your teeth you can smile
+and chew food
+
+

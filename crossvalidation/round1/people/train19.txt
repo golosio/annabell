@@ -1,0 +1,7 @@
+
+? how old is your mother
+.ph /mother/you have one mother//
+.ph /mother/Mum is your mother//
+.po /Mum/the personal pronoun for Mum is she/she/
+.o  /Mum/Mum is thirty_three year -s old/is thirty_three year -s old/
+

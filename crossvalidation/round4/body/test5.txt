@@ -1,0 +1,16 @@
+
+? what is the chest
+.cx
+
+? what is the face
+.cx
+
+? what is the palm
+.cx
+
+? what is the forehead
+.cx
+
+#? what is the chin
+#.cx
+#

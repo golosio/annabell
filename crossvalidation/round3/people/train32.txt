@@ -1,0 +1,29 @@
+
+? who is old -er Kate or Misty
+.pg /Kate/Kate is two year -s old/two/
+.rip
+.wg /Misty/Misty is three year -s old/three/
+.ph three
+.sctx two
+.wg two
+.rip
+.po Kate
+.rip
+.wg is old -er
+.drop_goal
+.rw
+
+? who is old -er Misty or Kate
+.pg /Misty/Misty is three year -s old/three/
+.rip
+.wg /Kate/Kate is two year -s old/two/
+.ph two
+.sctx two
+.wg two
+.rip
+.po Kate
+.rip
+.wg is old -er
+.drop_goal
+.rw
+

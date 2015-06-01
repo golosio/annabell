@@ -1,0 +1,10 @@
+
+? is Misty a girl
+.pg /Misty/Misty is a girl/a girl/
+.rip
+.po* /? is//yes/
+.po* /Misty/the personal pronoun for Misty is she/she/
+.ggp
+.drop_goal
+.o is a girl
+

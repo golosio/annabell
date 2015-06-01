@@ -1,0 +1,9 @@
+
+? what is your sister 's favorite cartoon
+.pg /your sister/Susan is your sister/Susan/
+.po //the possessive pronoun for Susan is her/her/
+.rip
+.wg /favorite cartoon/Susan 's favorite cartoon is Candy Candy/Susan 's/
+.drop_goal
+.snto
+

@@ -1,0 +1,7 @@
+
+? what is the wrist
+.wg what is
+.po* /what is//it is/
+.wg /wrist/the wrist is the joint/the wrist is/
+.snto
+

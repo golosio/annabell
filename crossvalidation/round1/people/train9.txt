@@ -1,0 +1,10 @@
+
+? is Sally a man
+.pg /Sally/Sally is a woman/a woman/
+.rip
+.po* /? is//no/
+.po* /Sally/the personal pronoun for Sally is she/she/
+.ggp
+.drop_goal
+.o is a woman
+

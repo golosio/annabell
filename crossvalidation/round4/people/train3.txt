@@ -1,0 +1,11 @@
+
+? how many friend -s do you have 
+.ph /friend/you have one friend//
+.po* /you have//I have/
+.o one friend
+
+? how many Grandma -s do you have 
+.ph /Grandma/you have two Grandma -s//
+.po* /you have//I have/
+.o two Grandma -s
+

@@ -1,0 +1,23 @@
+#bathroom-corridor-studio
+you are in the bathroom
+to the south there is the corridor
+? what do you want to do
+go to the studio
+.cx
+ -> south
+.
+south
+
+ >>> End context
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+ -> south
+.
+south
+
+ >>> End context

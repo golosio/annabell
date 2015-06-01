@@ -1,0 +1,284 @@
+yes I have two aunt -s
+yes I have two Grandma -s
+yes I have two Grandpa -s
+yes I have one friend
+yes I have many book -s
+yes I have many toy -s
+yes I have two cousin -s
+yes I have some cartoon -s
+yes I have some photo_album -s
+no I do not have a brother
+no I do not have a pet
+no I do not have a videogame
+I have two aunt -s
+I have two Grandma -s
+I have two Grandpa -s
+I have one friend
+I have one sister
+I have many book -s
+I have two cousin -s
+I do not have a brother
+I do not have a pet
+I do not have a videogame
+yes she does
+yes she does
+yes he does
+no she does not have a car
+no she does not have a bike
+no she does not have a videogame
+yes she does
+yes she does
+yes he does
+no he does not have a boat
+no she does not have a bike
+no she does not have a videogame
+she is a woman
+she is a woman
+she is a woman
+she is a woman
+yes she is a woman
+yes she is a woman
+yes she is a woman
+yes she is a woman
+she is a woman
+she is a woman
+she is a woman
+she is a woman
+no he is a man
+no he is a man
+no he is a man
+no he is a man
+he is a man
+he is a man
+he is a man
+he is a man
+he is a man
+he is a man
+he is a man
+he is a man
+she is a girl
+she is a girl
+she is a girl
+she is a girl
+she is a girl
+yes she is a girl
+yes she is a girl
+yes she is a girl
+yes she is a girl
+yes she is a girl
+she is a girl
+she is a girl
+she is a girl
+she is a girl
+she is a girl
+they like to play hide_and_seek tag to play with videogame -s football
+they like to watch detective movie -s action movie -s western movie -s thriller -s
+they like to read novel -s love storie -s
+they like to watch animation movie -s fantasy movie -s adventure movie -s
+she is seven year -s old
+he is forty_two year -s old
+she is five year -s old
+which aunt
+which Grandma
+which Grandpa
+which uncle
+she is seven year -s old
+he is thirteen year -s old
+he is forty_two year -s old
+she is thirty_three year -s old
+she is five year -s old
+she is five year -s old
+he is three year -s old
+she is three year -s old
+he is forty_four year -s old
+she is forty year -s old
+he is twenty_eight year -s old
+she is twenty_six year -s old
+he is three year -s old
+she is two year -s old
+he is two year -s old
+she is fifty_three year -s old
+he is fifty_nine year -s old
+he is sixty_seven year -s old
+her name is Susan
+her name is Cindy
+her name is Letizia
+no she is old -er
+no she is old -er
+no he is old -er
+yes he is young -er
+yes she is young -er
+yes she is young -er
+yes she is young -er
+yes he is young -er
+yes she is old -er
+yes she is old -er
+yes he is old -er
+no he is young -er
+no he is young -er
+no she is young -er
+no she is young -er
+no he is young -er
+she is old -er
+she is old -er
+he is old -er
+he is young -er
+she is young -er
+she is young -er
+she is young -er
+he is young -er
+no she is old -er
+no he is old -er
+no she is old -er
+yes she is old -er
+yes she is old -er
+yes she is old -er
+Oliver is old -er
+Letizia is old -er
+Misty is old -er
+Oliver is old -er
+Oliver is old -er
+Letizia is old -er
+Misty is old -er
+Oliver is old -er
+they are the same age
+they are the same age
+they are the same age
+they are the same age
+yes he does
+yes she does
+yes she does
+yes he does
+yes she does
+yes she does
+yes she does
+no she does not
+no he does not
+no she does not
+no she does not
+no she does not
+no she does not
+no he does not
+yes he does
+yes she does
+yes she does
+yes he does
+yes she does
+yes she does
+yes she does
+no she does not
+no he does not
+no she does not
+no she does not
+no she does not
+no she does not
+no he does not
+yes she does
+yes she does
+yes she does
+yes she does
+yes he does
+yes she does
+yes she does
+no she does not
+no she does not
+no she does not
+no he does not
+no she does not
+no she does not
+no she does not
+yes she does
+yes she does
+yes she does
+yes she does
+yes he does
+yes she does
+yes she does
+no she does not
+no she does not
+no she does not
+no he does not
+no she does not
+no she does not
+no she does not
+yes I do
+yes I do
+yes I do
+yes I do
+yes I do
+no I do not
+no I do not
+no I do not
+no I do not
+no I do not
+yes I do
+yes I do
+yes I do
+yes I do
+yes I do
+no I do not
+no I do not
+no I do not
+no I do not
+no I do not
+my favorite tale is Sleeping Beauty
+my favorite game is hide_and_seek
+my favorite cartoon is Peppa Pig
+her favorite game is Pictionary
+his favorite music is classical music
+his favorite movie is The Hunter
+her favorite singer is Bryan Adams
+his favorite game is football
+his favorite sport is football
+her favorite game is hide_and_seek
+her favorite cartoon is Heidi
+her favorite color is yellow
+her favorite movie is Pretty Woman
+her favorite cartoon is Peppa Pig
+her favorite game is Pictionary
+her favorite cartoon is Candy Candy
+her favorite movie is Pretty Woman
+his favorite music is classical music
+her favorite singer is Bryan Adams
+her favorite cartoon is Peppa Pig
+her favorite color is yellow
+she is a journalist
+she is a secretary
+she is a doctor
+he is a teacher
+he is a businessman
+he is a fireman
+she go -s to the kindergarten
+she go -s to the kindergarten
+she go -s to the kindergarten
+he go -s to the kindergarten
+he go -s to the kindergarten
+she is a clerk
+he is a driver
+he is a teacher
+she go -s to the school
+she go -s to the kindergarten
+the doctor
+the journalist
+the sailor
+the builder
+the driver
+the hairdresser
+she is my mother
+he is my father
+she is my sister
+she is my friend
+she is my cousin
+he is my cousin
+she is my Grandma
+he is my Grandpa
+he is my Grandpa
+she is my aunt
+she is my aunt
+he is my uncle
+he is my uncle
+she is write -ing a article
+he is prepare -ing the lesson
+she is read -ing a book
+she is play -ing with the doll
+he is go -ing to school

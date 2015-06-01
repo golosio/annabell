@@ -1,0 +1,29 @@
+
+? who is old -er Susan or Tom
+.pg /Susan/Susan is seven year -s old/seven/
+.rip
+.wg /Tom/Tom is three year -s old/three/
+.ph three
+.sctx three
+.wg three
+.rip
+.po Susan
+.rip
+.wg is old -er
+.drop_goal
+.rw
+
+? who is old -er Tom or Susan
+.pg /Tom/Tom is three year -s old/three/
+.rip
+.wg /Susan/Susan is seven year -s old/seven/
+.ph seven
+.sctx three
+.wg three
+.rip
+.po Susan
+.rip
+.wg is old -er
+.drop_goal
+.rw
+

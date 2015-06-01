@@ -1,0 +1,10 @@
+
+? does your friend have a cat
+.pg /your friend/Letizia is your friend/Letizia/
+.rip
+.ph /a cat/Letizia has a cat//
+.drop_goal
+.po* /has//yes/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.o /has//does/
+

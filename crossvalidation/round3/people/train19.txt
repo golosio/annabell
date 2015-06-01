@@ -1,0 +1,7 @@
+
+? how old is your father
+.ph /father/you have one father//
+.ph /father/Dad is your father//
+.po /Dad/the personal pronoun for Dad is he/he/
+.o  /Dad/Dad is forty_two year -s old/is forty_two year -s old/
+

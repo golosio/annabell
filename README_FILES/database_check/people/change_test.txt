@@ -1,0 +1,51 @@
+> Carol is a clerk
+> Carol is your Grandma
+> Dad does not like candy -s
+< Dad has a sister
+< Dad like -s to play the piano
+< Dad like -s to watch tv
+< Dad 's favorite game is Monkey Island
+< Dad 's name is Bruce
+< Daniel has a wife
+> Daniel is forty_four year -s old
+> Daniel is your uncle
+> Laura is your Grandma
+> Letizia does not like soup
+> Letizia has a cat
+> Letizia like -s candy -s
+> Letizia like -s to eat candy -s
+> Letizia like -s to play with doll -s
+> Letizia 's favorite color is yellow
+> Lisa is forty year -s old
+> Lisa is your aunt
+> Matt is twenty_eight year -s old
+> Matt is your uncle
+> Mum does not like to answer the phone
+< Mum like -s to watch the tv
+> Mum 's favorite movie is Pretty Woman
+< Oliver does not have a guitar
+< Oliver does not like to go to school
+< Oliver does not like to study
+< Oliver like -s sport
+< Oliver like -s to play football
+< Oliver like -s to play videogame -s
+> Sally is twenty_six year -s old
+> Sally is your aunt
+> Steven is your Grandpa
+< Susan does not like to eat soup
+> Susan like -s to watch cartoon -s
+< you do not have brother -s
+> you do not like to visit your relative -s
+< you have a friend
+< you have no brother -s
+> you have some cartoon -s
+> you have some photo_album -s
+< you like Barbie
+< you like chocolate
+< you like ice_cream
+< you like little dog -s
+< you like the summer
+< you like to draw
+> you like dog -s
+> you like ice_cream -s
+

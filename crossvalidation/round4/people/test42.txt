@@ -1,0 +1,13 @@
+
+? what does your mother do
+.cx
+
+? what does your father do
+.cx
+
+#? what does your sister do
+#.cx
+#
+? what does your friend do
+.cx
+

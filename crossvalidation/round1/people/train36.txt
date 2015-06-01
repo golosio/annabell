@@ -1,0 +1,9 @@
+
+? do you like to play with doll -s
+.ph /play with doll/you like to play with doll -s//
+.o /like//yes I do/
+
+? do you like to play with videogame -s 
+.ph /play with videogame/you do not like to play with videogame -s//
+.o /do not like//no I do not/
+

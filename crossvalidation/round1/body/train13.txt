@@ -1,0 +1,6 @@
+
+? where are the ear -s 
+.po* /where are//they are/
+.wg /ear -s/the ear -s are at the side -s/the ear -s are/
+.snto
+

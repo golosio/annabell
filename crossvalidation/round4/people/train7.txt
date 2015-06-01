@@ -1,0 +1,10 @@
+
+? does your sister have an umbrella
+.pg /your sister/Susan is your sister/Susan/
+.rip
+.ph /an umbrella/Susan has an umbrella//
+.drop_goal
+.po* /has//yes/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o /has//does/
+

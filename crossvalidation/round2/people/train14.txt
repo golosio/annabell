@@ -1,0 +1,5 @@
+
+? is Matt a man or a woman
+.po* /Matt/the personal pronoun for Matt is he/he/
+.o /Matt/Matt is a man/is a man/
+

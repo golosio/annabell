@@ -1,0 +1,11 @@
+
+? do you have any Grandma -s
+.ph /Grandma/you have two Grandma -s//
+.po* /you have//yes I have/
+.o two Grandma -s
+
+? do you have any Grandpa -s
+.ph /Grandpa/you have two Grandpa -s//
+.po* /you have//yes I have/
+.o two Grandpa -s
+

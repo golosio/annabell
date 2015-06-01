@@ -1,0 +1,7 @@
+
+? does Susan have a bike
+.ph /a bike & Susan/Susan does not have a bike//
+.po* /does not//no/
+.po* /Susan/the personal pronoun for Susan is she/she/
+.o does not have a bike
+

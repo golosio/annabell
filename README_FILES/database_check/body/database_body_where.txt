@@ -1,0 +1,205 @@
+
+#1) 3: 2(body) + 1(face)
+#the <part> is on the ...
+
+the head is on the neck
+
+the hair is on the head
+
+#face
+the eyelid is on the eye
+
+#2) 4: 2(body) + 2(face)
+#the <part> is at the ...
+
+the face is at the front
+of the head
+
+the chest is at the front
+of the torso
+
+#face
+the ear is at the side
+of the head
+
+the cheek is at the side
+of the mouth
+
+#3) 9: 6(body) + 3(face)
+#the <part> is in the ...
+
+the face is in the front
+of the head
+
+the chest is in the front
+of the torso
+
+the umbilicus is in the middle
+of the abdomen
+
+the bellybutton is in the middle
+of the abdomen
+
+the palm is in the hand
+
+the thigh is in the leg
+
+#face
+the eye is in the face
+
+the nose is in the face
+
+the mouth is in the face
+
+#4) 9: 8(body) + 1(face)
+#the <part> is between the ...
+
+the neck is between the head
+and the trunk
+
+the chest is between the neck
+and the abdomen
+
+the elbow is between the upper
+and lower arm
+
+the forearm is between the elbow
+and the wrist
+
+the wrist is between the lower arm
+and the hand
+
+the knee is between the thigh
+and the lower leg
+
+the hip is between the waist
+and the top of the leg
+
+the ankle is between the foot
+and the leg
+
+#face
+the forehead is between the eyebrow -s
+and the hair line
+
+#5) 1(body)
+#the <part> -s are between the ...
+
+the shoulder -s are between the neck
+and the upper arm
+
+#6) 5: 4(body) + 1(irregular)
+#the <part> -s are attach -ed
+
+the arm -s are attach -ed
+to the shoulder -s
+
+the finger -s are attach -ed
+to the hand -s
+
+the leg -s are attach -ed to the hip
+
+the hand -s are attach -ed
+to the lower arm -s
+
+#irregular
+the feet are attach -ed
+to the leg
+
+#7) 5(body)
+#the <part> is attach -ed
+
+the arm is attach -ed
+to the shoulder
+
+the finger is attach -ed
+to the hand
+
+the foot is attach -ed
+to the leg
+
+the leg is attach -ed
+to the hip
+
+the hand is attach -ed
+to the lower arm
+
+
+#8) 1(body)
+#the <part> -s are in the
+
+the palm -s are in the hand -s
+
+#9) 1(face)
+#the <part> is above the ...
+
+the forehead is above the eyebrow -s
+
+
+#10) 1(face)
+#the <part> -s are above the ...
+
+the eyebrow -s are above the eye -s
+
+#11) 4: 1(body) + 3(face)
+#the part -s are at the ...
+
+the arm -s are at the side -s
+of the trunk
+
+#face
+the eyelash -es are at the edge
+of the eyelid -s
+
+the ear -s are at the side -s
+of the head
+
+the cheek -s are at the side -s
+of the mouth
+
+#11) 1(face)
+#the part -s are on the ...
+
+the eyelid -s are on the eye -s
+
+#12) 4(face)
+#the <part> is inside the ...
+
+the tooth is inside the mouth
+
+the tongue is inside the mouth
+
+the gum is inside the mouth
+
+the palate is inside the mouth
+
+#13) 1(body)
+#the <part> is where ...
+
+the waist is where a belt
+is usually worn
+
+#14) 3(face)
+#other forms
+
+the lip -s are around the mouth
+
+the chin is under the mouth
+
+the teeth are inside the mouth
+
+#15) 4(body)
+#the <part> connect -s the ...
+
+the elbow connect -s the upper
+and lower arm
+
+the wrist connect -s the lower arm
+and the hand
+
+the knee connect -s the thigh
+and the lower leg
+
+the ankle connect -s the foot
+and the leg
+

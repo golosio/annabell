@@ -1,0 +1,517 @@
+you have two aunt -s
+
+your aunt 's name -s are
+Lisa and
+Sally
+
+Lisa is your father 's sister
+
+Lisa is a woman
+
+Lisa is a female person
+
+Lisa is a clerk
+
+Sally is Daniel 's wife
+
+Sally is a woman
+
+Sally is a female person
+
+Sally is a secretary
+
+Daniel has a wife
+
+Dad has a sister
+
+boy -s like to play
+football
+to play with car -s
+to play with videogame -s
+to play with superhero -s
+to play cops and robbers
+
+you do not have brother -s
+
+you have no brother -s
+
+you do not have a brother
+
+you have one sister
+
+your sister 's name is Susan
+
+Susan is your sister
+
+Susan is a girl
+
+Susan is a female person
+
+Susan go -es to the school
+
+Susan is seven year -s old
+
+Susan like -s to read book -s
+
+Susan like -s chocolate
+
+Susan does not like sport
+
+Susan does not like to eat soup
+
+Susan does not like to eat vegetable -s
+
+Susan 's favorite game is Pictionary
+
+Susan 's favorite cartoon is Candy Candy
+
+Susan has an umbrella
+
+you have one father
+
+Dad is your father
+
+Dad is a man
+
+Dad is a male person
+
+Dad is forty_two year -s old
+
+Dad has a car
+
+Dad like -s to watch tv
+
+Dad like -s to watch the tv
+
+Dad like -s to play the piano
+
+Dad like -s music
+
+Dad does not like to cook
+
+Dad 's name is Bruce
+
+your father 's name is Bruce
+
+Dad is a teacher
+
+Dad 's favorite game is Monkey Island
+
+Dad 's favorite music is classical music
+
+Dad 's favorite movie is The Hunter
+
+the doctor work -s in the hospital
+
+when you are sick you go to the doctor
+
+you are a little girl
+
+you are a girl
+
+girl -s like to play
+with doll -s
+
+when you were little you were a baby
+
+baby -s often cry
+
+baby -s do not go to the school
+
+you have two Grandma -s
+
+your Grandma 's name -s are
+Laura and
+Carol
+
+Laura is a woman
+
+Laura is a female person
+
+Laura is a doctor
+
+Carol is a woman
+
+Carol is a female person
+
+Grandma is a woman
+
+Grandma is a female person
+
+Grandma Laura is fifty_three year -s old
+
+Grandma Carol is sixty_four year -s old
+
+you have two Grandpa -s
+
+your Grandpa 's name -s are
+Steven and
+Ben
+
+Steven is a man
+
+Steven is a male person
+
+Steven is a doctor
+
+Ben is a man
+
+Ben is a male person
+
+Ben is a businessman
+
+Grandpa is a man
+
+Grandpa is a male person
+
+Grandpa Steven is fifty_nine year -s old
+
+Grandpa Ben is sixty_seven year -s old
+
+Grandpa Steven is a doctor
+
+Grandpa Steven work -s in the hospital
+
+you have one mother
+
+Mum is your mother
+
+Mum is a woman
+
+Mum is a female person
+
+Mum is thirty_three year -s old
+
+Mum 's name is Cindy
+
+your mother 's name is Cindy
+
+Mum is a journalist
+
+Mum cook -s
+
+Mum like -s to read book -s
+
+Mum like -s music
+
+Mum does not like sport
+
+Mum 's favorite singer is Bryan Adams
+
+your name is Annabell
+
+you are four year -s old
+
+you like to play with doll -s
+
+you like to draw
+
+you like to watch cartoon -s
+
+you like the summer
+because you can go to the sea
+
+you are afraid of the dark
+
+your favorite tale is Sleeping Beauty
+
+your favorite game is hide_and_seek
+
+your favorite toy is Barbie
+
+you like animal -s
+
+you do not have a pet
+
+a pet is a little animal
+
+you like cat -s
+
+you like little dog -s
+
+you like to eat ice_cream
+
+you like ice_cream
+
+you like to eat chip -s
+
+you like chip -s
+
+you like to eat chocolate
+
+you like chocolate
+
+you like to eat candy -s
+
+you like candy -s
+
+you like Barbie
+
+you do not like sport
+
+you do not like to eat vegetable -s
+
+you do not like vegetable -s
+
+you do not like to eat salad
+
+you do not like salad
+
+you can go on the bike -s with train -ing wheel -s
+
+you have a friend
+
+you have one friend
+
+your friend 's name is Letizia
+
+Letizia is your friend
+
+Letizia is a girl
+
+Letizia is a female person
+
+Letizia go -es to the kindergarten
+
+Letizia is five year -s old
+
+you live in Sassari
+
+you have two cousin -s
+
+Oliver is your cousin
+
+Oliver is a boy
+
+Oliver is a male person
+
+Oliver go -es to the school
+
+Oliver is thirteen year -s old
+
+Oliver like -s sport
+
+Oliver like -s to play football
+
+Oliver does not like to go to school
+
+Oliver does not like to study
+
+Oliver 's favorite game is football
+
+Oliver 's favorite sport is football
+
+Vivian is your cousin
+
+Vivian is five year -s old
+
+Vivian is a girl
+
+Vivian is a female person
+
+Vivian go -es to the kindergarten
+
+Vivian 's favorite game is hide_and_seek
+
+Vivian 's favorite cartoon is Heidi
+
+you have two uncle -s
+
+your uncle 's name -s are
+Daniel and
+Matt
+
+Daniel is a man
+
+Daniel is a male person
+
+Matt is a man
+
+Matt is a male person
+
+Matt is the brother
+of your father
+
+Matt is a fireman
+
+Daniel is the brother
+of your mother
+
+Daniel is a driver
+
+Mum has a brother
+
+the doctor work -s in the hospital
+
+the fireman extinguish -es the fire
+
+the journalist write -s in the newspaper
+
+the teacher teach -es in the school
+
+the painter paint -s picture -s
+
+the writer write -s book -s
+
+the builder build -s the house -s
+
+the sailor work -s in the boat
+
+the driver drive -s the bus
+
+the hairdresser cut -s the hair
+
+you have many book -s
+
+you have many toy -s
+
+Grace is two year -s old
+
+Grace is a girl
+
+Grace is a female person
+
+Grace is a little girl
+
+Tom is three year -s old
+
+Tom is a boy
+
+Tom is a male person
+
+Tom is a little boy
+
+George is two year -s old
+
+George is a boy
+
+George is a male person
+
+George is a little boy
+
+Kate is two year -s old
+
+Kate is a girl
+
+Kate is a female person
+
+Kate is a little girl
+
+Kevin is three year -s old
+
+Kevin is a boy
+
+Kevin is a male person
+
+Kevin is a little boy
+
+Misty is three year -s old
+
+Misty is a girl
+
+Misty is a female person
+
+Misty is a little girl
+
+your age is four
+
+you do not have a videogame
+
+you do not have a bike
+
+Mum does not have a car
+
+Susan does not have a bike
+
+Susan has an umbrella
+
+Oliver does not have a guitar
+
+Dad does not have a boat
+
+Letizia does not have a videogame
+
+men like to watch
+detective movie -s
+action movie -s
+western movie -s
+thriller -s
+
+women like to watch
+comedie -s
+romance -s
+drama -s
+
+children like to watch
+animation movie -s
+fantasy movie -s
+adventure movie -s
+
+children like to play
+hide_and_seek
+tag
+to play with videogame -s
+football
+
+women like to read
+novel -s
+love storie -s
+
+Oliver like -s to play videogame -s
+
+Mum like -s to play the piano
+
+Letizia does not like to play videogame -s
+
+Mum does not like to drive the car
+
+Dad like -s to drive the car
+
+Mum like -s to watch the tv
+
+Dad does not like to read book -s
+
+Letizia does not like to watch the tv
+
+Susan does not like to play the piano
+
+Mum like -s flower -s
+
+Dad like -s comic -s
+
+Susan like -s book -s
+
+Letizia like -s doll -s
+
+Dad does not like flower -s
+
+Mum does not like comic -s
+
+Letizia does not like book -s
+
+Susan does not like doll -s
+
+you do not like to play with videogame -s
+
+you do not like to watch movie -s
+
+you do not like to eat tomato -s
+
+you do not like tomato -s
+
+you do not like mushroom -s
+
+you do not like videogame -s
+
+your favorite cartoon is Peppa Pig
+
+Letizia 's favorite cartoon is Peppa Pig
+
+Misty go -es to the kindergarten
+
+George go -es to the kindergarten
+
+Tom go -es to the kindergarten
+
+Kevin go -es to the kindergarten
+

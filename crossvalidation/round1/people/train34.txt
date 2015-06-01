@@ -1,0 +1,39 @@
+
+? does Mum like to watch the tv
+.pg /Mum & to watch the tv/Mum like -s to watch the tv/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Letizia like to watch the tv
+.pg /Letizia & to watch the tv/Letizia does not like to watch the tv/does not like/
+.po* /does not like//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg does not
+.drop_goal
+.rw
+
+? does your mother like to watch the tv
+.pg to watch the tv
+.rip
+.wg /your mother/Mum is your mother/Mum/
+.ph //Mum like -s to watch the tv/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your friend like to watch the tv
+.pg to watch the tv
+.rip
+.wg /your friend/Letizia is your friend/Letizia/
+.ph //Letizia does not like to watch the tv/does not like/
+.po* /does not like//no/
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.wg does not
+.drop_goal
+.rw
+

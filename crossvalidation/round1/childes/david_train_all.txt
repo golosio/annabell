@@ -1,0 +1,16 @@
+.f david_sentences.txt
+
+.f david_sentences3.txt
+
+.f david_train1.txt
+
+.f david_train2.txt
+
+.f david_train3a.txt
+
+.f david_train3.txt
+
+.f david_train4.txt
+
+.f david_train5.txt
+

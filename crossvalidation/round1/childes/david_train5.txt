@@ -1,0 +1,157 @@
+tell me the name -s of the fantastic four
+.pg fantastic four
+.ph the fantastic four are
+.ph Mister Fantastic
+.wg Mister Fantastic
+.ggp
+.drop_goal
+.push_goal
+.rw
+Mister Fantastic
+...
+.ggp
+.wg fantastic four
+.ph the fantastic four are
+.sctx Mister Fantastic
+.wg Mister Fantastic
+.ph Mister Fantastic
+.ph The Invisible Woman
+.wg The Invisible Woman
+.ggp
+.drop_goal
+.push_goal
+.rw
+right
+...
+.ggp
+.wg fantastic four
+.ph the fantastic four are
+.sctx The Invisible Woman
+.wg The Invisible Woman
+.ph The Invisible Woman
+.ph The Thing
+.wg The Thing
+.ggp
+.drop_goal
+.push_goal
+.rw
+that is right
+...
+.ggp
+.wg fantastic four
+.ph the fantastic four are
+.sctx The Thing
+.wg The Thing
+.ph The Thing
+.ph The Human Torch
+.wg The Human Torch
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+.drop_goal
+
+tell me the name -s of the seven kings
+.wg seven kings
+.push_goal
+.ph the seven kings are
+.ph first Romulus
+.wg first Romulus
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+first Romulus
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx first Romulus
+.wg first Romulus
+.ph first Romulus
+.ph second Numa Pompilius
+.wg second Numa Pompilius
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+second Numa Pompilius
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx second Numa Pompilius
+.wg second Numa Pompilius
+.ph second Numa Pompilius
+.ph third Tullus Hostilius
+.wg third Tullus Hostilius
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+that is good
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx third Tullus Hostilius
+.wg third Tullus Hostilius
+.ph third Tullus Hostilius
+.ph fourth Ancus Marcius
+.wg fourth Ancus Marcius
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+right
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx fourth Ancus Marcius
+.wg fourth Ancus Marcius
+.ph fourth Ancus Marcius
+.ph fifth Tarquinius Priscus
+.wg fifth Tarquinius Priscus
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+very good
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx fifth Tarquinius Priscus
+.wg fifth Tarquinius Priscus
+.ph fifth Tarquinius Priscus
+.ph sixth Tarquinius Superbus
+.wg sixth Tarquinius Superbus
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+okay
+...
+.ggp
+.wg seven kings
+.ph the seven kings are
+.sctx sixth Tarquinius Superbus
+.wg sixth Tarquinius Superbus
+.ph sixth Tarquinius Superbus
+.ph seventh Servius Tullius
+.wg seventh Servius Tullius
+.ggp
+.drop_goal
+.push_goal
+.rw
+#
+.drop_goal
+

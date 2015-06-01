@@ -1,0 +1,6 @@
+
+? what are the elbow -s 
+.po* /what are//they are/
+.wg /elbow -s/the elbow -s are the joint -s/the elbow -s are/
+.snto
+

@@ -1,0 +1,11 @@
+
+what is , it is
+
+? what is the herring
+.po* /what is//it is/
+.ph /herring/the herring is a fish//
+.o /a fish/a fish is an animal/an animal/
+? what kind of animal
+.sctx ? what is the herring
+.o /herring/the herring is a fish/a fish/
+

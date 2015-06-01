@@ -1,0 +1,49 @@
+
+? how many , one
+one , two
+two , three
+three , four
+four , five
+
+? how many game -s did you play
+.ggp
+.ph /hide_and_seek/you play hide_and_seek//
+.sctx you are at the central park
+.wg central park
+.drop_goal
+.csctx you play hide_and_seek
+.po hide_and_seek
+.rip
+.pg play
+.rip
+.o /? how many//one/
+hide_and_seek one
+.ph /hide_and_seek/you play hide_and_seek//
+.csctx you play bowl -s
+.po bowl -s
+.rip
+.o /one//two/
+bowl -s two
+.ph /bowl/you play bowl -s//
+.csctx you play frisbee
+.po frisbee
+.rip
+.o /two//three/
+frisbee three
+.ph /frisbee/you play frisbee//
+.csctx you play tag
+.po tag
+.rip
+.o /three//four/
+tag four
+.ph /tag/you play tag//
+.csctx you stop play -ing
+.pg you stop play -ing
+#.rw
+.rip
+.po four
+.drop_goal
+.ggp
+.o game -s
+.drop_goal
+

@@ -1,0 +1,19 @@
+
+#? what are the eyebrow -s
+#.cx
+#
+? what are the eyelash -es
+.cx
+
+? what are the eyelid -s
+.cx
+
+? what are the eye -s
+.cx
+
+? what are the lip -s
+.cx
+
+? what are the palm -s
+.cx
+

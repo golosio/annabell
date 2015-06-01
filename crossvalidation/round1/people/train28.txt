@@ -1,0 +1,16 @@
+
+? is Vivian young -er or old -er than you
+.pg /Vivian/Vivian is five year -s old/five/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /Vivian/the personal pronoun for Vivian is she/she/
+.po* is
+.wg old -er
+.drop_goal
+.rw
+

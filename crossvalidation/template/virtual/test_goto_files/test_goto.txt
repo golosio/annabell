@@ -1,0 +1,446 @@
+
+#veranda-living_room-kitchen
+you are in the veranda
+to the east there is the living_room
+? what do you want to do
+go to the kitchen
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#veranda-living_room-hall
+you are in the veranda
+to the east there is the living_room
+? what do you want to do
+go to the hall
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#kitchen-living_room-veranda
+you are in the kitchen
+to the south there is the living_room
+? what do you want to do
+go to the veranda
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#kitchen-living_room-hall
+you are in the kitchen
+to the south there is the living_room
+? what do you want to do
+go to the hall
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#living_room-hall-library
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+go to the library
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#living_room-hall-corridor
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+go to the corridor
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#living_room-hall-garden
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+go to the garden
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#hall-living_room-veranda
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the veranda
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#hall-living_room-kitchen
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the kitchen
+.cx
+
+you are in the living_room
+to the east there is the hall
+to the north there is the kitchen
+to the west there is the veranda
+? what do you want to do
+.x
+
+#hall-corridor-bathroom
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the bathroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#hall-corridor-studio
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the studio
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#hall-corridor-bedroom
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the bedroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#hall-garden-street
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+go to the street
+.cx
+
+you are in the garden
+to the north there is the hall
+to the south there is the street
+? what do you want to do
+.x
+
+#library-hall-living_room
+you are in the library
+to the south there is the hall
+? what do you want to do
+go to the living_room
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#library-hall-corridor
+you are in the library
+to the south there is the hall
+? what do you want to do
+go to the corridor
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#library-hall-garden
+you are in the library
+to the south there is the hall
+? what do you want to do
+go to the garden
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#corridor-hall-library
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+go to the library
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#corridor-hall-living_room
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+go to the living_room
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#corridor-hall-garden
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+go to the garden
+.cx
+
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+
+#bathroom-corridor-hall
+you are in the bathroom
+to the south there is the corridor
+? what do you want to do
+go to the hall
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#bathroom-corridor-bedroom
+you are in the bathroom
+to the south there is the corridor
+? what do you want to do
+go to the bedroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#bathroom-corridor-studio
+you are in the bathroom
+to the south there is the corridor
+? what do you want to do
+go to the studio
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#bedroom-corridor-bathroom
+you are in the bedroom
+to the west there is the corridor
+? what do you want to do
+go to the bathroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#bedroom-corridor-hall
+you are in the bedroom
+to the west there is the corridor
+? what do you want to do
+go to the hall
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#bedroom-corridor-studio
+you are in the bedroom
+to the west there is the corridor
+? what do you want to do
+go to the studio
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#studio-corridor-hall
+you are in the studio
+to the north there is the corridor
+? what do you want to do
+go to the hall
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#studio-corridor-bathroom
+you are in the studio
+to the north there is the corridor
+? what do you want to do
+go to the bathroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+
+#studio-corridor-bedroom
+you are in the studio
+to the north there is the corridor
+? what do you want to do
+go to the bedroom
+.cx
+
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+.x
+

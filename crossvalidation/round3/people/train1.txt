@@ -1,0 +1,11 @@
+
+? do you have any aunt -s
+.ph /aunt/you have two aunt -s//
+.po* /you have//yes I have/
+.o two aunt -s
+
+? do you have any book -s
+.ph /book/you have many book -s//
+.po* /you have//yes I have/
+.o many book -s
+

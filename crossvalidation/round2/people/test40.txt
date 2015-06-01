@@ -1,0 +1,25 @@
+
+? what is your sister 's favorite game
+.cx
+
+#? what is your sister 's favorite cartoon
+#.cx
+#
+? what is your mother 's favorite movie
+.cx
+
+? what is your father 's favorite music
+.cx
+
+? what is your father 's favorite movie
+.cx
+
+? what is your mother 's favorite singer
+.cx
+
+? what is your friend 's favorite cartoon
+.cx
+
+? what is your friend 's favorite color
+.cx
+

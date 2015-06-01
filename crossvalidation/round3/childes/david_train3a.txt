@@ -1,0 +1,54 @@
+
+Ann , my
+
+Bob , Bob 's
+
+Matt , Matt 's
+
+Helen , Helen 's
+
+tell me about Susan Dale
+.pg Susan Dale
+.ph will be Susan Dale
+.po Susan Dale
+.po will be
+.ggp
+.ph /Susan Dale/will be Susan Dale//
+.sctx Ann
+.po /Ann//my/
+.ggp
+.ph /Susan Dale/will be Susan Dale//
+.sctx your desk mate
+.o desk mate
+.drop_goal
+
+tell me about Bob Fingers
+.pg Bob Fingers
+.ph will be Bob Fingers
+.po Bob Fingers
+.po will be
+.ggp
+.ph /Bob Fingers/will be Bob Fingers//
+.sctx Matt
+.po /Matt//Matt 's/
+.ggp
+.ph /Bob Fingers/will be Bob Fingers//
+.sctx your desk mate
+.o desk mate
+.drop_goal
+
+? how about Carol Davis
+.pg Carol Davis
+.ph will be Carol Davis
+.po Carol Davis
+.po will be
+.ggp
+.ph /Carol Davis/will be Carol Davis//
+.sctx Helen
+.po /Helen//Helen 's/
+.ggp
+.ph /Carol Davis/will be Carol Davis//
+.sctx your desk mate
+.o desk mate
+.drop_goal
+

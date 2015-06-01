@@ -1,0 +1,11 @@
+
+? do you have any uncle -s
+.ph /uncle/you have two uncle -s//
+.po* /you have//yes I have/
+.o two uncle -s
+
+? do you have any sister -s
+.ph /sister/you have one sister//
+.po* /you have//yes I have/
+.o one sister
+

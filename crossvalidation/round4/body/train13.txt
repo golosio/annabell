@@ -1,0 +1,6 @@
+
+? where are the eyelash -es 
+.po* /where are//they are/
+.wg /eyelash -s/the eyelash -s are at the edge/the eyelash -s are/
+.snto
+

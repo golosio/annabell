@@ -1,0 +1,1436 @@
+.logfile log_rand.txt
+.time
+
+? what is your father 's favorite music
+.cx
+
+? do you like to eat candy -s
+.cx
+
+? how old is Misty
+.cx
+
+? what are the palm -s
+.cx
+
+tell me a mammal
+.xr
+
+? is your sister old -er than you
+.cx
+
+? is Tom young -er than you
+.cx
+
+? how old is Grandpa Ben
+.cx
+
+? do you have any Grandpa -s
+.cx
+
+? is Susan old -er than you
+.cx
+
+? what game -s do children like to play
+.cx
+
+? what are the elbow -s
+.cx
+
+? who is old -er Kate or Misty
+.cx
+
+? what is your sister 's favorite game
+.cx
+
+? does Susan like to eat vegetable -s
+.cx
+
+? what are the ankle -s
+.cx
+
+? is Vivian young -er than you
+.cx
+
+? what book -s do women like to read
+.cx
+
+? where are the arm -s
+.cx
+
+? how many book -s do you have
+.cx
+
+? does Letizia like soup
+.cx
+
+? who is old -er Letizia or Oliver
+.cx
+
+? what is the pike
+.cx
+? what kind of animal
+.x
+
+? what is the shark
+.cx
+? what kind of animal
+.x
+
+? what is the kangaroo
+.cx
+? what kind of animal
+.x
+
+? what is the shoulder
+.cx
+
+? is Grace old -er than you
+.cx
+
+? what is the ant
+.cx
+? what kind of animal
+.x
+
+? what is the nose
+.cx
+
+? how old is Oliver
+.cx
+
+? who is Matt
+.cx
+
+? what is the ladybug
+.cx
+? what kind of animal
+.x
+
+? do you have any pet -s
+.cx
+
+? is Sally a man or a woman
+.cx
+
+? does Mum like flower -s
+.cx
+
+? what is the herring
+.cx
+? what kind of animal
+.x
+
+? does your sister like to play the piano
+.cx
+
+? is your father young -er than you
+.cx
+
+? what is Dad 's favorite movie
+.cx
+
+? who is old -er Misty or Kate
+.cx
+
+? is Tom old -er than you
+.cx
+
+? does your sister like chocolate
+.cx
+
+? where are the finger -s
+.cx
+
+? does your father like to read book -s
+.cx
+
+? what is your mother 's favorite movie
+.cx
+
+? is Kate a boy or a girl
+.cx
+
+? is Vivian a girl
+.cx
+
+? is Steven a man or a woman
+.cx
+
+? what is the cricket
+.cx
+? what kind of animal
+.x
+
+? where are the cheek -s
+.cx
+
+? what is the gull
+.cx
+? what kind of animal
+.x
+
+? how many brother -s do you have
+.cx
+
+? what is the termite
+.cx
+? what kind of animal
+.x
+
+? is Mum a woman
+.cx
+
+? what is your friend 's name
+.cx
+
+.bx 20 tell me a fast mammal
+
+? does your mother like sport
+.cx
+
+? does your sister like to read book -s
+.cx
+
+? does Susan like book -s
+.cx
+
+? does your friend like doll -s
+.cx
+
+? do you like cat -s
+.cx
+
+? what are the eye -s
+.cx
+
+? does Susan have a umbrella
+.cx
+
+? what is your sister 's favorite cartoon
+.cx
+
+? is Daniel a man
+.cx
+
+? does Mum like to answer the phone
+.cx
+
+? is Grace a girl
+.cx
+
+? does Letizia like to play videogame -s
+.cx
+
+? is Ben a man
+.cx
+
+? what is the knee
+.cx
+
+? do you like ice_cream -s
+.cx
+
+? what can you do with your mouth
+.cx
+
+? do you like to eat tomato -s
+.cx
+
+? do you have any photo_album -s
+.cx
+
+? does Susan like chocolate
+.cx
+
+? what is the face
+.cx
+
+? is Letizia young -er than you
+.cx
+
+? what is your favorite cartoon
+.cx
+
+? who is old -er Misty or Letizia
+.cx
+
+? what is the carp
+.cx
+? what kind of animal
+.x
+
+? what is your favorite tale
+.cx
+
+? what is the butterfly
+.cx
+? what kind of animal
+.x
+
+? does Letizia like candy -s
+.cx
+
+? does Dad like music
+.cx
+
+? does your friend like soup
+.cx
+
+? what is the tongue
+.cx
+
+? who is old -er Tom or Kevin
+.cx
+
+? does your sister have a umbrella
+.cx
+
+? what are the cheek -s
+.cx
+
+? is Carol a woman
+.cx
+
+? is your mother young -er than you
+.cx
+
+? does Susan have a bike
+.cx
+
+? how old is Mum
+.cx
+
+? do you have any friend -s
+.cx
+
+? what is your mother 's favorite singer
+.cx
+
+? do you like tomato -s
+.cx
+
+? do you like to eat chip -s
+.cx
+
+? what is the forearm
+.cx
+
+? how many sister -s do you have
+.cx
+
+.bx 20 tell me a big reptile
+
+? what is the wrist
+.cx
+
+? do you like to eat vegetable -s
+.cx
+
+? what is the trout
+.cx
+? what kind of animal
+.x
+
+? does Letizia like book -s
+.cx
+
+? how old is your aunt
+.cx
+
+? where is the hip
+.cx
+
+? what is the gum
+.cx
+
+? does Dad like to read book -s
+.cx
+
+? do you have any book -s
+.cx
+
+? what is the dolphin
+.cx
+? what kind of animal
+.x
+
+? what can you do with your feet
+.cx
+
+? is Lisa a woman
+.cx
+
+? is Matt a man
+.cx
+
+? what is Dad do -ing
+.cx
+
+? what is the hawk
+.cx
+? what kind of animal
+.x
+
+.bx 20 tell me a dangerous mammal
+
+? does Dad like to cook
+.cx
+
+? how old is Susan
+.cx
+
+.bx 20 tell me a small amphibian
+
+? what is the lion
+.cx
+? what kind of animal
+.x
+
+? what is the dog
+.cx
+? what kind of animal
+.x
+
+? what is the bee
+.cx
+? what kind of animal
+.x
+
+? what is the pigeon
+.cx
+? what kind of animal
+.x
+
+? what is your sister 's name
+.cx
+
+? how old is Daniel
+.cx
+
+? does your mother like music
+.cx
+
+? what does Laura do
+.cx
+
+? is your friend old -er than you
+.cx
+
+? do you like to watch movie -s
+.cx
+
+? what are the wrist -s
+.cx
+
+? who cut -s the hair
+.cx
+
+? what is the fox
+.cx
+? what kind of animal
+.x
+
+? what is the ear
+.cx
+
+? what is the salmon
+.cx
+? what kind of animal
+.x
+
+? how many friend -s do you have
+.cx
+
+? what does Letizia do
+.cx
+
+? does your father have a car
+.cx
+
+? is Mum a man
+.cx
+
+? what is the cobra
+.cx
+? what kind of animal
+.x
+
+? what is Letizia do -ing
+.cx
+
+? is Oliver young -er than you
+.cx
+
+.bx 20 tell me a big bird
+
+? what is the mouse
+.cx
+? what kind of animal
+.x
+
+? does Letizia like to eat candy -s
+.cx
+
+? how many Grandpa -s do you have
+.cx
+
+? what is the tuna
+.cx
+? what kind of animal
+.x
+
+.bx 20 tell me a fast reptile
+
+? does your sister like sport
+.cx
+
+? where is the forearm
+.cx
+
+? how many Grandma -s do you have
+.cx
+
+? is Kate young -er than you
+.cx
+
+? what is the toad
+.cx
+? what kind of animal
+.x
+
+? what is Susan 's favorite game
+.cx
+
+? is Letizia a girl
+.cx
+
+? is Vivian a boy
+.cx
+
+? do you have any aunt -s
+.cx
+
+? what is the cockchafer
+.cx
+? what kind of animal
+.x
+
+? what is Dad 's favorite music
+.cx
+
+? what is the arm
+.cx
+
+? do you have any cartoon -s
+.cx
+
+? what is Susan do -ing
+.cx
+
+? does Letizia have a videogame
+.cx
+
+? does Dad like to watch the tv
+.cx
+
+? where is the gum
+.cx
+
+? what is the thigh
+.cx
+
+? who is Daniel
+.cx
+
+? does your friend like book -s
+.cx
+
+? do you like to eat ice_cream
+.cx
+
+? what does Matt do
+.cx
+
+? does your friend have a videogame
+.cx
+
+? what can you do with your teeth
+.cx
+
+? where is the forehead
+.cx
+
+? how old is Dad
+.cx
+
+.bx 20 tell me a fast insect
+
+? does your friend like to eat candy -s
+.cx
+
+? what is the lizard
+.cx
+? what kind of animal
+.x
+
+? what is the bear
+.cx
+? what kind of animal
+.x
+
+? is Ben a woman
+.cx
+
+? how old is Kevin
+.cx
+
+? what is the lip
+.cx
+
+? what is the hip
+.cx
+
+? what is the elbow
+.cx
+
+? what is the elephant
+.cx
+? what kind of animal
+.x
+
+? what movie -s do men like to watch
+.cx
+
+? do you like to eat salad
+.cx
+
+? what does your father do
+.cx
+
+? is your mother old -er than you
+.cx
+
+? does Mum like sport
+.cx
+
+? where are the eyelash -s
+.cx
+
+? where is the palm
+.cx
+
+? who is Lisa
+.cx
+
+? is Susan young -er or old -er than you
+.cx
+
+? what is the palate
+.cx
+
+? who is Vivian
+.cx
+
+? what does Vivian do
+.cx
+
+? who is old -er Misty or Oliver
+.cx
+
+? is Letizia young -er or old -er than you
+.cx
+
+? where is the hand
+.cx
+
+? does your mother like to drive the car
+.cx
+
+? what is the cod
+.cx
+? what kind of animal
+.x
+
+? do you like to visit your relative -s
+.cx
+
+? who is Carol
+.cx
+
+? does your sister have a bike
+.cx
+
+? is Misty old -er than you
+.cx
+
+? is Susan a boy
+.cx
+
+? what is the catfish
+.cx
+? what kind of animal
+.x
+
+? what is Vivian 's favorite game
+.cx
+
+? do you have any brother -s
+.cx
+
+? is Kate a girl
+.cx
+
+? what does Ben do
+.cx
+
+? do you like to watch cartoon -s
+.cx
+
+? how old is your Grandpa
+.cx
+
+? who is Mum
+.cx
+
+? how old is George
+.cx
+
+? what is the chest
+.cx
+
+? who is old -er Grace or George
+.cx
+
+? do you like sport
+.cx
+
+? how old is Vivian
+.cx
+
+? where is the wrist
+.cx
+
+? does your mother like flower -s
+.cx
+
+? how many videogame -s do you have
+.cx
+
+? what is Mum 's favorite singer
+.cx
+
+? where is the ankle
+.cx
+
+? what is Oliver 's favorite game
+.cx
+
+? is Lisa a man or a woman
+.cx
+
+.bx 20 tell me a small bird
+
+.bx 20 tell me a dangerous reptile
+
+? what is the newt
+.cx
+? what kind of animal
+.x
+
+? what is your mother 's name
+.cx
+
+? what is the salamander
+.cx
+? what kind of animal
+.x
+
+? is Daniel a man or a woman
+.cx
+
+? is Grace young -er than you
+.cx
+
+? what are the forearm -s
+.cx
+
+? does your mother like to answer the phone
+.cx
+
+? is Kate young -er or old -er than you
+.cx
+
+? does your sister like to eat vegetable -s
+.cx
+
+? who is old -er Oliver or Misty
+.cx
+
+? where is the umbilicus
+.cx
+
+? is Oliver young -er or old -er than you
+.cx
+
+? what is Vivian 's favorite cartoon
+.cx
+
+? does Susan like to play the piano
+.cx
+
+? does Susan like to watch cartoon -s
+.cx
+
+? what is the rattlesnake
+.cx
+? what kind of animal
+.x
+
+? who build -s the house -s
+.cx
+
+? what is the eyelash
+.cx
+
+? do you like animal -s
+.cx
+
+? how old is your Grandma
+.cx
+
+tell me an insect
+.xr
+
+? how old is your uncle
+.cx
+
+? who is old -er Letizia or Misty
+.cx
+
+? what are the arm -s
+.cx
+
+? who drive -s the bus
+.cx
+
+tell me a reptile
+.xr
+
+? what does Sally do
+.cx
+
+? where is the tooth
+.cx
+
+tell me an amphibian
+.xr
+
+? what are the ear -s
+.cx
+
+? what is the cormorant
+.cx
+? what kind of animal
+.x
+
+? where is the neck
+.cx
+
+? does your father have a boat
+.cx
+
+? does your father like to watch the tv
+.cx
+
+? who is Steven
+.cx
+
+? is Dad a woman
+.cx
+
+? what does your friend do
+.cx
+
+? is Grace a boy or a girl
+.cx
+
+? how old is your friend
+.cx
+
+? is Carol a man
+.cx
+
+? do you like salad
+.cx
+
+? what is Letizia 's favorite color
+.cx
+
+? what is the horse
+.cx
+? what kind of animal
+.x
+
+? what is the alligator
+.cx
+? what kind of animal
+.x
+
+? does Mum like music
+.cx
+
+? what is the leg
+.cx
+
+? how old is Grace
+.cx
+
+? do you have any videogame -s
+.cx
+
+? what is the cicada
+.cx
+? what kind of animal
+.x
+
+? where is the bellybutton
+.cx
+
+? what is the wasp
+.cx
+? what kind of animal
+.x
+
+? what is the whale
+.cx
+? what kind of animal
+.x
+
+? what is the forehead
+.cx
+
+? where is the leg
+.cx
+
+? does your mother like comic -s
+.cx
+
+? where is the mouth
+.cx
+
+? is your friend young -er than you
+.cx
+
+? what is the crocodile
+.cx
+? what kind of animal
+.x
+
+? what is the waist
+.cx
+
+? is Kevin old -er than you
+.cx
+
+? how many aunt -s do you have
+.cx
+
+? is Laura a man or a woman
+.cx
+
+.bx 20 tell me a small insect
+
+? what does Dad do
+.cx
+
+? is Mum a man or a woman
+.cx
+
+? what are the eyelid -s
+.cx
+
+? what does Mum do
+.cx
+
+? what is Mum 's favorite movie
+.cx
+
+? what is Oliver 's favorite sport
+.cx
+
+? does Mum like to play the piano
+.cx
+
+? does your father like to cook
+.cx
+
+? who work -s in the boat
+.cx
+
+? is Letizia a boy or a girl
+.cx
+
+? does your father like candy -s
+.cx
+
+? how many pet -s do you have
+.cx
+
+? who write -s in the newspaper
+.cx
+
+? what can you do with your hand -s
+.cx
+
+? what are the eyebrow -s
+.cx
+
+? where is the chest
+.cx
+
+? does your sister like doll -s
+.cx
+
+? where is the cheek
+.cx
+
+? what is Oliver do -ing
+.cx
+
+? how old is Grandma Laura
+.cx
+
+? what is the goldfish
+.cx
+? what kind of animal
+.x
+
+? what is the tiger
+.cx
+? what kind of animal
+.x
+
+? is Matt a man or a woman
+.cx
+
+? is Daniel a woman
+.cx
+
+? who is Letizia
+.cx
+
+? does your mother like to play the piano
+.cx
+
+? what is the chin
+.cx
+
+? what is the sardine
+.cx
+? what kind of animal
+.x
+
+? what is the sheep
+.cx
+? what kind of animal
+.x
+
+? who is old -er Oliver or Letizia
+.cx
+
+? where is the foot
+.cx
+
+? does your father like music
+.cx
+
+? what is the bream
+.cx
+? what kind of animal
+.x
+
+? is Kate a boy
+.cx
+
+? where is the face
+.cx
+
+? where is the finger
+.cx
+
+? is Laura a woman
+.cx
+
+? what is the grasshopper
+.cx
+? what kind of animal
+.x
+
+? does your sister like book -s
+.cx
+
+? what can you do with your leg -s
+.cx
+
+? does Dad have a car
+.cx
+
+? how old is Matt
+.cx
+
+? what is the eyelid
+.cx
+
+? do you have any toy -s
+.cx
+
+? what is the dove
+.cx
+? what kind of animal
+.x
+
+? does your mother have a brother
+.cx
+
+? how old is your sister
+.cx
+
+.bx 20 tell me a domestic mammal
+
+.bx 20 tell me a small mammal
+
+? does Mum like to drive the car
+.cx
+
+? what is the parrot
+.cx
+? what kind of animal
+.x
+
+? does your friend like candy -s
+.cx
+
+? who work -s in the hospital
+.cx
+
+? what is the cheek
+.cx
+
+? does Susan like to read book -s
+.cx
+
+? does your friend like to play videogame -s
+.cx
+
+? is Kevin young -er than you
+.cx
+
+? how old is Sally
+.cx
+
+? who is old -er Letizia or Vivian
+.cx
+
+? what does Tom do
+.cx
+
+? what is the mouth
+.cx
+
+? who is old -er Kevin or Misty
+.cx
+
+? what are the thigh -s
+.cx
+
+? what is your friend 's favorite cartoon
+.cx
+
+? do you like videogame -s
+.cx
+
+? what is the viper
+.cx
+? what kind of animal
+.x
+
+? where is the palate
+.cx
+
+? does Mum have a car
+.cx
+
+? what is the swordfish
+.cx
+? what kind of animal
+.x
+
+? does your friend like to play with doll -s
+.cx
+
+? what is the eagle
+.cx
+? what kind of animal
+.x
+
+? what is Mum do -ing
+.cx
+
+? is Vivian a boy or a girl
+.cx
+
+? is Laura a man
+.cx
+
+? what is the frog
+.cx
+? what kind of animal
+.x
+
+? is Oliver old -er than you
+.cx
+
+? what does Carol do
+.cx
+
+? does your sister like to watch cartoon -s
+.cx
+
+.bx 20 tell me a dangerous insect
+
+? do you have any cousin -s
+.cx
+
+? who is Sally
+.cx
+
+? does Susan like sport
+.cx
+
+? where are the leg -s
+.cx
+
+? is George old -er than you
+.cx
+
+? is Steven a woman
+.cx
+
+? is Kevin young -er or old -er than you
+.cx
+
+? do you like vegetable -s
+.cx
+
+? where is the thigh
+.cx
+
+? what movie -s do children like to watch
+.cx
+
+? is Tom young -er or old -er than you
+.cx
+
+? what is the fly
+.cx
+? what kind of animal
+.x
+
+? who is Dad
+.cx
+
+? who is Susan
+.cx
+
+? do you have any Grandma -s
+.cx
+
+? what does Misty do
+.cx
+
+? who is Ben
+.cx
+
+? where is the knee
+.cx
+
+? is Grace a boy
+.cx
+
+? does Dad like to drive the car
+.cx
+
+? does your father like to drive the car
+.cx
+
+? how old is Letizia
+.cx
+
+? what is the turtle
+.cx
+? what kind of animal
+.x
+
+? where is the nose
+.cx
+
+? what is the pelican
+.cx
+? what kind of animal
+.x
+
+? what is the eye
+.cx
+
+? what is your friend 's favorite color
+.cx
+
+? how many cousin -s do you have
+.cx
+
+? what is the foot
+.cx
+
+? is Susan a boy or a girl
+.cx
+
+? what does your sister do
+.cx
+
+? what is the cat
+.cx
+? what kind of animal
+.x
+
+? what does Daniel do
+.cx
+
+.bx 20 tell me a small reptile
+
+? what is the vulture
+.cx
+? what kind of animal
+.x
+
+? is Misty a boy
+.cx
+
+? how old is Lisa
+.cx
+
+? what is the flamingo
+.cx
+? what kind of animal
+.x
+
+.bx 20 tell me a domestic bird
+
+? what is Letizia 's favorite cartoon
+.cx
+
+? do you like dog -s
+.cx
+
+? do you like chip -s
+.cx
+
+? what is the chicken
+.cx
+? what kind of animal
+.x
+
+? does Letizia like to play with doll -s
+.cx
+
+? what are the leg -s
+.cx
+
+? who is Oliver
+.cx
+
+? is Misty young -er than you
+.cx
+
+? is Misty a girl
+.cx
+
+? is Ben a man or a woman
+.cx
+
+tell me a fish
+.xr
+
+? does Mum have a brother
+.cx
+
+? what is the hummingbird
+.cx
+? what kind of animal
+.x
+
+? does Mum like comic -s
+.cx
+
+? what does Kevin do
+.cx
+
+? how old is Grandpa Steven
+.cx
+
+? what can you do with your ear -s
+.cx
+
+? what is the head
+.cx
+
+? how old is Tom
+.cx
+
+? what is the ostrich
+.cx
+? what kind of animal
+.x
+
+? is Letizia old -er than you
+.cx
+
+? does Dad like candy -s
+.cx
+
+? what is your favorite game
+.cx
+
+? is Lisa a man
+.cx
+
+? does Letizia like doll -s
+.cx
+
+? do you like to eat chocolate
+.cx
+
+? is Misty young -er or old -er than you
+.cx
+
+? is Grace young -er or old -er than you
+.cx
+
+? what are the eyelash -s
+.cx
+
+? is Steven a man
+.cx
+
+? does Susan like doll -s
+.cx
+
+.bx 20 tell me a big mammal
+
+? how old is your father
+.cx
+
+.bx 20 tell me a fast bird
+
+.time
+.logfile off

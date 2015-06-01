@@ -1,0 +1,6 @@
+
+? what are the knee -s 
+.po* /what are//they are/
+.wg /knee -s/the knee -s are the joint -s/the knee -s are/
+.snto
+

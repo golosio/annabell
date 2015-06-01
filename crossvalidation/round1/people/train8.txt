@@ -1,0 +1,10 @@
+
+? does your mother have a car
+.pg /your mother/Mum is your mother/Mum/
+.rip
+.ph /a car/Mum does not have a car/does not have/
+.drop_goal
+.po* /does not//no/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.o does not have a car
+

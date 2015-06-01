@@ -1,0 +1,26 @@
+#corridor-hall-library
+you are in the corridor
+to the east there is the bedroom
+to the north there is the bathroom
+to the west there is the hall
+to the south there is the studio
+? what do you want to do
+go to the library
+.cx
+ -> east
+.
+east
+
+ >>> End context
+you are in the hall
+to the east there is the corridor
+to the north there is the library
+to the west there is the living_room
+to the south there is the garden
+? what do you want to do
+.x
+ -> north
+.
+north
+
+ >>> End context

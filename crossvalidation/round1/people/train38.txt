@@ -1,0 +1,6 @@
+
+? what is your favorite toy
+.po* /your//my/
+.wg /favorite toy/your favorite toy is Barbie/your/
+.snto
+

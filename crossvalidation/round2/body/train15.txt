@@ -1,0 +1,9 @@
+
+? what can you do with your hand -s
+.po* with
+.po* /your//my/
+.po* hand -s
+.po* /you//I/
+.wg /with your hand/with your hand -s you can play/you/
+.snto
+

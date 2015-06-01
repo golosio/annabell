@@ -1,0 +1,6 @@
+
+? what are the eyebrow -s 
+.po* /what are//they are/
+.wg /eyebrow -s/the eyebrow -s are the stripe -s/the eyebrow -s are/
+.snto
+

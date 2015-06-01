@@ -1,0 +1,7 @@
+
+? how old is your cousin
+.ph /cousin/you have two cousin -s//
+.rip
+.po* /your//? which/
+.o cousin
+

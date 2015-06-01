@@ -1,0 +1,16 @@
+
+? is Letizia young -er or old -er than you
+.pg /Letizia/Letizia is five year -s old/five/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /Letizia/the personal pronoun for Letizia is she/she/
+.po* is
+.wg old -er
+.drop_goal
+.rw
+

@@ -1,0 +1,19 @@
+
+tell me a mammal
+.xr
+
+tell me a bird
+.xr
+
+#tell me a fish
+#.xr
+#
+tell me an amphibian
+.xr
+
+tell me a reptile
+.xr
+
+tell me an insect
+.xr
+

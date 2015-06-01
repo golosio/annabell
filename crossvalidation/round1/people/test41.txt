@@ -1,0 +1,70 @@
+
+#? what does Lisa do
+#.cx
+#Lisa is a clerk
+#
+? what does Mum do
+.cx
+#Mum is a journalist
+
+? what does Sally do
+.cx
+#Sally is a secretary
+
+? what does Laura do
+.cx
+#Laura is a doctor
+
+#? what does Steven do
+#.cx
+#Steven is a doctor
+#
+? what does Dad do
+.cx
+#Dad is a teacher
+
+? what does Ben do
+.cx
+#Ben is a businessman
+
+? what does Matt do
+.cx
+#Matt is a fireman
+
+#? what does Susan do
+#.cx
+#Susan go -es to the school
+#
+? what does Letizia do
+.cx
+#go -es to the kindergarten
+
+? what does Vivian do
+.cx
+#go -es to the kindergarten
+
+? what does Misty do
+.cx
+#go -es to the kindergarten
+
+#? what does Oliver do
+#.cx
+# go -es to the school
+#
+
+? what does Tom do
+.cx
+#go -es to the kindergarten
+
+? what does Kevin do
+.cx
+#go -es to the kindergarten
+
+? what does Carol do
+.cx
+#is a clerk
+
+? what does Daniel do
+.cx
+#is a driver
+

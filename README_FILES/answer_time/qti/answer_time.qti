@@ -1,0 +1,243 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+answer_time_sample	11	2	4/26/14 4:53 PM
+geometry	445	10	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel	/home/golosio/sllm/devel/v_cu_5.53/sessions/answer_time_sample.dat	2
+<data>
+0	2161000	18.045
+1	4003000	19.575
+2	6028000	21.033
+3	8097000	22.29
+4	10220000	23.373
+5	12080000	24.499
+6	14070000	25.638
+7	16070000	27.138
+8	18230000	28.157
+9	20160000	29.536
+10	22070000	30.533
+</data>
+</table>
+<table>
+answer_time_cuda	11	2	4/26/14 4:53 PM
+geometry	921	59	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel	/home/golosio/sllm/devel/v_cu_5.53/sessions/answer_time_cuda.dat	2
+<data>
+0	2161000	7.822
+1	4003000	7.936
+2	6028000	8.184
+3	8097000	8.179
+4	10220000	8.335
+5	12080000	8.422
+6	14070000	8.634
+7	16070000	9.003
+8	18230000	8.984
+9	20160000	9.241
+10	22070000	9.485
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	4/26/14 4:55 PM
+geometry	552	107	523	477	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	4	505	414
+<PageGeometry>0.00970874	0.00932401	0.980583	0.965035</PageGeometry>
+PlotTitle	Answer time	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Number of allocated links	answer time(s)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	14	75	0	0	0
+ScaleFont0	Ubuntu	12	75	0	0	0
+ScaleFont1	Ubuntu	12	75	0	0	0
+ScaleFont2	Ubuntu	12	75	0	0	0
+ScaleFont3	Ubuntu	12	75	0	0	0
+AxisFont0	Ubuntu	12	50	0	0	0
+AxisFont1	Ubuntu	12	50	0	0	0
+AxisFont2	Ubuntu	12	50	0	0	0
+AxisFont3	Ubuntu	12	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#1f1c1b	#1f1c1b	#1f1c1b	#1f1c1b
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	answer_time_sample_1	answer_time_sample_2	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	10	1
+curve	answer_time_cuda_1	answer_time_cuda_2	1	0	#00ff00	0	1	7	2	#00ff00	#00ff00	0	#000000	14	1	2	0	0	10	1
+<Function>
+<Type>0</Type>
+<Title>LinearFit3</Title>
+<Expression>A*x+B</Expression>
+<Variable>x</Variable>
+<Range>2161000	22230000</Range>
+<Points>2</Points>
+<Constant>A	6.1821906580372e-07</Constant>
+<Constant>B	17.057267999284</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff0000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>LinearFit4</Title>
+<Expression>A*x+B</Expression>
+<Variable>x</Variable>
+<Range>2161000	22230000</Range>
+<Points>2</Points>
+<Constant>A	7.4529943398108e-08</Constant>
+<Constant>B	7.6355367642724</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#0000ff</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	35	0	8	5	0	0
+scale	1	0	35	0	8	5	0	0
+scale	2	0	25000000	0	6	5	0	0
+scale	3	0	25000000	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>1740139.2111369</x>
+<y>31.606060606061</y>
+<right>7124010.55408971</right>
+<bottom>30.5813953488372</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)CPU
+\l(2)GPU
+</Text>
+<Font>Ubuntu	12	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>
+<log>
+[4/26/14 4:55 PM	Plot: ''Graph1'']
+Linear Regression of dataset: answer_time_sample_2, using function: A*x+B
+Weighting Method: No weighting
+From x = 5.216000000000000e+06 to x = 4.521000000000000e+07
+B (y-intercept) = 5.780179111398719e+00 +/- 2.416480226534928e-01
+A (slope) = 2.733817673224906e-07 +/- 8.494093515266098e-09
+--------------------------------------------------------------------------------------
+Chi^2/doF = 1.109397948907818e-01
+R^2 = 0.993287750331049
+Adjusted R^2 = 0.991050333774732
+RMSE (Root Mean Squared Error) = 0.333076259872693
+RSS (Residual Sum of Squares) = 0.776578564235472
+---------------------------------------------------------------------------------------
+[4/26/14 5:12 PM	Plot: ''Graph1'']
+Linear Regression of dataset: answer_time_cuda_2, using function: A*x+B
+Weighting Method: No weighting
+From x = 5.216000000000000e+06 to x = 4.521000000000000e+07
+B (y-intercept) = 6.423353985500231e+00 +/- 9.828469183341464e-02
+A (slope) = 6.403601387104654e-08 +/- 3.454774238931962e-09
+--------------------------------------------------------------------------------------
+Chi^2/doF = 1.835238991442313e-02
+R^2 = 0.980032248117543
+Adjusted R^2 = 0.97337633082339
+RMSE (Root Mean Squared Error) = 0.135470992889338
+RSS (Residual Sum of Squares) = 0.128466729400961
+---------------------------------------------------------------------------------------
+
+[6/3/14 10:34 PM	Plot: ''Graph1'']
+Linear Regression of dataset: answer_time_sample_2, using function: A*x+B
+Weighting Method: No weighting
+From x = 2.161000000000000e+06 to x = 1.823000000000000e+07
+B (y-intercept) = 1.705726799928434e+01 +/- 1.515063725106477e-01
+A (slope) = 6.182190658037238e-07 +/- 1.333646558768770e-08
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.308289018334208e-02
+R^2 = 0.996752999916737
+Adjusted R^2 = 0.99567066655565
+RMSE (Root Mean Squared Error) = 0.20756418328638
+RSS (Residual Sum of Squares) = 0.301580231283395
+---------------------------------------------------------------------------------------
+[6/3/14 10:35 PM	Plot: ''Graph1'']
+Linear Regression of dataset: answer_time_cuda_2, using function: A*x+B
+Weighting Method: No weighting
+From x = 2.161000000000000e+06 to x = 1.823000000000000e+07
+B (y-intercept) = 7.635536764272385e+00 +/- 6.889958869945555e-02
+A (slope) = 7.452994339810832e-08 +/- 6.064939569664289e-09
+--------------------------------------------------------------------------------------
+Chi^2/doF = 8.909970958507386e-03
+R^2 = 0.955699290988572
+Adjusted R^2 = 0.940932387984762
+RMSE (Root Mean Squared Error) = 0.0943926425019841
+RSS (Residual Sum of Squares) = 0.0623697967095516
+---------------------------------------------------------------------------------------
+
+</log>

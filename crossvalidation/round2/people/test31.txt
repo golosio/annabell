@@ -1,0 +1,13 @@
+
+#? is your sister old -er than you
+#.cx
+#
+? is your friend old -er than you
+.cx
+
+? is your father old -er than you
+.cx
+
+? is your mother old -er than you
+.cx
+

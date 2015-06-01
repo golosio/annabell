@@ -1,0 +1,193 @@
+4,8d3
+< a pet is a little animal
+< baby -s do not go to the school
+< baby -s often cry
+< because you can go to the sea
+< Ben
+10d4
+< Ben is a male person
+11a6
+> Ben is your Grandpa
+13,14c8
+< Carol
+< Carol is a female person
+---
+> Carol is a clerk
+15a10
+> Carol is your Grandma
+19a15
+> Dad does not like candy -s
+24,25d19
+< Dad has a sister
+< Dad is a male person
+33d26
+< Dad like -s to play the piano
+35,36d27
+< Dad like -s to watch tv
+< Dad 's favorite game is Monkey Island
+39,41d29
+< Dad 's name is Bruce
+< Daniel and
+< Daniel has a wife
+43d30
+< Daniel is a male person
+45c32,33
+< Daniel is the brother
+---
+> Daniel is forty_four year -s old
+> Daniel is your uncle
+53,54d40
+< George is a little boy
+< George is a male person
+57d42
+< Grace is a female person
+59d43
+< Grace is a little girl
+62,63d45
+< Grandma is a female person
+< Grandma is a woman
+66,68d47
+< Grandpa is a male person
+< Grandpa is a man
+< Grandpa Steven is a doctor
+70d48
+< Grandpa Steven work -s in the hospital
+72d49
+< Kate is a female person
+74d50
+< Kate is a little girl
+78,79d53
+< Kevin is a little boy
+< Kevin is a male person
+81d54
+< Laura and
+83d55
+< Laura is a female person
+84a57
+> Laura is your Grandma
+86a60
+> Letizia does not like soup
+90c64
+< Letizia is a female person
+---
+> Letizia has a cat
+93a68
+> Letizia like -s candy -s
+94a70,71
+> Letizia like -s to eat candy -s
+> Letizia like -s to play with doll -s
+96c73
+< Lisa and
+---
+> Letizia 's favorite color is yellow
+98d74
+< Lisa is a female person
+100c76,77
+< Lisa is your father 's sister
+---
+> Lisa is forty year -s old
+> Lisa is your aunt
+102d78
+< Matt
+104d79
+< Matt is a male person
+106c81,82
+< Matt is the brother
+---
+> Matt is twenty_eight year -s old
+> Matt is your uncle
+109d84
+< Misty is a female person
+111d85
+< Misty is a little girl
+113d86
+< Mum cook -s
+116a90
+> Mum does not like to answer the phone
+119d92
+< Mum is a female person
+128c101
+< Mum like -s to watch the tv
+---
+> Mum 's favorite movie is Pretty Woman
+130d102
+< Mum 's name is Cindy
+132,136d103
+< of your father
+< of your mother
+< Oliver does not have a guitar
+< Oliver does not like to go to school
+< Oliver does not like to study
+139d105
+< Oliver is a male person
+142,144d107
+< Oliver like -s sport
+< Oliver like -s to play football
+< Oliver like -s to play videogame -s
+148,149d110
+< Sally
+< Sally is a female person
+152,153c113,114
+< Sally is Daniel 's wife
+< Steven and
+---
+> Sally is twenty_six year -s old
+> Sally is your aunt
+155d115
+< Steven is a male person
+156a117
+> Steven is your Grandpa
+160d120
+< Susan does not like to eat soup
+165,166d124
+< Susan has an umbrella
+< Susan is a female person
+172a131
+> Susan like -s to watch cartoon -s
+178d136
+< the doctor work -s in the hospital
+190,191d147
+< Tom is a little boy
+< Tom is a male person
+199d154
+< Vivian is a female person
+206,207d160
+< when you are sick you go to the doctor
+< when you were little you were a baby
+211d163
+< you are afraid of the dark
+213d164
+< you are a little girl
+215d165
+< you can go on the bike -s with train -ing wheel -s
+220d169
+< you do not have brother -s
+228a178
+> you do not like to visit your relative -s
+232d181
+< you have a friend
+235d183
+< you have no brother -s
+239a188,189
+> you have some cartoon -s
+> you have some photo_album -s
+246d195
+< you like Barbie
+250,254c199,200
+< you like chocolate
+< you like ice_cream
+< you like little dog -s
+< you like the summer
+< you like to draw
+---
+> you like dog -s
+> you like ice_cream -s
+261d206
+< you live in Sassari
+263d207
+< your aunt 's name -s are
+270,271d213
+< your Grandma 's name -s are
+< your Grandpa 's name -s are
+275d216
+< your uncle 's name -s are

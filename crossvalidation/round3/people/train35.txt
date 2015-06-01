@@ -1,0 +1,39 @@
+
+? does Mum like comic -s
+.pg /Mum & comic -s/Mum like -s comic -s/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does Mum like comic -s
+.pg /Mum & comic -s/Mum does not like comic -s/does not like/
+.po* /does not like//no/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg does not
+.drop_goal
+.rw
+
+? does your mother like comic -s
+.pg comic -s
+.rip
+.wg /your mother/Mum is your mother/Mum/
+.ph //Mum like -s comic -s/like -s/
+.po* /like -s//yes/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg /like -s//does/
+.drop_goal
+.rw
+
+? does your mother like comic -s
+.pg comic -s
+.rip
+.wg /your mother/Mum is your mother/Mum/
+.ph //Mum does not like comic -s/does not like/
+.po* /does not like//no/
+.po* /Mum/the personal pronoun for Mum is she/she/
+.wg does not
+.drop_goal
+.rw
+

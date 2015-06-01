@@ -1,0 +1,6 @@
+
+? where is the gum
+.po* /where is//it is/
+.wg /gum/the gum is inside the mouth/the gum is/
+.snto
+

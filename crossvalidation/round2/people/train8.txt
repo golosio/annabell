@@ -1,0 +1,10 @@
+
+? does your father have a boat
+.pg /your father/Dad is your father/Dad/
+.rip
+.ph /a boat/Dad does not have a boat/does not have/
+.drop_goal
+.po* /does not//no/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o does not have a boat
+

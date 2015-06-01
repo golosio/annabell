@@ -1,0 +1,9 @@
+
+? is Carol a woman
+.pg /Carol/Carol is a woman/a woman/
+.rip
+.po* /? is//yes/
+.po* /Carol/the personal pronoun for Carol is she/she/
+.ggp
+.drop_goal
+.o is a woman

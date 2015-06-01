@@ -1,0 +1,10 @@
+
+? does your father have a car
+.pg /your father/Dad is your father/Dad/
+.rip
+.ph /a car/Dad has a car//
+.drop_goal
+.po* /has//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /has//does/
+

@@ -1,0 +1,6 @@
+
+? what are the ankle -s 
+.po* /what are//they are/
+.wg /ankle -s/the ankle -s are the joint -s/the ankle -s are/
+.snto
+

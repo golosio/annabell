@@ -1,0 +1,9 @@
+
+? what can you do with your feet
+.po* with
+.po* /your//my/
+.po* feet
+.po* /you//I/
+.wg /with your feet/with your feet you can walk/you/
+.snto
+

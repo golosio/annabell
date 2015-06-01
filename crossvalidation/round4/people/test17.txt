@@ -1,0 +1,19 @@
+
+? is Susan a boy or a girl
+.cx
+
+? is Letizia a boy or a girl
+.cx
+
+#? is Vivian a boy or a girl
+#.cx
+#
+? is Misty a boy or a girl
+.cx
+
+? is Kate a boy or a girl
+.cx
+
+? is Grace a boy or a girl
+.cx
+

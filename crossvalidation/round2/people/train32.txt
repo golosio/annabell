@@ -1,0 +1,29 @@
+
+? who is old -er Letizia or Misty
+.pg /Letizia/Letizia is five year -s old/five/
+.rip
+.wg /Misty/Misty is three year -s old/three/
+.ph three
+.sctx three
+.wg three
+.rip
+.po Letizia
+.rip
+.wg is old -er
+.drop_goal
+.rw
+
+? who is old -er Misty or Letizia
+.pg /Misty/Misty is three year -s old/three/
+.rip
+.wg /Letizia/Letizia is five year -s old/five/
+.ph five
+.sctx three
+.wg three
+.rip
+.po Letizia
+.rip
+.wg is old -er
+.drop_goal
+.rw
+

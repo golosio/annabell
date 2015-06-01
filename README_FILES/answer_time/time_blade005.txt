@@ -1,0 +1,5 @@
+.time
+Elapsed time: 1.39374
+--
+.time
+Elapsed time: 28962.2

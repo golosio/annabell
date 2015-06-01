@@ -1,0 +1,6 @@
+
+? what is the palm
+.po* /what is//it is/
+.wg /palm/the palm is the inside part/the palm is/
+.snto
+

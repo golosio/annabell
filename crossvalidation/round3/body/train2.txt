@@ -1,0 +1,6 @@
+
+? what are the arm -s 
+.po* /what are//they are/
+.wg /arm -s/the arm -s are the part -s/the arm -s are/
+.snto
+

@@ -1,0 +1,284 @@
+? do you have any aunt -s
+? do you have any uncle -s
+? do you have any friend -s
+? do you have any sister -s
+? do you have any book -s
+? do you have any toy -s
+? do you have any cousin -s
+? do you have any cartoon -s
+? do you have any photo_album -s
+? do you have any brother -s
+? do you have any bike -s
+? do you have any videogame -s
+? how many uncle -s do you have
+? how many Grandma -s do you have
+? how many Grandpa -s do you have
+? how many friend -s do you have
+? how many book -s do you have
+? how many toy -s do you have
+? how many cousin -s do you have
+? how many brother -s do you have
+? how many pet -s do you have
+? how many bike -s do you have
+? does Mum have a brother
+? does Susan have a umbrella
+? does Letizia have a cat
+? does Mum have a car
+? does Dad have a boat
+? does Letizia have a videogame
+? does your friend have a cat
+? does your mother have a brother
+? does your sister have a umbrella
+? does your mother have a car
+? does your sister have a bike
+? does your friend have a videogame
+? is Lisa a man
+? is Mum a man
+? is Laura a man
+? is Sally a man
+? is Lisa a woman
+? is Carol a woman
+? is Laura a woman
+? is Sally a woman
+? is Mum a man or a woman
+? is Carol a man or a woman
+? is Laura a man or a woman
+? is Sally a man or a woman
+? is Steven a woman
+? is Ben a woman
+? is Daniel a woman
+? is Matt a woman
+? is Dad a man
+? is Steven a man
+? is Ben a man
+? is Matt a man
+? is Dad a man or a woman
+? is Steven a man or a woman
+? is Ben a man or a woman
+? is Daniel a man or a woman
+? is Letizia a boy
+? is Vivian a boy
+? is Misty a boy
+? is Kate a boy
+? is Grace a boy
+? is Susan a girl
+? is Letizia a girl
+? is Vivian a girl
+? is Kate a girl
+? is Grace a girl
+? is Susan a boy or a girl
+? is Letizia a boy or a girl
+? is Vivian a boy or a girl
+? is Misty a boy or a girl
+? is Grace a boy or a girl
+? what game -s do children like to play
+? what movie -s do women like to watch
+? what book -s do women like to read
+? what movie -s do children like to watch
+? how old is your sister
+? how old is your father
+? how old is your mother
+? how old is your aunt
+? how old is your Grandma
+? how old is your cousin
+? how old is your uncle
+? how old is Susan
+? how old is Oliver
+? how old is Mum
+? how old is Letizia
+? how old is Vivian
+? how old is Tom
+? how old is Kate
+? how old is Misty
+? how old is Daniel
+? how old is Lisa
+? how old is Matt
+? how old is Sally
+? how old is Kevin
+? how old is Grace
+? how old is George
+? how old is Grandma Carol
+? how old is Grandpa Steven
+? how old is Grandpa Ben
+? what is your sister 's name
+? what is your father 's name
+? what is your mother 's name
+? is Susan young -er than you
+? is Letizia young -er than you
+? is Oliver young -er than you
+? is Tom young -er than you
+? is George young -er than you
+? is Kate young -er than you
+? is Grace young -er than you
+? is Kevin young -er than you
+? is Letizia old -er than you
+? is Vivian old -er than you
+? is Oliver old -er than you
+? is George old -er than you
+? is Kate old -er than you
+? is Misty old -er than you
+? is Grace old -er than you
+? is Kevin old -er than you
+? is Letizia young -er or old -er than you
+? is Vivian young -er or old -er than you
+? is Oliver young -er or old -er than you
+? is Tom young -er or old -er than you
+? is George young -er or old -er than you
+? is Kate young -er or old -er than you
+? is Grace young -er or old -er than you
+? is Kevin young -er or old -er than you
+? is your sister young -er than you
+? is your father young -er than you
+? is your mother young -er than you
+? is your friend old -er than you
+? is your father old -er than you
+? is your mother old -er than you
+? who is old -er Susan or Tom
+? who is old -er Letizia or Oliver
+? who is old -er Kate or Misty
+? who is old -er Oliver or Misty
+? who is old -er Tom or Susan
+? who is old -er Oliver or Letizia
+? who is old -er Misty or Kate
+? who is old -er Misty or Oliver
+? who is old -er Letizia or Vivian
+? who is old -er George or Kate
+? who is old -er Tom or Kevin
+? who is old -er Kevin or Misty
+? does Dad like to drive the car
+? does Susan like to read book -s
+? does Mum like to watch the tv
+? does Dad like to watch the tv
+? does Letizia like to play with doll -s
+? does Letizia like to eat candy -s
+? does Susan like to watch cartoon -s
+? does Mum like to drive the car
+? does Dad like to read book -s
+? does Letizia like to watch the tv
+? does Letizia like to play videogame -s
+? does Mum like to answer the phone
+? does Susan like to eat vegetable -s
+? does Dad like to cook
+? does your father like to drive the car
+? does your sister like to read book -s
+? does your mother like to watch the tv
+? does your father like to watch the tv
+? does your friend like to play with doll -s
+? does your friend like to eat candy -s
+? does your sister like to watch cartoon -s
+? does your mother like to drive the car
+? does your father like to read book -s
+? does your friend like to watch the tv
+? does your friend like to play videogame -s
+? does your mother like to answer the phone
+? does your sister like to eat vegetable -s
+? does your father like to cook
+? does Mum like flower -s
+? does Dad like comic -s
+? does Susan like book -s
+? does Susan like chocolate
+? does Dad like music
+? does Mum like music
+? does Letizia like candy -s
+? does Mum like comic -s
+? does Dad like flower -s
+? does Susan like doll -s
+? does Dad like candy -s
+? does Letizia like soup
+? does Susan like sport
+? does Mum like sport
+? does your mother like flower -s
+? does your father like comic -s
+? does your sister like book -s
+? does your sister like chocolate
+? does your father like music
+? does your mother like music
+? does your friend like candy -s
+? does your mother like comic -s
+? does your father like flower -s
+? does your sister like doll -s
+? does your father like candy -s
+? does your friend like soup
+? does your sister like sport
+? does your mother like sport
+? do you like to eat chip -s
+? do you like to play with doll -s
+? do you like to eat candy -s
+? do you like to eat ice_cream
+? do you like to eat chocolate
+? do you like to eat vegetable -s
+? do you like to play with videogame -s
+? do you like to eat tomato -s
+? do you like to visit your relative -s
+? do you like to eat salad
+? do you like animal -s
+? do you like cat -s
+? do you like candy -s
+? do you like dog -s
+? do you like ice_cream -s
+? do you like vegetable -s
+? do you like tomato -s
+? do you like mushroom -s
+? do you like sport
+? do you like salad
+? what is your favorite tale
+? what is your favorite game
+? what is your favorite toy
+? what is Susan 's favorite game
+? what is Susan 's favorite cartoon
+? what is Dad 's favorite music
+? what is Mum 's favorite singer
+? what is Oliver 's favorite game
+? what is Oliver 's favorite sport
+? what is Vivian 's favorite game
+? what is Vivian 's favorite cartoon
+? what is Letizia 's favorite color
+? what is Mum 's favorite movie
+? what is Letizia 's favorite cartoon
+? what is your sister 's favorite game
+? what is your mother 's favorite movie
+? what is your father 's favorite music
+? what is your father 's favorite movie
+? what is your mother 's favorite singer
+? what is your friend 's favorite cartoon
+? what is your friend 's favorite color
+? what does Lisa do
+? what does Mum do
+? what does Laura do
+? what does Steven do
+? what does Dad do
+? what does Matt do
+? what does Susan do
+? what does Letizia do
+? what does Misty do
+? what does Oliver do
+? what does Kevin do
+? what does Carol do
+? what does Daniel do
+? what does your mother do
+? what does your father do
+? what does your sister do
+? who work -s in the hospital
+? who write -s in the newspaper
+? who teach -s in the school
+? who extinguish -s the fire
+? who build -s the house -s
+? who cut -s the hair
+? who is Mum
+? who is Susan
+? who is Letizia
+? who is Vivian
+? who is Oliver
+? who is Carol
+? who is Ben
+? who is Laura
+? who is Steven
+? who is Sally
+? who is Lisa
+? who is Matt
+? who is Daniel
+? what is Mum do -ing
+? what is Dad do -ing
+? what is Susan do -ing
+? what is Oliver do -ing
+? what is Vivian do -ing

@@ -1,0 +1,4 @@
+
+tell me an amphibian
+.o /an amphibian/the toad is an amphibian/toad/
+

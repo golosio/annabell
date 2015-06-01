@@ -1,0 +1,6 @@
+
+? where is the face
+.po* /where is//it is/
+.wg /face/the face is at the front/the face is/
+.snto
+

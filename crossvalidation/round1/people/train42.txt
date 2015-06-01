@@ -1,0 +1,12 @@
+
+? what does your mother do
+.ph /your mother/Mum is your mother//
+.po* /Mum/the personal pronoun for Mum is she/she/
+.o /Mum/Mum is a journalist/is a journalist/
+
+? what does your mother do
+.ph /your mother/Mum is your mother//
+.po* /Mum/the personal pronoun for Mum is she/she/
+.ph /Mum/Mum is a woman//
+.o /Mum/Mum is a journalist/is a journalist/
+

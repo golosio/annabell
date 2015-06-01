@@ -1,0 +1,11 @@
+
+what is , it is
+
+? what is the sheep
+.po* /what is//it is/
+.ph /sheep/the sheep is a mammal//
+.o /a mammal/a mammal is an animal/an animal/
+? what kind of animal
+.sctx ? what is the sheep
+.o /sheep/the sheep is a mammal/a mammal/
+

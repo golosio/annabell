@@ -1,0 +1,5 @@
+
+? how old is Dad
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /Dad/Dad is forty_two year -s old/is forty_two year -s old/
+

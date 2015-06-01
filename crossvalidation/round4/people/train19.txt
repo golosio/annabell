@@ -1,0 +1,7 @@
+
+? how old is your sister
+.ph /sister/you have one sister//
+.ph /sister/Susan is your sister//
+.po /Susan/the personal pronoun for Susan is she/she/
+.o  /Susan/Susan is seven year -s old/is seven year -s old/
+

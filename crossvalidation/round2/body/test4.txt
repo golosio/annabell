@@ -1,0 +1,13 @@
+
+? what are the elbow -s
+.cx
+
+? what are the wrist -s
+.cx
+
+? what are the knee -s
+.cx
+
+#? what are the ankle -s
+#.cx
+#

@@ -1,0 +1,16 @@
+
+? is Lisa a man
+.cx
+
+? is Mum a man
+.cx
+
+#? is Carol a man
+#.cx
+#
+? is Laura a man
+.cx
+
+? is Sally a man
+.cx
+

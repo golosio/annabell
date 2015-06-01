@@ -1,0 +1,13 @@
+
+? how old is your sister
+.cx
+
+? how old is your father
+.cx
+
+? how old is your friend
+.cx
+
+#? how old is your mother
+#.cx
+#

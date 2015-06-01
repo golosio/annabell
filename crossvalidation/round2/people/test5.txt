@@ -1,0 +1,13 @@
+
+? does Mum have a brother
+.cx
+
+? does Susan have an umbrella
+.cx
+
+? does Letizia have a cat
+.cx
+
+#? does Dad have a car
+#.cx
+#

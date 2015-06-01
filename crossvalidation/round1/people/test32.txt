@@ -1,0 +1,31 @@
+
+#? who is old -er Susan or Tom
+#.cx
+#
+? who is old -er Letizia or Oliver
+.cx
+
+? who is old -er Letizia or Misty
+.cx
+
+? who is old -er Kate or Misty
+.cx
+
+? who is old -er Oliver or Misty
+.cx
+
+#? who is old -er Tom or Susan
+#.cx
+#
+? who is old -er Oliver or Letizia
+.cx
+
+? who is old -er Misty or Letizia
+.cx
+
+? who is old -er Misty or Kate
+.cx
+
+? who is old -er Misty or Oliver
+.cx
+

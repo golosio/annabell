@@ -1,0 +1,6 @@
+
+? what is your sister 's name
+.ph /your sister/Susan is your sister//
+.po* /Susan/the possessive pronoun for Susan is her/her/
+.o /your sister/your sister 's name is Susan/name is Susan/
+

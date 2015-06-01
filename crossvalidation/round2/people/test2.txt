@@ -1,0 +1,13 @@
+
+? do you have any brother -s
+.cx
+
+#? do you have any pet -s
+#.cx
+#
+? do you have any bike -s
+.cx
+
+? do you have any videogame -s
+.cx
+

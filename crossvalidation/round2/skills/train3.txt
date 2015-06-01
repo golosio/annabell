@@ -1,0 +1,41 @@
+
+tell me a big mammal
+.pg big
+.rip
+.ph /mammal/the elephant is a mammal//
+.ph /elephant/the elephant is big//
+.drop_goal
+.rw
+
+tell me a dangerous mammal
+.pg dangerous
+.rip
+.ph /mammal/the tiger is a mammal//
+.ph /tiger/the tiger is dangerous//
+.drop_goal
+.rw
+
+tell me a domestic mammal
+.pg domestic
+.rip
+.ph /mammal/the cat is a mammal//
+.ph /cat/the cat is domestic//
+.drop_goal
+.rw
+
+tell me a fast mammal
+.pg fast
+.rip
+.ph /mammal/the horse is a mammal//
+.ph /horse/the horse is fast//
+.drop_goal
+.rw
+
+tell me a small mammal
+.pg small
+.rip
+.ph /mammal/the mouse is a mammal//
+.ph /mouse/the mouse is small//
+.drop_goal
+.rw
+

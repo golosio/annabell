@@ -1,0 +1,9 @@
+
+? who is old -er Tom or Kevin
+.pg /Tom/Tom is three year -s old/three/
+.rip
+.ph /Kevin/Kevin is three year -s old//
+.wg /year -s old//they are the same age/
+.drop_goal
+.rw
+

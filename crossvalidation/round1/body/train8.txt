@@ -1,0 +1,6 @@
+
+? where is the ear
+.po* /where is//it is/
+.wg /ear/the ear is at the side/the ear is/
+.snto
+

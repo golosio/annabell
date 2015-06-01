@@ -1,0 +1,20 @@
+
+? is your sister young -er than you
+.ph /your sister/Susan is your sister//
+.pg /Susan/Susan is seven year -s old/seven/
+.rip
+.wg /you/you are four year -s old/four/
+.ph four
+.sctx four
+.drop_goal
+.pg /four/you are four year -s old/you/
+.rip
+.po* /? is//no/
+.ph /your sister/Susan is your sister//
+.po /Susan/the personal pronoun for Susan is she/she/
+.rip
+.po is
+.wg /young -er//old -er/
+.drop_goal
+.rw
+

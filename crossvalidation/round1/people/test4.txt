@@ -1,0 +1,13 @@
+
+? how many brother -s do you have
+.cx
+
+? how many pet -s do you have
+.cx
+
+#? how many bike -s do you have
+#.cx
+#
+? how many videogame -s do you have
+.cx
+

@@ -1,0 +1,13 @@
+.f categories_list.txt
+
+.f categories_howto.txt
+
+.f adjectives_list.txt
+
+.f train3.txt
+
+.f train2.txt
+
+.f train1.txt
+
+.time

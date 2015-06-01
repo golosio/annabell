@@ -1,0 +1,7 @@
+
+? does Dad have a car
+.ph /a car & Dad/Dad has a car//
+.po* /has//yes/
+.po* /Dad/the personal pronoun for Dad is he/he/
+.o /has//does/
+

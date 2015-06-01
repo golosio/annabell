@@ -1,0 +1,36 @@
+? what does Laura do
+.po* /Laura/the personal pronoun for Laura is she/she/
+.o /Laura/Laura is a doctor/is a doctor/
+
+? what does Laura do
+.po* /Laura/the personal pronoun for Laura is she/she/
+.ph /Laura/Laura is a woman//
+.o /Laura/Laura is a doctor/is a doctor/
+
+? what does Matt do
+.po* /Matt/the personal pronoun for Matt is he/he/
+.o /Matt/Matt is a fireman/is a fireman/
+
+? what does Matt do
+.po* /Matt/the personal pronoun for Matt is he/he/
+.ph /Matt/Matt is a man//
+.o /Matt/Matt is a fireman/is a fireman/
+
+? what does Misty do
+.po* /Misty/the personal pronoun for Misty is she/she/
+.o /Misty/Misty go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Misty do
+.po* /Misty/the personal pronoun for Misty is she/she/
+.ph /Misty/Misty is a girl//
+.o /Misty/Misty go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Kevin do
+.po* /Kevin/the personal pronoun for Kevin is he/he/
+.o /Kevin/Kevin go -es to the kindergarten/go -es to the kindergarten/
+
+? what does Kevin do
+.po* /Kevin/the personal pronoun for Kevin is he/he/
+.ph /Kevin/Kevin is a boy//
+.o /Kevin/Kevin go -es to the kindergarten/go -es to the kindergarten/
+

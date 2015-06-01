@@ -1,0 +1,10 @@
+
+? is Laura a man
+.pg /Laura/Laura is a woman/a woman/
+.rip
+.po* /? is//no/
+.po* /Laura/the personal pronoun for Laura is she/she/
+.ggp
+.drop_goal
+.o is a woman
+

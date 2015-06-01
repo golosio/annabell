@@ -1,0 +1,5 @@
+
+? is Sally a man or a woman
+.po* /Sally/the personal pronoun for Sally is she/she/
+.o /Sally/Sally is a woman/is a woman/
+

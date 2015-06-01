@@ -1,0 +1,6 @@
+
+? where is the hand
+.po* /where is//it is/
+.wg /hand/the hand is attach -ed/the hand is/
+.snto
+

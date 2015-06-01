@@ -1,0 +1,34 @@
+
+Ann
+? when will you celebrate your fifth birthday
+.pg when will you celebrate
+.rip
+.ph /fifth birthday/you will celebrate your fifth birthday//
+.ph February the seventh
+.o February the seventh
+#
+? February the sixth
+.ggp
+.ph /fifth birthday/you will celebrate your fifth birthday//
+.ph February the seventh
+.wg February the seventh
+.ggp
+.ph /will you/to the question ? will you//
+.ph you can answer yes or no 
+.po no
+.ggp
+.ph /fifth birthday/you will celebrate your fifth birthday//
+.ph February the seventh
+.o February the seventh
+#
+? February the seventh
+.ggp
+.ph /fifth birthday/you will celebrate your fifth birthday//
+.ph February the seventh
+.wg February the seventh
+.ggp
+.ph /will you/to the question ? will you//
+.ph you can answer yes or no 
+.o yes
+.drop_goal
+

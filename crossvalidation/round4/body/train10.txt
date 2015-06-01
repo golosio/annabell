@@ -1,0 +1,6 @@
+
+? where is the ankle
+.po* /where is//it is/
+.wg /ankle/the ankle is between the foot/the ankle is/
+.snto
+

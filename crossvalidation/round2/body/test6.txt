@@ -1,0 +1,28 @@
+
+? what is the eyebrow
+.cx
+
+? what is the eyelash
+.cx
+
+? what is the eyelid
+.cx
+
+? what is the eye
+.cx
+
+#? what is the mouth
+#.cx
+#
+? what is the tongue
+.cx
+
+? what is the gum
+.cx
+
+? what is the palate
+.cx
+
+? what is the lip
+.cx
+
