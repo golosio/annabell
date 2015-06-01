@@ -1,4 +1,4 @@
-AC_INIT([annabell],[2.0.8],[golosio@uniss.it])
+AC_INIT([annabell],[2.0.9],[golosio@uniss.it])
 AC_PREREQ([2.60])
 AC_CONFIG_SRCDIR([src/annabell_main.cc])
 AC_CONFIG_AUX_DIR([build-aux])

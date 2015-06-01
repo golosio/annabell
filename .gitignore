@@ -28,3 +28,4 @@ configure.doc
 stamp-h1
 libtool
 .deps
+*.gz

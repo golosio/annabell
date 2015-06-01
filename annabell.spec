@@ -1,5 +1,5 @@
 Name: annabell 
-Version: 2.0.8
+Version: 2.0.9
 Release: 	1%{?dist}
 Summary: A neural architecture able to learn the natural language
 Group: 	Applications/Engineering and Scientific
@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_bindir}/annabell
 %{_prefix}/share/examples/annabell/*
-%{_prefix}/share/doc/annabell/annabell_2.0.8_man.pdf
+%{_prefix}/share/doc/annabell/annabell_2.0.9_man.pdf
 
 
 %changelog
