@@ -139,12 +139,13 @@ int main()
   Display.LogFileFlag=false;
   Display.ConsoleFlag=true;
 
+  init_randmt(12345);
+
   sllm *SLLM = new sllm();
   monitor *Mon = new monitor(SLLM);
   delete Display.LogFile;
   Display.LogFile = Mon->Display.LogFile;
 
-  init_randmt(1234567);
   SetMode(SLLM, NULL_MODE);
 
   Interface(SLLM, Mon);
@@ -1788,8 +1789,8 @@ int TargetExploration(sllm *SLLM, monitor *Mon, std::string name,
     }
     if (SLLM->GetRndFlag->Nr[0]->O>0.5) {
       int N1, N2;
-      N1=rand_uint32()%10; //N1=1+seed%5;
-      N2=rand_uint32()%6; //1+seed%5;
+      N1=rnd_int()%10; //N1=1+seed%5;
+      N2=rnd_int()%6; //1+seed%5;
       //cout << N1 << " " << N2 << endl;
       for (int i=0; i<PhSize; i++) vin[i] = (i==N1) ? 1 : 0;
       SLLM->SkipW->Fill(vin);
@@ -1845,8 +1846,8 @@ int TargetExplorationTest(sllm *SLLM, monitor *Mon, std::string name,
     }
     if (ExplorationPhaseIdx==1) {
       int N1, N2;
-      N1=1+rand_uint32()%10;
-      N2=1+rand_uint32()%6;
+      N1=1+rnd_int()%10;
+      N2=1+rnd_int()%6;
       ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
       for (int i=0; i<N1; i++) {
 	ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NEXT_W);

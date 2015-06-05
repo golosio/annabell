@@ -1,7 +1,5 @@
 .f people.txt
 
-.f pronouns_verbs_list.txt
-
 .f pronouns.txt
 
 .f people_howto.txt

@@ -114,7 +114,7 @@ int nr::CN(nr *nr1, float wgmin, float wgmax)
 {
   lk l;
 
-  l.Wg = wgmin+rand_unif()*(wgmax-wgmin);
+  l.Wg = wgmin+rnd()*(wgmax-wgmin);
   l.Nr = nr1;
   L.push_back(l);
 
@@ -681,7 +681,7 @@ int ssm::Wnn()
       }
       else {
 	if (!SparseLkFlag) R = Nr[i]->A;
-	else R = rand_unif();
+	else R = rnd();
 	if (imax<0 || R>amax) {
 	  amax = R;
 	  imax = i;
@@ -727,7 +727,7 @@ int ssm::RndActivWnn()
   Clear();
 
   int n_wnn=NumActivWnn(amax);
-  int k_wnn=rand_uint32()%n_wnn;
+  int k_wnn=rnd_int()%n_wnn;
   int k=0;
   //if (!NullIn()) {
   for(int i=0; i<NN(); i++) {
@@ -844,7 +844,7 @@ int ssm::RndWnn() //semplificare usando rnd()
     //}
     
     if (n_wnn==0) return -1;
-    int k_wnn=rand_uint32()%n_wnn;
+    int k_wnn=rnd_int()%n_wnn;
     int k=0;
     for(int i=0; i<NN(); i++) {
       if (Nr[i]->Used==1 && Nr[i]->O>0.5) {
@@ -1174,7 +1174,7 @@ int io_nr::OutCN(nr *nr1, float wgmin, float wgmax)
 {
   lk l;
 
-  l.Wg = wgmin+rand_unif()*(wgmax-wgmin);
+  l.Wg = wgmin+rnd()*(wgmax-wgmin);
   l.Nr = nr1;
   OutL.push_back(l);
 

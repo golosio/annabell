@@ -429,6 +429,9 @@ for(i = 0; i < 10; i++)
  */
 #define rand_geometric(p)   (rand_geometric_r(&__randmt_global_generator, p))
 
+#define rnd() rand_unif()
+#define rnd_int() rand_uint32()
+
 /** \} */
 
 #ifdef __cplusplus

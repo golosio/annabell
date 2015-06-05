@@ -210,7 +210,7 @@ int fssm::Wnn()
 	}
       }
       else {
-	R = rand_unif();
+	R = rnd();
 	if (imax<0 || R>amax) {
 	  amax = R;
 	  imax = i;
@@ -257,7 +257,7 @@ int fssm::RndActivWnn()
   Clear();
 
   int n_wnn=NumActivWnn(amax);
-  int k_wnn=rand_uint32()%n_wnn;
+  int k_wnn=rnd_int()%n_wnn;
   int k=0;
 
   //if (!NullIn()) {
@@ -396,7 +396,7 @@ int fssm::RndWnn()
   int n_wnn=NumWnn();
   //cout << "n_wnn: " << n_wnn << endl;
   if (n_wnn==0) return -1;
-  int k_wnn=rand_uint32()%n_wnn;
+  int k_wnn=rnd_int()%n_wnn;
   int k=0;
   for(unsigned int i=0; i<HighVect.size(); i++) {
     int inr = HighVect[i];
