@@ -29,3 +29,4 @@ stamp-h1
 libtool
 .deps
 *.gz
+*.tgz
