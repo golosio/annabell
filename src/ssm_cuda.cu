@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "sizes.h"
 #include "cuPrintf.cu"
+#include "gettime.h"
 
 using namespace std;
 using namespace sizes;
@@ -135,7 +136,7 @@ int cuda_SparseActiv_fn(int NRows, int **LkPt, int *Nlk,
   float *dev_in_sign;
   struct timespec clk0, clk1;
 
-  //gpuErrchk( cudaDeviceSynchronize() ); clock_gettime( CLOCK_MONOTONIC, &clk0);
+  //gpuErrchk( cudaDeviceSynchronize() ); GetMonotonicTime(&clk0);
   gpuErrchk(cudaMalloc((void**)&dev_LkPt, NRows*sizeof(int*)));
   gpuErrchk(cudaMalloc((void**)&dev_Nlk, NRows*sizeof(int)));
   gpuErrchk(cudaMalloc( (void**)&dev_in_sign, NRows*sizeof(float)));
@@ -150,7 +151,7 @@ int cuda_SparseActiv_fn(int NRows, int **LkPt, int *Nlk,
   gpuErrchk(cudaMemcpy(dev_activ_arr, activ_arr, NN*sizeof(float),
     cudaMemcpyHostToDevice));
 
-  gpuErrchk( cudaDeviceSynchronize() ); clock_gettime( CLOCK_MONOTONIC, &clk0);
+  gpuErrchk( cudaDeviceSynchronize() ); GetMonotonicTime(&clk0);
   kernel_SparseActiv_blk1<<< 65535, 512 >>>(NRows, dev_LkPt, dev_Nlk,
     dev_in_sign, dev_activ_arr);
   gpuErrchk( cudaPeekAtLastError() );
@@ -159,7 +160,7 @@ int cuda_SparseActiv_fn(int NRows, int **LkPt, int *Nlk,
     dev_in_sign, dev_activ_arr);
   gpuErrchk( cudaPeekAtLastError() );
   gpuErrchk( cudaDeviceSynchronize() );
-  gpuErrchk( cudaDeviceSynchronize() ); clock_gettime( CLOCK_MONOTONIC, &clk1);
+  gpuErrchk( cudaDeviceSynchronize() ); GetMonotonicTime(&clk1);
 
   gpuErrchk(cudaMemcpy(activ_arr, dev_activ_arr, NN*sizeof(float),
              cudaMemcpyDeviceToHost));
@@ -168,7 +169,7 @@ int cuda_SparseActiv_fn(int NRows, int **LkPt, int *Nlk,
   gpuErrchk(cudaFree(dev_Nlk));
   gpuErrchk(cudaFree(dev_in_sign));
 
-  //gpuErrchk(cudaDeviceSynchronize()); clock_gettime( CLOCK_MONOTONIC, &clk1);
+  //gpuErrchk(cudaDeviceSynchronize()); GetMonotonicTime(&clk1);
 
   cuda_time = cuda_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;

@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "rnd.h"
 #include "display.h" 
 #include <sys/time.h>
+#include "gettime.h" 
 
 using namespace std;
 using namespace sizes;
@@ -156,7 +157,7 @@ int main()
 int Interface(sllm *SLLM, monitor *Mon)
 {
   std::string input_line;
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
 
   for(;;) {
     std::cout << "Enter command: ";
@@ -211,14 +212,14 @@ int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
     // answer time
     if (AnswerTimeFlag && AnswerTimeUpdate && AnswerTimePhrase!="") {
       struct timespec clk0, clk1;
-      clock_gettime( CLOCK_REALTIME, &clk0);
+      GetRealTime(&clk0);
 
       AnswerTimeUpdate=false;
       ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
       GetInputPhrase(SLLM, Mon, AnswerTimePhrase);
       Exploitation(SLLM, Mon, 1);
 
-      clock_gettime( CLOCK_REALTIME, &clk1);
+      GetRealTime(&clk1);
       double answ_time = clk1.tv_sec - clk0.tv_sec
 	+ (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
       double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();
@@ -830,7 +831,7 @@ int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
       return 1;
     }
 
-    clock_gettime( CLOCK_REALTIME, &clk1);
+    GetRealTime(&clk1);
 
     Display.Print("Elapsed time: " + to_string
 		  ((double)(clk1.tv_sec - clk0.tv_sec)
@@ -1092,13 +1093,13 @@ int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
     }
 
     struct timespec clk0, clk1;
-    clock_gettime( CLOCK_REALTIME, &clk0);
+    GetRealTime(&clk0);
     
     ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
     GetInputPhrase(SLLM, Mon, AnswerTimePhrase);
     Exploitation(SLLM, Mon, 1);
 
-    clock_gettime( CLOCK_REALTIME, &clk1);
+    GetRealTime(&clk1);
     double answ_time = clk1.tv_sec - clk0.tv_sec
       + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
     double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();

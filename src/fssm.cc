@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdlib.h>
 #include "fssm.h"
 #include "rnd.h"
+#include "gettime.h"
 
 using namespace std;
 
@@ -36,7 +37,7 @@ int fssm::Activ()
   struct timespec clk0, clk1;
 
   if (SparseLkFlag) return SparseActiv();
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
   Forced=false;
   ActivVect.clear();
   for (unsigned int iv=0; iv<SparseRef.size(); iv++) {
@@ -53,7 +54,7 @@ int fssm::Activ()
     }
   }
 
-  clock_gettime( CLOCK_REALTIME, &clk1);
+  GetRealTime(&clk1);
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -64,7 +65,7 @@ int fssm::Out()
 {
   struct timespec clk0, clk1;
 
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
   Clear();
 
   for(unsigned int i=0; i<ActivVect.size(); i++) {
@@ -77,7 +78,7 @@ int fssm::Out()
   }
   SetDefault();
 
-  clock_gettime( CLOCK_REALTIME, &clk1);
+  GetRealTime(&clk1);
   out_time = out_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -436,7 +437,7 @@ int fssm2d::Activ()
   fssm::Activ();
   struct timespec clk0, clk1;
 
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
   for (unsigned int iv=0; iv<SparseRefRow.size(); iv++) {
     for (unsigned int i=0; i<SparseRefRow[iv]->size(); i++) {
       int ix = SparseRefRow[iv]->at(i);
@@ -470,7 +471,7 @@ int fssm2d::Activ()
     }
   }
 
-  clock_gettime( CLOCK_REALTIME, &clk1);
+  GetRealTime(&clk1);
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -481,7 +482,7 @@ int fssm2d::Out()
 {
   struct timespec clk0, clk1;
 
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
   NHigh = 0;
   for(unsigned int i=0; i<HighVect.size(); i++) {
     int inr = HighVect[i];
@@ -511,7 +512,7 @@ int fssm2d::Out()
   }
   SetDefault();
   
-  clock_gettime( CLOCK_REALTIME, &clk1);
+  GetRealTime(&clk1);
   out_time = out_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
