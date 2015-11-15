@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ssm.h"
 #include "sizes.h"
 #include "monitor.h"
+#include "ann_exception.h"
 
 using namespace std;
 using namespace sizes;
@@ -29,10 +30,8 @@ template <typename T>
 int FREAD(T *var, int size, int nmemb, FILE *fp)
 {
   int err = fread(var, size, nmemb, fp);
-  if (err!=nmemb) {
-    cerr << "Error reading file\n";
-    exit(0);
-  }
+  if (err!=nmemb)
+    throw ann_exception("Error reading file\n");
 
   return 0;
 }

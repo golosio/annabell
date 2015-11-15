@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdlib.h>
 #include "enum_ssm.h"
 #include "monitor.h"
+#include "ann_exception.h"
 
 using namespace std;
 using namespace sizes;
@@ -46,10 +47,9 @@ int monitor::MapW(char *w)
   
   for (int jw=0; jw<WMSize; jw++) {
     if (SLLM->IW->Nr[jw]->O>0.5) {
-      if (idx >= 0) {
-	Display.Warning("Err >1 wnn!!");
-	exit(0);
-      }
+      if (idx >= 0)
+	throw ann_exception("More than one winner!!"); //Display.Warning
+
       idx=jw;
     }
   }

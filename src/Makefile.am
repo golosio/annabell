@@ -1,5 +1,5 @@
 annabellincludedir = ${includedir}/annabell
-annabellinclude_HEADERS = display.h  enum_ssm.h  fssm.h  interface.h  monitor.h  rnd.h  sizes.h  sllm.h  ssm.h
+annabellinclude_HEADERS = display.h  enum_ssm.h  fssm.h  interface.h  monitor.h  rnd.h  sizes.h  sllm.h  ssm.h  ann_exception.h
 
 bin_PROGRAMS = annabell
 

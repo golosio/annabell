@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "monitor.h"
 #include "rnd.h"
 #include "display.h" 
+#include "ann_exception.h"
 #include <sys/time.h>
 
 using namespace std;
@@ -83,10 +84,8 @@ std::string to_string(T const& value) {
 
 int CheckTryLimit(int i)
 {
-  if (i>=TRYLIMIT) {
-    cout << "Too many attempts\n";
-    exit(0);
-  }
+  if (i>=TRYLIMIT)
+    throw ann_exception("Too many attempts\n");
 
   return 0;
 }
@@ -139,16 +138,30 @@ int main()
   Display.LogFileFlag=false;
   Display.ConsoleFlag=true;
 
-  init_randmt(12345);
+  try {
+    init_randmt(12345);
+  
+    sllm *SLLM = new sllm();
+    monitor *Mon = new monitor(SLLM);
+    delete Display.LogFile;
+    Display.LogFile = Mon->Display.LogFile;
 
-  sllm *SLLM = new sllm();
-  monitor *Mon = new monitor(SLLM);
-  delete Display.LogFile;
-  Display.LogFile = Mon->Display.LogFile;
+    SetMode(SLLM, NULL_MODE);
 
-  SetMode(SLLM, NULL_MODE);
-
-  Interface(SLLM, Mon);
+    Interface(SLLM, Mon);
+  }
+  catch (ann_exception &e){ // handle possible runtime errors
+    cerr << "Error: " << e.what() << "\n";
+    return 1;
+  }
+  catch (bad_alloc&) {
+    cerr << "Error allocating memory." << "\n";
+    return 1;
+  }
+  catch (...) {
+    cerr << "Unrecognized error\n";
+    return 1;
+  }
 
   return 0;
 }

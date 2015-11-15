@@ -21,6 +21,7 @@
 @code
 #include <stdio.h>
 #include "randmt.h"
+#include "ann_exception.h"
 
 int main(void)
 {
@@ -107,7 +108,7 @@ randmt_t *generator = NULL;
 int i;
 
 if(!(generator = new_randmt()))
-    exit(1);
+    throw ann_exception("Error in random number generator\n"); // ex it(1);
 
 init_randmt_auto_r(generator);
 

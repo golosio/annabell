@@ -106,7 +106,7 @@ int ssm_as::OMPSparseActiv()
 	float wg = *lk_wg_it;
 	OMPActivArr[THREAD_IDX][inr1] += in_sign*(wg-wgmin);
 	//float f=in_sign*(wg-DefaultMinWg);
-	//if (f!=2) {cout << "here " << f << endl; exit(0); }
+	//if (f!=2) {cout << "here " << f << endl; ex it(0); }
 	// the second term compensates for the original
 	// assumption that neurons are unconnected
 	// and have default (negative) weights

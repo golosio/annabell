@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdlib.h>
 #include "ssm.h"
 #include "rnd.h"
+#include "ann_exception.h"
 
 using namespace std;
 
@@ -272,10 +273,9 @@ float vssm::SparseMinInSign()
 
 int vssm::FC(vssm *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("SSM cannot have both sparse and ordinary input links\n");
 
   for(int i=0; i<NN(); i++) {
     Nr[i]->CN(ssm1, wg);
@@ -286,11 +286,10 @@ int vssm::FC(vssm *ssm1, float wg)
 
 int vssm::FC(vssm *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+       
   for(int i=0; i<NN(); i++) {
     Nr[i]->CN(ssm1, wgmin, wgmax);
   }
@@ -321,10 +320,10 @@ int vssm::SparseFC(vssm *ssm1, float wgmin, float wgmax)
 
 int vssm::SparseFC(vssm *ssm1, float wgmin, float wgmax, bool check_null_flag)
 {
-  if (!SparseLkFlag) {
-    cout << "Error. SSM cannot have both ordinary and sparse input links\n";
-    exit(0);
-  }
+  if (!SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both ordinary and sparse input links\n");
+
   CheckNullVect.push_back(check_null_flag);
   ssm1->FillHighVect=true;
   SparseInSSM.push_back(ssm1);
@@ -346,14 +345,13 @@ int vssm::SparseFC(vssm *ssm1, float wgmin, float wgmax, bool check_null_flag)
 
 int vssm::SC(vssm *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != NN()) {
-    cout << "NN must match in SC!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != NN())
+    throw ann_exception("NN must match in SC!\n");
+
   for(int i=0; i<NN(); i++) {
     Nr[i]->CN(ssm1->Nr[i], wg);
   }
@@ -363,14 +361,13 @@ int vssm::SC(vssm *ssm1, float wg)
 
 int vssm::SC(vssm *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != NN()) {
-    cout << "NN must match in SC!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != NN())
+    throw ann_exception("NN must match in SC!\n");
+
   for(int i=0; i<NN(); i++) {
     Nr[i]->CN(ssm1->Nr[i], wgmin, wgmax);
   }
@@ -380,14 +377,13 @@ int vssm::SC(vssm *ssm1, float wgmin, float wgmax)
 
 int vssm::SCtoRows(vssm2d *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->Nx() != NN()) {
-    cout << "Nx and NN must match in SCtoRows!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->Nx() != NN())
+    throw ann_exception("Nx and NN must match in SCtoRows!\n");
+
   for (int iy=0; iy<ssm1->Ny(); iy++) {
     SC(ssm1->Row[iy], wg);
   }
@@ -397,14 +393,13 @@ int vssm::SCtoRows(vssm2d *ssm1, float wg)
 
 int vssm::SCtoRows(vssm2d *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->Nx() != NN()) {
-    cout << "Nx and NN must match in SCtoRows!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->Nx() != NN())
+    throw ann_exception("Nx and NN must match in SCtoRows!\n");
+
   for (int iy=0; iy<ssm1->Ny(); iy++) {
     SC(ssm1->Row[iy], wgmin, wgmax);
   }
@@ -414,14 +409,13 @@ int vssm::SCtoRows(vssm2d *ssm1, float wgmin, float wgmax)
 
 int vssm::SCtoColumns(vssm2d *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->Ny() != NN()) {
-    cout << "Ny and NN must match in SCtoColumns!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->Ny() != NN())
+    throw ann_exception("Ny and NN must match in SCtoColumns!\n");
+
   for (int ix=0; ix<ssm1->Nx(); ix++) {
     SC(ssm1->Column[ix], wg);
   }
@@ -431,14 +425,13 @@ int vssm::SCtoColumns(vssm2d *ssm1, float wg)
 
 int vssm::SCtoColumns(vssm2d *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->Ny() != NN()) {
-    cout << "Ny and NN must match in SCtoColumns!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->Ny() != NN())
+    throw ann_exception("Ny and NN must match in SCtoColumns!\n");
+
   for (int ix=0; ix<ssm1->Nx(); ix++) {
     SC(ssm1->Column[ix], wgmin, wgmax);
   }
@@ -786,10 +779,9 @@ int ssm::NewWnn()
   if (!NullIn()) {
     imax = NewWnnNum;
     NewWnnNum++;
-    if (NewWnnNum>NN()) {
-      cout << "Error: NewWnn overflow\n";
-      exit(0);
-    }
+    if (NewWnnNum>NN())
+      throw ann_exception("Error: NewWnn overflow\n");
+
     Nr[imax]->O = 1;
     Nr[imax]->Used = 1;
     NHigh = 1;
@@ -963,14 +955,13 @@ int vssm2d::UseRowDefault()
 
 int vssm2d::SCRows(vssm *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != Nx()) {
-    cout << "Nx and NN must match in SCRows!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != Nx())
+    throw ann_exception("Nx and NN must match in SCRows!\n");
+
   for (int iy=0; iy<Ny(); iy++) {
     Row[iy]->SC(ssm1, wg);
   }
@@ -980,14 +971,13 @@ int vssm2d::SCRows(vssm *ssm1, float wg)
 
 int vssm2d::SCRows(vssm *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != Nx()) {
-    cout << "Nx and NN must match in SCRows!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != Nx())
+    throw ann_exception("Nx and NN must match in SCRows!\n");
+
   for (int iy=0; iy<Ny(); iy++) {
     Row[iy]->SC(ssm1, wgmin, wgmax);
   }
@@ -997,14 +987,13 @@ int vssm2d::SCRows(vssm *ssm1, float wgmin, float wgmax)
 
 int vssm2d::SCColumns(vssm *ssm1, float wg)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != Ny()) {
-    cout << "Ny and NN must match in SCColumns!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != Ny())
+    throw ann_exception("Ny and NN must match in SCColumns!\n");
+
   for (int ix=0; ix<Nx(); ix++) {
     Column[ix]->SC(ssm1, wg);
   }
@@ -1014,14 +1003,13 @@ int vssm2d::SCColumns(vssm *ssm1, float wg)
 
 int vssm2d::SCColumns(vssm *ssm1, float wgmin, float wgmax)
 {
-  if (SparseLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary input links\n";
-    exit(0);
-  }
-  if (ssm1->NN() != Ny()) {
-    cout << "Ny and NN must match in SCColumns!\n";
-    exit(0);
-  }
+  if (SparseLkFlag)
+    throw ann_exception
+      ("SSM cannot have both sparse and ordinary input links\n");
+
+  if (ssm1->NN() != Ny())
+    throw ann_exception("Ny and NN must match in SCColumns!\n");
+
   for (int ix=0; ix<Nx(); ix++) {
     Column[ix]->SC(ssm1, wgmin, wgmax);
   }
@@ -1281,10 +1269,10 @@ int vssm_io::SetSparseOut()
 
 int vssm_io::OutFC(vssm *ssm1, float wg)
 {
-  if (SparseOutLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary output links\n";
-    exit(0);
-  }
+  if (SparseOutLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary output links\n");
+
   for(int i=0; i<NN(); i++) {
     OutNr[i]->OutCN(ssm1, wg);
   }
@@ -1295,10 +1283,10 @@ int vssm_io::OutFC(vssm *ssm1, float wg)
 
 int vssm_io::OutFC(vssm *ssm1, float wgmin, float wgmax)
 {
-  if (SparseOutLkFlag) {
-    cout << "Error. SSM cannot have both sparse and ordinary output links\n";
-    exit(0);
-  }
+  if (SparseOutLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both sparse and ordinary output links\n");
+
   for(int i=0; i<NN(); i++) {
     OutNr[i]->OutCN(ssm1, wgmin, wgmax);
   }
@@ -1309,10 +1297,9 @@ int vssm_io::OutFC(vssm *ssm1, float wgmin, float wgmax)
 
 int vssm_io::SparseOutFC(vssm *ssm1)
 {
-  if (!SparseOutLkFlag) {
-    cout << "Error. SSM cannot have both ordinary and sparse output links\n";
-    exit(0);
-  }
+  if (!SparseOutLkFlag)
+    throw ann_exception
+      ("Error. SSM cannot have both ordinary and sparse output links\n");
 
   OutSSM.push_back(ssm1);
 
@@ -1543,14 +1530,13 @@ int ssm_as::SetDynamicBias()
   for(int i=0; i<N; i++) {
     if (Nr[i]->Used==1) {
       int iA = (int)ceil(Nr[i]->A) + MaxBias;
-      if (iA<0) {
-	cerr << "Error: neuron activation state + maximum bias < 0\n";
-	exit(0);
-      }
-      if (iA>BiasNum-1) {
-	cerr << "Error: neuron activation state + minimum bias > 0\n";
-	exit(0);
-      }
+      if (iA<0)
+	throw ann_exception("Neuron activation state + maximum bias < 0\n");
+
+      if (iA>BiasNum-1)
+	throw ann_exception
+	  ("Error: neuron activation state + minimum bias > 0\n");
+
       BiasVect[iA]++;
     }
   }
@@ -1612,7 +1598,7 @@ int nr::SparseCreateActiveLks(vector<vssm*> SparseInSSM,
 	lk_wg->push_back(wgmax);
 	A += wgmax*SparseInSSM[issm]->Nr[inr]->O; //not pres. in old vs.
 	//float f= DefaultMaxWg*SparseInSSM[issm]->Nr[inr]->O;
-	//if (f!=1) {cout << f <<endl; exit(0);}
+	//if (f!=1) {cout << f <<endl; ex it(0);}
       }
     }
   }
