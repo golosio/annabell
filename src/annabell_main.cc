@@ -170,13 +170,15 @@ int Interface(sllm *SLLM, monitor *Mon)
 {
   std::string input_line;
   clock_gettime( CLOCK_REALTIME, &clk0);
+  bool out_flag=false;
 
   for(;;) {
     std::cout << "Enter command: ";
-    std::getline (std::cin, input_line);
-    //Display.Print(input_line+"\n");
-    if (ParseCommand(SLLM, Mon, input_line)==2) break;
+    if (!std::getline (std::cin, input_line)) out_flag=true;
+      //Display.Print(input_line+"\n");
+    if (ParseCommand(SLLM, Mon, input_line)==2 || out_flag) break;
   }
+  
   if (Display.LogFile->is_open()) Display.LogFile->close();
 
   return 0;
