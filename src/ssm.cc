@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ssm.h"
 #include "rnd.h"
 #include "ann_exception.h"
+#include "gettime.h"
 
 using namespace std;
 
@@ -493,7 +494,7 @@ int ssm::SparseActiv()
   //float DefaultMinWg = -1; // put in header
   struct timespec clk0, clk1;
 
-  //clock_gettime( CLOCK_MONOTONIC, &clk0);
+  //GetMonotonicTime(&clk0);
 
   //int n_high=SparseNHighIn();
   float min_in_sign = SparseMinInSign();
@@ -504,7 +505,7 @@ int ssm::SparseActiv()
   }
 
   Forced=false;
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   for (unsigned int issm=0; issm<SparseInSSM.size(); issm++) {
     float wgmin = SparseInMinWeight[issm];
     vssm *ssm1=SparseInSSM[issm];
@@ -525,7 +526,7 @@ int ssm::SparseActiv()
       }
     }
   }
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
+  GetMonotonicTime(&clk1);
 
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
@@ -541,14 +542,14 @@ int ssm::Activ()
   }
 
   struct timespec clk0, clk1;
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   Forced=false;
   for(int i=0; i<NN(); i++) {
     Nr[i]->Activ();
     Nr[i]->A += GB;
   }
 
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
+  GetMonotonicTime(&clk1);
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -560,7 +561,7 @@ int ssm::Out()
   struct timespec clk0, clk1;
   int N;
   
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   NHigh = 0;
   if (FillHighVect) HighVect.clear();
 
@@ -575,7 +576,7 @@ int ssm::Out()
   }
   SetDefault();
 
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   out_time = out_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
   return 0;
@@ -1026,7 +1027,7 @@ int ssm2d::Out()
 {
   struct timespec clk0, clk1;
 
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   NHigh = 0;
   if (FillHighVect) HighVect.clear();
   if (FillHighVectRow) HighVectRow.clear();
@@ -1057,7 +1058,7 @@ int ssm2d::Out()
   }
   SetDefault();
 
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
+  GetMonotonicTime(&clk1);
   out_time = out_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -1371,7 +1372,7 @@ int ssm_as::AsOut()
   if (WTA_FLAG==T_NEW_WTA || WTA_FLAG==T_NEW_KWTA) N = NewWnnNum;
   else N = NN();
 
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   bool null_in=NullIn();
   if (null_in && Forced==false) {
     //cout << "null in\n";
@@ -1451,7 +1452,7 @@ int ssm_as::AsOut()
   }
   */
 
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
+  GetMonotonicTime(&clk1);
   as_time = as_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 

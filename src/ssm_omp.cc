@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include "ssm.h"
 #include <omp.h>
+#include "gettime.h"
 using namespace std;
 
 #define THREAD_MAXNUM omp_get_max_threads()
@@ -30,7 +31,7 @@ int ssm_as::OMPActiv()
   if (WTA_FLAG==T_NEW_WTA || WTA_FLAG==T_NEW_KWTA) N = NewWnnNum;
   else N = NN();
 
-  clock_gettime( CLOCK_REALTIME, &clk0);
+  GetRealTime(&clk0);
 
   Forced=false;
   int i;
@@ -48,7 +49,7 @@ int ssm_as::OMPActiv()
     }
   }
 
-  clock_gettime( CLOCK_REALTIME, &clk1);
+  GetRealTime(&clk1);
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
 
@@ -90,7 +91,7 @@ int ssm_as::OMPSparseActiv()
   //  Nr[i]->A = Nr[i]->B + GB - n_high;
   //}
   Forced=false;
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
 #pragma omp parallel for default(shared) collapse(1)
   for (unsigned int issm=0; issm<SparseInSSM.size(); issm++) {
     float wgmin = SparseInMinWeight[issm];
@@ -120,7 +121,7 @@ int ssm_as::OMPSparseActiv()
       //}
     }
   }
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
+  GetMonotonicTime(&clk1);
 
 #pragma omp parallel for default(shared) collapse(1)
   for(int i=0; i<N; i++) {

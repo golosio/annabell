@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdlib.h>
 #include "ssm.h"
 #include "ann_exception.h"
+#include "gettime.h"
 
 using namespace std;
 
@@ -112,7 +113,7 @@ int ssm_as::cuda_SparseActiv()
   struct timespec clk0, clk1;
   struct timespec clkh0, clkh1;
 
-  clock_gettime( CLOCK_MONOTONIC, &clkh0);
+  GetMonotonicTime(&clkh0);
 
   //int n_high=SparseNHighIn();
   float min_in_sign = SparseMinInSign();
@@ -128,7 +129,7 @@ int ssm_as::cuda_SparseActiv()
   //cout << NN() << endl;
 
   Forced=false;
-  clock_gettime( CLOCK_MONOTONIC, &clk0);
+  GetMonotonicTime(&clk0);
   NRows = 0;
   for (unsigned int issm=0; issm<SparseInSSM.size(); issm++) {
     vssm *ssm1=SparseInSSM[issm];
@@ -182,8 +183,8 @@ int ssm_as::cuda_SparseActiv()
   delete[] Nlk;
   delete[] in_sign_arr;
 
-  clock_gettime( CLOCK_MONOTONIC, &clk1);
-  clock_gettime( CLOCK_MONOTONIC, &clkh1);
+  GetMonotonicTime(&clk1);
+  GetMonotonicTime(&clkh1);
 
   act_time = act_time
     + clk1.tv_sec - clk0.tv_sec + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
