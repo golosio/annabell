@@ -1,1 +1,1 @@
-nvcc -D CUDA -lgomp -Xcompiler -fopenmp -Xcompiler -O4 -arch=sm_20 -O4 -o annabell_cuda annabell_main.cc sllm.cc ssm.cc interface.cc monitor.cc rnd.cc addref.cc fssm.cc display.cc modes.cc goals.cc ssm_omp.cc ssm_cuda.cc ssm_file.cc ssm_cuda.cu -lm 
+nvcc -D CUDA -lgomp -Xcompiler -fopenmp -Xcompiler -O4 -arch=sm_20 -O4 -o annabell_cuda annabell_main.cc sllm.cc ssm.cc interface.cc monitor.cc rnd.cc addref.cc fssm.cc display.cc modes.cc goals.cc ssm_omp.cc ssm_cuda.cc ssm_file.cc simplify.cc ssm_cuda.cu -lm 

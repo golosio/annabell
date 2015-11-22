@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <stdlib.h>
 #include "ssm.h"
+#include "ann_exception.h"
 
 using namespace std;
 
@@ -42,22 +43,30 @@ int ssm_as::cuda_CopyInpuLinks()
 
   host_time = 0;
   activ_arr = new float[NN()];
-  Nnr = (int*)malloc(Nssm*sizeof(int));
-  Nlk = (int**)malloc(Nssm*sizeof(int*));
-  lk_nr = (int***)malloc(Nssm*sizeof(int**));
-  lk_nr2 = (int***)malloc(Nssm*sizeof(int**));
-
+  if((Nnr=(int*)malloc(Nssm*sizeof(int)))==NULL)
+    throw ann_exception("Failed to allocate memory for cuda.\n");
+  if((Nlk = (int**)malloc(Nssm*sizeof(int*)))==NULL)
+    throw ann_exception("Failed to allocate memory for cuda.\n");
+  if((lk_nr = (int***)malloc(Nssm*sizeof(int**)))==NULL)
+    throw ann_exception("Failed to allocate memory for cuda.\n");
+  if((lk_nr2 = (int***)malloc(Nssm*sizeof(int**)))==NULL)
+    throw ann_exception("Failed to allocate memory for cuda.\n");
   for (int issm=0; issm<Nssm; issm++) {
     vssm *ssm1=SparseInSSM[issm];
     Nnr[issm] = ssm1->NN();
-    Nlk[issm] = (int*)malloc(Nnr[issm]*sizeof(int));
-    lk_nr[issm] = (int**)malloc(Nnr[issm]*sizeof(int*));
-    lk_nr2[issm] = (int**)malloc(Nnr[issm]*sizeof(int*));
+    if((Nlk[issm] = (int*)malloc(Nnr[issm]*sizeof(int)))==NULL)
+      throw ann_exception("Failed to allocate memory for cuda.\n");
+    if((lk_nr[issm] = (int**)malloc(Nnr[issm]*sizeof(int*)))==NULL)
+      throw ann_exception("Failed to allocate memory for cuda.\n");
+    if((lk_nr2[issm] = (int**)malloc(Nnr[issm]*sizeof(int*)))==NULL)
+      throw ann_exception("Failed to allocate memory for cuda.\n");
     for (int inr=0; inr<Nnr[issm]; inr++) {
       vector<int> *lk_set = &InputLkSet[issm][inr];
       Nlk[issm][inr] = lk_set->size();
-      lk_nr[issm][inr] = (int*)malloc(Nlk[issm][inr]*sizeof(int));
-      lk_nr2[issm][inr] = (int*)malloc(Nlk[issm][inr]*sizeof(int));
+      if((lk_nr[issm][inr] = (int*)malloc(Nlk[issm][inr]*sizeof(int)))==NULL)
+	throw ann_exception("Failed to allocate memory for cuda.\n");
+      if((lk_nr2[issm][inr] = (int*)malloc(Nlk[issm][inr]*sizeof(int)))==NULL)
+	throw ann_exception("Failed to allocate memory for cuda.\n");
       for (int ilk=0; ilk<Nlk[issm][inr]; ilk++) {
 	lk_nr[issm][inr][ilk] = lk_set->at(ilk);
       }
@@ -98,7 +107,7 @@ int ssm_as::cuda_CopyInpuLinks()
 
 int ssm_as::cuda_SparseActiv()
 {
-  float DefaultMinWg = -1; // put in header
+  //float DefaultMinWg = -1; // put in header
   int NRows, NCols = 512;
   struct timespec clk0, clk1;
   struct timespec clkh0, clkh1;
