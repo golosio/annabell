@@ -30,3 +30,8 @@ libtool
 .deps
 *.gz
 *.tgz
+/.autotools
+/.cproject
+/.project
+/m4/
+/.settings/
