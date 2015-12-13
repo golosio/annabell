@@ -214,6 +214,12 @@ int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
     input_token.push_back(buf);
     buf="";
   }
+  if (buf!="") {
+    int l=buf.size()-1;
+    if (buf[l]==' ') buf.erase(l);
+    input_token.push_back(buf);
+  }
+
   if (simplify(SLLM, Mon, input_token)) return 0;
 
   std::string target_phrase;
