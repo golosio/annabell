@@ -1464,6 +1464,7 @@ int ssm_as::KWTA()
   int N;
   if (WTA_FLAG==T_NEW_WTA || WTA_FLAG==T_NEW_KWTA) N = NewWnnNum;
   else N = NN();
+  if (N==0) return 1;
 
   if (DynamicBiasFlag) SetDynamicBias();
   Out();
@@ -1526,6 +1527,7 @@ int ssm_as::SetDynamicBias()
   int N;
   if (WTA_FLAG==T_NEW_WTA || WTA_FLAG==T_NEW_KWTA) N = NewWnnNum;
   else N = NN();
+  if (N==0) return 1;
 
   fill(BiasVect.begin(), BiasVect.end(), 0);
   for(int i=0; i<N; i++) {
