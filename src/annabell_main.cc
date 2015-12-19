@@ -15,6 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <Annabell.h>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -22,7 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <set>
 #include <stdio.h>
 #include <stdlib.h>
-#include "sllm.h"
 #include "sizes.h"
 #include "interface.h"
 #include "monitor.h"
@@ -54,27 +54,27 @@ long AutoSaveLinkStep=2000000;
 
 struct timespec clk0, clk1;
 
-int GetInputPhrase(sllm *SLLM, monitor *Mon, string input_phrase);
-int GetInputPhraseTest(sllm *SLLM, monitor *Mon, string input_phrase);
-int BuildAs(sllm *SLLM, monitor *Mon);
-int BuildAsTest(sllm *SLLM, monitor *Mon);
-int ExplorationApprove(sllm *SLLM, monitor *Mon);
-int ExplorationRetry(sllm *SLLM, monitor *Mon);
-int Reward(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter);
-int RewardTest(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter);
-string Exploitation(sllm *SLLM, monitor *Mon, int n_iter);
-string ExploitationTest(sllm *SLLM, monitor *Mon, int n_iter);
-int ExploitationSlow(sllm *SLLM, monitor *Mon);
-int TargetExploration(sllm *SLLM, monitor *Mon, std::string name,
+int GetInputPhrase(Annabell *SLLM, monitor *Mon, string input_phrase);
+int GetInputPhraseTest(Annabell *SLLM, monitor *Mon, string input_phrase);
+int BuildAs(Annabell *SLLM, monitor *Mon);
+int BuildAsTest(Annabell *SLLM, monitor *Mon);
+int ExplorationApprove(Annabell *SLLM, monitor *Mon);
+int ExplorationRetry(Annabell *SLLM, monitor *Mon);
+int Reward(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter);
+int RewardTest(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter);
+string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter);
+string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter);
+int ExploitationSlow(Annabell *SLLM, monitor *Mon);
+int TargetExploration(Annabell *SLLM, monitor *Mon, std::string name,
 		      std::string target_phrase);
-int TargetExplorationTest(sllm *SLLM, monitor *Mon, std::string name,
+int TargetExplorationTest(Annabell *SLLM, monitor *Mon, std::string name,
 		      std::string target_phrase);
-int SearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase);
-int ContinueSearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase);
-int WorkingPhraseOut(sllm *SLLM, monitor *Mon);
-string SentenceOut(sllm *SLLM, monitor *Mon);
-int Interface(sllm *SLLM, monitor *Mon);
-int Reset(sllm *SLLM, monitor *Mon);
+int SearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase);
+int ContinueSearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase);
+int WorkingPhraseOut(Annabell *SLLM, monitor *Mon);
+string SentenceOut(Annabell *SLLM, monitor *Mon);
+int Interface(Annabell *SLLM, monitor *Mon);
+int Reset(Annabell *SLLM, monitor *Mon);
 
 template <typename T>
 std::string to_string(T const& value) {
@@ -91,7 +91,7 @@ int CheckTryLimit(int i)
   return 0;
 }
 
-int SetAct(sllm *SLLM, int acq_act, int el_act)
+int SetAct(Annabell *SLLM, int acq_act, int el_act)
 {
   SLLM->AcqAct->Fill((int*)v_acq_act[acq_act]);
   SLLM->ElActFL->Fill((int*)v_el_act[el_act]);
@@ -100,7 +100,7 @@ int SetAct(sllm *SLLM, int acq_act, int el_act)
   return 0;
 }
 
-int SetAct(sllm *SLLM, int rwd_act, int acq_act, int el_act)
+int SetAct(Annabell *SLLM, int rwd_act, int acq_act, int el_act)
 {
   SLLM->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
   SLLM->AcqAct->Fill((int*)v_acq_act[acq_act]);
@@ -110,14 +110,14 @@ int SetAct(sllm *SLLM, int rwd_act, int acq_act, int el_act)
   return 0;
 }
 
-int SetMode(sllm *SLLM, int imode)
+int SetMode(Annabell *SLLM, int imode)
 {
   SLLM->ModeFlags->Fill((int*)v_mode[imode]);
 
   return 0;
 }
 
-int ExecuteAct(sllm *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act)
+int ExecuteAct(Annabell *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act)
 {
   SetAct(SLLM, rwd_act, acq_act, el_act);
   Mon->Print();
@@ -129,10 +129,10 @@ int ExecuteAct(sllm *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act)
   return 0;
 }
 
-bool simplify(sllm *SLLM, monitor *Mon,
+bool simplify(Annabell *SLLM, monitor *Mon,
 	      std::vector<std::string> input_token);
 
-int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line);
+int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line);
 
 int main()
 {
@@ -142,7 +142,7 @@ int main()
   try {
     init_randmt(12345);
   
-    sllm *SLLM = new sllm();
+    Annabell *SLLM = new Annabell();
     monitor *Mon = new monitor(SLLM);
     delete Display.LogFile;
     Display.LogFile = Mon->Display.LogFile;
@@ -167,7 +167,7 @@ int main()
   return 0;
 }
 
-int Interface(sllm *SLLM, monitor *Mon)
+int Interface(Annabell *SLLM, monitor *Mon)
 {
   std::string input_line;
   bool out_flag=false;
@@ -190,7 +190,7 @@ int Interface(sllm *SLLM, monitor *Mon)
 //////////////////////////////////////////////////////////////////////
 // Read command or input phrase from command line
 //////////////////////////////////////////////////////////////////////
-int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
+int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line)
 {
   std::vector<std::string> input_token;
 
@@ -1180,7 +1180,7 @@ int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line)
 }
 
 
-int GetInputPhraseTest(sllm *SLLM, monitor *Mon, string input_phrase)
+int GetInputPhraseTest(Annabell *SLLM, monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
@@ -1226,7 +1226,7 @@ int GetInputPhraseTest(sllm *SLLM, monitor *Mon, string input_phrase)
   return 0;
 }
 
-int GetInputPhrase(sllm *SLLM, monitor *Mon, string input_phrase)
+int GetInputPhrase(Annabell *SLLM, monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
@@ -1277,7 +1277,7 @@ int GetInputPhrase(sllm *SLLM, monitor *Mon, string input_phrase)
   return 0;
 }
 
-int BuildAs(sllm *SLLM, monitor *Mon)
+int BuildAs(Annabell *SLLM, monitor *Mon)
 {
   //cout << "ok2\n";
   if (StartContextFlag) {
@@ -1303,7 +1303,7 @@ int BuildAs(sllm *SLLM, monitor *Mon)
   return 0;
 }
 
-int BuildAsTest(sllm *SLLM, monitor *Mon)
+int BuildAsTest(Annabell *SLLM, monitor *Mon)
 {
   int PhI;
 
@@ -1352,7 +1352,7 @@ int BuildAsTest(sllm *SLLM, monitor *Mon)
 }
 
 
-int MoreRetrAsSlow(sllm *SLLM, monitor *Mon)
+int MoreRetrAsSlow(Annabell *SLLM, monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
@@ -1368,7 +1368,7 @@ int MoreRetrAsSlow(sllm *SLLM, monitor *Mon)
   return next_act;
 }
 
-int ExploitationSlow(sllm *SLLM, monitor *Mon)
+int ExploitationSlow(Annabell *SLLM, monitor *Mon)
 {
   SetMode(SLLM, EXPLOIT);
   //cout << "\nExploitation\n";
@@ -1426,7 +1426,7 @@ int ExploitationSlow(sllm *SLLM, monitor *Mon)
 }
 
 
-int MoreRetrAs(sllm *SLLM, monitor *Mon)
+int MoreRetrAs(Annabell *SLLM, monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
@@ -1442,7 +1442,7 @@ int MoreRetrAs(sllm *SLLM, monitor *Mon)
   return next_act;
 }
 
-int ExplorationRetry(sllm *SLLM, monitor *Mon)
+int ExplorationRetry(Annabell *SLLM, monitor *Mon)
 {
   //cout << "\nExplorationRetry (RetrieveStActIdx)\n";
 
@@ -1466,7 +1466,7 @@ int ExplorationRetry(sllm *SLLM, monitor *Mon)
   return 0;
 }
 
-int GetStActIdx(sllm *SLLM, monitor *Mon)
+int GetStActIdx(Annabell *SLLM, monitor *Mon)
 {
   int vi[StActSize];
 
@@ -1478,7 +1478,7 @@ int GetStActIdx(sllm *SLLM, monitor *Mon)
   return is;
 }
 
-int RewardTest(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter)
+int RewardTest(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter)
 {
   SetMode(SLLM, REWARD);
 
@@ -1523,7 +1523,7 @@ int RewardTest(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter)
   return 0;
 }
 
-int Reward(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter)
+int Reward(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter)
 {
   int vin[IterSize];
   for (int i=0; i<IterSize; i++) vin[i] = (i==n_iter) ? 1 : 0;
@@ -1546,7 +1546,7 @@ int Reward(sllm *SLLM, monitor *Mon, int partial_flag, int n_iter)
   return 0;
 }
 
-string Exploitation(sllm *SLLM, monitor *Mon, int n_iter)
+string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
 {
   int Nupdate, MaxNupdate=4000;
   int vin[IterSize];
@@ -1650,7 +1650,7 @@ string Exploitation(sllm *SLLM, monitor *Mon, int n_iter)
   return BestPhrase;
 }
 
-string ExploitationTest(sllm *SLLM, monitor *Mon, int n_iter)
+string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
 {
   SetMode(SLLM, EXPLOIT);
   //cout << "\nExploitation\n";
@@ -1765,7 +1765,7 @@ string ExploitationTest(sllm *SLLM, monitor *Mon, int n_iter)
 }
 
 int ttt=0;
-int TargetExploration(sllm *SLLM, monitor *Mon, std::string name,
+int TargetExploration(Annabell *SLLM, monitor *Mon, std::string name,
 		       std::string target_phrase)
 {
   int vin[PhSize];
@@ -1839,7 +1839,7 @@ int TargetExploration(sllm *SLLM, monitor *Mon, std::string name,
   return 0;
 }
 
-int ExplorationApprove(sllm *SLLM, monitor *Mon)
+int ExplorationApprove(Annabell *SLLM, monitor *Mon)
 {
   ExecuteAct(SLLM, Mon, STORE_SAI, NULL_ACT, NULL_ACT);
 
@@ -1848,7 +1848,7 @@ int ExplorationApprove(sllm *SLLM, monitor *Mon)
   return 0;
 }
 
-int TargetExplorationTest(sllm *SLLM, monitor *Mon, std::string name,
+int TargetExplorationTest(Annabell *SLLM, monitor *Mon, std::string name,
 			  std::string target_phrase)
 {
   //cout << "\nExploration\n";
@@ -1931,7 +1931,7 @@ int TargetExplorationTest(sllm *SLLM, monitor *Mon, std::string name,
   return 0;
 }
 
-int SearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase)
+int SearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(SLLM, EXPLORE);
@@ -1969,7 +1969,7 @@ int SearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase)
   return 0;
 }
 
-int ContinueSearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase)
+int ContinueSearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(SLLM, EXPLORE);
@@ -2002,7 +2002,7 @@ int ContinueSearchContext(sllm *SLLM, monitor *Mon, std::string target_phrase)
   return 0;
 }
 
-int WorkingPhraseOut(sllm *SLLM, monitor *Mon)
+int WorkingPhraseOut(Annabell *SLLM, monitor *Mon)
 {
   //cout << "\nSend working phrase to output\n";
   SetMode(SLLM, EXPLORE);
@@ -2035,7 +2035,7 @@ int WorkingPhraseOut(sllm *SLLM, monitor *Mon)
   return 0;
 }
 
-string SentenceOut(sllm *SLLM, monitor *Mon)
+string SentenceOut(Annabell *SLLM, monitor *Mon)
 {
   //cout << "\nSend sentence to output\n";
   string out_phrase = "";
@@ -2074,7 +2074,7 @@ string SentenceOut(sllm *SLLM, monitor *Mon)
   return out_phrase;
 }
 
-int Reset(sllm *SLLM, monitor *Mon)
+int Reset(Annabell *SLLM, monitor *Mon)
 {
   SetMode(SLLM, NULL_MODE);
   //StartContextFlag=true;

@@ -120,7 +120,7 @@ const int v_rwd_act[RwdActSize+1][RwdActSize] = {
   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // RWD_ACT_14
 };
 
-class sllm
+class Annabell
 {
  public:
   bool CudaFlag;
@@ -636,7 +636,7 @@ class sllm
   ssm_as *GoalMem;
   //
 
-  sllm();
+  Annabell();
   int AddRef();
   int In(int *w, int *phi);
   int PhUpdate();

@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace std;
 using namespace sizes;
 
-monitor::monitor(sllm *sllm1)
+monitor::monitor(Annabell *sllm1)
 {
   SLLM = sllm1;
   for (int iw=0; iw<WMSize; iw++) wflag[iw]=0;

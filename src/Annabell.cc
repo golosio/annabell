@@ -15,9 +15,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <Annabell.h>
 #include <iostream>
 #include <vector>
-#include "sllm.h"
 #include "sizes.h"
 #include "interface.h"
 #include "rnd.h"
@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace std;
 using namespace sizes;
 
-sllm::sllm()
+Annabell::Annabell()
 {
   CudaFlag = false;
   W = new ssm(WSize);
@@ -1284,7 +1284,7 @@ sllm::sllm()
   ElActfSt->OMPActivArrInit();
 }
 
-int sllm::In(int *w, int *phi)
+int Annabell::In(int *w, int *phi)
 {
   W->Fill(w);
   PhI->Fill(phi);
@@ -1292,7 +1292,7 @@ int sllm::In(int *w, int *phi)
   return 0;
 }
 
-int sllm::PhUpdate()
+int Annabell::PhUpdate()
 {
   //level 10
   GetGoalPhFL->ActivOut();
@@ -1419,7 +1419,7 @@ int sllm::PhUpdate()
   return 0;
 }
 
-int sllm::AsUpdate()
+int Annabell::AsUpdate()
 {
   //level 19
   RemPh->Activ();
@@ -1431,7 +1431,7 @@ int sllm::AsUpdate()
   return 0;
 }
 
-int sllm::StActMemUpdate()
+int Annabell::StActMemUpdate()
 {
   CurrStoredStActI->ActivOut();
   StoredStActIFL->ActivOut();
@@ -1453,7 +1453,7 @@ int sllm::StActMemUpdate()
   return 0;
 }
 
-int sllm::ActUpdate()
+int Annabell::ActUpdate()
 {
   ActFlags->ActivOut();
   CurrPhI->ActivOut();
@@ -1466,7 +1466,7 @@ int sllm::ActUpdate()
   return 0;
 }
 
-int sllm::ElActfStUpdate()
+int Annabell::ElActfStUpdate()
 {
   // just to save time
   if (RetrElActfSt->Nr[0]->O<0.5 && BuildElActfSt->Nr[0]->O<0.5) return 0;
@@ -1571,7 +1571,7 @@ int sllm::ElActfStUpdate()
   return 0;
 }
 
-int sllm::MemPhUpdate()
+int Annabell::MemPhUpdate()
 {
   // level b11
   CurrMemPh->ActivOut();
@@ -1604,7 +1604,7 @@ int sllm::MemPhUpdate()
   return 0;
 }
 
-int sllm::Update()
+int Annabell::Update()
 {
   //TEMPORARY PATCH!!!!
   if (ElAct->Default->Nr[0]->O>0.5 && AcqAct->Default->Nr[0]->O>0.5) return 0;
@@ -1616,7 +1616,7 @@ int sllm::Update()
 }
 
 
-int sllm::StActRwdUpdate()
+int Annabell::StActRwdUpdate()
 {
   //RwdFlags->ActivOut();
   //StActMemUpdate();

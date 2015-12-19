@@ -22,8 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "Annabell.h"
 #include "sizes.h"
-#include "sllm.h"
 #include "display.h"
 
 class monitor
@@ -42,11 +43,11 @@ class monitor
   int LastModeIdx;
   int wflag[sizes::WMSize];
   char wlst[sizes::WMSize][sizes::NC];
-  sllm *SLLM;
+  Annabell *SLLM;
   std::string OutStr[sizes::PhSize];
   std::string OutPhrase;
 
-  monitor(sllm *sllm1);
+  monitor(Annabell *sllm1);
 
   int MapW(char *w);
   int PrintWM(std::string name, vssm *wm);

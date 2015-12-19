@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef INTERFACEH
 #define INTERFACEH
-#include "sllm.h"
+#include "Annabell.h"
 #include "sizes.h"
 #include "monitor.h"
 
@@ -40,11 +40,11 @@ extern bool VerboseFlag;
 extern bool StartContextFlag;
 
 int CheckTryLimit(int i);
-int SetAct(sllm *SLLM, int acq_act, int el_act);
-int SetAct(sllm *SLLM, int rwd_act, int acq_act, int el_act);
-int SetMode(sllm *SLLM, int imode);
-int ExecuteAct(sllm *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act);
-int GetInputPhrase(sllm *SLLM, monitor *Mon, std::string input_phrase);
+int SetAct(Annabell *SLLM, int acq_act, int el_act);
+int SetAct(Annabell *SLLM, int rwd_act, int acq_act, int el_act);
+int SetMode(Annabell *SLLM, int imode);
+int ExecuteAct(Annabell *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act);
+int GetInputPhrase(Annabell *SLLM, monitor *Mon, std::string input_phrase);
 
 
 #endif

@@ -15,15 +15,15 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <Annabell.h>
 #include <iostream>
-#include "sllm.h"
 #include "sizes.h"
 #include "interface.h"
 
 using namespace std;
 using namespace sizes;
 
-int sllm::GoalArch()
+int Annabell::GoalArch()
 {
   SetGoalFlag = new ssm(1);
   GetGoalFlag = new ssm(1);
@@ -208,7 +208,7 @@ int sllm::GoalArch()
   return 0;
 }
 
-int sllm::AddGoalRef()
+int Annabell::AddGoalRef()
 {
 #ifdef FAST_SSM
   GoalPhFL->AddSparseRef(WkPhB);
@@ -247,7 +247,7 @@ int sllm::AddGoalRef()
   return 0;
 }
 
-int sllm::GoalUpdate()
+int Annabell::GoalUpdate()
 {
 
   //level 1

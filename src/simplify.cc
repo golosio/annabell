@@ -15,22 +15,22 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <Annabell.h>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <stdlib.h>
-#include "sllm.h"
 #include "interface.h"
 #include "monitor.h"
 #include "display.h" 
 
 using namespace std;
 
-int ParseCommand(sllm *SLLM, monitor *Mon, std::string input_line);
+int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line);
 
-bool simplify(sllm *SLLM, monitor *Mon,
+bool simplify(Annabell *SLLM, monitor *Mon,
 	      std::vector<std::string> input_token)
  {
    std::string cmd, buf; // buffer string
