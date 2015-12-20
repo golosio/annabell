@@ -35,46 +35,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace std;
 using namespace sizes;
 
-const int TRYLIMIT=10000;
+const int TRYLIMIT = 10000;
+
 int LastGB;
 int ExplorationPhaseIdx;
 int StoredStActI;
 display Display;
-bool VerboseFlag=false;
-bool StartContextFlag=true;
-bool PeriodFlag=false;
-bool SpeakerFlag=false;
-bool AnswerTimeFlag=false;
-bool AnswerTimeUpdate=false;
-string AnswerTimePhrase="? do you have any friend -s";
-string SpeakerName="HUM";
-bool AutoSaveLinkFlag=false;
-int AutoSaveLinkIndex=0;
-long AutoSaveLinkStep=2000000;
+bool VerboseFlag = false;
+bool StartContextFlag = true;
+bool PeriodFlag = false;
+bool SpeakerFlag = false;
+bool AnswerTimeFlag = false;
+bool AnswerTimeUpdate = false;
+string AnswerTimePhrase = "? do you have any friend -s";
+string SpeakerName = "HUM";
+bool AutoSaveLinkFlag = false;
+int AutoSaveLinkIndex = 0;
+long AutoSaveLinkStep = 2000000;
 
 struct timespec clk0, clk1;
 
-int GetInputPhrase(Annabell *SLLM, monitor *Mon, string input_phrase);
-int GetInputPhraseTest(Annabell *SLLM, monitor *Mon, string input_phrase);
-int BuildAs(Annabell *SLLM, monitor *Mon);
-int BuildAsTest(Annabell *SLLM, monitor *Mon);
-int ExplorationApprove(Annabell *SLLM, monitor *Mon);
-int ExplorationRetry(Annabell *SLLM, monitor *Mon);
-int Reward(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter);
-int RewardTest(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter);
-string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter);
-string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter);
-int ExploitationSlow(Annabell *SLLM, monitor *Mon);
-int TargetExploration(Annabell *SLLM, monitor *Mon, string name,
-		      string target_phrase);
-int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
-		      string target_phrase);
-int SearchContext(Annabell *SLLM, monitor *Mon, string target_phrase);
-int ContinueSearchContext(Annabell *SLLM, monitor *Mon, string target_phrase);
-int WorkingPhraseOut(Annabell *SLLM, monitor *Mon);
-string SentenceOut(Annabell *SLLM, monitor *Mon);
-int Interface(Annabell *SLLM, monitor *Mon);
-int Reset(Annabell *SLLM, monitor *Mon);
+int GetInputPhrase(Annabell *annabell, monitor *Mon, string input_phrase);
+int GetInputPhraseTest(Annabell *annabell, monitor *Mon, string input_phrase);
+int BuildAs(Annabell *annabell, monitor *Mon);
+int BuildAsTest(Annabell *annabell, monitor *Mon);
+int ExplorationApprove(Annabell *annabell, monitor *Mon);
+int ExplorationRetry(Annabell *annabell, monitor *Mon);
+int Reward(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter);
+int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter);
+string Exploitation(Annabell *annabell, monitor *Mon, int n_iter);
+string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter);
+int ExploitationSlow(Annabell *annabell, monitor *Mon);
+int TargetExploration(Annabell *annabell, monitor *Mon, string name, string target_phrase);
+int TargetExplorationTest(Annabell *annabell, monitor *Mon, string name, string target_phrase);
+int SearchContext(Annabell *annabell, monitor *Mon, string target_phrase);
+int ContinueSearchContext(Annabell *annabell, monitor *Mon, string target_phrase);
+int WorkingPhraseOut(Annabell *annabell, monitor *Mon);
+string SentenceOut(Annabell *annabell, monitor *Mon);
+int Interface(Annabell *annabell, monitor *Mon);
+int Reset(Annabell *annabell, monitor *Mon);
 
 template <typename T>
 string to_string(T const& value) {
@@ -167,7 +166,7 @@ int main()
   return 0;
 }
 
-int Interface(Annabell *SLLM, monitor *Mon)
+int Interface(Annabell *annabell, monitor *Mon)
 {
   string input_line;
   bool out_flag=false;
@@ -178,7 +177,7 @@ int Interface(Annabell *SLLM, monitor *Mon)
     std::cout << "Enter command: ";
     if (!std::getline (std::cin, input_line)) out_flag=true;
       //Display.Print(input_line+"\n");
-    if (ParseCommand(SLLM, Mon, input_line)==2 || out_flag) break;
+    if (ParseCommand(annabell, Mon, input_line)==2 || out_flag) break;
   }
   
   if (Display.LogFile->is_open()) Display.LogFile->close();
@@ -1180,18 +1179,18 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 }
 
 
-int GetInputPhraseTest(Annabell *SLLM, monitor *Mon, string input_phrase)
+int GetInputPhraseTest(Annabell *annabell, monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
   //cout << input_phrase << endl;
-  SetMode(SLLM, ACQUIRE);
+  SetMode(annabell, ACQUIRE);
 
   for (int ic=0; ic<WSize; ic++) vin[ic]=0;
-  SLLM->W->Fill(vin);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+  annabell->W->Fill(vin);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
 
-  SetAct(SLLM, ACQ_W, NULL_ACT);
+  SetAct(annabell, ACQ_W, NULL_ACT);
 
   string buf; // Have a buffer string
   stringstream ss(input_phrase); // Insert the string into a stream
@@ -1201,44 +1200,44 @@ int GetInputPhraseTest(Annabell *SLLM, monitor *Mon, string input_phrase)
     if (buf=="-es") buf="-s";
     interface::w2bin((char*)buf.c_str(),vin);
     Mon->Print();
-    SLLM->W->Fill(vin);
-    SLLM->Update();
+    annabell->W->Fill(vin);
+    annabell->Update();
     Mon->MapW((char*)buf.c_str()); //swap with previous line!!!!
 
     i++;
   }
   for (int ic=0; ic<WSize; ic++) vin[ic]=0;
-  SLLM->W->Fill(vin);
+  annabell->W->Fill(vin);
 
-  SetAct(SLLM, NULL_ACT, W_FROM_WK);
+  SetAct(annabell, NULL_ACT, W_FROM_WK);
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
   // used to clear PrevWkPh, PrevWG, PrevInEqWGWx, PrevWkEqWGWx, ....
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
 
   ExplorationPhaseIdx=0;
-  SLLM->EPhaseI->Clear();
+  annabell->EPhaseI->Clear();
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-int GetInputPhrase(Annabell *SLLM, monitor *Mon, string input_phrase)
+int GetInputPhrase(Annabell *annabell, monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
   //cout << input_phrase << endl;
-  SLLM->StartAcquireFlag->Nr[0]->O = 1;
+  annabell->StartAcquireFlag->Nr[0]->O = 1;
 
-  SLLM->AcquireUpdate();
-  SLLM->ElActFL->ActivOut();
-  SLLM->AcqAct->ActivOut();
-  SLLM->ElAct->ActivOut();
+  annabell->AcquireUpdate();
+  annabell->ElActFL->ActivOut();
+  annabell->AcqAct->ActivOut();
+  annabell->ElAct->ActivOut();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
   string buf; // Have a buffer string
   stringstream ss(input_phrase); // Insert the string into a stream
@@ -1247,106 +1246,106 @@ int GetInputPhrase(Annabell *SLLM, monitor *Mon, string input_phrase)
     if (buf=="an") buf="a";
     if (buf=="-es") buf="-s";
     interface::w2bin((char*)buf.c_str(),vin);
-    SLLM->W->Fill(vin);
-    SLLM->AcquireUpdate();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
-    SLLM->ElAct->ActivOut();
+    annabell->W->Fill(vin);
+    annabell->AcquireUpdate();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
+    annabell->ElAct->ActivOut();
     Mon->Print();
-    SLLM->Update();
+    annabell->Update();
     Mon->MapW((char*)buf.c_str()); //swap with previous line!!!!
     i++;
   }
   for (int ic=0; ic<WSize; ic++) vin[ic]=0; // blank word at the end of phrase
-  SLLM->W->Fill(vin);
+  annabell->W->Fill(vin);
   do {
-    SLLM->AcquireUpdate();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
-    SLLM->ElAct->ActivOut();
+    annabell->AcquireUpdate();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
+    annabell->ElAct->ActivOut();
     Mon->Print();
-    SLLM->Update();
-  } while (SLLM->EndAcquireFlag->Nr[0]->O==0);
+    annabell->Update();
+  } while (annabell->EndAcquireFlag->Nr[0]->O==0);
 
   ExplorationPhaseIdx=0;
-  SLLM->EPhaseI->Clear();
+  annabell->EPhaseI->Clear();
 
-  SLLM->AcquireUpdate();
-  SetMode(SLLM, NULL_MODE);
+  annabell->AcquireUpdate();
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-int BuildAs(Annabell *SLLM, monitor *Mon)
+int BuildAs(Annabell *annabell, monitor *Mon)
 {
   //cout << "ok2\n";
   if (StartContextFlag) {
     StartContextFlag = false;
-    SLLM->SetStartPhFlag->Nr[0]->O = 1;
+    annabell->SetStartPhFlag->Nr[0]->O = 1;
   }
-  else SLLM->SetStartPhFlag->Nr[0]->O = 0;
+  else annabell->SetStartPhFlag->Nr[0]->O = 0;
 
-  SLLM->StartAssociateFlag->Nr[0]->O = 1;
+  annabell->StartAssociateFlag->Nr[0]->O = 1;
   do {
     //cout << "okii\n";
-    SLLM->AssociateUpdate();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
-    SLLM->ElAct->ActivOut();
+    annabell->AssociateUpdate();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
+    annabell->ElAct->ActivOut();
     Mon->Print();
-    SLLM->Update();
-  } while (SLLM->EndAssociateFlag->Nr[0]->O==0);
+    annabell->Update();
+  } while (annabell->EndAssociateFlag->Nr[0]->O==0);
 
-  SLLM->AssociateUpdate();
-  SetMode(SLLM, NULL_MODE);
+  annabell->AssociateUpdate();
+  SetMode(annabell, NULL_MODE);
   //cout << "ok3\n";
   return 0;
 }
 
-int BuildAsTest(Annabell *SLLM, monitor *Mon)
+int BuildAsTest(Annabell *annabell, monitor *Mon)
 {
   int PhI;
 
-  SetMode(SLLM, ASSOCIATE);
+  SetMode(annabell, ASSOCIATE);
   if (StartContextFlag) {
     StartContextFlag = false;
-    ExecuteAct(SLLM, Mon, NULL_ACT, SET_START_PH, NULL_ACT);
+    ExecuteAct(annabell, Mon, NULL_ACT, SET_START_PH, NULL_ACT);
   }
-  else ExecuteAct(SLLM, Mon, NULL_ACT, MEM_PH, NULL_ACT);
+  else ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
 
   int SkipW = 0;
-  SetAct(SLLM, NULL_ACT, W_FROM_WK);
+  SetAct(annabell, NULL_ACT, W_FROM_WK);
   Mon->Print();
-  SLLM->Update();
-  while (SkipW<PhSize && SLLM->InPhB->RowDefault->Nr[SkipW]->O<0.5) {
+  annabell->Update();
+  while (SkipW<PhSize && annabell->InPhB->RowDefault->Nr[SkipW]->O<0.5) {
     for (PhI=-1; PhI<SkipW; PhI++) {
-      SetAct(SLLM, NEXT_AS_W, NULL_ACT);
+      SetAct(annabell, NEXT_AS_W, NULL_ACT);
       Mon->Print();
       //SLLM->ActUpdate(); //just to save time in place of Update
-      SLLM->Update();
+      annabell->Update();
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
     for (int WGI=0; WGI<3 && PhI<PhSize
-	   && SLLM->InPhB->RowDefault->Nr[PhI]->O<0.5; WGI++) {
-      SetAct(SLLM, BUILD_AS, NULL_ACT);
+	   && annabell->InPhB->RowDefault->Nr[PhI]->O<0.5; WGI++) {
+      SetAct(annabell, BUILD_AS, NULL_ACT);
       Mon->Print();
-      SLLM->Update();
+      annabell->Update();
 
-      SetAct(SLLM, NEXT_AS_W, NULL_ACT);
+      SetAct(annabell, NEXT_AS_W, NULL_ACT);
       Mon->Print();
-      SLLM->Update();
+      annabell->Update();
       PhI++;
     }
     SkipW++;
-    SetAct(SLLM, NULL_ACT, W_FROM_WK);
+    SetAct(annabell, NULL_ACT, W_FROM_WK);
     Mon->Print();
-    SLLM->Update();
+    annabell->Update();
   }
   // used to clear PrevWkPh, PrevWG, PrevInEqWGWx, PrevWkEqWGWx, ....
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
@@ -1368,48 +1367,48 @@ int MoreRetrAsSlow(Annabell *SLLM, monitor *Mon)
   return next_act;
 }
 
-int ExploitationSlow(Annabell *SLLM, monitor *Mon)
+int ExploitationSlow(Annabell *annabell, monitor *Mon)
 {
-  SetMode(SLLM, EXPLOIT);
+  SetMode(annabell, EXPLOIT);
   //cout << "\nExploitation\n";
 
   int iac, Nac=300, Nb=60;
   int prev_act, next_act;
 
-  ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+  ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
   for (iac=0; iac<Nac; iac++) {
     prev_act=Mon->GetElActFL();
     for (int ib=0; ib<Nb; ib++) {    
-      ExecuteAct(SLLM, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
+      ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
       next_act=Mon->GetElActFL();
       if (next_act==NULL_ACT && prev_act==RETR_AS)
-	next_act = MoreRetrAsSlow(SLLM,Mon);
+	next_act = MoreRetrAsSlow(annabell,Mon);
 
-      if (SLLM->ElActfSt->NumWnn()>=5
+      if (annabell->ElActfSt->NumWnn()>=5
 	  && next_act!=NULL_ACT
 	  && (prev_act!=RETR_AS || next_act!=RETR_AS)) break;
-      SLLM->ElActfSt->GB++;
+      annabell->ElActfSt->GB++;
       //cout << "next act not found. Trying with GB=" << SLLM->ElActfSt->GB
       //	   << endl;
     }
-    LastGB = SLLM->ElActfSt->GB;
-    SLLM->ElActfSt->GB=0;
-    if (next_act==NULL_ACT || SLLM->ElActfSt->NumWnn()<5) {
+    LastGB = annabell->ElActfSt->GB;
+    annabell->ElActfSt->GB=0;
+    if (next_act==NULL_ACT || annabell->ElActfSt->NumWnn()<5) {
       Display.Warning("next act not found with GB=" + toStr(LastGB) +
 		      ". Exiting\n");
       break;
     }
 
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    if (SLLM->OutFlag->Nr[0]->O>0.5) {
-      Mon->GetPhM("OutPhB", SLLM->OutPhB);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+    if (annabell->OutFlag->Nr[0]->O>0.5) {
+      Mon->GetPhM("OutPhB", annabell->OutPhB);
       Display.Print(Mon->OutPhrase+"\n");
     }
     //if (SLLM->OutFlag->Nr[0]->O>0.5) {
-    if (SLLM->ElAct->Nr[CONTINUE-1]->O>0.5) {
+    if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
       Display.Print(" ... ");
     }
-    if (SLLM->ElAct->Nr[DONE-1]->O>0.5) {
+    if (annabell->ElAct->Nr[DONE-1]->O>0.5) {
       Display.Print(".\n");
       //Display.Print("Done. Exiting\n");
       //Mon->Print();
@@ -1420,7 +1419,7 @@ int ExploitationSlow(Annabell *SLLM, monitor *Mon)
   }
   if (iac==Nac) Display.Warning("Exploitation number of actions >= " +
 				toStr(Nac) + ". Exiting\n");
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
@@ -1442,7 +1441,7 @@ int MoreRetrAs(Annabell *SLLM, monitor *Mon)
   return next_act;
 }
 
-int ExplorationRetry(Annabell *SLLM, monitor *Mon)
+int ExplorationRetry(Annabell *annabell, monitor *Mon)
 {
   //cout << "\nExplorationRetry (RetrieveStActIdx)\n";
 
@@ -1452,16 +1451,16 @@ int ExplorationRetry(Annabell *SLLM, monitor *Mon)
   //cout << "StoredStActI: " << SLLM->StoredStActI->HighVect[0] << endl;
   //cout << "StActI before: " << SLLM->StActI->HighVect[0] << endl;
   //Mon->Print();
-  SetAct(SLLM, RETR_SAI, NULL_ACT, NULL_ACT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
+  annabell->StActRwdUpdate();
   //cout << "StActI after: " << SLLM->StActI->HighVect[0] << endl;
-  SetAct(SLLM, RETR_ST_A, NULL_ACT, NULL_ACT);
-  SLLM->StActRwdUpdate();
-  SetAct(SLLM, RETR_SAI, NULL_ACT, NULL_ACT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, RETR_ST_A, NULL_ACT, NULL_ACT);
+  annabell->StActRwdUpdate();
+  SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
+  annabell->StActRwdUpdate();
   //Mon->Print();
-  SLLM->RetrStActIFlag->Nr[0]->O=0;
-  SLLM->CurrStActIFlag->Nr[0]->O=1;
+  annabell->RetrStActIFlag->Nr[0]->O=0;
+  annabell->CurrStActIFlag->Nr[0]->O=1;
 
   return 0;
 }
@@ -1478,82 +1477,82 @@ int GetStActIdx(Annabell *SLLM, monitor *Mon)
   return is;
 }
 
-int RewardTest(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter)
+int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
 {
-  SetMode(SLLM, REWARD);
+  SetMode(annabell, REWARD);
 
-  SetAct(SLLM, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
-  SetAct(SLLM, STORE_ST_A, NULL_ACT, WG_OUT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, STORE_ST_A, NULL_ACT, WG_OUT);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
-  if (partial_flag!=0) SetAct(SLLM, STORE_ST_A, NULL_ACT, CONTINUE);
-  else SetAct(SLLM, STORE_ST_A, NULL_ACT, DONE);
-  SLLM->StActRwdUpdate();
+  if (partial_flag!=0) SetAct(annabell, STORE_ST_A, NULL_ACT, CONTINUE);
+  else SetAct(annabell, STORE_ST_A, NULL_ACT, DONE);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
-  SetAct(SLLM, STORE_ST_A, NULL_ACT, NULL_ACT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, STORE_ST_A, NULL_ACT, NULL_ACT);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
   //Mon->Print();
-  int LastStActI = GetStActIdx(SLLM, Mon); //SLLM->StActI
+  int LastStActI = GetStActIdx(annabell, Mon); //SLLM->StActI
   for (int i=0; i<n_iter; i++) {
     //Mon->ModeMessage("Start State-Action Index\n");
-    SetAct(SLLM, START_ST_A, NULL_ACT, NULL_ACT);
-    SLLM->StActRwdUpdate();
+    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
+    annabell->Update();
     for (int StActI=0; StActI<LastStActI-1; StActI++) {
       //Mon->ModeMessage("Retrieve and reward State-Action\n");
-      SetAct(SLLM, RWD_ST_A, NULL_ACT, NULL_ACT);
-      SLLM->StActRwdUpdate();
+      SetAct(annabell, RWD_ST_A, NULL_ACT, NULL_ACT);
+      annabell->StActRwdUpdate();
       Mon->Print();
-      SLLM->Update();
+      annabell->Update();
     }
   }
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
   return 0;
 }
 
-int Reward(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter)
+int Reward(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
 {
   int vin[IterSize];
   for (int i=0; i<IterSize; i++) vin[i] = (i==n_iter) ? 1 : 0;
-  SLLM->IterNum->Fill(vin);
+  annabell->IterNum->Fill(vin);
 
-  SLLM->StartRewardFlag->Nr[0]->O = 1;
-  SLLM->PartialFlag->Nr[0]->O = partial_flag;
+  annabell->StartRewardFlag->Nr[0]->O = 1;
+  annabell->PartialFlag->Nr[0]->O = partial_flag;
   do {
-    SLLM->RewardUpdate();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
-    SLLM->StActRwdUpdate();
+    annabell->RewardUpdate();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
-  } while (SLLM->EndRewardFlag->Nr[0]->O==0);
+    annabell->Update();
+  } while (annabell->EndRewardFlag->Nr[0]->O==0);
 
-  SLLM->RewardUpdate();
-  SetMode(SLLM, NULL_MODE);
+  annabell->RewardUpdate();
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
+string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
 {
   int Nupdate, MaxNupdate=4000;
   int vin[IterSize];
   for (int i=0; i<IterSize-1; i++) vin[i] = (i==n_iter-1) ? 1 : 0;
-  SLLM->IterNum->Fill(vin);
+  annabell->IterNum->Fill(vin);
 
-  SLLM->StartExploitFlag->Nr[0]->O = 1;
+  annabell->StartExploitFlag->Nr[0]->O = 1;
   string OutPhrase="", BestPhrase="";
   int BestDB=1000;
   int IterI=0;
@@ -1565,33 +1564,33 @@ string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
     if (Nupdate>=MaxNupdate) {
       Display.Warning("Exploitation number of updates >= " +
 				  toStr(MaxNupdate) + "\n");
-      Reset(SLLM, Mon);
-      SLLM->EndExploitFlag->Nr[0]->O=1;
-      SLLM->ExploitUpdate();
-      SetMode(SLLM, NULL_MODE);
+      Reset(annabell, Mon);
+      annabell->EndExploitFlag->Nr[0]->O=1;
+      annabell->ExploitUpdate();
+      SetMode(annabell, NULL_MODE);
 
       return "";
     }
 
-    SLLM->RewardUpdate();
-    SLLM->ExploitUpdate();
-    SLLM->RwdAct->ActivOut();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
+    annabell->RewardUpdate();
+    annabell->ExploitUpdate();
+    annabell->RwdAct->ActivOut();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
     //Mon->PrintRwdAct();
 
     //if (SLLM->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
     if (VerboseFlag) Mon->PrintRwdAct();
     //int prev_act=Mon->GetElAct(); // temporary
-    SLLM->StActRwdUpdate();
+    annabell->StActRwdUpdate();
     //int next_act=Mon->GetElAct(); // temporary
     if (VerboseFlag) Mon->PrintElActFL();
     if (VerboseFlag) Mon->PrintElAct();
 
-    SLLM->Update();
+    annabell->Update();
 
-    if (n_iter>1 && SLLM->Exploit_I30->Nr[0]->O>0.5) {
+    if (n_iter>1 && annabell->Exploit_I30->Nr[0]->O>0.5) {
       Display.Print("Trying n. " + toStr(IterI));
       IterI++; 
     }
@@ -1599,11 +1598,11 @@ string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
       /////////////////////// the following has to be checked when possible
 
       //if (next_act==SNT_OUT) {//SLLM->ElAct->Nr[SNT_OUT-1]->O>0.5) {
-    if (SLLM->ElAct->Nr[SNT_OUT-1]->O>0.5 &&
-	SLLM->RwdAct->Nr[STORE_ST_A-1]->O>0.5) {
-      int DB = SLLM->ElActfSt->DB;
+    if (annabell->ElAct->Nr[SNT_OUT-1]->O>0.5 &&
+	annabell->RwdAct->Nr[STORE_ST_A-1]->O>0.5) {
+      int DB = annabell->ElActfSt->DB;
       if (OutPhrase!="") OutPhrase = OutPhrase + " ";
-      OutPhrase = OutPhrase + SentenceOut(SLLM, Mon);
+      OutPhrase = OutPhrase + SentenceOut(annabell, Mon);
       if (n_iter>1) cout << "DB: " << DB << endl;
       else Display.Print(".\n");
       if (DB<BestDB) {
@@ -1616,19 +1615,19 @@ string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
       /////////////////////// end part to be checked
 
 
-    if (SLLM->OutFlag->Nr[0]->O>0.5 && SLLM->RwdAct->Nr[STORE_ST_A-1]->O>0.5) {
-      Mon->GetPhM("OutPhB", SLLM->OutPhB);
+    if (annabell->OutFlag->Nr[0]->O>0.5 && annabell->RwdAct->Nr[STORE_ST_A-1]->O>0.5) {
+      Mon->GetPhM("OutPhB", annabell->OutPhB);
       Display.Print(" -> " + Mon->OutPhrase+"\n");
       if (OutPhrase!="") OutPhrase = OutPhrase + " ";
       OutPhrase = OutPhrase + Mon->OutPhrase;
       Nupdate=0;
     }
     //if (SLLM->OutFlag->Nr[0]->O>0.5) {
-    if (SLLM->ElAct->Nr[CONTINUE-1]->O>0.5) {
+    if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
       Display.Print(" ... ");
     }
-    if (SLLM->ElAct->Nr[DONE-1]->O>0.5) {
-      int DB = SLLM->ElActfSt->DB;
+    if (annabell->ElAct->Nr[DONE-1]->O>0.5) {
+      int DB = annabell->ElActfSt->DB;
       if (n_iter>1) cout << "DB: " << DB << endl;
       else Display.Print(".\n");
       if (DB<BestDB) {
@@ -1638,21 +1637,21 @@ string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter)
       OutPhrase="";
     }
 
-  } while (SLLM->EndExploitFlag->Nr[0]->O==0);
+  } while (annabell->EndExploitFlag->Nr[0]->O==0);
 
-  SLLM->ExploitUpdate();
+  annabell->ExploitUpdate();
   if (SpeakerFlag) Display.Print("*SYS:\t");
   Display.Print(BestPhrase);
   if (PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return BestPhrase;
 }
 
-string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
+string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
 {
-  SetMode(SLLM, EXPLOIT);
+  SetMode(annabell, EXPLOIT);
   //cout << "\nExploitation\n";
 
   int iac, Nac=300, Nas=100; // it should be Nas=MaxNRetr in sizes.h
@@ -1660,37 +1659,37 @@ string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
   string OutPhrase="", BestPhrase="";
   int BestDB=1000;
 
-  ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+  ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
   for (int IterI=0; IterI<n_iter; IterI++) {
-    ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
     if (n_iter>1) {
       Display.Print("Trying n. " + toStr(IterI));
     }
-    ExecuteAct(SLLM, Mon, RETR_ST_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_ST_A, NULL_ACT, NULL_ACT);
     for (iac=0; iac<Nac; iac++) {
       prev_act=Mon->GetElActFL(); //Mon->PrintElAct();
       if (prev_act==RETR_AS) {
 	int best_DB = 1000, best_act = NULL_ACT;
-	ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+	ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
 	for (int i=0; i<Nas; i++) {
-	  ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, RETR_AS);
-	  ExecuteAct(SLLM, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
+	  ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, RETR_AS);
+	  ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
 	  next_act=Mon->GetElActFL(); //Mon->PrintElAct();
 	  //int n_wnn = SLLM->ElActfSt->NumWnn();
 	  //cout << "next act " << next_act << endl;
 	  //cout << "NumWnn: " << n_wnn << endl;
 	  //cout << "DB: " << SLLM->ElActfSt->DB << endl;
-	  int DB = SLLM->ElActfSt->DB;
+	  int DB = annabell->ElActfSt->DB;
 	  if (next_act!=RETR_AS && next_act!=NULL_ACT
-	      && SLLM->ElActfSt->NumWnn()>=5 && DB<best_DB) {
+	      && annabell->ElActfSt->NumWnn()>=5 && DB<best_DB) {
 	    best_DB = DB;
 	    best_act = next_act;
-	    ExecuteAct(SLLM, Mon, CHANGE_ST_A, NULL_ACT, NULL_ACT);
+	    ExecuteAct(annabell, Mon, CHANGE_ST_A, NULL_ACT, NULL_ACT);
 	    //cout << "best DB updated to: " << best_DB << endl;
 	  }
 	  else {
-	    ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
+	    ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
 	  }
 	}
 	next_act = best_act; 
@@ -1699,25 +1698,25 @@ string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
 			  ". Exiting\n");
 	  break;
 	}
-	ExecuteAct(SLLM, Mon, GET_ST_A, NULL_ACT, NULL_ACT);
+	ExecuteAct(annabell, Mon, GET_ST_A, NULL_ACT, NULL_ACT);
 	//LastGB = best_DB;
       }
       else {
-	ExecuteAct(SLLM, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
+	ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
 	next_act=Mon->GetElActFL(); // Mon->PrintElAct();
 	
-	if (next_act==NULL_ACT || SLLM->ElActfSt->NumWnn()<5) {
+	if (next_act==NULL_ACT || annabell->ElActfSt->NumWnn()<5) {
 	  Display.Warning("next act not found with GB="
-			  + toStr(SLLM->ElActfSt->DB) + ". Exiting\n");
+			  + toStr(annabell->ElActfSt->DB) + ". Exiting\n");
 	  break;
 	}
       }
 
 
       if (next_act==SNT_OUT) {//SLLM->ElAct->Nr[SNT_OUT-1]->O>0.5) {
-	int DB = SLLM->ElActfSt->DB;
+	int DB = annabell->ElActfSt->DB;
 	if (OutPhrase!="") OutPhrase = OutPhrase + " ";
-	OutPhrase = OutPhrase + SentenceOut(SLLM, Mon);
+	OutPhrase = OutPhrase + SentenceOut(annabell, Mon);
 	if (n_iter>1) cout << "DB: " << DB << endl;
 	else Display.Print(".\n");
 	if (DB<BestDB) {
@@ -1727,19 +1726,19 @@ string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
 	OutPhrase="";
 	break;
       }
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, next_act);
-      if (SLLM->OutFlag->Nr[0]->O>0.5) {
-	Mon->GetPhM("OutPhB", SLLM->OutPhB);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, next_act);
+      if (annabell->OutFlag->Nr[0]->O>0.5) {
+	Mon->GetPhM("OutPhB", annabell->OutPhB);
 	Display.Print(" -> " + Mon->OutPhrase+"\n");
 	if (OutPhrase!="") OutPhrase = OutPhrase + " ";
 	OutPhrase = OutPhrase + Mon->OutPhrase;
       }
       //if (SLLM->OutFlag->Nr[0]->O>0.5) {
-      if (SLLM->ElAct->Nr[CONTINUE-1]->O>0.5) {
+      if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
 	Display.Print(" ... ");
       }
-      if (SLLM->ElAct->Nr[DONE-1]->O>0.5) {
-	int DB = SLLM->ElActfSt->DB;
+      if (annabell->ElAct->Nr[DONE-1]->O>0.5) {
+	int DB = annabell->ElActfSt->DB;
 	if (n_iter>1) cout << "DB: " << DB << endl;
 	else Display.Print(".\n");
 	if (DB<BestDB) {
@@ -1759,77 +1758,76 @@ string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
   if (PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
   
   return BestPhrase;
 }
 
 int ttt=0;
-int TargetExploration(Annabell *SLLM, monitor *Mon, string name,
-		       string target_phrase)
+int TargetExploration(Annabell *annabell, monitor *Mon, string name, string target_phrase)
 {
   int vin[PhSize];
 
   // temp1 start here
-  SLLM->EPhaseI->Clear();
-  SLLM->EPhaseI->Nr[ExplorationPhaseIdx]->O = 1;
+  annabell->EPhaseI->Clear();
+  annabell->EPhaseI->Nr[ExplorationPhaseIdx]->O = 1;
   // temp1 end here
 
-  if (name=="WGB") SLLM->WGTargetFlag->Nr[0]->O = 1;
-  else SLLM->WGTargetFlag->Nr[0]->O = 0;
+  if (name=="WGB") annabell->WGTargetFlag->Nr[0]->O = 1;
+  else annabell->WGTargetFlag->Nr[0]->O = 0;
 
-  SLLM->TargetEqWkPhFlag->Nr[0]->O = 0;
-  SLLM->TargetEqWGFlag->Nr[0]->O = 0;
-  SLLM->StartExploreFlag->Nr[0]->O = 1;
+  annabell->TargetEqWkPhFlag->Nr[0]->O = 0;
+  annabell->TargetEqWGFlag->Nr[0]->O = 0;
+  annabell->StartExploreFlag->Nr[0]->O = 1;
 
   int i=0;
   do {
-    SLLM->AssociateUpdate();
-    SLLM->RewardUpdate();
-    SLLM->ExploitUpdate();
-    SLLM->ExploreUpdate();
-    SLLM->RwdAct->ActivOut();
-    SLLM->ElActFL->ActivOut();
-    SLLM->AcqAct->ActivOut();
+    annabell->AssociateUpdate();
+    annabell->RewardUpdate();
+    annabell->ExploitUpdate();
+    annabell->ExploreUpdate();
+    annabell->RwdAct->ActivOut();
+    annabell->ElActFL->ActivOut();
+    annabell->AcqAct->ActivOut();
 
     //if (SLLM->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
     if (VerboseFlag) Mon->PrintRwdAct();
-    SLLM->StActRwdUpdate();
+    annabell->StActRwdUpdate();
     if (VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
 
-    SLLM->Update();
+    annabell->Update();
 
-    if (SLLM->CheckWGFlag->Nr[0]->O>0.5) {
-      Mon->GetPhM(name, SLLM->WGB);
+    if (annabell->CheckWGFlag->Nr[0]->O>0.5) {
+      Mon->GetPhM(name, annabell->WGB);
       if (target_phrase==Mon->OutPhrase)
-	SLLM->TargetEqWGFlag->Nr[0]->O = 1;
+	annabell->TargetEqWGFlag->Nr[0]->O = 1;
     }
-    if (SLLM->CheckWkPhFlag->Nr[0]->O>0.5) {
-      Mon->GetPhM(name, SLLM->WkPhB);
+    if (annabell->CheckWkPhFlag->Nr[0]->O>0.5) {
+      Mon->GetPhM(name, annabell->WkPhB);
       if (target_phrase==Mon->OutPhrase)
-	SLLM->TargetEqWkPhFlag->Nr[0]->O = 1;
+	annabell->TargetEqWkPhFlag->Nr[0]->O = 1;
     }
-    if (SLLM->GetRndFlag->Nr[0]->O>0.5) {
+    if (annabell->GetRndFlag->Nr[0]->O>0.5) {
       int N1, N2;
       N1=rnd_int()%10; //N1=1+seed%5;
       N2=rnd_int()%6; //1+seed%5;
       //cout << N1 << " " << N2 << endl;
       for (int i=0; i<PhSize; i++) vin[i] = (i==N1) ? 1 : 0;
-      SLLM->SkipW->Fill(vin);
+      annabell->SkipW->Fill(vin);
       for (int i=0; i<PhSize; i++) vin[i] = (i==N2) ? 1 : 0;
-      SLLM->ExplWordNum->Fill(vin);
+      annabell->ExplWordNum->Fill(vin);
     }
     i++;
-  } while (SLLM->EndExploreFlag->Nr[0]->O==0);
+  } while (annabell->EndExploreFlag->Nr[0]->O==0);
 
-  SLLM->ExploreUpdate();
+  annabell->ExploreUpdate();
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   // temp2 start here
   for (int i=0; i<5; i++) {
-    if (SLLM->EPhaseI->Nr[i]->O>0.5) {
+    if (annabell->EPhaseI->Nr[i]->O>0.5) {
       ExplorationPhaseIdx = i;
       break;
     }
@@ -1839,22 +1837,21 @@ int TargetExploration(Annabell *SLLM, monitor *Mon, string name,
   return 0;
 }
 
-int ExplorationApprove(Annabell *SLLM, monitor *Mon)
+int ExplorationApprove(Annabell *annabell, monitor *Mon)
 {
-  ExecuteAct(SLLM, Mon, STORE_SAI, NULL_ACT, NULL_ACT);
+  ExecuteAct(annabell, Mon, STORE_SAI, NULL_ACT, NULL_ACT);
 
   if (ExplorationPhaseIdx!=4) ExplorationPhaseIdx++;
 
   return 0;
 }
 
-int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
-			  string target_phrase)
+int TargetExplorationTest(Annabell *annabell, monitor *Mon, string name, string target_phrase)
 {
   //cout << "\nExploration\n";
-  SetMode(SLLM, EXPLORE);
+  SetMode(annabell, EXPLORE);
 
-  ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
+  ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
   if (name=="WGB" && (ExplorationPhaseIdx==3 || ExplorationPhaseIdx==4))
     ExplorationPhaseIdx = 1;
   int StartExplorationPhaseIdx = ExplorationPhaseIdx;
@@ -1862,29 +1859,29 @@ int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
   int i = 0;
   while (i<TRYLIMIT) {
     if (ExplorationPhaseIdx==0) {
-      ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
-      ExplorationApprove(SLLM, Mon);
+      ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
+      ExplorationApprove(annabell, Mon);
       ExplorationPhaseIdx=1;
     }
     if (ExplorationPhaseIdx==1) {
       int N1, N2;
       N1=1+rnd_int()%10;
       N2=1+rnd_int()%6;
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
       for (int i=0; i<N1; i++) {
-	ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
+	ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
       }
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
       for (int i=0; i<N2; i++) {
-	ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_W);
-	ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
-	Mon->GetWM("CW", SLLM->CW);
+	ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_W);
+	ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
+	Mon->GetWM("CW", annabell->CW);
 	if (Mon->OutStr[0]=="") break;
       }
       if (name=="WGB") {
-	ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
-	Mon->GetPhM(name, SLLM->WGB);
+	ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
+	Mon->GetPhM(name, annabell->WGB);
 	if (target_phrase==Mon->OutPhrase) break;
 	//else cout << "exp WBG: " << Mon->OutPhrase << endl;
       }
@@ -1894,213 +1891,213 @@ int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
       }
     }
     else if (ExplorationPhaseIdx==2) {
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, RETR_AS);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, RETR_AS);
       if (name=="WGB") {
 	ExplorationPhaseIdx = 1;
 	continue;
       }
       else { // (name=="WkPhB")
-	Mon->GetPhM(name, SLLM->WkPhB);
+	Mon->GetPhM(name, annabell->WkPhB);
 	if (target_phrase==Mon->OutPhrase) break;
       }
     }
     else if (ExplorationPhaseIdx==3) {
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
-      Mon->GetPhM(name, SLLM->WkPhB);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
+      Mon->GetPhM(name, annabell->WkPhB);
       if (target_phrase==Mon->OutPhrase) break;
     }
     else if (ExplorationPhaseIdx==4) {
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
-      Mon->GetPhM(name, SLLM->WkPhB);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
+      Mon->GetPhM(name, annabell->WkPhB);
       if (target_phrase==Mon->OutPhrase) break;
     }
     ExplorationPhaseIdx = StartExplorationPhaseIdx;
     if (ExplorationPhaseIdx==3) StartExplorationPhaseIdx=4;
     if (ExplorationPhaseIdx==4) StartExplorationPhaseIdx=1;
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_ST, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_ST, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
     i++;
   }
   CheckTryLimit(i);
   cout << "Good answer after " << i << " iterations\n";
-  ExplorationApprove(SLLM, Mon);
+  ExplorationApprove(annabell, Mon);
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-int SearchContext(Annabell *SLLM, monitor *Mon, string target_phrase)
+int SearchContext(Annabell *annabell, monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
-  SetMode(SLLM, EXPLORE);
+  SetMode(annabell, EXPLORE);
 
   if (ExplorationPhaseIdx==0) {
-    ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
+    ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
   }
-  ExplorationApprove(SLLM, Mon);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
+  ExplorationApprove(annabell, Mon);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
   ExplorationPhaseIdx = 3;
-  Mon->GetPhM("WkPhB", SLLM->WkPhB);
+  Mon->GetPhM("WkPhB", annabell->WkPhB);
   cout << " ... " << Mon->OutPhrase << endl;
   if (target_phrase!=Mon->OutPhrase) {
     ExplorationPhaseIdx = 4;
     while(Mon->OutPhrase!=".end_context" && Mon->OutPhrase!="") {
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
-      Mon->GetPhM("WkPhB", SLLM->WkPhB);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
+      Mon->GetPhM("WkPhB", annabell->WkPhB);
       cout << " ... " << Mon->OutPhrase << endl;
       if (target_phrase==Mon->OutPhrase) break;
     }
   }
   if (target_phrase!=Mon->OutPhrase) {
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_ST, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_ST, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
   }
   else  {
-    ExplorationApprove(SLLM, Mon);
+    ExplorationApprove(annabell, Mon);
     Display.Print(target_phrase + "\n");
   }
     
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-int ContinueSearchContext(Annabell *SLLM, monitor *Mon, string target_phrase)
+int ContinueSearchContext(Annabell *annabell, monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
-  SetMode(SLLM, EXPLORE);
+  SetMode(annabell, EXPLORE);
 
   if (ExplorationPhaseIdx==0) {
-    ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
+    ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
   }
-  ExplorationApprove(SLLM, Mon);
+  ExplorationApprove(annabell, Mon);
 
   ExplorationPhaseIdx = 4;
   do {
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
-    Mon->GetPhM("WkPhB", SLLM->WkPhB);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
+    Mon->GetPhM("WkPhB", annabell->WkPhB);
     cout << " ... " << Mon->OutPhrase << endl;
     if (target_phrase==Mon->OutPhrase) break;
   } while(Mon->OutPhrase!=".end_context" && Mon->OutPhrase!="");
   if (target_phrase!=Mon->OutPhrase) {
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_ST, NULL_ACT, NULL_ACT);
-    ExecuteAct(SLLM, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_ST, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
   }
   else  {
-    ExplorationApprove(SLLM, Mon);
+    ExplorationApprove(annabell, Mon);
     Display.Print(target_phrase + "\n");
   }
     
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-int WorkingPhraseOut(Annabell *SLLM, monitor *Mon)
+int WorkingPhraseOut(Annabell *annabell, monitor *Mon)
 {
   //cout << "\nSend working phrase to output\n";
-  SetMode(SLLM, EXPLORE);
+  SetMode(annabell, EXPLORE);
 
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
   for (int i=0; i<PhSize; i++) {
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_W);
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_W);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
     // try to restore the following lines
     //Mon->GetWM("CW", SLLM->CW);
     //	if (Mon->OutStr[0]=="") break;
     //}
   }
-  SetAct(SLLM, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
-  SetAct(SLLM, STORE_ST_A, NULL_ACT, WG_OUT);
-  SLLM->StActRwdUpdate();
+  SetAct(annabell, STORE_ST_A, NULL_ACT, WG_OUT);
+  annabell->StActRwdUpdate();
   Mon->Print();
-  SLLM->Update();
+  annabell->Update();
 
   ExplorationPhaseIdx = 2;
-  ExplorationApprove(SLLM, Mon);
+  ExplorationApprove(annabell, Mon);
 
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
 
   return 0;
 }
 
-string SentenceOut(Annabell *SLLM, monitor *Mon)
+string SentenceOut(Annabell *annabell, monitor *Mon)
 {
   //cout << "\nSend sentence to output\n";
   string out_phrase = "";
 
-  ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, SNT_OUT);
-  if (SLLM->ModeFlags->Nr[EXPLORE]->O>0.5) {
-    ExplorationApprove(SLLM, Mon);
+  ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, SNT_OUT);
+  if (annabell->ModeFlags->Nr[EXPLORE]->O>0.5) {
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx = 2;
   }
   //ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
 
-  Mon->GetPhM("WkPhB", SLLM->WkPhB);
+  Mon->GetPhM("WkPhB", annabell->WkPhB);
   while(Mon->OutPhrase!=".end_context" && Mon->OutPhrase!="") {
-    ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
+    ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
     //while (SLLM->PhI->Nr[PhSize-1]->O<0.5) {
     for(;;) {
-      ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, GET_W);
-      if (SLLM->PhI->Nr[PhSize-1]->O>0.5) break;
-      ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, NEXT_W);
+      ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, GET_W);
+      if (annabell->PhI->Nr[PhSize-1]->O>0.5) break;
+      ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NEXT_W);
       // try to restore the following lines
       //Mon->GetWM("CW", SLLM->CW);
       //	if (Mon->OutStr[0]=="") break;
       //}
     } 
-    ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, FLUSH_OUT);
-    ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, WG_OUT);
-    Mon->GetPhM("OutPhB", SLLM->OutPhB);
+    ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_OUT);
+    ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, WG_OUT);
+    Mon->GetPhM("OutPhB", annabell->OutPhB);
     if (out_phrase!="") Display.Print(" ... ");
     Display.Print("-> " + Mon->OutPhrase+"\n");
     out_phrase = out_phrase + Mon->OutPhrase;
-    ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, GET_NEXT_PH);
-    Mon->GetPhM("WkPhB", SLLM->WkPhB);
+    ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, GET_NEXT_PH);
+    Mon->GetPhM("WkPhB", annabell->WkPhB);
   }
   //Display.Print("\n");
 
   return out_phrase;
 }
 
-int Reset(Annabell *SLLM, monitor *Mon)
+int Reset(Annabell *annabell, monitor *Mon)
 {
-  SetMode(SLLM, NULL_MODE);
+  SetMode(annabell, NULL_MODE);
   //StartContextFlag=true;
 
-  ExecuteAct(SLLM, Mon, NULL_ACT, FLUSH, NULL_ACT);
-  ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, FLUSH_OUT);
+  ExecuteAct(annabell, Mon, NULL_ACT, FLUSH, NULL_ACT);
+  ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_OUT);
   for (int i=0; i<5; i++)
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
 
   int v1[WSize];
   for (int ic=0; ic<WSize; ic++) v1[ic]=0;
-  SLLM->W->Fill(v1);
+  annabell->W->Fill(v1);
 
   int v2[PhSize];
   for (int i=0; i<PhSize; i++) v2[i] = 0;
-  SLLM->InI->Fill(v2);
-  SLLM->PhI->Fill(v2);
+  annabell->InI->Fill(v2);
+  annabell->PhI->Fill(v2);
 
-  SLLM->Update();
-  SLLM->StartExploitFlag->Nr[0]->O = 1;
-  SLLM->ExploitUpdate();
-  SLLM->EndExploitFlag->Nr[0]->O=1;
-  SLLM->ExploitUpdate();
+  annabell->Update();
+  annabell->StartExploitFlag->Nr[0]->O = 1;
+  annabell->ExploitUpdate();
+  annabell->EndExploitFlag->Nr[0]->O=1;
+  annabell->ExploitUpdate();
 
-  ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-  ExplorationApprove(SLLM, Mon);
+  ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+  ExplorationApprove(annabell, Mon);
   ExplorationPhaseIdx=0;
 
   return 0;
