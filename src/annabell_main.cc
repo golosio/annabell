@@ -46,8 +46,8 @@ bool PeriodFlag=false;
 bool SpeakerFlag=false;
 bool AnswerTimeFlag=false;
 bool AnswerTimeUpdate=false;
-std::string AnswerTimePhrase="? do you have any friend -s";
-std::string SpeakerName="HUM";
+string AnswerTimePhrase="? do you have any friend -s";
+string SpeakerName="HUM";
 bool AutoSaveLinkFlag=false;
 int AutoSaveLinkIndex=0;
 long AutoSaveLinkStep=2000000;
@@ -65,19 +65,19 @@ int RewardTest(Annabell *SLLM, monitor *Mon, int partial_flag, int n_iter);
 string Exploitation(Annabell *SLLM, monitor *Mon, int n_iter);
 string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter);
 int ExploitationSlow(Annabell *SLLM, monitor *Mon);
-int TargetExploration(Annabell *SLLM, monitor *Mon, std::string name,
-		      std::string target_phrase);
-int TargetExplorationTest(Annabell *SLLM, monitor *Mon, std::string name,
-		      std::string target_phrase);
-int SearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase);
-int ContinueSearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase);
+int TargetExploration(Annabell *SLLM, monitor *Mon, string name,
+		      string target_phrase);
+int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
+		      string target_phrase);
+int SearchContext(Annabell *SLLM, monitor *Mon, string target_phrase);
+int ContinueSearchContext(Annabell *SLLM, monitor *Mon, string target_phrase);
 int WorkingPhraseOut(Annabell *SLLM, monitor *Mon);
 string SentenceOut(Annabell *SLLM, monitor *Mon);
 int Interface(Annabell *SLLM, monitor *Mon);
 int Reset(Annabell *SLLM, monitor *Mon);
 
 template <typename T>
-std::string to_string(T const& value) {
+string to_string(T const& value) {
     stringstream sstr;
     sstr << value;
     return sstr.str();
@@ -132,7 +132,7 @@ int ExecuteAct(Annabell *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_ac
 bool simplify(Annabell *SLLM, monitor *Mon,
 	      std::vector<std::string> input_token);
 
-int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line);
+int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line);
 
 int main()
 {
@@ -169,7 +169,7 @@ int main()
 
 int Interface(Annabell *SLLM, monitor *Mon)
 {
-  std::string input_line;
+  string input_line;
   bool out_flag=false;
 
   GetRealTime(&clk0);
@@ -190,12 +190,12 @@ int Interface(Annabell *SLLM, monitor *Mon)
 //////////////////////////////////////////////////////////////////////
 // Read command or input phrase from command line
 //////////////////////////////////////////////////////////////////////
-int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line)
+int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 {
   std::vector<std::string> input_token;
 
   std::stringstream ss(input_line); // Insert the line into a stream
-  std::string buf, buf1; // buffer strings
+  string buf, buf1; // buffer strings
 
   buf = "";
   while (ss >> buf1) { // split line in string tokens
@@ -222,7 +222,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line)
 
   if (simplify(SLLM, Mon, input_token)) return 0;
 
-  std::string target_phrase;
+  string target_phrase;
   if (input_token.size()==0) {
     Display.Print(input_line+"\n");
     target_phrase = ".end_context";
@@ -830,7 +830,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    std::string action_name=input_token[1];
+    string action_name=input_token[1];
     int iact;
     for (iact=0; iact<ElActSize && Mon->ElActName[iact]!=action_name;
 	 iact++);
@@ -1765,8 +1765,8 @@ string ExploitationTest(Annabell *SLLM, monitor *Mon, int n_iter)
 }
 
 int ttt=0;
-int TargetExploration(Annabell *SLLM, monitor *Mon, std::string name,
-		       std::string target_phrase)
+int TargetExploration(Annabell *SLLM, monitor *Mon, string name,
+		       string target_phrase)
 {
   int vin[PhSize];
 
@@ -1848,8 +1848,8 @@ int ExplorationApprove(Annabell *SLLM, monitor *Mon)
   return 0;
 }
 
-int TargetExplorationTest(Annabell *SLLM, monitor *Mon, std::string name,
-			  std::string target_phrase)
+int TargetExplorationTest(Annabell *SLLM, monitor *Mon, string name,
+			  string target_phrase)
 {
   //cout << "\nExploration\n";
   SetMode(SLLM, EXPLORE);
@@ -1931,7 +1931,7 @@ int TargetExplorationTest(Annabell *SLLM, monitor *Mon, std::string name,
   return 0;
 }
 
-int SearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase)
+int SearchContext(Annabell *SLLM, monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(SLLM, EXPLORE);
@@ -1969,7 +1969,7 @@ int SearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase)
   return 0;
 }
 
-int ContinueSearchContext(Annabell *SLLM, monitor *Mon, std::string target_phrase)
+int ContinueSearchContext(Annabell *SLLM, monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(SLLM, EXPLORE);
