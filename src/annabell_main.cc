@@ -128,7 +128,7 @@ int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int e
   return 0;
 }
 
-bool simplify(Annabell *annabell, monitor *Mon, std::vector<std::string> input_token);
+bool simplify(Annabell *annabell, monitor *Mon, vector<string> input_token);
 
 int ParseCommand(Annabell *annabell, monitor *Mon, string input_line);
 
@@ -173,8 +173,8 @@ int Interface(Annabell *annabell, monitor *Mon)
   GetRealTime(&clk0);
 
   for(;;) {
-    std::cout << "Enter command: ";
-    if (!std::getline (std::cin, input_line)) out_flag=true;
+    cout << "Enter command: ";
+    if (!getline (cin, input_line)) out_flag=true;
       //Display.Print(input_line+"\n");
     if (ParseCommand(annabell, Mon, input_line)==2 || out_flag) break;
   }
@@ -190,9 +190,9 @@ int Interface(Annabell *annabell, monitor *Mon)
 //////////////////////////////////////////////////////////////////////
 int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
 {
-  std::vector<std::string> input_token;
+  vector<string> input_token;
 
-  std::stringstream ss(input_line); // Insert the line into a stream
+  stringstream ss(input_line); // Insert the line into a stream
   string buf, buf1; // buffer strings
 
   buf = "";
@@ -438,7 +438,7 @@ int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
     int n_iter;
     if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
     else {
-      std::stringstream ss1(input_token[1]);
+      stringstream ss1(input_token[1]);
       ss1 >> n_iter;
       if (!ss1) {
 	Display.Warning("Cannot convert token to integer.");
@@ -474,7 +474,7 @@ int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
     int n_iter;
     if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
     else {
-      std::stringstream ss1(input_token[1]);
+      stringstream ss1(input_token[1]);
       ss1 >> n_iter;
       if (!ss1) {
 	Display.Warning("Cannot convert token to integer.");
@@ -607,7 +607,7 @@ int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
     int n_iter;
     if (input_token.size()==1) n_iter=20; // will never be exec in curr. vers.
     else {
-      std::stringstream ss1(input_token[1]);
+      stringstream ss1(input_token[1]);
       ss1 >> n_iter;
       if (!ss1) {
 	Display.Warning("Cannot convert token to integer.");
@@ -744,7 +744,7 @@ int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
       Display.Warning("Input file not found.");
       return 1;
     }
-    while(std::getline (fs, buf))  {
+    while(getline (fs, buf))  {
       //Display.Print(buf+"\n");
       if (ParseCommand(annabell, Mon, buf)==2) break;
     }
