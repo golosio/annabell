@@ -90,48 +90,47 @@ int CheckTryLimit(int i)
   return 0;
 }
 
-int SetAct(Annabell *SLLM, int acq_act, int el_act)
+int SetAct(Annabell *annabell, int acq_act, int el_act)
 {
-  SLLM->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  SLLM->ElActFL->Fill((int*)v_el_act[el_act]);
-  SLLM->ElAct->Fill((int*)v_el_act[el_act]);
+  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
+  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
+  annabell->ElAct->Fill((int*)v_el_act[el_act]);
 
   return 0;
 }
 
-int SetAct(Annabell *SLLM, int rwd_act, int acq_act, int el_act)
+int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act)
 {
-  SLLM->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
-  SLLM->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  SLLM->ElActFL->Fill((int*)v_el_act[el_act]);
-  SLLM->ElAct->Fill((int*)v_el_act[el_act]);
+  annabell->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
+  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
+  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
+  annabell->ElAct->Fill((int*)v_el_act[el_act]);
 
   return 0;
 }
 
-int SetMode(Annabell *SLLM, int imode)
+int SetMode(Annabell *annabell, int imode)
 {
-  SLLM->ModeFlags->Fill((int*)v_mode[imode]);
+  annabell->ModeFlags->Fill((int*)v_mode[imode]);
 
   return 0;
 }
 
-int ExecuteAct(Annabell *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act)
+int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int el_act)
 {
-  SetAct(SLLM, rwd_act, acq_act, el_act);
+  SetAct(annabell, rwd_act, acq_act, el_act);
   Mon->Print();
   if (VerboseFlag) Mon->PrintRwdAct();
-  SLLM->StActRwdUpdate();
+  annabell->StActRwdUpdate();
   if (VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
-  SLLM->Update();
+  annabell->Update();
 
   return 0;
 }
 
-bool simplify(Annabell *SLLM, monitor *Mon,
-	      std::vector<std::string> input_token);
+bool simplify(Annabell *annabell, monitor *Mon, std::vector<std::string> input_token);
 
-int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line);
+int ParseCommand(Annabell *annabell, monitor *Mon, string input_line);
 
 int main()
 {
@@ -141,14 +140,14 @@ int main()
   try {
     init_randmt(12345);
   
-    Annabell *SLLM = new Annabell();
-    monitor *Mon = new monitor(SLLM);
+    Annabell *annabell = new Annabell();
+    monitor *Mon = new monitor(annabell);
     delete Display.LogFile;
     Display.LogFile = Mon->Display.LogFile;
 
-    SetMode(SLLM, NULL_MODE);
+    SetMode(annabell, NULL_MODE);
 
-    Interface(SLLM, Mon);
+    Interface(annabell, Mon);
   }
   catch (ann_exception &e){ // handle possible runtime errors
     cerr << "Error: " << e.what() << "\n";
@@ -189,7 +188,7 @@ int Interface(Annabell *annabell, monitor *Mon)
 //////////////////////////////////////////////////////////////////////
 // Read command or input phrase from command line
 //////////////////////////////////////////////////////////////////////
-int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
+int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
 {
   std::vector<std::string> input_token;
 
@@ -219,14 +218,14 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     input_token.push_back(buf);
   }
 
-  if (simplify(SLLM, Mon, input_token)) return 0;
+  if (simplify(annabell, Mon, input_token)) return 0;
 
   string target_phrase;
   if (input_token.size()==0) {
     Display.Print(input_line+"\n");
     target_phrase = ".end_context";
-    GetInputPhrase(SLLM, Mon, target_phrase);
-    ExecuteAct(SLLM, Mon, NULL_ACT, MEM_PH, NULL_ACT);
+    GetInputPhrase(annabell, Mon, target_phrase);
+    ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
     Display.Print(" >>> End context\n");
     StartContextFlag=true;
 
@@ -236,21 +235,21 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       GetRealTime(&clk0);
 
       AnswerTimeUpdate=false;
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, AnswerTimePhrase);
-      Exploitation(SLLM, Mon, 1);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, AnswerTimePhrase);
+      Exploitation(annabell, Mon, 1);
 
       GetRealTime(&clk1);
       double answ_time = clk1.tv_sec - clk0.tv_sec
 	+ (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
-      double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();
+      double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
       FILE *at_fp=fopen("answer_time.dat", "a");
       fprintf(at_fp, "%.3e\t%.3f\n", link_num, answ_time);
       fclose(at_fp);
     }
     // auto save links
     if (AutoSaveLinkFlag) {
-      double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();
+      double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
       int index = (int)(link_num/AutoSaveLinkStep);
       if (index>AutoSaveLinkIndex) {
 	AutoSaveLinkIndex = index;
@@ -258,36 +257,36 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 	sprintf(filename, "links_%d.dat", AutoSaveLinkIndex);
 	FILE *fp=fopen(filename, "wb");
 	Mon->SaveWM(fp);
-	if (SLLM->MemPh->HighVect.size()!=1) {
+	if (annabell->MemPh->HighVect.size()!=1) {
 	  Display.Warning("Error on MemPh.");
 	  return 1;
 	}
-	fwrite(&SLLM->MemPh->HighVect[0], sizeof(int), 1, fp);
-	if (SLLM->StartPh->HighVect.size()!=1) {
+	fwrite(&annabell->MemPh->HighVect[0], sizeof(int), 1, fp);
+	if (annabell->StartPh->HighVect.size()!=1) {
 	  Display.Warning("Error on StartPh.");
 	  return 1;
 	}
-	fwrite(&SLLM->StartPh->HighVect[0], sizeof(int), 1, fp);
+	fwrite(&annabell->StartPh->HighVect[0], sizeof(int), 1, fp);
 
-	SLLM->IW->SaveNr(fp);
-	SLLM->IW->SaveInputLinks(fp);
-	SLLM->ElActfSt->SaveNr(fp);
-	SLLM->ElActfSt->SaveSparseInputLinks(fp);
-	SLLM->ElActfSt->SaveOutputLinks(fp);
-	SLLM->RemPh->SaveSparseOutputLinks(fp);
-	SLLM->RemPhfWG->SaveNr(fp);
-	SLLM->RemPhfWG->SaveSparseInputLinks(fp);
-	SLLM->RemPhfWG->SaveSparseOutputLinks(fp);
+	annabell->IW->SaveNr(fp);
+	annabell->IW->SaveInputLinks(fp);
+	annabell->ElActfSt->SaveNr(fp);
+	annabell->ElActfSt->SaveSparseInputLinks(fp);
+	annabell->ElActfSt->SaveOutputLinks(fp);
+	annabell->RemPh->SaveSparseOutputLinks(fp);
+	annabell->RemPhfWG->SaveNr(fp);
+	annabell->RemPhfWG->SaveSparseInputLinks(fp);
+	annabell->RemPhfWG->SaveSparseOutputLinks(fp);
 
 	fclose(fp);
       }
     }
     // added 5/01/2013
-    SetAct(SLLM, START_ST_A, NULL_ACT, NULL_ACT);
-    SLLM->StActRwdUpdate();
+    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+    annabell->Update();
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
 
     return 0; // empty line
   }
@@ -303,10 +302,10 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     // input line is a phrase, not a command
     if (SpeakerFlag) Display.Print("*" + SpeakerName + ":\t"); //("*TEA:\t"); 
     Display.Print(input_line+"\n");
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(SLLM, Mon, input_line);
-    BuildAs(SLLM, Mon);
-    //BuildAsTest(SLLM, Mon);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+    GetInputPhrase(annabell, Mon, input_line);
+    BuildAs(annabell, Mon);
+    //BuildAsTest(annabell, Mon);
 
     return 0;
   }
@@ -338,8 +337,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       target_phrase = target_phrase + " " + input_token[itk];
     }
     //VerboseFlag=true;
-    //TargetExplorationTest(SLLM, Mon, "WkPhB", target_phrase);
-    TargetExploration(SLLM, Mon, "WkPhB", target_phrase);
+    //TargetExplorationTest(annabell, Mon, "WkPhB", target_phrase);
+    TargetExploration(annabell, Mon, "WkPhB", target_phrase);
     //cout << "target_phrase: " << target_phrase << endl;
     //VerboseFlag=false;
     return 0;
@@ -351,8 +350,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     if (input_token.size()<2) {
       //Display.Warning("a word group should be provided as argument.");
       //return 1;
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
       return 0;
     }
     target_phrase = input_token[1];
@@ -360,8 +359,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       target_phrase = target_phrase + " " + input_token[itk];
     }
     //VerboseFlag=true;
-    //TargetExplorationTest(SLLM, Mon, "WGB", target_phrase);
-    TargetExploration(SLLM, Mon, "WGB", target_phrase);
+    //TargetExplorationTest(annabell, Mon, "WGB", target_phrase);
+    TargetExploration(annabell, Mon, "WGB", target_phrase);
     //cout << "target_phrase: " << target_phrase << endl;
     //VerboseFlag=false;
 
@@ -381,7 +380,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       target_phrase = target_phrase + " " + input_token[itk];
     }
     //VerboseFlag=true;
-    SearchContext(SLLM, Mon, target_phrase);
+    SearchContext(annabell, Mon, target_phrase);
     //cout << "target_phrase: " << target_phrase << endl;
     //VerboseFlag=false;
 
@@ -402,7 +401,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       target_phrase = target_phrase + " " + input_token[itk];
     }
     //VerboseFlag=true;
-    ContinueSearchContext(SLLM, Mon, target_phrase);
+    ContinueSearchContext(annabell, Mon, target_phrase);
     //cout << "target_phrase: " << target_phrase << endl;
     //VerboseFlag=false;
 
@@ -416,14 +415,14 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
-    //ExecuteAct(SLLM, Mon, STORE_ST_A, MEM_PH, NULL_ACT); // dummy
-    ExplorationApprove(SLLM, Mon);
-    //Mon->PrintPhM("WkPhB", SLLM->WkPhB);
-    //Mon->PrintSSMidx("RemPh", SLLM->RemPh);
-    //Mon->PrintSSMidx("MemPh", SLLM->MemPh);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
+    //ExecuteAct(annabell, Mon, STORE_ST_A, MEM_PH, NULL_ACT); // dummy
+    ExplorationApprove(annabell, Mon);
+    //Mon->PrintPhM("WkPhB", annabell->WkPhB);
+    //Mon->PrintSSMidx("RemPh", annabell->RemPh);
+    //Mon->PrintSSMidx("MemPh", annabell->MemPh);
     ExplorationPhaseIdx=1;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     return 0;
   }
@@ -437,7 +436,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       return 1;
     }
     int n_iter;
-    if (input_token.size()==1) n_iter=SLLM->ElActfSt->K;
+    if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
     else {
       std::stringstream ss1(input_token[1]);
       ss1 >> n_iter;
@@ -446,18 +445,18 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       }
     }
     //int ex_ph = ExplorationPhaseIdx;
-    Reward(SLLM, Mon, 0, n_iter);
+    Reward(annabell, Mon, 0, n_iter);
     //ExplorationPhaseIdx=ex_ph;
     //ExplorationPhaseIdx=0;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     // added 5/01/2013
-    SetAct(SLLM, START_ST_A, NULL_ACT, NULL_ACT);
-    SLLM->StActRwdUpdate();
+    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    ExplorationApprove(SLLM, Mon);
+    annabell->Update();
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx=0;
     AnswerTimeUpdate=true;
 
@@ -473,7 +472,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       return 1;
     }
     int n_iter;
-    if (input_token.size()==1) n_iter=SLLM->ElActfSt->K;
+    if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
     else {
       std::stringstream ss1(input_token[1]);
       ss1 >> n_iter;
@@ -482,18 +481,18 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       }
     }
     //int ex_ph = ExplorationPhaseIdx;
-    Reward(SLLM, Mon, 1, n_iter);
+    Reward(annabell, Mon, 1, n_iter);
     //ExplorationPhaseIdx=ex_ph;
     //ExplorationPhaseIdx=0;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     // added 5/01/2013
-    SetAct(SLLM, START_ST_A, NULL_ACT, NULL_ACT);
-    SLLM->StActRwdUpdate();
+    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    ExplorationApprove(SLLM, Mon);
+    annabell->Update();
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx=1; //ex_ph;
 
     return 0;
@@ -511,12 +510,12 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 	target_phrase = target_phrase + " " + input_token[itk];
       }
       if (AnswerTimePhrase=="")  AnswerTimePhrase = target_phrase;
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, target_phrase);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, target_phrase);
     }
     //VerboseFlag = true;
-    //ExploitationTest(SLLM, Mon, 1);
-    Exploitation(SLLM, Mon, 1);
+    //ExploitationTest(annabell, Mon, 1);
+    Exploitation(annabell, Mon, 1);
     //VerboseFlag = false;
 
     return 0;
@@ -529,7 +528,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
   ////////////////////////////////////////
   else if (buf==".clean_exploit" || buf==".cx") { // clean exploitation
     for (int i=0; i<5; i++)
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
 
     if (input_token.size()>1) {
       target_phrase = input_token[1];
@@ -537,12 +536,12 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 	target_phrase = target_phrase + " " + input_token[itk];
       }
       if (AnswerTimePhrase=="")  AnswerTimePhrase = target_phrase;
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, target_phrase);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, target_phrase);
     }
     //VerboseFlag = true;
-    //ExploitationTest(SLLM, Mon, 1);
-    Exploitation(SLLM, Mon, 1);
+    //ExploitationTest(annabell, Mon, 1);
+    Exploitation(annabell, Mon, 1);
     //VerboseFlag = false;
     
     return 0;
@@ -559,15 +558,15 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, target_phrase);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, target_phrase);
     }
-    SLLM->RemPhfWG->OrderedWnnFlag = false;
+    annabell->RemPhfWG->OrderedWnnFlag = false;
     //VerboseFlag = true;
-    //ExploitationTest(SLLM, Mon, 1);
-    Exploitation(SLLM, Mon, 1);
+    //ExploitationTest(annabell, Mon, 1);
+    Exploitation(annabell, Mon, 1);
     //VerboseFlag = false;
-    SLLM->RemPhfWG->OrderedWnnFlag = true;
+    annabell->RemPhfWG->OrderedWnnFlag = true;
 
     return 0;
   }
@@ -581,16 +580,16 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, target_phrase);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, target_phrase);
     }
     //VerboseFlag = true;
-    //ExploitationTest(SLLM, Mon, 1);
-    string best_phrase = Exploitation(SLLM, Mon, 1);
+    //ExploitationTest(annabell, Mon, 1);
+    string best_phrase = Exploitation(annabell, Mon, 1);
     //VerboseFlag = false;
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(SLLM, Mon, best_phrase);
-    BuildAs(SLLM, Mon);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+    GetInputPhrase(annabell, Mon, best_phrase);
+    BuildAs(annabell, Mon);
 
     return 0;
   }
@@ -619,17 +618,17 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       for(unsigned int itk=3; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(SLLM, Mon, target_phrase);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+      GetInputPhrase(annabell, Mon, target_phrase);
     }
-    SLLM->RemPhfWG->OrderedWnnFlag = false;
+    annabell->RemPhfWG->OrderedWnnFlag = false;
     //VerboseFlag = true;
-    //BestExploitation(SLLM, Mon, n_iter, target_phrase);
-    //BestExploitation2(SLLM, Mon, n_iter, target_phrase);
-    //ExploitationTest(SLLM, Mon, n_iter);
-    Exploitation(SLLM, Mon, n_iter);
+    //BestExploitation(annabell, Mon, n_iter, target_phrase);
+    //BestExploitation2(annabell, Mon, n_iter, target_phrase);
+    //ExploitationTest(annabell, Mon, n_iter);
+    Exploitation(annabell, Mon, n_iter);
     //VerboseFlag = false;
-    SLLM->RemPhfWG->OrderedWnnFlag = true;
+    annabell->RemPhfWG->OrderedWnnFlag = true;
 
     return 0;
   }
@@ -643,16 +642,16 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       return 1;
     }
     if (ExplorationPhaseIdx==0) {
-      ExecuteAct(SLLM, Mon, START_ST_A, NULL_ACT, NULL_ACT);
-      ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
+      ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
+      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
       ExplorationPhaseIdx++;
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, PUSH_GL);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, PUSH_GL);
     int ex_ph = ExplorationPhaseIdx;
-    ExplorationApprove(SLLM, Mon);
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx = ex_ph;
     //ExplorationPhaseIdx=0;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     return 0;
   }
@@ -665,12 +664,12 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
     int ex_ph = ExplorationPhaseIdx;
-    ExplorationApprove(SLLM, Mon);
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx = ex_ph;
     //ExplorationPhaseIdx=0;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     return 0;
   }
@@ -683,11 +682,11 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, GET_GL_PH);
-    ExplorationApprove(SLLM, Mon);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_GL_PH);
+    ExplorationApprove(annabell, Mon);
 
     ExplorationPhaseIdx=1;
-    //SLLM->EPhaseI->Clear();
+    //annabell->EPhaseI->Clear();
 
     return 0;
   }
@@ -698,7 +697,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    WorkingPhraseOut(SLLM, Mon);
+    WorkingPhraseOut(annabell, Mon);
 
     return 0;
   }
@@ -713,19 +712,19 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    SentenceOut(SLLM, Mon);
+    SentenceOut(annabell, Mon);
 
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
-    ExplorationApprove(SLLM, Mon);
-    int n_iter=SLLM->ElActfSt->K;
-    Reward(SLLM, Mon, 0, n_iter);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
+    ExplorationApprove(annabell, Mon);
+    int n_iter=annabell->ElActfSt->K;
+    Reward(annabell, Mon, 0, n_iter);
 
-    SetAct(SLLM, START_ST_A, NULL_ACT, NULL_ACT);
-    SLLM->StActRwdUpdate();
+    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->StActRwdUpdate();
     Mon->Print();
-    SLLM->Update();
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    ExplorationApprove(SLLM, Mon);
+    annabell->Update();
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
+    ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx=0;
     AnswerTimeUpdate=true;
 
@@ -747,7 +746,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     }
     while(std::getline (fs, buf))  {
       //Display.Print(buf+"\n");
-      if (ParseCommand(SLLM, Mon, buf)==2) break;
+      if (ParseCommand(annabell, Mon, buf)==2) break;
     }
     return 0;
   }
@@ -765,8 +764,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
     }
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(SLLM, Mon, target_phrase);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+    GetInputPhrase(annabell, Mon, target_phrase);
     return 0;
   }
   ////////////////////////////////////////
@@ -777,7 +776,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("no arguments should be provided.");
       return 1;
     }
-    BuildAs(SLLM, Mon);
+    BuildAs(annabell, Mon);
 
     return 0;
   }
@@ -787,7 +786,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("no arguments should be provided.");
       return 1;
     }
-    BuildAsTest(SLLM, Mon);
+    BuildAsTest(annabell, Mon);
 
     return 0;
   }
@@ -799,8 +798,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("syntax error.");
       return 1;
     }
-    SetAct(SLLM, NULL_ACT, NULL_ACT);
-    SLLM->Update();
+    SetAct(annabell, NULL_ACT, NULL_ACT);
+    annabell->Update();
     return 0;
   }
 
@@ -837,8 +836,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("unknown action name.");
       return 1;
     }
-    SetAct(SLLM, NULL_ACT, iact);
-    SLLM->Update();
+    SetAct(annabell, NULL_ACT, iact);
+    annabell->Update();
     Mon->Print();
     return 0;
   }
@@ -857,26 +856,26 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     Display.Print("Elapsed time: " + to_string
 		  ((double)(clk1.tv_sec - clk0.tv_sec)
 		    + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9) + "\n");
-    Display.Print("StActMem->act_time: " + to_string(SLLM->StActMem->act_time)
+    Display.Print("StActMem->act_time: " + to_string(annabell->StActMem->act_time)
 		  + "\n");
-    Display.Print("StActMem->as_time: " + to_string(SLLM->StActMem->as_time)
+    Display.Print("StActMem->as_time: " + to_string(annabell->StActMem->as_time)
 		  + "\n");
-    Display.Print("ElActfSt->act_time: " + to_string(SLLM->ElActfSt->act_time)
+    Display.Print("ElActfSt->act_time: " + to_string(annabell->ElActfSt->act_time)
 		  + "\n");
-    Display.Print("ElActfSt->as_time: " + to_string(SLLM->ElActfSt->as_time)
+    Display.Print("ElActfSt->as_time: " + to_string(annabell->ElActfSt->as_time)
 		  + "\n");
-    Display.Print("RemPh->act_time: " + to_string(SLLM->RemPh->act_time)
+    Display.Print("RemPh->act_time: " + to_string(annabell->RemPh->act_time)
 		  + "\n");
-    Display.Print("RemPh->as_time: " + to_string(SLLM->RemPh->as_time) + "\n");
-    Display.Print("RemPhfWG->act_time: " + to_string(SLLM->RemPhfWG->act_time)
+    Display.Print("RemPh->as_time: " + to_string(annabell->RemPh->as_time) + "\n");
+    Display.Print("RemPhfWG->act_time: " + to_string(annabell->RemPhfWG->act_time)
 		  + "\n");
-    Display.Print("RemPhfWG->as_time: " + to_string(SLLM->RemPhfWG->as_time)
+    Display.Print("RemPhfWG->as_time: " + to_string(annabell->RemPhfWG->as_time)
 		  + "\n");
     int nl = 0;
-    Display.Print("ElActfSt neurons: " + toStr(SLLM->ElActfSt->NewWnnNum)
+    Display.Print("ElActfSt neurons: " + toStr(annabell->ElActfSt->NewWnnNum)
 		  + "\n");
-    for (int i=0; i<SLLM->ElActfSt->NewWnnNum; i++) {
-      nl += SLLM->ElActfSt->Nr[i]->NL();
+    for (int i=0; i<annabell->ElActfSt->NewWnnNum; i++) {
+      nl += annabell->ElActfSt->Nr[i]->NL();
     }
     Display.Print("ElActfSt links: " + toStr(nl) + "\n");
 
@@ -896,37 +895,37 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       if (Mon->wflag[iw]>0.5) nw++;
     }
     Display.Print("Learned Words: " + toStr(nw) + "\n");
-    int nph = SLLM->MemPh->HighVect[0];
+    int nph = annabell->MemPh->HighVect[0];
     Display.Print("Learned Phrases: " + toStr(nph) + "\n");
-    int nphwg = SLLM->RemPhfWG->NewWnnNum;
+    int nphwg = annabell->RemPhfWG->NewWnnNum;
     Display.Print("Learned associations between word groups and phrases: "
 		  + toStr(nphwg) + "\n");
 
-    //Display.Print("IW neurons: " + toStr(SLLM->IW->NewWnnNum) + "\n");
-    Display.Print("IW input links: " + toStr(SLLM->IW->CountInputLinks())
+    //Display.Print("IW neurons: " + toStr(annabell->IW->NewWnnNum) + "\n");
+    Display.Print("IW input links: " + toStr(annabell->IW->CountInputLinks())
 		  + "\n");
-    Display.Print("ElActfSt neurons: " + toStr(SLLM->ElActfSt->NewWnnNum)
+    Display.Print("ElActfSt neurons: " + toStr(annabell->ElActfSt->NewWnnNum)
 		  + "\n");
     Display.Print("ElActfSt input links: " +
-		  toStr(SLLM->ElActfSt->CountSparseInputLinks()) + "\n");
+		  toStr(annabell->ElActfSt->CountSparseInputLinks()) + "\n");
     Display.Print("ElActfSt virtual input links: " +
-		  toStr(SLLM->ElActfSt->CountVirtualInputLinks()) + "\n");
+		  toStr(annabell->ElActfSt->CountVirtualInputLinks()) + "\n");
     Display.Print("ElActfSt output links: " +
-		  toStr(SLLM->ElActfSt->CountOutputLinks()) + "\n");
+		  toStr(annabell->ElActfSt->CountOutputLinks()) + "\n");
     Display.Print("RemPh output links: " +
-		  toStr(SLLM->RemPh->CountSparseOutputLinks()) + "\n");
+		  toStr(annabell->RemPh->CountSparseOutputLinks()) + "\n");
     Display.Print("RemPh virtual output links: " +
-		  toStr(SLLM->RemPh->CountVirtualOutputLinks()) + "\n");
-    Display.Print("RemPhfWG neurons: " + toStr(SLLM->RemPhfWG->NewWnnNum)
+		  toStr(annabell->RemPh->CountVirtualOutputLinks()) + "\n");
+    Display.Print("RemPhfWG neurons: " + toStr(annabell->RemPhfWG->NewWnnNum)
 		  + "\n");
     Display.Print("RemPhfWG input links: " +
-		  toStr(SLLM->RemPhfWG->CountSparseInputLinks()) + "\n");
+		  toStr(annabell->RemPhfWG->CountSparseInputLinks()) + "\n");
     Display.Print("RemPhfWG virtual input links: " +
-		  toStr(SLLM->RemPhfWG->CountVirtualInputLinks()) + "\n");
+		  toStr(annabell->RemPhfWG->CountVirtualInputLinks()) + "\n");
     Display.Print("RemPhfWG output links: " +
-		  toStr(SLLM->RemPhfWG->CountSparseOutputLinks()) + "\n");
+		  toStr(annabell->RemPhfWG->CountSparseOutputLinks()) + "\n");
     Display.Print("RemPhfWG virtual output links: " +
-		  toStr(SLLM->RemPhfWG->CountVirtualOutputLinks()) + "\n");
+		  toStr(annabell->RemPhfWG->CountVirtualOutputLinks()) + "\n");
 
     return 0;
   }
@@ -940,8 +939,8 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       return 1;
     }
 #ifdef CUDA
-    SLLM->ElActfSt->cuda_CopyInpuLinks();
-    SLLM->CudaFlag = true;
+    annabell->ElActfSt->cuda_CopyInpuLinks();
+    annabell->CudaFlag = true;
     return 0;
 #else
     Display.Warning("CUDA is not available.");
@@ -964,26 +963,26 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
 
     FILE *fp=fopen(filename.c_str(), "wb");
     Mon->SaveWM(fp);
-    if (SLLM->MemPh->HighVect.size()!=1) {
+    if (annabell->MemPh->HighVect.size()!=1) {
       Display.Warning("Error on MemPh.");
       return 1;
     }
-    fwrite(&SLLM->MemPh->HighVect[0], sizeof(int), 1, fp);
-    if (SLLM->StartPh->HighVect.size()!=1) {
+    fwrite(&annabell->MemPh->HighVect[0], sizeof(int), 1, fp);
+    if (annabell->StartPh->HighVect.size()!=1) {
       Display.Warning("Error on StartPh.");
       return 1;
     }
-    fwrite(&SLLM->StartPh->HighVect[0], sizeof(int), 1, fp);
+    fwrite(&annabell->StartPh->HighVect[0], sizeof(int), 1, fp);
 
-    SLLM->IW->SaveNr(fp);
-    SLLM->IW->SaveInputLinks(fp);
-    SLLM->ElActfSt->SaveNr(fp);
-    SLLM->ElActfSt->SaveSparseInputLinks(fp);
-    SLLM->ElActfSt->SaveOutputLinks(fp);
-    SLLM->RemPh->SaveSparseOutputLinks(fp);
-    SLLM->RemPhfWG->SaveNr(fp);
-    SLLM->RemPhfWG->SaveSparseInputLinks(fp);
-    SLLM->RemPhfWG->SaveSparseOutputLinks(fp);
+    annabell->IW->SaveNr(fp);
+    annabell->IW->SaveInputLinks(fp);
+    annabell->ElActfSt->SaveNr(fp);
+    annabell->ElActfSt->SaveSparseInputLinks(fp);
+    annabell->ElActfSt->SaveOutputLinks(fp);
+    annabell->RemPh->SaveSparseOutputLinks(fp);
+    annabell->RemPhfWG->SaveNr(fp);
+    annabell->RemPhfWG->SaveSparseInputLinks(fp);
+    annabell->RemPhfWG->SaveSparseOutputLinks(fp);
 
     fclose(fp);
 
@@ -1012,28 +1011,28 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       Display.Warning("Error reading MemPh.");
       return 1;
     }
-    SLLM->MemPh->Clear();
-    SLLM->MemPh->HighVect.push_back(i1);
-    SLLM->MemPh->Nr[i1]->O = 1;
+    annabell->MemPh->Clear();
+    annabell->MemPh->HighVect.push_back(i1);
+    annabell->MemPh->Nr[i1]->O = 1;
 
     nmemb = fread(&i1, sizeof(int), 1, fp);
     if (nmemb!=1) {
       Display.Warning("Error reading StartPh.");
       return 1;
     }
-    SLLM->StartPh->Clear();
-    SLLM->StartPh->HighVect.push_back(i1);
-    SLLM->StartPh->Nr[i1]->O = 1;
+    annabell->StartPh->Clear();
+    annabell->StartPh->HighVect.push_back(i1);
+    annabell->StartPh->Nr[i1]->O = 1;
 
-    SLLM->IW->LoadNr(fp);
-    SLLM->IW->LoadInputLinks(fp);
-    SLLM->ElActfSt->LoadNr(fp);
-    SLLM->ElActfSt->LoadSparseInputLinks(fp);
-    SLLM->ElActfSt->LoadOutputLinks(fp);
-    SLLM->RemPh->LoadSparseOutputLinks(fp);
-    SLLM->RemPhfWG->LoadNr(fp);
-    SLLM->RemPhfWG->LoadSparseInputLinks(fp);
-    SLLM->RemPhfWG->LoadSparseOutputLinks(fp);
+    annabell->IW->LoadNr(fp);
+    annabell->IW->LoadInputLinks(fp);
+    annabell->ElActfSt->LoadNr(fp);
+    annabell->ElActfSt->LoadSparseInputLinks(fp);
+    annabell->ElActfSt->LoadOutputLinks(fp);
+    annabell->RemPh->LoadSparseOutputLinks(fp);
+    annabell->RemPhfWG->LoadNr(fp);
+    annabell->RemPhfWG->LoadSparseInputLinks(fp);
+    annabell->RemPhfWG->LoadSparseOutputLinks(fp);
 
     fclose(fp);
 
@@ -1116,14 +1115,14 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
     struct timespec clk0, clk1;
     GetRealTime(&clk0);
     
-    ExecuteAct(SLLM, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(SLLM, Mon, AnswerTimePhrase);
-    Exploitation(SLLM, Mon, 1);
+    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+    GetInputPhrase(annabell, Mon, AnswerTimePhrase);
+    Exploitation(annabell, Mon, 1);
 
     GetRealTime(&clk1);
     double answ_time = clk1.tv_sec - clk0.tv_sec
       + (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
-    double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();
+    double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
     //FILE *at_fp=fopen("answer_time.dat", "a");
     printf("EAT: %.3e\t%.3f\n", link_num, answ_time);
     //fclose(at_fp);
@@ -1140,7 +1139,7 @@ int ParseCommand(Annabell *SLLM, monitor *Mon, string input_line)
       return 1;
     }
     AutoSaveLinkFlag = true;
-    double link_num = (double)SLLM->ElActfSt->CountSparseInputLinks();
+    double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
     AutoSaveLinkIndex = (int)(link_num/AutoSaveLinkStep);
 
     return 0;
@@ -1321,7 +1320,7 @@ int BuildAsTest(Annabell *annabell, monitor *Mon)
     for (PhI=-1; PhI<SkipW; PhI++) {
       SetAct(annabell, NEXT_AS_W, NULL_ACT);
       Mon->Print();
-      //SLLM->ActUpdate(); //just to save time in place of Update
+      //annabell->ActUpdate(); //just to save time in place of Update
       annabell->Update();
     }
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
@@ -1351,15 +1350,15 @@ int BuildAsTest(Annabell *annabell, monitor *Mon)
 }
 
 
-int MoreRetrAsSlow(Annabell *SLLM, monitor *Mon)
+int MoreRetrAsSlow(Annabell *annabell, monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
     //cout << "MoreRetrAs " << i << endl;
-    SetAct(SLLM, NULL_ACT, RETR_AS);
-    SLLM->Update();
+    SetAct(annabell, NULL_ACT, RETR_AS);
+    annabell->Update();
     //Mon->Print();
-    ExecuteAct(SLLM, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
     next_act=Mon->GetElActFL();
     if (next_act!=NULL_ACT) break;    
   }
@@ -1388,7 +1387,7 @@ int ExploitationSlow(Annabell *annabell, monitor *Mon)
 	  && next_act!=NULL_ACT
 	  && (prev_act!=RETR_AS || next_act!=RETR_AS)) break;
       annabell->ElActfSt->GB++;
-      //cout << "next act not found. Trying with GB=" << SLLM->ElActfSt->GB
+      //cout << "next act not found. Trying with GB=" << annabell->ElActfSt->GB
       //	   << endl;
     }
     LastGB = annabell->ElActfSt->GB;
@@ -1404,7 +1403,7 @@ int ExploitationSlow(Annabell *annabell, monitor *Mon)
       Mon->GetPhM("OutPhB", annabell->OutPhB);
       Display.Print(Mon->OutPhrase+"\n");
     }
-    //if (SLLM->OutFlag->Nr[0]->O>0.5) {
+    //if (annabell->OutFlag->Nr[0]->O>0.5) {
     if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
       Display.Print(" ... ");
     }
@@ -1412,7 +1411,7 @@ int ExploitationSlow(Annabell *annabell, monitor *Mon)
       Display.Print(".\n");
       //Display.Print("Done. Exiting\n");
       //Mon->Print();
-      //Mon->GetPhM("OutPhB", SLLM->OutPhB);
+      //Mon->GetPhM("OutPhB", annabell->OutPhB);
       //Display.Print(Mon->OutPhrase+"\n");
       break;
     }
@@ -1425,15 +1424,15 @@ int ExploitationSlow(Annabell *annabell, monitor *Mon)
 }
 
 
-int MoreRetrAs(Annabell *SLLM, monitor *Mon)
+int MoreRetrAs(Annabell *annabell, monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
     //cout << "MoreRetrAs " << i << endl;
-    SetAct(SLLM, NULL_ACT, RETR_AS);
-    SLLM->Update();
+    SetAct(annabell, NULL_ACT, RETR_AS);
+    annabell->Update();
     //Mon->Print();
-    ExecuteAct(SLLM, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
+    ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
     next_act=Mon->GetElActFL();
     if (next_act!=NULL_ACT) break;    
   }
@@ -1448,12 +1447,12 @@ int ExplorationRetry(Annabell *annabell, monitor *Mon)
   if (ExplorationPhaseIdx==3) ExplorationPhaseIdx=4;
   else if (ExplorationPhaseIdx==4) ExplorationPhaseIdx=1;
 
-  //cout << "StoredStActI: " << SLLM->StoredStActI->HighVect[0] << endl;
-  //cout << "StActI before: " << SLLM->StActI->HighVect[0] << endl;
+  //cout << "StoredStActI: " << annabell->StoredStActI->HighVect[0] << endl;
+  //cout << "StActI before: " << annabell->StActI->HighVect[0] << endl;
   //Mon->Print();
   SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
-  //cout << "StActI after: " << SLLM->StActI->HighVect[0] << endl;
+  //cout << "StActI after: " << annabell->StActI->HighVect[0] << endl;
   SetAct(annabell, RETR_ST_A, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
   SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
@@ -1465,12 +1464,12 @@ int ExplorationRetry(Annabell *annabell, monitor *Mon)
   return 0;
 }
 
-int GetStActIdx(Annabell *SLLM, monitor *Mon)
+int GetStActIdx(Annabell *annabell, monitor *Mon)
 {
   int vi[StActSize];
 
   for (int ib=0; ib<StActSize; ib++) {
-    vi[ib]=SLLM->StActI->Nr[ib]->O;
+    vi[ib]=annabell->StActI->Nr[ib]->O;
   } 
   int is=interface::v2i(vi, StActSize);
 
@@ -1502,7 +1501,7 @@ int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
   Mon->Print();
   annabell->Update();
   //Mon->Print();
-  int LastStActI = GetStActIdx(annabell, Mon); //SLLM->StActI
+  int LastStActI = GetStActIdx(annabell, Mon); //annabell->StActI
   for (int i=0; i<n_iter; i++) {
     //Mon->ModeMessage("Start State-Action Index\n");
     SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
@@ -1579,7 +1578,7 @@ string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
     annabell->AcqAct->ActivOut();
     //Mon->PrintRwdAct();
 
-    //if (SLLM->ElAct->Default->Nr[0]->O<0.5)
+    //if (annabell->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
     if (VerboseFlag) Mon->PrintRwdAct();
     //int prev_act=Mon->GetElAct(); // temporary
@@ -1597,7 +1596,7 @@ string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
 
       /////////////////////// the following has to be checked when possible
 
-      //if (next_act==SNT_OUT) {//SLLM->ElAct->Nr[SNT_OUT-1]->O>0.5) {
+      //if (next_act==SNT_OUT) {//annabell->ElAct->Nr[SNT_OUT-1]->O>0.5) {
     if (annabell->ElAct->Nr[SNT_OUT-1]->O>0.5 &&
 	annabell->RwdAct->Nr[STORE_ST_A-1]->O>0.5) {
       int DB = annabell->ElActfSt->DB;
@@ -1622,7 +1621,7 @@ string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
       OutPhrase = OutPhrase + Mon->OutPhrase;
       Nupdate=0;
     }
-    //if (SLLM->OutFlag->Nr[0]->O>0.5) {
+    //if (annabell->OutFlag->Nr[0]->O>0.5) {
     if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
       Display.Print(" ... ");
     }
@@ -1676,10 +1675,10 @@ string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
 	  ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, RETR_AS);
 	  ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
 	  next_act=Mon->GetElActFL(); //Mon->PrintElAct();
-	  //int n_wnn = SLLM->ElActfSt->NumWnn();
+	  //int n_wnn = annabell->ElActfSt->NumWnn();
 	  //cout << "next act " << next_act << endl;
 	  //cout << "NumWnn: " << n_wnn << endl;
-	  //cout << "DB: " << SLLM->ElActfSt->DB << endl;
+	  //cout << "DB: " << annabell->ElActfSt->DB << endl;
 	  int DB = annabell->ElActfSt->DB;
 	  if (next_act!=RETR_AS && next_act!=NULL_ACT
 	      && annabell->ElActfSt->NumWnn()>=5 && DB<best_DB) {
@@ -1713,7 +1712,7 @@ string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
       }
 
 
-      if (next_act==SNT_OUT) {//SLLM->ElAct->Nr[SNT_OUT-1]->O>0.5) {
+      if (next_act==SNT_OUT) {//annabell->ElAct->Nr[SNT_OUT-1]->O>0.5) {
 	int DB = annabell->ElActfSt->DB;
 	if (OutPhrase!="") OutPhrase = OutPhrase + " ";
 	OutPhrase = OutPhrase + SentenceOut(annabell, Mon);
@@ -1733,7 +1732,7 @@ string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
 	if (OutPhrase!="") OutPhrase = OutPhrase + " ";
 	OutPhrase = OutPhrase + Mon->OutPhrase;
       }
-      //if (SLLM->OutFlag->Nr[0]->O>0.5) {
+      //if (annabell->OutFlag->Nr[0]->O>0.5) {
       if (annabell->ElAct->Nr[CONTINUE-1]->O>0.5) {
 	Display.Print(" ... ");
       }
@@ -1790,7 +1789,7 @@ int TargetExploration(Annabell *annabell, monitor *Mon, string name, string targ
     annabell->ElActFL->ActivOut();
     annabell->AcqAct->ActivOut();
 
-    //if (SLLM->ElAct->Default->Nr[0]->O<0.5)
+    //if (annabell->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
     if (VerboseFlag) Mon->PrintRwdAct();
     annabell->StActRwdUpdate();
@@ -2010,7 +2009,7 @@ int WorkingPhraseOut(Annabell *annabell, monitor *Mon)
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_W);
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NEXT_W);
     // try to restore the following lines
-    //Mon->GetWM("CW", SLLM->CW);
+    //Mon->GetWM("CW", annabell->CW);
     //	if (Mon->OutStr[0]=="") break;
     //}
   }
@@ -2042,18 +2041,18 @@ string SentenceOut(Annabell *annabell, monitor *Mon)
     ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx = 2;
   }
-  //ExecuteAct(SLLM, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
+  //ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
 
   Mon->GetPhM("WkPhB", annabell->WkPhB);
   while(Mon->OutPhrase!=".end_context" && Mon->OutPhrase!="") {
     ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
-    //while (SLLM->PhI->Nr[PhSize-1]->O<0.5) {
+    //while (annabell->PhI->Nr[PhSize-1]->O<0.5) {
     for(;;) {
       ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, GET_W);
       if (annabell->PhI->Nr[PhSize-1]->O>0.5) break;
       ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NEXT_W);
       // try to restore the following lines
-      //Mon->GetWM("CW", SLLM->CW);
+      //Mon->GetWM("CW", annabell->CW);
       //	if (Mon->OutStr[0]=="") break;
       //}
     } 

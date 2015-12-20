@@ -40,11 +40,11 @@ extern bool VerboseFlag;
 extern bool StartContextFlag;
 
 int CheckTryLimit(int i);
-int SetAct(Annabell *SLLM, int acq_act, int el_act);
-int SetAct(Annabell *SLLM, int rwd_act, int acq_act, int el_act);
-int SetMode(Annabell *SLLM, int imode);
-int ExecuteAct(Annabell *SLLM, monitor *Mon, int rwd_act, int acq_act, int el_act);
-int GetInputPhrase(Annabell *SLLM, monitor *Mon, std::string input_phrase);
+int SetAct(Annabell *annabell, int acq_act, int el_act);
+int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act);
+int SetMode(Annabell *annabell, int imode);
+int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int el_act);
+int GetInputPhrase(Annabell *annabell, monitor *Mon, std::string input_phrase);
 
 
 #endif
