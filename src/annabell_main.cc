@@ -132,37 +132,35 @@ bool simplify(Annabell *annabell, Monitor *Mon, vector<string> input_token);
 
 int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line);
 
-int main()
-{
-  Display.LogFileFlag=false;
-  Display.ConsoleFlag=true;
+int main() {
 
-  try {
-    init_randmt(12345);
-  
-    Annabell *annabell = new Annabell();
-    Monitor *Mon = new Monitor(annabell);
-    delete Display.LogFile;
-    Display.LogFile = Mon->Display.LogFile;
+	Display.LogFileFlag = false;
+	Display.ConsoleFlag = true;
 
-    SetMode(annabell, NULL_MODE);
+	try {
+		init_randmt(12345);
 
-    Interface(annabell, Mon);
-  }
-  catch (ann_exception &e){ // handle possible runtime errors
-    cerr << "Error: " << e.what() << "\n";
-    return 1;
-  }
-  catch (bad_alloc&) {
-    cerr << "Error allocating memory." << "\n";
-    return 1;
-  }
-  catch (...) {
-    cerr << "Unrecognized error\n";
-    return 1;
-  }
+		Annabell *annabell = new Annabell();
+		Monitor *Mon = new Monitor(annabell);
 
-  return 0;
+		delete Display.LogFile;
+		Display.LogFile = Mon->Display.LogFile;
+
+		SetMode(annabell, NULL_MODE);
+
+		Interface(annabell, Mon);
+
+		return 0;
+	} catch (ann_exception &e) {
+		cerr << "Error: " << e.what() << "\n";
+		return 1;
+	} catch (bad_alloc&) {
+		cerr << "Error allocating memory.\n";
+		return 1;
+	} catch (...) {
+		cerr << "Unrecognized error.\n";
+		return 1;
+	}
 }
 
 int Interface(Annabell *annabell, Monitor *Mon)
