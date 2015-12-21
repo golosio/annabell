@@ -185,9 +185,9 @@ int Interface(Annabell *annabell, monitor *Mon)
 }
 
 
-//////////////////////////////////////////////////////////////////////
-// Read command or input phrase from command line
-//////////////////////////////////////////////////////////////////////
+/**
+ * Read command or input phrase from command line
+ */
 int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
 {
   vector<string> input_token;
