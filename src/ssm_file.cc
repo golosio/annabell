@@ -15,12 +15,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <Monitor.h>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include "ssm.h"
 #include "sizes.h"
-#include "monitor.h"
 #include "ann_exception.h"
 
 using namespace std;
@@ -211,7 +211,7 @@ int vssm::LoadInputLinks(FILE *fp)
   return 0;
 }
 
-int monitor::SaveWM(FILE *fp)
+int Monitor::SaveWM(FILE *fp)
 {
   for (int iw=0; iw<WMSize; iw++) {
     fwrite(&wflag[iw], sizeof(int), 1, fp);
@@ -223,7 +223,7 @@ int monitor::SaveWM(FILE *fp)
   return 0;
 }
 
-int monitor::LoadWM(FILE *fp)
+int Monitor::LoadWM(FILE *fp)
 {
   for (int iw=0; iw<WMSize; iw++) {
     FREAD(&wflag[iw], sizeof(int), 1, fp);

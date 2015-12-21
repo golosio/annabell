@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sizes.h"
 #include "display.h"
 
-class monitor
+class Monitor
 {
  public:
   display Display;
@@ -47,7 +47,7 @@ class monitor
   std::string OutStr[sizes::PhSize];
   std::string OutPhrase;
 
-  monitor(Annabell *sllm1);
+  Monitor(Annabell *sllm1);
 
   int MapW(char *w);
   int PrintWM(std::string name, vssm *wm);

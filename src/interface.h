@@ -18,8 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef INTERFACEH
 #define INTERFACEH
 #include "Annabell.h"
+#include "Monitor.h"
 #include "sizes.h"
-#include "monitor.h"
 
 class interface
 {
@@ -43,8 +43,8 @@ int CheckTryLimit(int i);
 int SetAct(Annabell *annabell, int acq_act, int el_act);
 int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act);
 int SetMode(Annabell *annabell, int imode);
-int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int el_act);
-int GetInputPhrase(Annabell *annabell, monitor *Mon, std::string input_phrase);
+int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act);
+int GetInputPhrase(Annabell *annabell, Monitor *Mon, std::string input_phrase);
 
 
 #endif

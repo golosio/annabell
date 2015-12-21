@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <Annabell.h>
+#include <Monitor.h>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -25,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdlib.h>
 #include "sizes.h"
 #include "interface.h"
-#include "monitor.h"
 #include "rnd.h"
 #include "display.h" 
 #include "ann_exception.h"
@@ -55,25 +55,25 @@ long AutoSaveLinkStep = 2000000;
 
 struct timespec clk0, clk1;
 
-int GetInputPhrase(Annabell *annabell, monitor *Mon, string input_phrase);
-int GetInputPhraseTest(Annabell *annabell, monitor *Mon, string input_phrase);
-int BuildAs(Annabell *annabell, monitor *Mon);
-int BuildAsTest(Annabell *annabell, monitor *Mon);
-int ExplorationApprove(Annabell *annabell, monitor *Mon);
-int ExplorationRetry(Annabell *annabell, monitor *Mon);
-int Reward(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter);
-int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter);
-string Exploitation(Annabell *annabell, monitor *Mon, int n_iter);
-string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter);
-int ExploitationSlow(Annabell *annabell, monitor *Mon);
-int TargetExploration(Annabell *annabell, monitor *Mon, string name, string target_phrase);
-int TargetExplorationTest(Annabell *annabell, monitor *Mon, string name, string target_phrase);
-int SearchContext(Annabell *annabell, monitor *Mon, string target_phrase);
-int ContinueSearchContext(Annabell *annabell, monitor *Mon, string target_phrase);
-int WorkingPhraseOut(Annabell *annabell, monitor *Mon);
-string SentenceOut(Annabell *annabell, monitor *Mon);
-int Interface(Annabell *annabell, monitor *Mon);
-int Reset(Annabell *annabell, monitor *Mon);
+int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
+int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase);
+int BuildAs(Annabell *annabell, Monitor *Mon);
+int BuildAsTest(Annabell *annabell, Monitor *Mon);
+int ExplorationApprove(Annabell *annabell, Monitor *Mon);
+int ExplorationRetry(Annabell *annabell, Monitor *Mon);
+int Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
+int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
+string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter);
+string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter);
+int ExploitationSlow(Annabell *annabell, Monitor *Mon);
+int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
+int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
+int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase);
+int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase);
+int WorkingPhraseOut(Annabell *annabell, Monitor *Mon);
+string SentenceOut(Annabell *annabell, Monitor *Mon);
+int Interface(Annabell *annabell, Monitor *Mon);
+int Reset(Annabell *annabell, Monitor *Mon);
 
 template <typename T>
 string to_string(T const& value) {
@@ -116,7 +116,7 @@ int SetMode(Annabell *annabell, int imode)
   return 0;
 }
 
-int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int el_act)
+int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act)
 {
   SetAct(annabell, rwd_act, acq_act, el_act);
   Mon->Print();
@@ -128,9 +128,9 @@ int ExecuteAct(Annabell *annabell, monitor *Mon, int rwd_act, int acq_act, int e
   return 0;
 }
 
-bool simplify(Annabell *annabell, monitor *Mon, vector<string> input_token);
+bool simplify(Annabell *annabell, Monitor *Mon, vector<string> input_token);
 
-int ParseCommand(Annabell *annabell, monitor *Mon, string input_line);
+int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line);
 
 int main()
 {
@@ -141,7 +141,7 @@ int main()
     init_randmt(12345);
   
     Annabell *annabell = new Annabell();
-    monitor *Mon = new monitor(annabell);
+    Monitor *Mon = new Monitor(annabell);
     delete Display.LogFile;
     Display.LogFile = Mon->Display.LogFile;
 
@@ -165,7 +165,7 @@ int main()
   return 0;
 }
 
-int Interface(Annabell *annabell, monitor *Mon)
+int Interface(Annabell *annabell, Monitor *Mon)
 {
   string input_line;
   bool out_flag=false;
@@ -188,7 +188,7 @@ int Interface(Annabell *annabell, monitor *Mon)
 /**
  * Read command or input phrase from command line
  */
-int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
+int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line)
 {
   vector<string> input_token;
 
@@ -1178,7 +1178,7 @@ int ParseCommand(Annabell *annabell, monitor *Mon, string input_line)
 }
 
 
-int GetInputPhraseTest(Annabell *annabell, monitor *Mon, string input_phrase)
+int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
@@ -1224,7 +1224,7 @@ int GetInputPhraseTest(Annabell *annabell, monitor *Mon, string input_phrase)
   return 0;
 }
 
-int GetInputPhrase(Annabell *annabell, monitor *Mon, string input_phrase)
+int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase)
 {
   int vin[WSize];
 
@@ -1275,7 +1275,7 @@ int GetInputPhrase(Annabell *annabell, monitor *Mon, string input_phrase)
   return 0;
 }
 
-int BuildAs(Annabell *annabell, monitor *Mon)
+int BuildAs(Annabell *annabell, Monitor *Mon)
 {
   //cout << "ok2\n";
   if (StartContextFlag) {
@@ -1301,7 +1301,7 @@ int BuildAs(Annabell *annabell, monitor *Mon)
   return 0;
 }
 
-int BuildAsTest(Annabell *annabell, monitor *Mon)
+int BuildAsTest(Annabell *annabell, Monitor *Mon)
 {
   int PhI;
 
@@ -1350,7 +1350,7 @@ int BuildAsTest(Annabell *annabell, monitor *Mon)
 }
 
 
-int MoreRetrAsSlow(Annabell *annabell, monitor *Mon)
+int MoreRetrAsSlow(Annabell *annabell, Monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
@@ -1366,7 +1366,7 @@ int MoreRetrAsSlow(Annabell *annabell, monitor *Mon)
   return next_act;
 }
 
-int ExploitationSlow(Annabell *annabell, monitor *Mon)
+int ExploitationSlow(Annabell *annabell, Monitor *Mon)
 {
   SetMode(annabell, EXPLOIT);
   //cout << "\nExploitation\n";
@@ -1424,7 +1424,7 @@ int ExploitationSlow(Annabell *annabell, monitor *Mon)
 }
 
 
-int MoreRetrAs(Annabell *annabell, monitor *Mon)
+int MoreRetrAs(Annabell *annabell, Monitor *Mon)
 {
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
@@ -1440,7 +1440,7 @@ int MoreRetrAs(Annabell *annabell, monitor *Mon)
   return next_act;
 }
 
-int ExplorationRetry(Annabell *annabell, monitor *Mon)
+int ExplorationRetry(Annabell *annabell, Monitor *Mon)
 {
   //cout << "\nExplorationRetry (RetrieveStActIdx)\n";
 
@@ -1464,7 +1464,7 @@ int ExplorationRetry(Annabell *annabell, monitor *Mon)
   return 0;
 }
 
-int GetStActIdx(Annabell *annabell, monitor *Mon)
+int GetStActIdx(Annabell *annabell, Monitor *Mon)
 {
   int vi[StActSize];
 
@@ -1476,7 +1476,7 @@ int GetStActIdx(Annabell *annabell, monitor *Mon)
   return is;
 }
 
-int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
+int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
 {
   SetMode(annabell, REWARD);
 
@@ -1521,7 +1521,7 @@ int RewardTest(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
   return 0;
 }
 
-int Reward(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
+int Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
 {
   int vin[IterSize];
   for (int i=0; i<IterSize; i++) vin[i] = (i==n_iter) ? 1 : 0;
@@ -1544,7 +1544,7 @@ int Reward(Annabell *annabell, monitor *Mon, int partial_flag, int n_iter)
   return 0;
 }
 
-string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
+string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter)
 {
   int Nupdate, MaxNupdate=4000;
   int vin[IterSize];
@@ -1648,7 +1648,7 @@ string Exploitation(Annabell *annabell, monitor *Mon, int n_iter)
   return BestPhrase;
 }
 
-string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
+string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter)
 {
   SetMode(annabell, EXPLOIT);
   //cout << "\nExploitation\n";
@@ -1763,7 +1763,7 @@ string ExploitationTest(Annabell *annabell, monitor *Mon, int n_iter)
 }
 
 int ttt=0;
-int TargetExploration(Annabell *annabell, monitor *Mon, string name, string target_phrase)
+int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase)
 {
   int vin[PhSize];
 
@@ -1836,7 +1836,7 @@ int TargetExploration(Annabell *annabell, monitor *Mon, string name, string targ
   return 0;
 }
 
-int ExplorationApprove(Annabell *annabell, monitor *Mon)
+int ExplorationApprove(Annabell *annabell, Monitor *Mon)
 {
   ExecuteAct(annabell, Mon, STORE_SAI, NULL_ACT, NULL_ACT);
 
@@ -1845,7 +1845,7 @@ int ExplorationApprove(Annabell *annabell, monitor *Mon)
   return 0;
 }
 
-int TargetExplorationTest(Annabell *annabell, monitor *Mon, string name, string target_phrase)
+int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase)
 {
   //cout << "\nExploration\n";
   SetMode(annabell, EXPLORE);
@@ -1927,7 +1927,7 @@ int TargetExplorationTest(Annabell *annabell, monitor *Mon, string name, string 
   return 0;
 }
 
-int SearchContext(Annabell *annabell, monitor *Mon, string target_phrase)
+int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(annabell, EXPLORE);
@@ -1965,7 +1965,7 @@ int SearchContext(Annabell *annabell, monitor *Mon, string target_phrase)
   return 0;
 }
 
-int ContinueSearchContext(Annabell *annabell, monitor *Mon, string target_phrase)
+int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
   SetMode(annabell, EXPLORE);
@@ -1998,7 +1998,7 @@ int ContinueSearchContext(Annabell *annabell, monitor *Mon, string target_phrase
   return 0;
 }
 
-int WorkingPhraseOut(Annabell *annabell, monitor *Mon)
+int WorkingPhraseOut(Annabell *annabell, Monitor *Mon)
 {
   //cout << "\nSend working phrase to output\n";
   SetMode(annabell, EXPLORE);
@@ -2031,7 +2031,7 @@ int WorkingPhraseOut(Annabell *annabell, monitor *Mon)
   return 0;
 }
 
-string SentenceOut(Annabell *annabell, monitor *Mon)
+string SentenceOut(Annabell *annabell, Monitor *Mon)
 {
   //cout << "\nSend sentence to output\n";
   string out_phrase = "";
@@ -2070,7 +2070,7 @@ string SentenceOut(Annabell *annabell, monitor *Mon)
   return out_phrase;
 }
 
-int Reset(Annabell *annabell, monitor *Mon)
+int Reset(Annabell *annabell, Monitor *Mon)
 {
   SetMode(annabell, NULL_MODE);
   //StartContextFlag=true;

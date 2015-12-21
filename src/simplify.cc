@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <Annabell.h>
+#include <Monitor.h>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -23,14 +24,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <sstream>
 #include <stdlib.h>
 #include "interface.h"
-#include "monitor.h"
 #include "display.h" 
 
 using namespace std;
 
-int ParseCommand(Annabell *SLLM, monitor *Mon, std::string input_line);
+int ParseCommand(Annabell *SLLM, Monitor *Mon, std::string input_line);
 
-bool simplify(Annabell *SLLM, monitor *Mon,
+bool simplify(Annabell *SLLM, Monitor *Mon,
 	      std::vector<std::string> input_token)
  {
    std::string cmd, buf; // buffer string
