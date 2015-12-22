@@ -75,62 +75,15 @@ string SentenceOut(Annabell *annabell, Monitor *Mon);
 int Interface(Annabell *annabell, Monitor *Mon);
 int Reset(Annabell *annabell, Monitor *Mon);
 
+bool simplify(Annabell *annabell, Monitor *Mon, vector<string> input_token);
+int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line);
+
 template <typename T>
 string to_string(T const& value) {
     stringstream sstr;
     sstr << value;
     return sstr.str();
 }
-
-int CheckTryLimit(int i)
-{
-  if (i>=TRYLIMIT)
-    throw ann_exception("Too many attempts\n");
-
-  return 0;
-}
-
-int SetAct(Annabell *annabell, int acq_act, int el_act)
-{
-  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
-  annabell->ElAct->Fill((int*)v_el_act[el_act]);
-
-  return 0;
-}
-
-int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act)
-{
-  annabell->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
-  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
-  annabell->ElAct->Fill((int*)v_el_act[el_act]);
-
-  return 0;
-}
-
-int SetMode(Annabell *annabell, int imode)
-{
-  annabell->ModeFlags->Fill((int*)v_mode[imode]);
-
-  return 0;
-}
-
-int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act)
-{
-  SetAct(annabell, rwd_act, acq_act, el_act);
-  Mon->Print();
-  if (VerboseFlag) Mon->PrintRwdAct();
-  annabell->StActRwdUpdate();
-  if (VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
-  annabell->Update();
-
-  return 0;
-}
-
-bool simplify(Annabell *annabell, Monitor *Mon, vector<string> input_token);
-
-int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line);
 
 int main() {
 
@@ -163,14 +116,54 @@ int main() {
 	}
 }
 
-int Interface(Annabell *annabell, Monitor *Mon)
-{
+int CheckTryLimit(int i) {
+  if (i>=TRYLIMIT)
+    throw ann_exception("Too many attempts\n");
+
+  return 0;
+}
+
+int SetAct(Annabell *annabell, int acq_act, int el_act) {
+  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
+  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
+  annabell->ElAct->Fill((int*)v_el_act[el_act]);
+
+  return 0;
+}
+
+int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act) {
+  annabell->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
+  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
+  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
+  annabell->ElAct->Fill((int*)v_el_act[el_act]);
+
+  return 0;
+}
+
+int SetMode(Annabell *annabell, int imode) {
+  annabell->ModeFlags->Fill((int*)v_mode[imode]);
+
+  return 0;
+}
+
+int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act) {
+  SetAct(annabell, rwd_act, acq_act, el_act);
+  Mon->Print();
+  if (VerboseFlag) Mon->PrintRwdAct();
+  annabell->StActRwdUpdate();
+  if (VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
+  annabell->Update();
+
+  return 0;
+}
+
+int Interface(Annabell *annabell, Monitor *Mon) {
   string input_line;
   bool out_flag=false;
 
   GetRealTime(&clk0);
 
-  for(;;) {
+  while(true) {
     cout << "Enter command: ";
     if (!getline (cin, input_line)) out_flag=true;
       //Display.Print(input_line+"\n");
@@ -186,8 +179,7 @@ int Interface(Annabell *annabell, Monitor *Mon)
 /**
  * Read command or input phrase from command line
  */
-int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line)
-{
+int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
   vector<string> input_token;
 
   stringstream ss(input_line); // Insert the line into a stream
