@@ -149,58 +149,78 @@ int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int e
   return 0;
 }
 
-int Interface(Annabell *annabell, Monitor *Mon) {
+int Interface(Annabell *annabell, Monitor *mon) {
   string input_line;
-  bool out_flag=false;
+  bool out_flag = false;
 
   GetRealTime(&clk0);
 
   while(true) {
     cout << "Enter command: ";
-    if (!getline (cin, input_line)) out_flag=true;
-      //Display.Print(input_line+"\n");
-    if (ParseCommand(annabell, Mon, input_line)==2 || out_flag) break;
+
+    if (!getline (cin, input_line)) {
+    	out_flag=true;
+    }
+
+    if (ParseCommand(annabell, mon, input_line) == 2 || out_flag) {
+    	break;
+    }
   }
   
-  if (Display.LogFile->is_open()) Display.LogFile->close();
+  if (Display.LogFile->is_open()) {
+	  Display.LogFile->close();
+  }
 
   return 0;
 }
 
 
 /**
- * Read command or input phrase from command line
+ * Read command or input phrase from command line.
+ * @returns 2 for .quit command.
  */
 int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
-  vector<string> input_token;
 
-  stringstream ss(input_line); // Insert the line into a stream
-  string buf, buf1; // buffer strings
+	vector<string> input_token;
 
-  buf = "";
-  while (ss >> buf1) { // split line in string tokens
-    if (buf1=="an") buf1="a"; // take care of article
-    if (buf1=="-es") buf1="-s"; // take care of plural suffix
+	stringstream ss(input_line); // Insert the line into a stream
+	string buf, buf1; // buffer strings
 
-    buf = buf + buf1;
-    if (buf[0]=='/' || buf[0]=='<') {
-      int l=buf.size()-1;
-      if ((buf[0]=='/' && buf[l]!='/') ||
-	  (buf[0]=='<' && buf[l]!='>')) {
-	buf = buf + " ";
-	continue;
-      }
-    }
-    input_token.push_back(buf);
-    buf="";
-  }
-  if (buf!="") {
-    int l=buf.size()-1;
-    if (buf[l]==' ') buf.erase(l);
-    input_token.push_back(buf);
-  }
+	buf = "";
+	while (ss >> buf1) { // split line in string tokens
 
-  if (simplify(annabell, Mon, input_token)) return 0;
+		if (buf1 == "an") {
+			buf1 = "a"; // take care of article
+		}
+
+		if (buf1 == "-es") {
+			buf1 = "-s"; // take care of plural suffix
+		}
+
+		buf = buf + buf1;
+		if (buf[0] == '/' || buf[0] == '<') {
+			int l = buf.size() - 1;
+			if ((buf[0] == '/' && buf[l] != '/') || (buf[0] == '<' && buf[l] != '>')) {
+				buf = buf + " ";
+				continue;
+			}
+		}
+
+		input_token.push_back(buf);
+		buf = "";
+	}
+
+	if (buf != "") {
+		int l = buf.size() - 1;
+		if (buf[l] == ' ') {
+			buf.erase(l);
+		}
+		input_token.push_back(buf);
+	}
+
+	if (simplify(annabell, Mon, input_token)) {
+		return 0;
+	}
 
   string target_phrase;
   if (input_token.size()==0) {
