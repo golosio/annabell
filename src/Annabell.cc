@@ -1282,6 +1282,14 @@ Annabell::Annabell()
 
   AddRef();
   ElActfSt->OMPActivArrInit();
+
+  this->SetMode(NULL_MODE);
+}
+
+int Annabell::SetMode(int imode) {
+  this->ModeFlags->Fill((int*)v_mode[imode]);
+
+  return 0;
 }
 
 int Annabell::In(int *w, int *phi)

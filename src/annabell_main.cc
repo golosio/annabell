@@ -99,8 +99,6 @@ int main() {
 		delete Display.LogFile;
 		Display.LogFile = Mon->Display.LogFile;
 
-		SetMode(annabell, NULL_MODE);
-
 		Interface(annabell, Mon);
 
 		return 0;
@@ -136,12 +134,6 @@ int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act) {
   annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
   annabell->ElActFL->Fill((int*)v_el_act[el_act]);
   annabell->ElAct->Fill((int*)v_el_act[el_act]);
-
-  return 0;
-}
-
-int SetMode(Annabell *annabell, int imode) {
-  annabell->ModeFlags->Fill((int*)v_mode[imode]);
 
   return 0;
 }
@@ -1173,7 +1165,7 @@ int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
   int vin[WSize];
 
   //cout << input_phrase << endl;
-  SetMode(annabell, ACQUIRE);
+  annabell->SetMode(ACQUIRE);
 
   for (int ic=0; ic<WSize; ic++) vin[ic]=0;
   annabell->W->Fill(vin);
@@ -1209,7 +1201,7 @@ int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
   ExplorationPhaseIdx=0;
   annabell->EPhaseI->Clear();
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1260,7 +1252,7 @@ int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase)
   annabell->EPhaseI->Clear();
 
   annabell->AcquireUpdate();
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1286,7 +1278,7 @@ int BuildAs(Annabell *annabell, Monitor *Mon)
   } while (annabell->EndAssociateFlag->Nr[0]->O==0);
 
   annabell->AssociateUpdate();
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
   //cout << "ok3\n";
   return 0;
 }
@@ -1295,7 +1287,7 @@ int BuildAsTest(Annabell *annabell, Monitor *Mon)
 {
   int PhI;
 
-  SetMode(annabell, ASSOCIATE);
+  annabell->SetMode(ASSOCIATE);
   if (StartContextFlag) {
     StartContextFlag = false;
     ExecuteAct(annabell, Mon, NULL_ACT, SET_START_PH, NULL_ACT);
@@ -1334,7 +1326,7 @@ int BuildAsTest(Annabell *annabell, Monitor *Mon)
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1358,7 +1350,7 @@ int MoreRetrAsSlow(Annabell *annabell, Monitor *Mon)
 
 int ExploitationSlow(Annabell *annabell, Monitor *Mon)
 {
-  SetMode(annabell, EXPLOIT);
+  annabell->SetMode(EXPLOIT);
   //cout << "\nExploitation\n";
 
   int iac, Nac=300, Nb=60;
@@ -1408,7 +1400,7 @@ int ExploitationSlow(Annabell *annabell, Monitor *Mon)
   }
   if (iac==Nac) Display.Warning("Exploitation number of actions >= " +
 				toStr(Nac) + ". Exiting\n");
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1468,7 +1460,7 @@ int GetStActIdx(Annabell *annabell, Monitor *Mon)
 
 int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
 {
-  SetMode(annabell, REWARD);
+  annabell->SetMode(REWARD);
 
   SetAct(annabell, STORE_ST_A, NULL_ACT, FLUSH_OUT);
   annabell->StActRwdUpdate();
@@ -1507,7 +1499,7 @@ int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
     }
   }
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
   return 0;
 }
 
@@ -1529,7 +1521,7 @@ int Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
   } while (annabell->EndRewardFlag->Nr[0]->O==0);
 
   annabell->RewardUpdate();
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1556,7 +1548,7 @@ string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter)
       Reset(annabell, Mon);
       annabell->EndExploitFlag->Nr[0]->O=1;
       annabell->ExploitUpdate();
-      SetMode(annabell, NULL_MODE);
+      annabell->SetMode(NULL_MODE);
 
       return "";
     }
@@ -1633,14 +1625,14 @@ string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter)
   Display.Print(BestPhrase);
   if (PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return BestPhrase;
 }
 
 string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter)
 {
-  SetMode(annabell, EXPLOIT);
+  annabell->SetMode(EXPLOIT);
   //cout << "\nExploitation\n";
 
   int iac, Nac=300, Nas=100; // it should be Nas=MaxNRetr in sizes.h
@@ -1747,7 +1739,7 @@ string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter)
   if (PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
   
   return BestPhrase;
 }
@@ -1812,7 +1804,7 @@ int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string targ
 
   annabell->ExploreUpdate();
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   // temp2 start here
   for (int i=0; i<5; i++) {
@@ -1838,7 +1830,7 @@ int ExplorationApprove(Annabell *annabell, Monitor *Mon)
 int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase)
 {
   //cout << "\nExploration\n";
-  SetMode(annabell, EXPLORE);
+  annabell->SetMode(EXPLORE);
 
   ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
   if (name=="WGB" && (ExplorationPhaseIdx==3 || ExplorationPhaseIdx==4))
@@ -1912,7 +1904,7 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
   cout << "Good answer after " << i << " iterations\n";
   ExplorationApprove(annabell, Mon);
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1920,7 +1912,7 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
 int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
-  SetMode(annabell, EXPLORE);
+  annabell->SetMode(EXPLORE);
 
   if (ExplorationPhaseIdx==0) {
     ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
@@ -1950,7 +1942,7 @@ int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
     Display.Print(target_phrase + "\n");
   }
     
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1958,7 +1950,7 @@ int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
 int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase)
 {
   //cout << "\nSearch context\n";
-  SetMode(annabell, EXPLORE);
+  annabell->SetMode(EXPLORE);
 
   if (ExplorationPhaseIdx==0) {
     ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
@@ -1983,7 +1975,7 @@ int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase
     Display.Print(target_phrase + "\n");
   }
     
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -1991,7 +1983,7 @@ int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase
 int WorkingPhraseOut(Annabell *annabell, Monitor *Mon)
 {
   //cout << "\nSend working phrase to output\n";
-  SetMode(annabell, EXPLORE);
+  annabell->SetMode(EXPLORE);
 
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
@@ -2016,7 +2008,7 @@ int WorkingPhraseOut(Annabell *annabell, Monitor *Mon)
   ExplorationPhaseIdx = 2;
   ExplorationApprove(annabell, Mon);
 
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
 
   return 0;
 }
@@ -2062,7 +2054,7 @@ string SentenceOut(Annabell *annabell, Monitor *Mon)
 
 int Reset(Annabell *annabell, Monitor *Mon)
 {
-  SetMode(annabell, NULL_MODE);
+  annabell->SetMode(NULL_MODE);
   //StartContextFlag=true;
 
   ExecuteAct(annabell, Mon, NULL_ACT, FLUSH, NULL_ACT);

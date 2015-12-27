@@ -42,7 +42,6 @@ extern bool StartContextFlag;
 int CheckTryLimit(int i);
 int SetAct(Annabell *annabell, int acq_act, int el_act);
 int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act);
-int SetMode(Annabell *annabell, int imode);
 int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act);
 int GetInputPhrase(Annabell *annabell, Monitor *Mon, std::string input_phrase);
 

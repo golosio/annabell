@@ -638,6 +638,7 @@ class Annabell
 
   Annabell();
   int AddRef();
+  int SetMode(int imode);
   int In(int *w, int *phi);
   int PhUpdate();
   int AsUpdate();
