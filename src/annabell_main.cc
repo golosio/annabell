@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ann_exception.h"
 #include <sys/time.h>
 #include "gettime.h" 
+#include "CommandUtils.h"
 
 using namespace std;
 using namespace sizes;
@@ -193,9 +194,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
 			buf1 = "a"; // take care of article
 		}
 
-		if (buf1 == "-es") {
-			buf1 = "-s"; // take care of plural suffix
-		}
+		buf1 = CommandUtils::processPlural(buf1);
 
 		buf = buf + buf1;
 		if (buf[0] == '/' || buf[0] == '<') {
