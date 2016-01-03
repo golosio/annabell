@@ -20,6 +20,19 @@ public:
 			return input;
 		}
 	}
+
+	/**
+	 * This function takes care of the articles, simplifying "an" occurrences to "a".
+	 * @param input a string
+	 * @return "a" if the input is "an", and the unchanged input otherwise.
+	 */
+	static string processArticle(string input) {
+		if (input == "an") {
+			return "a";
+		} else {
+			return input;
+		}
+	}
 };
 
 #endif /* SRC_COMMANDUTILS_H_ */

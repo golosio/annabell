@@ -190,9 +190,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
 	buf = "";
 	while (ss >> buf1) { // split line in string tokens
 
-		if (buf1 == "an") {
-			buf1 = "a"; // take care of article
-		}
+		buf1 = CommandUtils::processArticle(buf1);
 
 		buf1 = CommandUtils::processPlural(buf1);
 
