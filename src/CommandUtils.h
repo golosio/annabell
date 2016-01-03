@@ -33,6 +33,21 @@ public:
 			return input;
 		}
 	}
+
+	/**
+	 * @returns true if input string starts with provided character, false otherwise.
+	 */
+	static bool startsWith(string input, char character) {
+		return input[0] == character;
+	}
+
+	/**
+	 * @returns true if input string ends with provided character, false otherwise.
+	 */
+	static bool endsWith(string input, char character) {
+		int lastIndex = input.size() - 1;
+		return input[lastIndex] == character;
+	}
 };
 
 #endif /* SRC_COMMANDUTILS_H_ */

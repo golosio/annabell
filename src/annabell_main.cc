@@ -195,12 +195,10 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
 		buf1 = CommandUtils::processPlural(buf1);
 
 		buf = buf + buf1;
-		if (buf[0] == '/') {
-			int l = buf.size() - 1;
-			if (buf[0] == '/' && buf[l] != '/') {
-				buf = buf + " ";
-				continue;
-			}
+
+		if (CommandUtils::startsWith(buf, '/') && !CommandUtils::endsWith(buf, '/')) {
+			buf = buf + " ";
+			continue;
 		}
 
 		input_token.push_back(buf);
