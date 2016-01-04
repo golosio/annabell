@@ -1,0 +1,61 @@
+one plus one equals two
+two plus one equals three
+three plus one equals four
+four plus one equals five
+five plus one equals six
+six plus one equals seven
+seven plus one equals eight
+eight plus one equals nine
+nine plus one equals ten
+
+one plus two equals three
+two plus two equals four
+three plus two equals five
+four plus two equals six
+five plus two equals seven
+six plus two equals eight
+seven plus two equals nine
+eight plus two equals ten
+nine plus two equals eleven
+
+one plus three equals four
+two plus three equals five
+three plus three equals six
+four plus three equals seven
+five plus three equals eight
+six plus three equals nine
+seven plus three equals ten
+eight plus three equals eleven 
+nine plus three equals twelve
+
+add the number one
+.pg one
+.rw
+to each of the digits nine eight four seven
+.po /nine/nine plus one equals ten/ten/
+.rip
+.po /eight/eight plus one equals nine/nine/
+.rip
+.po /four/four plus one equals five/five/
+.rip
+.o /seven/seven plus one equals eight/eight/
+.drop_goal
+
+add the number two
+.pg two
+.rw
+to each of the digits six three nine four
+.po /six/six plus two equals eight/eight/
+.rip
+.po /three/three plus two equals five/five/
+.rip
+.po /nine/nine plus two equals eleven/eleven/
+.rip
+.o /four/four plus two equals six/six/
+.drop_goal
+
+add the number three
+.cx
+to each of the digits seven eight two five
+.x
+
