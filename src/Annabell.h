@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef SLLMH
 #define SLLMH
+#include "AnnabellFlags.h"
 #include "fssm.h"
 #define FAST_SSM       // Comment to use slow version.
 //#define FAST_SSM_AS    // Comment to use slow version.
@@ -120,9 +121,11 @@ const int v_rwd_act[RwdActSize+1][RwdActSize] = {
   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // RWD_ACT_14
 };
 
-class Annabell
-{
- public:
+class Annabell {
+public:
+	/** general behaviour and configuration flags */
+	AnnabellFlags* flags;
+
   bool CudaFlag;
   static const float BIGWG=1e20;
   ssm *W;

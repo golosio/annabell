@@ -44,8 +44,6 @@ int ExplorationPhaseIdx;
 int StoredStActI;
 display Display;
 
-AnnabellFlags* flags;
-
 struct timespec clk0, clk1;
 
 int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
@@ -79,7 +77,6 @@ string to_string(T const& value) {
 }
 
 int main() {
-	flags = new AnnabellFlags();
 	Display.LogFileFlag = false;
 	Display.ConsoleFlag = true;
 
@@ -134,9 +131,9 @@ int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act) {
 int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act) {
   SetAct(annabell, rwd_act, acq_act, el_act);
   Mon->Print();
-  if (flags->VerboseFlag) Mon->PrintRwdAct();
+  if (annabell->flags->VerboseFlag) Mon->PrintRwdAct();
   annabell->StActRwdUpdate();
-  if (flags->VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
+  if (annabell->flags->VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
   annabell->Update();
 
   return 0;
@@ -216,16 +213,16 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     GetInputPhrase(annabell, Mon, target_phrase);
     ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
     Display.Print(" >>> End context\n");
-    flags->StartContextFlag=true;
+    annabell->flags->StartContextFlag=true;
 
     // answer time
-    if (flags->AnswerTimeFlag && flags->AnswerTimeUpdate && flags->AnswerTimePhrase!="") {
+    if (annabell->flags->AnswerTimeFlag && annabell->flags->AnswerTimeUpdate && annabell->flags->AnswerTimePhrase!="") {
       struct timespec clk0, clk1;
       GetRealTime(&clk0);
 
-      flags->AnswerTimeUpdate=false;
+      annabell->flags->AnswerTimeUpdate=false;
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(annabell, Mon, flags->AnswerTimePhrase);
+      GetInputPhrase(annabell, Mon, annabell->flags->AnswerTimePhrase);
       Exploitation(annabell, Mon, 1);
 
       GetRealTime(&clk1);
@@ -237,13 +234,13 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       fclose(at_fp);
     }
     // auto save links
-    if (flags->AutoSaveLinkFlag) {
+    if (annabell->flags->AutoSaveLinkFlag) {
       double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
-      int index = (int)(link_num/flags->AutoSaveLinkStep);
-      if (index>flags->AutoSaveLinkIndex) {
-    	  flags->AutoSaveLinkIndex = index;
+      int index = (int)(link_num/annabell->flags->AutoSaveLinkStep);
+      if (index>annabell->flags->AutoSaveLinkIndex) {
+    	  annabell->flags->AutoSaveLinkIndex = index;
 	char filename[20];
-	sprintf(filename, "links_%d.dat", flags->AutoSaveLinkIndex);
+	sprintf(filename, "links_%d.dat", annabell->flags->AutoSaveLinkIndex);
 	FILE *fp=fopen(filename, "wb");
 	Mon->SaveWM(fp);
 	if (annabell->MemPh->HighVect.size()!=1) {
@@ -289,7 +286,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
   if (buf[0]!='.' || (buf[1]=='.' && buf[2]=='.')) {
     // if token does not start with "." or if token is "..."
     // input line is a phrase, not a command
-    if (flags->SpeakerFlag) Display.Print("*" + flags->SpeakerName + ":\t"); //("*TEA:\t");
+    if (annabell->flags->SpeakerFlag) Display.Print("*" + annabell->flags->SpeakerName + ":\t"); //("*TEA:\t");
     Display.Print(input_line+"\n");
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
     GetInputPhrase(annabell, Mon, input_line);
@@ -309,7 +306,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       Display.Warning("syntax error.");
       return 1;
     }
-    flags->StartContextFlag=false;
+    annabell->flags->StartContextFlag=false;
 
     return 0;
   }
@@ -447,7 +444,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
     ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx=0;
-    flags->AnswerTimeUpdate=true;
+    annabell->flags->AnswerTimeUpdate=true;
 
     return 0;
   }
@@ -498,7 +495,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
-      if (flags->AnswerTimePhrase=="")  flags->AnswerTimePhrase = target_phrase;
+      if (annabell->flags->AnswerTimePhrase=="")  annabell->flags->AnswerTimePhrase = target_phrase;
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
       GetInputPhrase(annabell, Mon, target_phrase);
     }
@@ -524,7 +521,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
-      if (flags->AnswerTimePhrase=="")  flags->AnswerTimePhrase = target_phrase;
+      if (annabell->flags->AnswerTimePhrase=="")  annabell->flags->AnswerTimePhrase = target_phrase;
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
       GetInputPhrase(annabell, Mon, target_phrase);
     }
@@ -715,7 +712,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
     ExplorationApprove(annabell, Mon);
     ExplorationPhaseIdx=0;
-    flags->AnswerTimeUpdate=true;
+    annabell->flags->AnswerTimeUpdate=true;
 
     return 0;
   }
@@ -1065,12 +1062,12 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       return 1;
     }
     if (input_token[1]=="off") {
-    	flags->SpeakerFlag = false;
+    	annabell->flags->SpeakerFlag = false;
       return 0;
     }
     else {
-    	flags->SpeakerName = input_token[1];
-    	flags->SpeakerFlag = true;
+    	annabell->flags->SpeakerName = input_token[1];
+    	annabell->flags->SpeakerFlag = true;
       return 0;
     }
     return 1;
@@ -1087,7 +1084,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     FILE *at_fp=fopen("answer_time.dat", "w");
     fclose(at_fp);
 
-    flags->AnswerTimeFlag = true;
+    annabell->flags->AnswerTimeFlag = true;
 
     return 0;
   }
@@ -1105,7 +1102,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     GetRealTime(&clk0);
     
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(annabell, Mon, flags->AnswerTimePhrase);
+    GetInputPhrase(annabell, Mon, annabell->flags->AnswerTimePhrase);
     Exploitation(annabell, Mon, 1);
 
     GetRealTime(&clk1);
@@ -1127,9 +1124,9 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       Display.Warning("syntax error.");
       return 1;
     }
-    flags->AutoSaveLinkFlag = true;
+    annabell->flags->AutoSaveLinkFlag = true;
     double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
-    flags->AutoSaveLinkIndex = (int)(link_num/flags->AutoSaveLinkStep);
+    annabell->flags->AutoSaveLinkIndex = (int)(link_num/annabell->flags->AutoSaveLinkStep);
 
     return 0;
   }
@@ -1143,11 +1140,11 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       return 1;
     }
     if (input_token[1]=="off") {
-    	flags->PeriodFlag = false;
+    	annabell->flags->PeriodFlag = false;
       return 0;
     }
     else if (input_token[1]=="on") {
-    	flags->PeriodFlag = true;
+    	annabell->flags->PeriodFlag = true;
       return 0;
     }
     else {
@@ -1267,8 +1264,8 @@ int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase)
 int BuildAs(Annabell *annabell, Monitor *Mon)
 {
   //cout << "ok2\n";
-  if (flags->StartContextFlag) {
-	  flags->StartContextFlag = false;
+  if (annabell->flags->StartContextFlag) {
+	  annabell->flags->StartContextFlag = false;
     annabell->SetStartPhFlag->Nr[0]->O = 1;
   }
   else annabell->SetStartPhFlag->Nr[0]->O = 0;
@@ -1295,8 +1292,8 @@ int BuildAsTest(Annabell *annabell, Monitor *Mon)
   int PhI;
 
   annabell->SetMode(ASSOCIATE);
-  if (flags->StartContextFlag) {
-	  flags->StartContextFlag = false;
+  if (annabell->flags->StartContextFlag) {
+	  annabell->flags->StartContextFlag = false;
     ExecuteAct(annabell, Mon, NULL_ACT, SET_START_PH, NULL_ACT);
   }
   else ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
@@ -1569,12 +1566,12 @@ string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter)
 
     //if (annabell->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
-    if (flags->VerboseFlag) Mon->PrintRwdAct();
+    if (annabell->flags->VerboseFlag) Mon->PrintRwdAct();
     //int prev_act=Mon->GetElAct(); // temporary
     annabell->StActRwdUpdate();
     //int next_act=Mon->GetElAct(); // temporary
-    if (flags->VerboseFlag) Mon->PrintElActFL();
-    if (flags->VerboseFlag) Mon->PrintElAct();
+    if (annabell->flags->VerboseFlag) Mon->PrintElActFL();
+    if (annabell->flags->VerboseFlag) Mon->PrintElAct();
 
     annabell->Update();
 
@@ -1628,9 +1625,9 @@ string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter)
   } while (annabell->EndExploitFlag->Nr[0]->O==0);
 
   annabell->ExploitUpdate();
-  if (flags->SpeakerFlag) Display.Print("*SYS:\t");
+  if (annabell->flags->SpeakerFlag) Display.Print("*SYS:\t");
   Display.Print(BestPhrase);
-  if (flags->PeriodFlag) Display.Print(" . \n");
+  if (annabell->flags->PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
   annabell->SetMode(NULL_MODE);
 
@@ -1741,9 +1738,9 @@ string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter)
     if (iac==Nac) Display.Warning("Exploitation number of actions >= " +
 				  toStr(Nac) + ". Exiting\n");
   }
-  if (flags->SpeakerFlag) Display.Print("*SYS:\t");
+  if (annabell->flags->SpeakerFlag) Display.Print("*SYS:\t");
   Display.Print(BestPhrase);
-  if (flags->PeriodFlag) Display.Print(" . \n");
+  if (annabell->flags->PeriodFlag) Display.Print(" . \n");
   else Display.Print("\n");
 
   annabell->SetMode(NULL_MODE);
@@ -1780,9 +1777,9 @@ int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string targ
 
     //if (annabell->ElAct->Default->Nr[0]->O<0.5)
     Mon->Print();
-    if (flags->VerboseFlag) Mon->PrintRwdAct();
+    if (annabell->flags->VerboseFlag) Mon->PrintRwdAct();
     annabell->StActRwdUpdate();
-    if (flags->VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
+    if (annabell->flags->VerboseFlag) {Mon->PrintElActFL(); Mon->PrintElAct();}
 
     annabell->Update();
 

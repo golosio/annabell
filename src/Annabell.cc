@@ -25,8 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace std;
 using namespace sizes;
 
-Annabell::Annabell()
-{
+Annabell::Annabell() {
+  flags = new AnnabellFlags();
   CudaFlag = false;
   W = new ssm(WSize);
   IW = new ssm(WMSize);
