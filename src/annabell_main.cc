@@ -111,25 +111,8 @@ int CheckTryLimit(int i) {
   return 0;
 }
 
-int SetAct(Annabell *annabell, int acq_act, int el_act) {
-  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
-  annabell->ElAct->Fill((int*)v_el_act[el_act]);
-
-  return 0;
-}
-
-int SetAct(Annabell *annabell, int rwd_act, int acq_act, int el_act) {
-  annabell->RwdAct->Fill((int*)v_rwd_act[rwd_act]);
-  annabell->AcqAct->Fill((int*)v_acq_act[acq_act]);
-  annabell->ElActFL->Fill((int*)v_el_act[el_act]);
-  annabell->ElAct->Fill((int*)v_el_act[el_act]);
-
-  return 0;
-}
-
 int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act) {
-  SetAct(annabell, rwd_act, acq_act, el_act);
+  annabell->SetAct(rwd_act, acq_act, el_act);
   Mon->Print();
   if (annabell->flags->VerboseFlag) Mon->PrintRwdAct();
   annabell->StActRwdUpdate();
@@ -268,7 +251,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       }
     }
     // added 5/01/2013
-    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
     annabell->StActRwdUpdate();
     Mon->Print();
     annabell->Update();
@@ -437,7 +420,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     //annabell->EPhaseI->Clear();
 
     // added 5/01/2013
-    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
     annabell->StActRwdUpdate();
     Mon->Print();
     annabell->Update();
@@ -473,7 +456,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     //annabell->EPhaseI->Clear();
 
     // added 5/01/2013
-    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
     annabell->StActRwdUpdate();
     Mon->Print();
     annabell->Update();
@@ -705,7 +688,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
     int n_iter=annabell->ElActfSt->K;
     Reward(annabell, Mon, 0, n_iter);
 
-    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
     annabell->StActRwdUpdate();
     Mon->Print();
     annabell->Update();
@@ -784,7 +767,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       Display.Warning("syntax error.");
       return 1;
     }
-    SetAct(annabell, NULL_ACT, NULL_ACT);
+    annabell->SetAct(NULL_ACT, NULL_ACT);
     annabell->Update();
     return 0;
   }
@@ -822,7 +805,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line) {
       Display.Warning("unknown action name.");
       return 1;
     }
-    SetAct(annabell, NULL_ACT, iact);
+    annabell->SetAct(NULL_ACT, iact);
     annabell->Update();
     Mon->Print();
     return 0;
@@ -1175,7 +1158,7 @@ int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
   annabell->W->Fill(vin);
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
 
-  SetAct(annabell, ACQ_W, NULL_ACT);
+  annabell->SetAct(ACQ_W, NULL_ACT);
 
   string buf; // Have a buffer string
   stringstream ss(input_phrase); // Insert the string into a stream
@@ -1194,7 +1177,7 @@ int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
   for (int ic=0; ic<WSize; ic++) vin[ic]=0;
   annabell->W->Fill(vin);
 
-  SetAct(annabell, NULL_ACT, W_FROM_WK);
+  annabell->SetAct(NULL_ACT, W_FROM_WK);
   Mon->Print();
   annabell->Update();
 
@@ -1299,12 +1282,12 @@ int BuildAsTest(Annabell *annabell, Monitor *Mon)
   else ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
 
   int SkipW = 0;
-  SetAct(annabell, NULL_ACT, W_FROM_WK);
+  annabell->SetAct(NULL_ACT, W_FROM_WK);
   Mon->Print();
   annabell->Update();
   while (SkipW<PhSize && annabell->InPhB->RowDefault->Nr[SkipW]->O<0.5) {
     for (PhI=-1; PhI<SkipW; PhI++) {
-      SetAct(annabell, NEXT_AS_W, NULL_ACT);
+    	annabell->SetAct(NEXT_AS_W, NULL_ACT);
       Mon->Print();
       //annabell->ActUpdate(); //just to save time in place of Update
       annabell->Update();
@@ -1312,17 +1295,17 @@ int BuildAsTest(Annabell *annabell, Monitor *Mon)
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
     for (int WGI=0; WGI<3 && PhI<PhSize
 	   && annabell->InPhB->RowDefault->Nr[PhI]->O<0.5; WGI++) {
-      SetAct(annabell, BUILD_AS, NULL_ACT);
+    	annabell->SetAct(BUILD_AS, NULL_ACT);
       Mon->Print();
       annabell->Update();
 
-      SetAct(annabell, NEXT_AS_W, NULL_ACT);
+      annabell->SetAct(NEXT_AS_W, NULL_ACT);
       Mon->Print();
       annabell->Update();
       PhI++;
     }
     SkipW++;
-    SetAct(annabell, NULL_ACT, W_FROM_WK);
+    annabell->SetAct(NULL_ACT, W_FROM_WK);
     Mon->Print();
     annabell->Update();
   }
@@ -1341,7 +1324,7 @@ int MoreRetrAsSlow(Annabell *annabell, Monitor *Mon)
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
     //cout << "MoreRetrAs " << i << endl;
-    SetAct(annabell, NULL_ACT, RETR_AS);
+	  annabell->SetAct(NULL_ACT, RETR_AS);
     annabell->Update();
     //Mon->Print();
     ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
@@ -1415,7 +1398,7 @@ int MoreRetrAs(Annabell *annabell, Monitor *Mon)
   int next_act, Nas=20;
   for (int i=0; i<Nas; i++) {
     //cout << "MoreRetrAs " << i << endl;
-    SetAct(annabell, NULL_ACT, RETR_AS);
+	  annabell->SetAct(NULL_ACT, RETR_AS);
     annabell->Update();
     //Mon->Print();
     ExecuteAct(annabell, Mon, RETR_EL_A, NULL_ACT, NULL_ACT);
@@ -1436,12 +1419,12 @@ int ExplorationRetry(Annabell *annabell, Monitor *Mon)
   //cout << "StoredStActI: " << annabell->StoredStActI->HighVect[0] << endl;
   //cout << "StActI before: " << annabell->StActI->HighVect[0] << endl;
   //Mon->Print();
-  SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
+  annabell->SetAct(RETR_SAI, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
   //cout << "StActI after: " << annabell->StActI->HighVect[0] << endl;
-  SetAct(annabell, RETR_ST_A, NULL_ACT, NULL_ACT);
+  annabell->SetAct(RETR_ST_A, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
-  SetAct(annabell, RETR_SAI, NULL_ACT, NULL_ACT);
+  annabell->SetAct(RETR_SAI, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
   //Mon->Print();
   annabell->RetrStActIFlag->Nr[0]->O=0;
@@ -1466,23 +1449,23 @@ int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
 {
   annabell->SetMode(REWARD);
 
-  SetAct(annabell, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+  annabell->SetAct(STORE_ST_A, NULL_ACT, FLUSH_OUT);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();
 
-  SetAct(annabell, STORE_ST_A, NULL_ACT, WG_OUT);
+  annabell->SetAct(STORE_ST_A, NULL_ACT, WG_OUT);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();
 
-  if (partial_flag!=0) SetAct(annabell, STORE_ST_A, NULL_ACT, CONTINUE);
-  else SetAct(annabell, STORE_ST_A, NULL_ACT, DONE);
+  if (partial_flag!=0) annabell->SetAct(STORE_ST_A, NULL_ACT, CONTINUE);
+  else annabell->SetAct(STORE_ST_A, NULL_ACT, DONE);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();
 
-  SetAct(annabell, STORE_ST_A, NULL_ACT, NULL_ACT);
+  annabell->SetAct(STORE_ST_A, NULL_ACT, NULL_ACT);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();
@@ -1490,13 +1473,13 @@ int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter)
   int LastStActI = GetStActIdx(annabell, Mon); //annabell->StActI
   for (int i=0; i<n_iter; i++) {
     //Mon->ModeMessage("Start State-Action Index\n");
-    SetAct(annabell, START_ST_A, NULL_ACT, NULL_ACT);
+	  annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
     annabell->StActRwdUpdate();
     Mon->Print();
     annabell->Update();
     for (int StActI=0; StActI<LastStActI-1; StActI++) {
       //Mon->ModeMessage("Retrieve and reward State-Action\n");
-      SetAct(annabell, RWD_ST_A, NULL_ACT, NULL_ACT);
+    	annabell->SetAct(RWD_ST_A, NULL_ACT, NULL_ACT);
       annabell->StActRwdUpdate();
       Mon->Print();
       annabell->Update();
@@ -1999,12 +1982,12 @@ int WorkingPhraseOut(Annabell *annabell, Monitor *Mon)
     //	if (Mon->OutStr[0]=="") break;
     //}
   }
-  SetAct(annabell, STORE_ST_A, NULL_ACT, FLUSH_OUT);
+  annabell->SetAct(STORE_ST_A, NULL_ACT, FLUSH_OUT);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();
 
-  SetAct(annabell, STORE_ST_A, NULL_ACT, WG_OUT);
+  annabell->SetAct(STORE_ST_A, NULL_ACT, WG_OUT);
   annabell->StActRwdUpdate();
   Mon->Print();
   annabell->Update();

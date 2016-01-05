@@ -664,6 +664,8 @@ public:
   int GoalArch();
   int AddGoalRef();
   int GoalUpdate();
+  int SetAct(int acq_act, int el_act);
+  int SetAct(int rwd_act, int acq_act, int el_act);
 
 };
 

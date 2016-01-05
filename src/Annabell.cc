@@ -1641,3 +1641,19 @@ int Annabell::StActRwdUpdate()
   return 0;
 }
 
+int Annabell::SetAct(int acq_act, int el_act) {
+	this->AcqAct->Fill((int*) v_acq_act[acq_act]);
+	this->ElActFL->Fill((int*) v_el_act[el_act]);
+	this->ElAct->Fill((int*) v_el_act[el_act]);
+
+	return 0;
+}
+
+int Annabell::SetAct(int rwd_act, int acq_act, int el_act) {
+	this->RwdAct->Fill((int*) v_rwd_act[rwd_act]);
+	this->AcqAct->Fill((int*) v_acq_act[acq_act]);
+	this->ElActFL->Fill((int*) v_el_act[el_act]);
+	this->ElAct->Fill((int*) v_el_act[el_act]);
+
+	return 0;
+}
