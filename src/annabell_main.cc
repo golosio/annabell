@@ -37,8 +37,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace std;
 using namespace sizes;
 
-const int TRYLIMIT = 10000;
-
 int LastGB;
 int ExplorationPhaseIdx;
 int StoredStActI;
@@ -47,27 +45,29 @@ display Display;
 struct timespec clk0, clk1;
 
 int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
-int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase);
 int BuildAs(Annabell *annabell, Monitor *Mon);
-int BuildAsTest(Annabell *annabell, Monitor *Mon);
 int ExplorationApprove(Annabell *annabell, Monitor *Mon);
 int ExplorationRetry(Annabell *annabell, Monitor *Mon);
 int Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
-int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
 string Exploitation(Annabell *annabell, Monitor *Mon, int n_iter);
-string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter);
 int ExploitationSlow(Annabell *annabell, Monitor *Mon);
 int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
-int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
 int SearchContext(Annabell *annabell, Monitor *Mon, string target_phrase);
 int ContinueSearchContext(Annabell *annabell, Monitor *Mon, string target_phrase);
 int WorkingPhraseOut(Annabell *annabell, Monitor *Mon);
 string SentenceOut(Annabell *annabell, Monitor *Mon);
+
 int Interface(Annabell *annabell, Monitor *Mon);
 int Reset(Annabell *annabell, Monitor *Mon);
 
 bool simplify(Annabell *annabell, Monitor *Mon, vector<string> input_token);
 int ParseCommand(Annabell *annabell, Monitor *Mon, string input_line);
+
+int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase);
+int BuildAsTest(Annabell *annabell, Monitor *Mon);
+string ExploitationTest(Annabell *annabell, Monitor *Mon, int n_iter);
+int RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
+int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
 
 template <typename T>
 string to_string(T const& value) {
@@ -102,13 +102,6 @@ int main() {
 		cerr << "Unrecognized error.\n";
 		return 1;
 	}
-}
-
-int CheckTryLimit(int i) {
-  if (i>=TRYLIMIT)
-    throw ann_exception("Too many attempts\n");
-
-  return 0;
 }
 
 int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act) {
@@ -1814,8 +1807,10 @@ int ExplorationApprove(Annabell *annabell, Monitor *Mon)
   return 0;
 }
 
-int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase)
-{
+int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase) {
+
+	const int TRYLIMIT = 10000;
+
   //cout << "\nExploration\n";
   annabell->SetMode(EXPLORE);
 
@@ -1887,7 +1882,11 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
     ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
     i++;
   }
-  CheckTryLimit(i);
+
+  if (i >= TRYLIMIT) {
+      throw ann_exception("Too many attempts\n");
+  }
+
   cout << "Good answer after " << i << " iterations\n";
   ExplorationApprove(annabell, Mon);
 
