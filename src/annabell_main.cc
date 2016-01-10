@@ -77,9 +77,6 @@ string to_string(T const& value) {
 }
 
 int main() {
-	Display.LogFileFlag = false;
-	Display.ConsoleFlag = true;
-
 	try {
 		init_randmt(12345);
 
@@ -90,6 +87,10 @@ int main() {
 		Display.LogFile = Mon->Display.LogFile;
 
 		Interface(annabell, Mon);
+
+		if (Display.LogFile->is_open()) {
+			Display.LogFile->close();
+		}
 
 		return 0;
 	} catch (ann_exception &e) {
@@ -116,28 +117,24 @@ int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int e
 }
 
 int Interface(Annabell *annabell, Monitor *mon) {
-  string input_line;
-  bool out_flag = false;
+	string input_line;
 
-  GetRealTime(&clk0);
+	GetRealTime(&clk0);
 
-  while(true) {
-    cout << "Enter command: ";
+	bool lineRead = true;
+	int commandResult = 1;
 
-    if (!getline (cin, input_line)) {
-    	out_flag=true;
-    }
+	while (lineRead && (commandResult != 2)) {
+		cout << "Enter command: ";
 
-    if (ParseCommand(annabell, mon, input_line) == 2 || out_flag) {
-    	break;
-    }
-  }
-  
-  if (Display.LogFile->is_open()) {
-	  Display.LogFile->close();
-  }
+		lineRead = getline(cin, input_line);
 
-  return 0;
+		if (lineRead) {
+			commandResult = ParseCommand(annabell, mon, input_line);
+		}
+	}
+
+	return 0;
 }
 
 
