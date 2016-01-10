@@ -35,7 +35,6 @@ extern const int TRYLIMIT;
 extern int LastGB;
 extern int ExplorationPhaseIdx;
 extern int StoredStActI;
-extern display Display;
 extern bool VerboseFlag;
 extern bool StartContextFlag;
 

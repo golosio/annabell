@@ -28,9 +28,9 @@
 
 using namespace std;
 
-int ParseCommand(Annabell *annabell, Monitor *monitor, string input_line);
+int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line);
 
-bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) {
+bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* clk0, timespec* clk1, vector<string> input_token) {
 
 	string cmd, buf; // buffer string
 	string cmd_line; //command_line
@@ -73,7 +73,7 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 			}
 
 			if (i >= buf.size()) {
-				Display.Warning("Syntax error 1 on simplifying");
+				Display->Warning("Syntax error 1 on simplifying");
 				return true;
 			}
 
@@ -86,7 +86,7 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 					s1b = s1b + buf[i];
 				}
 				if (i == buf.size()) {
-					Display.Warning("Syntax error 2 on simplifying");
+					Display->Warning("Syntax error 2 on simplifying");
 					return true;
 				}
 			}
@@ -100,7 +100,7 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 			}
 
 			if (i == buf.size()) {
-				Display.Warning("Syntax error 3 on simplifying");
+				Display->Warning("Syntax error 3 on simplifying");
 				return true;
 			}
 
@@ -113,41 +113,41 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 			}
 
 			if (i == buf.size()) {
-				Display.Warning("Syntax error 4 on simplifying");
+				Display->Warning("Syntax error 4 on simplifying");
 				return true;
 			}
 
 			if (ph == "" && s2 == "") {
-				Display.Warning("Syntax error 5 on simplifying");
+				Display->Warning("Syntax error 5 on simplifying");
 				return true;
 			}
 
 			// if working phrase must be stored and retrieved at the end
-			if (push_flag && ParseCommand(annabell, monitor, ".push_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
 				return true;
 			}
 
-			if (push_flag && ParseCommand(annabell, monitor, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
 				return true;
 			}
 
 			if (s1b != "") { // if there is a second cue
 
-				if (ParseCommand(annabell, monitor, string(".wg ") + s1b) == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s1b) == 2) {
 					return true;
 				}
 
-				if (ParseCommand(annabell, monitor, ".push_goal") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
 					return true;
 				}
 
-				if (ParseCommand(annabell, monitor, ".ggp") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
 					return true;
 				}
 			}
 
 			if (s1 != "") {
-				if (ParseCommand(annabell, monitor, string(".wg ") + s1) == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s1) == 2) {
 					return true;
 				}
 			} else {
@@ -164,25 +164,25 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 				cmd_line = cmd_line + ph;
 			}
 
-			if (ParseCommand(annabell, monitor, cmd_line) == 2) {
+			if (ParseCommand(annabell, monitor, Display, clk0, clk1, cmd_line) == 2) {
 				return true;
 			}
 
-			if (s2 != "" && ParseCommand(annabell, monitor, string(".wg ") + s2) == 2) {
+			if (s2 != "" && ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s2) == 2) {
 				return true;
 			}
 
 			if (s1b != "") { // drop goal if there was a second cue
-				if (ParseCommand(annabell, monitor, ".drop_goal") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
 					return true;
 				}
 			}
 
 			// retrieve working phrase if necessary
-			if (push_flag && ParseCommand(annabell, monitor, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
 				return true;
 			}
-			if (push_flag && ParseCommand(annabell, monitor, ".drop_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
 				return true;
 			}
 
@@ -191,10 +191,10 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 		}
 		else {
 
-			if (push_flag && ParseCommand(annabell, monitor, ".push_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
 				return true;
 			}
-			if (push_flag && ParseCommand(annabell, monitor, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
 				return true;
 			}
 
@@ -205,23 +205,23 @@ bool simplify(Annabell *annabell, Monitor *monitor, vector<string> input_token) 
 				cmd_line = cmd_line + " " + buf;
 			}
 
-			if (ParseCommand(annabell, monitor, cmd_line) == 2) {
+			if (ParseCommand(annabell, monitor, Display, clk0, clk1, cmd_line) == 2) {
 				return true;
 			}
 
-			if (push_flag && ParseCommand(annabell, monitor, ".drop_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
 				return true;
 			}
 		}
 
 		if (cmd == ".po") {
-			ParseCommand(annabell, monitor, ".prw");
+			ParseCommand(annabell, monitor, Display, clk0, clk1, ".prw");
 		}
 		else if (cmd == ".o") {
-			ParseCommand(annabell, monitor, ".rw");
+			ParseCommand(annabell, monitor, Display, clk0, clk1, ".rw");
 		}
 		else if (cmd == ".pg") {
-			ParseCommand(annabell, monitor, ".push_goal");
+			ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal");
 		}
 
 		return true;
