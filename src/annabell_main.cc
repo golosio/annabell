@@ -77,6 +77,8 @@ int Interface(Annabell *annabell, Monitor *mon) {
 
 	GetRealTime(&clk0);
 
+	CommandFactory::init(annabell, mon, &Display, &clk0, &clk1);
+
 	bool lineRead = true;
 	int commandResult = 1;
 
@@ -86,8 +88,8 @@ int Interface(Annabell *annabell, Monitor *mon) {
 		lineRead = getline(cin, input_line);
 
 		if (lineRead) {
-			Command* c = CommandFactory::newCommand(annabell, mon, &Display, &clk0, &clk1);
-			commandResult = c->execute(input_line);
+			Command* c = CommandFactory::newCommand(input_line);
+			commandResult = c->execute();
 		}
 	}
 

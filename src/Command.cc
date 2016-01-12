@@ -50,16 +50,17 @@ string to_string(T const& value) {
 }
 
 
-Command::Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1) {
+Command::Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
 	this->annabell = annabell;
 	this->monitor = monitor;
 	this->Display = aDisplay;
 	this->clk0 = clock0;
 	this->clk1 = clock1;
+	this->input_line = input_line;
 }
 
-int Command::execute(string input_line) {
-	return ParseCommand(this->annabell, this->monitor, this->Display, this->clk0, this->clk1, input_line);
+int Command::execute() {
+	return ParseCommand(this->annabell, this->monitor, this->Display, this->clk0, this->clk1, this->input_line);
 }
 
 /**
