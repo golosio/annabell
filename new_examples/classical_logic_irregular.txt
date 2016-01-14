@@ -1,0 +1,28 @@
+########################################
+# example by James Metz (Senior Scientist at Abbvie) and Bruno Golosio
+########################################
+# training example
+
+the plural for mouse is mice
+
+Mickey is a mouse
+
+all mice are animal -s
+
+tell me an animal
+.wg /animal/all mice are animal -s/mice/
+.wg //the plural for mouse is mice/mouse/
+.o //Mickey is a mouse/Mickey/
+
+########################################
+# test example
+
+the plural for man is men
+
+Socrates is a man
+
+all men are mortal
+
+tell me a mortal
+.x
+

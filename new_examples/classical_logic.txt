@@ -1,0 +1,23 @@
+########################################
+# example by James Metz (Senior Scientist at Abbvie) and Bruno Golosio
+########################################
+# training example
+
+Barbie is a doll
+
+all doll -s are toy -s
+
+tell me a toy
+.wg /toy/all doll -s are toy -s/doll/
+.o //Barbie is a doll/Barbie/
+
+########################################
+# test example
+
+Plato is a human
+
+all human -s are creature -s
+
+tell me a creature
+.x
+
