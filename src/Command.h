@@ -16,17 +16,18 @@
 using namespace std;
 
 class Command {
-private:
+protected:
 	Annabell* annabell;
-	Monitor* monitor;
-	display aDisplay;
+	Monitor* Mon;
 	display* Display;
 	timespec* clk0;
 	timespec* clk1;
+	string input_line;
 
 public:
-	Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1);
-	int execute(string input_line);
+	Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1, string input_line);
+	virtual int execute();
+	virtual ~Command();
 };
 
 #endif /* SRC_COMMAND_H_ */

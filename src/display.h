@@ -32,6 +32,7 @@ class display
   display();
   int Warning(std::string msg);
   int Print(std::string msg);
+  int Println(std::string msg);
 };
 
 template <class argType>
