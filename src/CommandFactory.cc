@@ -5,9 +5,11 @@
  *      Author: jpp
  */
 
-#include "CommandFactory.h"
-#include "Command.h"
-#include "display.h"
+#include <CommandFactory.h>
+#include <EmptyCommand.h>
+#include <string>
+
+struct timespec;
 
 Annabell* CommandFactory::annabell;
 Monitor* CommandFactory::monitor;
@@ -23,7 +25,16 @@ void CommandFactory::init(Annabell* annabell, Monitor* monitor, display* aDispla
 	CommandFactory::clk1 = clk1;
 }
 
+void CommandFactory::pepe() {};
+
 Command* CommandFactory::newCommand(string input) {
-	return new Command(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
-			CommandFactory::clk0, CommandFactory::clk1, input);
+	if (input.empty()) {
+		//aDisplay->Println("Creating EmptyCommand");
+		return new EmptyCommand(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
+				CommandFactory::clk0, CommandFactory::clk1, input);
+	} else {
+		//aDisplay->Println("Creating base Command");
+		return new Command(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
+				CommandFactory::clk0, CommandFactory::clk1, input);
+	}
 }

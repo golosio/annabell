@@ -5,14 +5,22 @@
  *      Author: jpp
  */
 
-#include "Command.h"
-#include "CommandUtils.h"
-#include "sizes.h"
-#include <sys/time.h>
-#include "gettime.h"
-#include "interface.h"
-#include "rnd.h"
-#include "ann_exception.h"
+#include <ann_exception.h>
+#include <AnnabellFlags.h>
+#include <Command.h>
+#include <CommandUtils.h>
+#include <fssm.h>
+#include <gettime.h>
+#include <interface.h>
+#include <rnd.h>
+#include <sizes.h>
+#include <ssm.h>
+#include <cstdio>
+#include <ctime>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <vector>
 
 using namespace sizes;
 
@@ -52,15 +60,19 @@ string to_string(T const& value) {
 
 Command::Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
 	this->annabell = annabell;
-	this->monitor = monitor;
+	this->Mon = monitor;
 	this->Display = aDisplay;
 	this->clk0 = clock0;
 	this->clk1 = clock1;
 	this->input_line = input_line;
 }
 
+Command::~Command() {
+
+}
+
 int Command::execute() {
-	return ParseCommand(this->annabell, this->monitor, this->Display, this->clk0, this->clk1, this->input_line);
+	return ParseCommand(this->annabell, this->Mon, this->Display, this->clk0, this->clk1, this->input_line);
 }
 
 /**
@@ -105,75 +117,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 	}
 
   string target_phrase;
-  if (input_token.size()==0) {
-    Display->Print(input_line+"\n");
-    target_phrase = ".end_context";
-    GetInputPhrase(annabell, Mon, target_phrase);
-    ExecuteAct(annabell, Mon, NULL_ACT, MEM_PH, NULL_ACT);
-    Display->Print(" >>> End context\n");
-    annabell->flags->StartContextFlag=true;
 
-    // answer time
-    if (annabell->flags->AnswerTimeFlag && annabell->flags->AnswerTimeUpdate && annabell->flags->AnswerTimePhrase!="") {
-      struct timespec clk0, clk1;
-      GetRealTime(&clk0);
-
-      annabell->flags->AnswerTimeUpdate=false;
-      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(annabell, Mon, annabell->flags->AnswerTimePhrase);
-      Exploitation(annabell, Mon, Display, 1);
-
-      GetRealTime(&clk1);
-      double answ_time = clk1.tv_sec - clk0.tv_sec
-	+ (double)(clk1.tv_nsec - clk0.tv_nsec)*1e-9;
-      double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
-      FILE *at_fp=fopen("answer_time.dat", "a");
-      fprintf(at_fp, "%.3e\t%.3f\n", link_num, answ_time);
-      fclose(at_fp);
-    }
-    // auto save links
-    if (annabell->flags->AutoSaveLinkFlag) {
-      double link_num = (double)annabell->ElActfSt->CountSparseInputLinks();
-      int index = (int)(link_num/annabell->flags->AutoSaveLinkStep);
-      if (index>annabell->flags->AutoSaveLinkIndex) {
-    	  annabell->flags->AutoSaveLinkIndex = index;
-	char filename[20];
-	sprintf(filename, "links_%d.dat", annabell->flags->AutoSaveLinkIndex);
-	FILE *fp=fopen(filename, "wb");
-	Mon->SaveWM(fp);
-	if (annabell->MemPh->HighVect.size()!=1) {
-	  Display->Warning("Error on MemPh.");
-	  return 1;
-	}
-	fwrite(&annabell->MemPh->HighVect[0], sizeof(int), 1, fp);
-	if (annabell->StartPh->HighVect.size()!=1) {
-	  Display->Warning("Error on StartPh.");
-	  return 1;
-	}
-	fwrite(&annabell->StartPh->HighVect[0], sizeof(int), 1, fp);
-
-	annabell->IW->SaveNr(fp);
-	annabell->IW->SaveInputLinks(fp);
-	annabell->ElActfSt->SaveNr(fp);
-	annabell->ElActfSt->SaveSparseInputLinks(fp);
-	annabell->ElActfSt->SaveOutputLinks(fp);
-	annabell->RemPh->SaveSparseOutputLinks(fp);
-	annabell->RemPhfWG->SaveNr(fp);
-	annabell->RemPhfWG->SaveSparseInputLinks(fp);
-	annabell->RemPhfWG->SaveSparseOutputLinks(fp);
-
-	fclose(fp);
-      }
-    }
-    // added 5/01/2013
-    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
-    annabell->StActRwdUpdate();
-    Mon->Print();
-    annabell->Update();
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-
-    return 0; // empty line
-  }
   buf = input_token[0];
   ////////////////////////////////////////
   if (buf[0]=='#') { // input line is a comment

@@ -12,6 +12,9 @@
 #include <Monitor.h>
 #include "Command.h"
 #include "display.h"
+#include <string>
+
+using namespace std;
 
 class CommandFactory {
 private:
@@ -37,6 +40,8 @@ public:
 	 * @return an instance of the sub-type of Command corresponding to the issued string line command.
 	 */
 	static Command* newCommand(string input);
+
+	static void pepe();
 };
 
 #endif /* SRC_COMMANDFACTORY_H_ */
