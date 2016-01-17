@@ -46,7 +46,11 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 
 		buf = input_token[1];
 
-		if (input_token.size() == 2 && buf[0] == '/') {
+		if (input_token.size() == 2 && CommandUtils::startsWith(input_token[1], '/')) {
+
+			//Entered command is a macro, because it has only two tokens, and the second token starts with the character '/'.
+			//For example: .o /mammal/the dog is a mammal/dog/
+
 			unsigned int i;
 			string s1, s1b, s2, ph;
 			i = 0;
@@ -175,17 +179,30 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 			}
 
 		} else if (cmd == PHRASE_CMD || cmd == WORD_GROUP_CMD) {
+			//command is not a macro, and is a phrase or word group command. return false so it can be normally processed.
 			return false;
 		}
 		else {
 
+			//command is not a macro, nor a phrase or wordgroup command.
+			//because simplify is called only for phrase, wordgroup, reward, partial reward and push commands,
+			//it has to be one of reward, partial reward or push.
+
+			//if push flag was true (.ie the abreviated form of command ending in asterisk was used), lets push the goal
 			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG) == 2) {
-				return true;
-			}
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
+				//this only happens if ParseCommand returned 2, which in turn only happens if entered command is .quit,
+				//which is like never the case, so this most likely never happens.
 				return true;
 			}
 
+			//get the goal phrase and use it as a working phrase
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
+				//this only happens if ParseCommand returned 2, which in turn only happens if entered command is .quit,
+				//which is like never the case, so this most likely never happens.
+				return true;
+			}
+
+			//automatically suggest extracting all tokens from the working phrase
 			cmd_line = WORD_GROUP_CMD;
 
 			for (unsigned int i = 1; i < input_token.size(); i++) {
@@ -193,22 +210,31 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 				cmd_line = cmd_line + " " + buf;
 			}
 
+			//execute the word group command
 			if (ParseCommand(annabell, monitor, Display, clk0, clk1, cmd_line) == 2) {
+				//this only happens if ParseCommand returned 2, which in turn only happens if entered command is .quit,
+				//which is like never the case, so this most likely never happens.
 				return true;
 			}
 
+			//if push flasg was true that means the goal was pushed, so remove it from the top of the goal stack
 			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG) == 2) {
+				//this only happens if ParseCommand returned 2, which in turn only happens if entered command is .quit,
+				//which is like never the case, so this most likely never happens.
 				return true;
 			}
 		}
 
 		if (cmd == PARTIAL_REWARD_CMD) {
+			//if it was a partial reward, lets execute it
 			ParseCommand(annabell, monitor, Display, clk0, clk1, PARTIAL_REWARD_CMD2);
 		}
 		else if (cmd == REWARD_CMD) {
+			//if it was a reward, lets execute it
 			ParseCommand(annabell, monitor, Display, clk0, clk1, REWARD_CMD2);
 		}
 		else if (cmd == PUSH_GOAL_CMD) {
+			//if it was a push goal (not an abbreviated one like ".ph*" because that would have lead to push flag being true before), lets execute it
 			ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
 		}
 
