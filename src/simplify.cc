@@ -34,19 +34,16 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
 bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* clk0, timespec* clk1, vector<string> input_token) {
 
-	//I think this is not necessary, because is comparing the LITERAL ".ph*" string, not finding strings that start with ".ph"
-	string cmd = CommandUtils::removeTrailing(input_token[0], '*');
-
 	string cmd_line; //command_line
-
 	string buf; // buffer string
 
+	bool push_flag = false;
 
-		bool push_flag = false;
-
-		if (cmd == WORD_GROUP_CMD || cmd == REWARD_CMD || cmd == PARTIAL_REWARD_CMD) {
+		string cmd = CommandUtils::removeTrailing(input_token[0], '*');
+		if ((cmd == WORD_GROUP_CMD || cmd == REWARD_CMD || cmd == PARTIAL_REWARD_CMD) && CommandUtils::endsWith(input_token[0], '*')) {
 			push_flag = true;
 		}
+
 		buf = input_token[1];
 
 		if (input_token.size() == 2 && buf[0] == '/') {
