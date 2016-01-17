@@ -1,6 +1,6 @@
 annabellincludedir = ${includedir}/annabell
 
-annabellinclude_HEADERS = AnnabellFlags.h Command.h EmptyCommand.h CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h
+annabellinclude_HEADERS = CommandConstants.h AnnabellFlags.h Command.h EmptyCommand.h CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h
 
 bin_PROGRAMS = annabell
 
