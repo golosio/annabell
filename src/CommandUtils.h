@@ -42,12 +42,42 @@ public:
 	}
 
 	/**
+	 * @returns true if input string starts with provided substring, false otherwise.
+	 */
+	static bool startsWith(string input, string subString) {
+		if (input.find(subString) == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * @returns true if input string ends with provided character, false otherwise.
 	 */
 	static bool endsWith(string input, char character) {
 		int lastIndex = input.size() - 1;
 		return input[lastIndex] == character;
 	}
+
+	/**
+	 * @returns the input string, minus its last character
+	 */
+	static string removeTrailing(string input) {
+		return input.substr(0, input.size() - 1);
+	}
+
+	/**
+	 * @returns the input string, minus its last character, is such last character is equal to the character specified as second argument, or the unchanged specified string otherwise
+	 */
+	static string removeTrailing(string input, char character) {
+		if (CommandUtils::endsWith(input, character)) {
+			return input.substr(0, input.size() - 1);
+		} else {
+			return input;
+		}
+	}
+
 };
 
 #endif /* SRC_COMMANDUTILS_H_ */

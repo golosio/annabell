@@ -21,6 +21,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include "CommandConstants.h"
 
 using namespace sizes;
 
@@ -112,15 +113,26 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 		input_token.push_back(buf);
 	}
 
-	if (simplify(annabell, Mon, Display, clk0, clk1, input_token)) {
-		return 0;
+	if (input_token.size() >= 2
+			&& (CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD)
+					|| CommandUtils::startsWith(input_token[0], REWARD_CMD)
+					|| CommandUtils::startsWith(input_token[0], PARTIAL_REWARD_CMD)
+					|| CommandUtils::startsWith(input_token[0], PUSH_GOAL_CMD)
+					|| CommandUtils::startsWith(input_token[0], PHRASE_CMD))) {
+
+		bool endProcessing;
+		endProcessing = simplify(annabell, Mon, Display, clk0, clk1, input_token);
+
+		if (endProcessing) {
+			return 0;
+		}
 	}
 
   string target_phrase;
 
   buf = input_token[0];
   ////////////////////////////////////////
-  if (buf[0]=='#') { // input line is a comment
+  if (buf[0] == COMMENT_CMD) { // input line is a comment
     Display->Print(input_line+"\n");
     return 0;
   }
@@ -141,9 +153,9 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Exits the program or the current input file
   ////////////////////////////////////////
-  if (buf==".quit" || buf==".q") return 2; // quit
+  if (buf == QUIT_CMD_LONG || buf == QUIT_CMD) return 2; // quit
   ////////////////////////////////////////
-  else if (buf==".continue_context" || buf==".cctx") { // continue context
+  else if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -155,7 +167,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Suggests a phrase to be retrieved by the association process.
   ////////////////////////////////////////
- else if (buf==".phrase" || buf==".ph") { // suggest a phrase
+ else if (buf == PHRASE_CMD_LONG || buf == PHRASE_CMD) { // suggest a phrase
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
       return 1;
@@ -174,7 +186,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Suggests a word group to be extracted from the working phrase.
   ////////////////////////////////////////
-  else if (buf==".word_group" || buf==".wg") { // suggest a group of words
+  else if (buf == WORD_GROUP_CMD_LONG || buf == WORD_GROUP_CMD) { // suggest a group of words
     if (input_token.size()<2) {
       //Display->Warning("a word group should be provided as argument.");
       //return 1;
@@ -198,7 +210,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Searches a phrase in the current context of the working phrase
   // starting from the beginning of the context
   ////////////////////////////////////////
-  else if (buf==".search_context" || buf==".sctx") { //search phrase in context
+  else if (buf == SEARCH_CONTEXT_CMD_LONG || buf == SEARCH_CONTEXT_CMD) { //search phrase in context
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
       return 1;
@@ -218,7 +230,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Searches a phrase in the current context of the working phrase
   // starting from the phrase next to the working phrase
   ////////////////////////////////////////
-  else if (buf==".continue_search_context" || buf==".csctx") {
+  else if (buf == CONTINUE_SEARCH_CONTEXT_CMD_LONG || buf == CONTINUE_SEARCH_CONTEXT_CMD) {
     //search phrase in context
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
@@ -238,7 +250,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Copies the input phrase to the working phrase.
   ////////////////////////////////////////
-  else if (buf==".retrieve_input_phrase" || buf==".rip") { // back to input
+  else if (buf == RETRIEVE_INPUT_PHRASE_CMD_LONG || buf == RETRIEVE_INPUT_PHRASE_CMD) { // back to input
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -258,7 +270,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Sends the word group to output and produces a (conclusive) reward
   // for the past state-action sequence.
   ////////////////////////////////////////
-  else if (buf==".reward" || buf==".rw") { // reward
+  else if (buf == REWARD_CMD_LONG || buf == REWARD_CMD2) { // reward
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -294,7 +306,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Sends the word group to output and produces a partial reward
   // for the past state-action sequence.
   ////////////////////////////////////////
-  else if (buf==".partial_reward" || buf==".prw") { // partial reward
+  else if (buf == PARTIAL_REWARD_CMD_LONG || buf == PARTIAL_REWARD_CMD2) { // partial reward
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -331,7 +343,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // phrase. Without argument, the exploitation is related to the previous
   // input phrase.
   ////////////////////////////////////////
-  else if (buf==".exploit" || buf==".x") { // exploitation
+  else if (buf == EXPLOIT_CMD_LONG || buf == EXPLOIT_CMD) { // exploitation
     if (input_token.size()>1) {
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
@@ -354,7 +366,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // an appropriate output phrase. Without argument, the exploitation is
   // related to the previous input phrase.
   ////////////////////////////////////////
-  else if (buf==".clean_exploit" || buf==".cx") { // clean exploitation
+  else if (buf == CLEAN_EXPLOIT_CMD_LONG || buf == CLEAN_EXPLOIT_CMD) { // clean exploitation
     for (int i=0; i<5; i++)
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
 
@@ -380,7 +392,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // phrase with an appropriate output phrase. Without argument, the
   // exploitation is related to the previous input phrase.
   ////////////////////////////////////////
-  else if (buf==".exploit_random" || buf==".xr") { // random exploitation
+  else if (buf == EXPLOIT_RANDOM_CMD_LONG || buf == EXPLOIT_RANDOM_CMD) { // random exploitation
     if (input_token.size()>1) {
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
@@ -402,7 +414,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Starts an exploitation phase.
   // The output phrase is memorized by the system.
   ////////////////////////////////////////
-  else if (buf==".exploit_memorize" || buf==".xm") { //exploitation-memorization
+  else if (buf == EXPLOIT_MEMORIZE_CMD_LONG || buf == EXPLOIT_MEMORIZE_CMD) { //exploitation-memorization
     if (input_token.size()>1) {
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
@@ -426,7 +438,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
  // Analogous to .x, but it iterates the exploitation process n_iter times
  // and selects the best output phrase.
  ////////////////////////////////////////
-  else if (buf==".best_exploit"|| buf== ".bx") { // best exploitation
+  else if (buf == BEST_EXPLOIT_CMD_LONG|| buf == BEST_EXPLOIT_CMD) { // best exploitation
     if (input_token.size()<3) {
       Display->Warning("n. of iterations and a phrase should be provided");
       Display->Warning("as argument in the current version.");
@@ -464,7 +476,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Insert the working phrase and the current word group in the top of the
   // goal stack
   ////////////////////////////////////////
-  else if (buf==".push_goal" || buf==".pg") { // push goal
+  else if (buf == PUSH_GOAL_CMD_LONG || buf == PUSH_GOAL_CMD) { // push goal
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -487,7 +499,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Removes the goal phrase and the goal word group from the top
   // of the goal stack
   ////////////////////////////////////////
-  else if (buf==".drop_goal" || buf==".dg") { // drop goal
+  else if (buf == DROP_GOAL_CMD_LONG || buf == DROP_GOAL_CMD) { // drop goal
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -505,7 +517,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Copies the goal phrase from the top of the goal stack to the
   // working phrase
   ////////////////////////////////////////
-  else if (buf==".get_goal_phrase" || buf==".ggp") { // get goal phrase
+  else if (buf == GET_GOAL_PHRASE_CMD_LONG || buf == GET_GOAL_PHRASE_CMD) { // get goal phrase
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -520,7 +532,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   }
 
   ////////////////////////////////////////
-  else if (buf==".working_phrase_out" || buf==".wpo") { // working phrase out
+  else if (buf == WORKING_PHRASE_OUT_CMD_LONG || buf == WORKING_PHRASE_OUT_CMD) { // working phrase out
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -535,7 +547,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // current word, and all subsequent phrases of the same context until the
   // end of the context itself.
   ////////////////////////////////////////
-  else if (buf==".sentence_out" || buf==".snto") { // sentence out
+  else if (buf == SENTENCE_OUT_CMD_LONG || buf == SENTENCE_OUT_CMD) { // sentence out
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -562,7 +574,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Loads phrases and/or commands from the file file_name.
   ////////////////////////////////////////
-  else if (buf==".file" || buf==".f") { // read phrases/commands from file
+  else if (buf == FILE_CMD_LONG || buf == FILE_CMD) { // read phrases/commands from file
     if (input_token.size()<2) {
       Display->Warning("a file name should be provided as argument.");
       return 1;
@@ -583,7 +595,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   // Gets the input phrase provided as argument without building the
   // associations between the word groups and the phrase.
   ////////////////////////////////////////
-  else if (buf==".get_input_phrase" || buf==".gi") { // get input phrase
+  else if (buf == GET_INPUT_PHRASE_CMD_LONG || buf == GET_INPUT_PHRASE_CMD) { // get input phrase
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
       return 1;
@@ -599,7 +611,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Builds the associations between the word groups and the working phrase.
   ////////////////////////////////////////
-  else if (buf==".build_association" || buf==".ba") { // build association
+  else if (buf == BUILD_ASSOCIATION_CMD_LONG || buf == BUILD_ASSOCIATION_CMD) { // build association
     if (input_token.size()!=1) {
       Display->Warning("no arguments should be provided.");
       return 1;
@@ -621,7 +633,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Executes a system update with a NULL action
   ////////////////////////////////////////
-  else if (buf==".null" || buf==".n") { // null action
+  else if (buf == NULL_CMD_LONG || buf == NULL_CMD) { // null action
     if (input_token.size()!=1) {
       Display->Warning("syntax error.");
       return 1;
@@ -634,7 +646,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Sends a command to the monitor
   ////////////////////////////////////////
-  else if (buf==".monitor" || buf==".m") { // send a command to the monitor
+  else if (buf == MONITOR_CMD_LONG || buf == MONITOR_CMD) { // send a command to the monitor
     if (input_token.size()<2) {
       Display->Warning("a monitor command should be provided as argument.");
       return 1;
@@ -651,7 +663,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Executes single elaboration action
   ////////////////////////////////////////
-  else if (buf==".action" || buf==".a") { // executes single elaboration action
+  else if (buf == ACTION_CMD_LONG || buf == ACTION_CMD) { // executes single elaboration action
     if (input_token.size()!=2) {
       Display->Warning("syntax error.");
       return 1;
@@ -673,7 +685,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Displays the execution time
   ////////////////////////////////////////
-  else if (buf==".time" || buf==".t") { // time
+  else if (buf == TIME_CMD_LONG || buf == TIME_CMD) { // time
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -713,7 +725,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Displays some statistical information
   ////////////////////////////////////////
-  else if (buf==".stat") { // statistic
+  else if (buf == STAT_CMD) { // statistic
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -761,7 +773,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Starts CUDA version of exploitation mode
   ////////////////////////////////////////
-  else if (buf==".cuda" || buf==".cu") { // time
+  else if (buf == CUDA_CMD_LONG || buf == CUDA_CMD) { // time
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
@@ -780,7 +792,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Saves all variable-weight links to a file
   ////////////////////////////////////////
-  else if (buf==".save") { // save links
+  else if (buf == SAVE_CMD) { // save links
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -819,7 +831,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Loads all variable-weight links from a file
   ////////////////////////////////////////
-  else if (buf==".load") { // load links
+  else if (buf == LOAD_CMD) { // load links
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -870,12 +882,12 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Writes the output to a log file
   ////////////////////////////////////////
-  else if (buf==".logfile") { // write output to a log file
+  else if (buf == LOGFILE_CMD) { // write output to a log file
     if (input_token.size()<2) {
       Display->Warning("a file name or off should be provided as argument.");
       return 1;
     }
-    if (input_token[1]=="off" && Display->LogFileFlag) {
+    if (input_token[1] == LOGFILE_OFF && Display->LogFileFlag) {
       Mon->Display.LogFileFlag = Display->LogFileFlag = false;
       Display->LogFile->close();
       return 0;
@@ -898,7 +910,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Displays the speaker names using the CHAT format (3 characters)
   ////////////////////////////////////////
-  else if (buf==".speaker") { // display the name of the speaker
+  else if (buf == SPEAKER_CMD) { // display the name of the speaker
     if (input_token.size()<2) {
       Display->Warning("a speaker name or off should be provided as argument.");
       return 1;
@@ -918,7 +930,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Records the answer time
   ////////////////////////////////////////
-  else if (buf==".answer_time" || buf==".at") { // record answer time
+  else if (buf == ANSWER_TIME_CMD_LONG || buf == ANSWER_TIME_CMD) { // record answer time
     if (input_token.size()!=1) {
       Display->Warning("syntax error.");
       return 1;
@@ -934,7 +946,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Evaluates the answer time
   ////////////////////////////////////////
-  else if (buf==".evaluate_answer_time" || buf==".eat") {//evaluate answer time
+  else if (buf == EVALUATE_ANSWER_TIME_CMD_LONG || buf == EVALUATE_ANSWER_TIME_CMD) {//evaluate answer time
     if (input_token.size()!=1) {
       Display->Warning("syntax error.");
       return 1;
@@ -961,7 +973,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Periodically save variable-link weights in files with progressive numbers
   ////////////////////////////////////////
-  else if (buf==".auto_save_links" || buf==".asl") { // autosave links
+  else if (buf == AUTO_SAVE_LINKS_CMD_LONG || buf == AUTO_SAVE_LINKS_CMD) { // autosave links
     if (input_token.size()!=1) {
       Display->Warning("syntax error.");
       return 1;
@@ -976,16 +988,16 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Displays a period at the end of the output sentences
   ////////////////////////////////////////
-  else if (buf==".period") { // display a period at the end of output sentences
+  else if (buf == PERIOD_CMD) { // display a period at the end of output sentences
     if (input_token.size()<2) {
       Display->Warning("on or off should be provided as argument.");
       return 1;
     }
-    if (input_token[1]=="off") {
+    if (input_token[1] == PERIOD_OFF) {
     	annabell->flags->PeriodFlag = false;
       return 0;
     }
-    else if (input_token[1]=="on") {
+    else if (input_token[1] == PERIOD_ON) {
     	annabell->flags->PeriodFlag = true;
       return 0;
     }

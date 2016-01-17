@@ -25,6 +25,8 @@
 #include <stdlib.h>
 #include "interface.h"
 #include "display.h" 
+#include "CommandUtils.h"
+#include "CommandConstants.h"
 
 using namespace std;
 
@@ -32,30 +34,19 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
 bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* clk0, timespec* clk1, vector<string> input_token) {
 
-	string cmd, buf; // buffer string
+	//I think this is not necessary, because is comparing the LITERAL ".ph*" string, not finding strings that start with ".ph"
+	string cmd = CommandUtils::removeTrailing(input_token[0], '*');
+
 	string cmd_line; //command_line
-	bool push_flag;
 
-	if (input_token.size() <= 1) {
-		return false;
-	}
+	string buf; // buffer string
 
-	cmd = input_token[0];
 
-	if (cmd == ".wg*") {
-		cmd = ".wg";
-		push_flag = true;
-	} else if (cmd == ".po*") {
-		cmd = ".po";
-		push_flag = true;
-	} else if (cmd == ".o*") {
-		cmd = ".o";
-		push_flag = true;
-	} else {
-		push_flag = false;
-	}
+		bool push_flag = false;
 
-	if (input_token.size() >= 2 && (cmd == ".wg" || cmd == ".o" || cmd == ".po" || cmd == ".pg" || cmd == ".ph")) {
+		if (cmd == WORD_GROUP_CMD || cmd == REWARD_CMD || cmd == PARTIAL_REWARD_CMD) {
+			push_flag = true;
+		}
 		buf = input_token[1];
 
 		if (input_token.size() == 2 && buf[0] == '/') {
@@ -123,31 +114,31 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 			}
 
 			// if working phrase must be stored and retrieved at the end
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG) == 2) {
 				return true;
 			}
 
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
 				return true;
 			}
 
 			if (s1b != "") { // if there is a second cue
 
-				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s1b) == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s1b) == 2) {
 					return true;
 				}
 
-				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG) == 2) {
 					return true;
 				}
 
-				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
 					return true;
 				}
 			}
 
 			if (s1 != "") {
-				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s1) == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s1) == 2) {
 					return true;
 				}
 			} else {
@@ -155,7 +146,7 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 				s1 = monitor->OutPhrase;
 			}
 
-			cmd_line = ".ph ";
+			cmd_line = PHRASE_CMD + " ";
 
 			if (ph == "") {
 				cmd_line = cmd_line + s1 + " , " + s2; // standard substitution
@@ -168,37 +159,37 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 				return true;
 			}
 
-			if (s2 != "" && ParseCommand(annabell, monitor, Display, clk0, clk1, string(".wg ") + s2) == 2) {
+			if (s2 != "" && ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s2) == 2) {
 				return true;
 			}
 
 			if (s1b != "") { // drop goal if there was a second cue
-				if (ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
+				if (ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG) == 2) {
 					return true;
 				}
 			}
 
 			// retrieve working phrase if necessary
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
 				return true;
 			}
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG) == 2) {
 				return true;
 			}
 
-		} else if (cmd == ".ph" || cmd == ".wg") {
+		} else if (cmd == PHRASE_CMD || cmd == WORD_GROUP_CMD) {
 			return false;
 		}
 		else {
 
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG) == 2) {
 				return true;
 			}
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".ggp") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD) == 2) {
 				return true;
 			}
 
-			cmd_line = ".wg";
+			cmd_line = WORD_GROUP_CMD;
 
 			for (unsigned int i = 1; i < input_token.size(); i++) {
 				buf = input_token[i];
@@ -209,23 +200,20 @@ bool simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 				return true;
 			}
 
-			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, ".drop_goal") == 2) {
+			if (push_flag && ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG) == 2) {
 				return true;
 			}
 		}
 
-		if (cmd == ".po") {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, ".prw");
+		if (cmd == PARTIAL_REWARD_CMD) {
+			ParseCommand(annabell, monitor, Display, clk0, clk1, PARTIAL_REWARD_CMD2);
 		}
-		else if (cmd == ".o") {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, ".rw");
+		else if (cmd == REWARD_CMD) {
+			ParseCommand(annabell, monitor, Display, clk0, clk1, REWARD_CMD2);
 		}
-		else if (cmd == ".pg") {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, ".push_goal");
+		else if (cmd == PUSH_GOAL_CMD) {
+			ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
 		}
 
 		return true;
-	}
-
-	return false;
 }
