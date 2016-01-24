@@ -1,19 +1,19 @@
 /*
-Copyright (C) 2015 Bruno Golosio
+ Copyright (C) 2015 Bruno Golosio
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include <Annabell.h>
 #include <Monitor.h>
@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "AnnabellFlags.h"
 #include "CommandFactory.h"
 #include "Command.h"
+#include "ParseCommandTests.h"
 
 using namespace std;
 using namespace sizes;
@@ -42,14 +43,32 @@ int LastGB;
 int StoredStActI;
 
 int Interface(Annabell *annabell, Monitor *Mon);
+int annabellMain();
 
-int main() {
+int main(int argc, char** argv) {
+
+	bool isTestMode = false;
+
+	for (int i = 0; i < argc; i++) {
+		if (argv[i] == string("test")) {
+			isTestMode = true;
+			break;
+		}
+	}
+
+	if (isTestMode) {
+		return runAllTests(argc, argv);
+	} else {
+		return annabellMain();
+	}
+}
+
+int annabellMain() {
 	try {
 		init_randmt(12345);
 
 		Annabell *annabell = new Annabell();
 		Monitor *Mon = new Monitor(annabell);
-
 
 		Interface(annabell, Mon);
 
@@ -64,6 +83,7 @@ int main() {
 		cerr << "Unrecognized error.\n";
 		return 1;
 	}
+
 }
 
 int Interface(Annabell *annabell, Monitor *mon) {
