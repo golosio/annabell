@@ -37,6 +37,7 @@ void CommandUtils::compileMacroRegex() {
 
 	//only compile the regex once, for performance reasons
 	if (CommandUtils::optimizedMacroRegex == NULL) {
+		//TODO: use CommandConstants constants and split the regex into a more human-readable concatenation of such constants.
 		compileRegex("\\.(ph|pg|wg|po|o|wg\\*|po\\*|o\\*) \\/([^\\/]+)\\/([^\\/]*)\\/([^\\/]*)\\/($|( & ([^\\/]+)\\/([^\\/]*)\\/([^\\/]*)\\/)?$)");
 	}
 }
