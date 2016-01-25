@@ -37,10 +37,23 @@ void CommandUtils::compileMacroRegex() {
 
 	//only compile the regex once, for performance reasons
 	if (CommandUtils::optimizedMacroRegex == NULL) {
-		compileRegex("(.*)(hello)+");
+		compileRegex("\\.(ph|pg|wg|po|o|wg\\*|po\\*|o\\*) \\/([^\\/]+)\\/([^\\/]*)\\/([^\\/]*)\\/($|( & ([^\\/]+)\\/([^\\/]*)\\/([^\\/]*)\\/)?$)");
 	}
 }
 
+/**
+ *  Macro commands take the following form:
+ *
+ *  .COMMAND /CUE/[PHRASE]/[WORD_GROUP]/[ & CUE2/[PHRASE2]/[WORD_GROUP2]]
+ *
+ *  Where:
+ *
+ *  - COMMAND is one of: ph, pg, wg, po, o, wg*, po*, o*
+ *  - CUE is a word group that must be extracted from the current working phrase and used as a cue
+ *  - PHRASE = is the phrase that must be retrieved from the long-term memory using cue.
+ *    This is optional. Is PHRASE is not supplied, the command takes the short form of /CUE//WORD_GROUP/ used for implementing substitutions like "you , I".
+ *  - WORD_GROUP optional group of words extracted from phrase
+ */
 bool CommandUtils::isMacroCommand(string inputString) {
 	compileMacroRegex();
 

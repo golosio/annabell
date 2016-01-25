@@ -38,18 +38,37 @@ TEST(CommandUtilsStringTests, removeTrailingTest) {
 	EXPECT_EQ("abcdef", CommandUtils::removeTrailing("abcdef*", '*'));
 }
 
-TEST(CommandUtilsMacroTests, regexTests) {
-	CommandUtils::compileRegex("hello");
-	EXPECT_TRUE(CommandUtils::isMacroCommand("hello"));
-	EXPECT_TRUE(CommandUtils::isMacroCommand("This should hello match"));
-	EXPECT_FALSE(CommandUtils::isMacroCommand("goodbye"));
+TEST(CommandUtilsMacroTests, macroDetectionTests) {
 
-	CommandUtils::compileRegex("(.*)(hello)+");
-	EXPECT_TRUE(CommandUtils::isMacroCommand("This should match hello"));
-	EXPECT_TRUE(CommandUtils::isMacroCommand("This should match hello! because it hello should"));
-	EXPECT_FALSE(CommandUtils::isMacroCommand("This should not match"));
+	//valid macro form
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".ph /mammal/the dog is a mammal/dog/"));
 
+	//valid macro form with two expressions separated by an '&' character
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".ph /mammal/the dog is a mammal/dog/ & mammal/the dog is a mammal/dog/"));
 
+	//should fail because .ph* is not a valid macro command
+	EXPECT_FALSE(CommandUtils::isMacroCommand(".ph* /mammal/the dog is a mammal/dog/"));
+
+	//valid commands ending with asterisk
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".wg* /mammal/the dog is a mammal/dog/"));
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".po* /mammal/the dog is a mammal/dog/"));
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".o* /mammal/the dog is a mammal/dog/"));
+
+	//.wg is nos a valid macro command
+	EXPECT_FALSE(CommandUtils::isMacroCommand(".wg the dog is a mammal"));
+
+	//valid forms, omitting optional PHRASE to use as substitution
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".po* /mammal//dog/"));
+	EXPECT_TRUE(CommandUtils::isMacroCommand(".ph /mammal//dog/ & mammal//dog/"));
+
+	//.f command is similar because it has '/' characters, but is nos a macro
+	EXPECT_FALSE(CommandUtils::isMacroCommand(".f /path/to/a/file.txt"));
+
+	//just a phrase, not a command
+	EXPECT_FALSE(CommandUtils::isMacroCommand("the dog is a mammal"));
+
+	//should fail because it lacks the ending '/'
+	EXPECT_FALSE(CommandUtils::isMacroCommand(".ph /mammal/the dog is a mammal/dog"));
 }
 
 int runAllTests(int argc, char** argv) {
