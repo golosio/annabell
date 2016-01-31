@@ -5,8 +5,11 @@ A cognitive neural architecture able to learn and communicate through natural la
 
 Installation and usage
 ----------------------
-Installation and usage instruction are provided in the document:
 
-* annabell-x.x.x_man.pdf
+In order to build the project the following libraries are needed:
 
-where x.x.x refers to the version number.
+ - **pthread** and **gtest**: [Download from GoogleTest project](https://github.com/google/googletest)
+ - **pcre**: [Download from pcre.org](http://pcre.org/)
+
+Additionally, installation and usage instructions are provided in the document **annabell-x.x.x_man.pdf**, where x.x.x refers to the version number.
+
