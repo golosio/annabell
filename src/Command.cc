@@ -22,6 +22,7 @@
 #include <sstream>
 #include <vector>
 #include "CommandConstants.h"
+#include "CommandFactory.h"
 
 using namespace sizes;
 
@@ -574,22 +575,30 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   // Loads phrases and/or commands from the file file_name.
   ////////////////////////////////////////
-  else if (buf == FILE_CMD_LONG || buf == FILE_CMD) { // read phrases/commands from file
-    if (input_token.size()<2) {
-      Display->Warning("a file name should be provided as argument.");
-      return 1;
-    }
-    ifstream fs(input_token[1].c_str());
-    if (!fs) {
-      Display->Warning("Input file not found.");
-      return 1;
-    }
-    while(getline (fs, buf))  {
-      //Display->Print(buf+"\n");
-      if (ParseCommand(annabell, Mon, Display, clk0, clk1, buf)==2) break;
-    }
-    return 0;
-  }
+	else if (buf == FILE_CMD_LONG || buf == FILE_CMD) { // read phrases/commands from file
+
+		if (input_token.size() < 2) {
+			Display->Warning("a file name should be provided as argument.");
+			return 1;
+		}
+
+		ifstream fs(input_token[1].c_str());
+		if (!fs) {
+			Display->Warning("Input file not found.");
+			return 1;
+		}
+
+		while (getline(fs, buf)) {
+
+			//Display->Print(buf+"\n");
+			Command* c = CommandFactory::newCommand(buf);
+			int	commandResult = c->execute();
+			if(commandResult == 2) {
+				break;
+			}
+		}
+		return 0;
+	}
 
   ////////////////////////////////////////
   // Gets the input phrase provided as argument without building the
