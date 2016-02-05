@@ -2028,7 +2028,9 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
   // parse and process sensorymotor response
   while(getline (in_ss, buf))  {
     //Display->Print(buf+"\n");
-    if (ParseCommand(annabell, Mon, Display, clk0, clk1, buf)==2) break;
+    Command* c = CommandFactory::newCommand(buf);
+    int	commandResult = c->execute();
+    if(commandResult == 2) break;
   }
   
   return 0;
