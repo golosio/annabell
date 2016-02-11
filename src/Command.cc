@@ -23,6 +23,7 @@
 #include <vector>
 #include "CommandConstants.h"
 #include "CommandFactory.h"
+#include "sensorymotor.h"
 
 using namespace sizes;
 
@@ -2036,36 +2037,3 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
   return 0;
 }
 
-//////////////////////////////////////////////////////////////////////////////
-// Execute sensorymotor command
-//////////////////////////////////////////////////////////////////////////////
-int SensoryMotor(vector <string> phrase_token, stringstream &ss,
-		 display* Display)
-{
-  // parse sensorymotor device and command
-  if (phrase_token[0]=="[testdev:cmd]") { 
-    Display->Print("sensorymotor test device: "+phrase_token[0]+"\n");
-    Display->Print("command:");
-    for (int i=1; i<phrase_token.size(); i++) {
-      Display->Print(" "+phrase_token[i]);
-    }
-    Display->Print("\n");
-    
-    ss << "Sensorymotor" << endl;
-    ss << "test message" << endl;
-    ss << "OK" << endl;
-  }
-  // put here your devices
-  // else if (phrase_token[0]=="[mydevice:mycmd]" { // test device command
-  // execute here your commands
-  // pass messages/commands to ANNABELL below:
-  // ss << "Your device messages/commands\n";
-  // ss << "to be passed to ANNABELL\n";
-  // }
-  else {
-    Display->Warning("Unrecognized sensorymotor device: " + phrase_token[0]
-		     + "\n");
-  }
-  
-  return 0;
-}

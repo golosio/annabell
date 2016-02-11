@@ -65,6 +65,16 @@ AC_CHECK_LIB([m], [exp], [], [AC_MSG_ERROR([math library does not contain exp])]
 AC_CHECK_FUNC(expm1,,[AC_MSG_ERROR([Required libc function not found])])
 AC_CHECK_FUNC(log1p,,[AC_MSG_ERROR([Required libc function not found])])
 
+#determine if the yarp support should be built
+AC_ARG_ENABLE([yarp], AS_HELP_STRING([--enable-yarp],[build with YARP support]), [enable_yarp=yes], [enable_yarp=no])
+
+if test x$enable_yarp = xyes ; then
+		AC_MSG_NOTICE([Building with YARP support])
+else
+		AC_MSG_NOTICE([Building without YARP support])
+fi
+
+AM_CONDITIONAL(ENABLE_YARP,[test "x$enable_yarp" = xyes && test "x$enable_yarp" = xyes])
 
 AC_CONFIG_FILES([	Makefile
 			src/Makefile

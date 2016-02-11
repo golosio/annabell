@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2015 Bruno Golosio
+Copyright (C) 2016 Bruno Golosio
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,25 +15,17 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SIZESH
-#define SIZESH
+#ifndef SENSORYMOTORH
+#define SENSORYMOTORH
 
-namespace sizes
-{
-  const int PhSize=10;
-  const int CSize=7;
-  const int NC=25;
-  const int WSize=NC*CSize;
-  const int WMSize=1000;
-  const float Wgm=0.5;
-  const int WkPhfWGSize=100000;
-  const int StActSize=300;
-  const int ElActfStSize=120000;
-  const int MemPhSize=100000;
-  const int IterSize=10000;
-  const int MaxExploreIter=9990;  
-  const int MaxNRetr=100;
-  const int GoalSize=10;
-}
+#include <sstream>
+#include <vector>
+
+#include "display.h"
+
+int SensoryMotor(std::vector <std::string> phrase_token, std::stringstream &ss,
+		 display* Display);
+int YarpInterface(std::vector <std::string> phrase_token, std::stringstream &ss,
+		 display* Display);
 
 #endif

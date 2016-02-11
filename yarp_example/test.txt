@@ -1,0 +1,14 @@
+this is a test
+[yarp:interface] again let us try
+? again
+.wg again
+.ph [yarp:interface] again let us try
+.wg [yarp:interface] again let us
+.prw
+.rip
+.wg again
+.ph [yarp:interface] again let us try
+.wg again let
+.rw
+? again
+.x
