@@ -240,4 +240,16 @@ const char COMMENT_CMD = '#';
 const string CUDA_CMD = ".cu";
 const string CUDA_CMD_LONG = ".cuda";
 
+/**
+ * Takes the input from a YARP port
+ */
+const string YARP_INPUT_CMD = ".yi";
+const string YARP_INPUT_CMD_LONG = ".yarp_input";
+
+/**
+ * Sends the output to a YARP port
+ */
+const string YARP_OUTPUT_CMD = ".yo";
+const string YARP_OUTPUT_CMD_LONG = ".yarp_output";
+
 #endif /* SRC_COMMANDCONSTANTS_H_ */

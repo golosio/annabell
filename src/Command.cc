@@ -44,8 +44,7 @@ string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
 string WorkingPhraseOut(Annabell *annabell, Monitor *Mon);
 string SentenceOut(Annabell *annabell, Monitor *Mon, display* Display);
 int Reset(Annabell *annabell, Monitor *Mon);
-int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
-		      display* Display, timespec* clk0, timespec* clk1);
+int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display);
 int SensoryMotor(vector <string> phrase_token, stringstream &ss, display* Display);
 
 /** TEST functions - start */
@@ -307,7 +306,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     ExplorationPhaseIdx=0;
     annabell->flags->AnswerTimeUpdate=true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -369,7 +368,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     string out_phrase=Exploitation(annabell, Mon, Display, 1);
     //VerboseFlag = false;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -397,7 +396,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     string out_phrase=Exploitation(annabell, Mon, Display, 1);
     //VerboseFlag = false;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -423,7 +422,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     //VerboseFlag = false;
     annabell->RemPhfWG->OrderedWnnFlag = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -448,7 +447,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     GetInputPhrase(annabell, Mon, out_phrase);
     BuildAs(annabell, Mon);
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -489,7 +488,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     //VerboseFlag = false;
     annabell->RemPhfWG->OrderedWnnFlag = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -560,7 +559,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     }
     string out_phrase=WorkingPhraseOut(annabell, Mon);
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -591,7 +590,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     ExplorationPhaseIdx=0;
     annabell->flags->AnswerTimeUpdate=true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(out_phrase, annabell, Mon, Display, clk0, clk1);
+    CheckSensoryMotor(out_phrase, annabell, Display);
 
     return 0;
   }
@@ -617,6 +616,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 			//Display->Print(buf+"\n");
 			Command* c = CommandFactory::newCommand(buf);
 			int	commandResult = c->execute();
+			delete c;
 			if(commandResult == 2) {
 				break;
 			}
@@ -1040,6 +1040,38 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     }
 
     return 1;
+  }
+  ////////////////////////////////////////
+  // Takes the input from a YARP port
+  ////////////////////////////////////////
+  else if (buf == YARP_INPUT_CMD_LONG || buf == YARP_INPUT_CMD) {
+    if (input_token.size()>1) {
+      Display->Warning("syntax error.");
+      return 1;
+    }
+    YarpInput(Display);
+
+    return 0;
+  }
+  ////////////////////////////////////////
+  // Sends the output to a YARP port
+  ////////////////////////////////////////
+  else if (buf == YARP_OUTPUT_CMD_LONG || buf == YARP_OUTPUT_CMD) {
+    if (input_token.size()==1 ||
+	(input_token.size()==2 && input_token[1]=="on")) {
+      if ((annabell->flags->YarpOutputFlag=YarpOutputInit(Display))==true)
+	return 0;
+      else return 1;
+    }
+    else if (input_token.size()==2 && input_token[1]=="off") {
+      YarpOutputClose(Display);
+      annabell->flags->YarpOutputFlag = false;
+      return 0;
+    }
+    else {
+      Display->Warning("on or off should be provided as argument.");
+      return 1;
+    }
   }
   ////////////////////////////////////////
   else {
@@ -2003,10 +2035,10 @@ int ExplorationRetry(Annabell *annabell, Monitor *Mon)
 
 
 //////////////////////////////////////////////////////////////////////////////
-// check if output phrase is a sensorymotor command, and eventually execute it
+// check if output phrase is a sensorymotor command
+// or if it should be sent to a YARP port
 //////////////////////////////////////////////////////////////////////////////
-int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
-		      display* Display, timespec* clk0, timespec* clk1)
+int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display)
 {
   vector<string> phrase_token;
 
@@ -2018,9 +2050,13 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
     phrase_token.push_back(buf);
   }
   buf=phrase_token[0];
-  if (buf[0] != '[') return 0; // phrase is not a sensorymotor command
   int l = buf.size() - 1;
-  if (buf[l] != ']') return 0; // phrase is not a sensorymotor command
+  if (buf[0]!='[' || buf[l] != ']') { // phrase is not a sensorymotor command
+    if (annabell->flags->YarpOutputFlag) { // send output to a YARP port
+      YarpOutput(out_phrase, Display);
+    }
+    return 0;
+  }
 
   stringstream in_ss("");
 
@@ -2031,6 +2067,7 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, Monitor *Mon,
     //Display->Print(buf+"\n");
     Command* c = CommandFactory::newCommand(buf);
     int	commandResult = c->execute();
+    delete c;
     if(commandResult == 2) break;
   }
   

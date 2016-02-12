@@ -20,12 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <sstream>
 #include <vector>
+#include <string>
 
 #include "display.h"
 
 int SensoryMotor(std::vector <std::string> phrase_token, std::stringstream &ss,
 		 display* Display);
+int YarpNotSupported(display* Display);
 int YarpInterface(std::vector <std::string> phrase_token, std::stringstream &ss,
 		 display* Display);
+int YarpInput(display* Display);
+int YarpOutput(std::string out_phrase, display* Display);
+bool YarpOutputInit(display* Display);
+int YarpOutputClose(display* Display);
+bool CheckYarp(display* Display);
 
 #endif

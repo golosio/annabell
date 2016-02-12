@@ -21,6 +21,7 @@ public:
 	bool AnswerTimeFlag;
 	bool AnswerTimeUpdate;
 	bool AutoSaveLinkFlag;
+	bool YarpOutputFlag;
 
 	int AutoSaveLinkIndex;
 	long AutoSaveLinkStep;
