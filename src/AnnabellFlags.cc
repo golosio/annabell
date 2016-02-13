@@ -9,6 +9,7 @@ AnnabellFlags::AnnabellFlags() {
 	AnswerTimeUpdate = false;
 	AutoSaveLinkFlag = false;
 	YarpOutputFlag = false;
+	AutoExploitFlag = false;
 
 	AutoSaveLinkIndex = 0;
 	AutoSaveLinkStep = 2000000;

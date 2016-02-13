@@ -149,6 +149,12 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     GetInputPhrase(annabell, Mon, input_line);
     BuildAs(annabell, Mon);
     //BuildAsTest(annabell, Mon);
+    // check if automatic-exploitation flag is ON
+    if (annabell->flags->AutoExploitFlag) {
+      string out_phrase=Exploitation(annabell, Mon, Display, 1);
+      // check if the output is a sensorymotor command
+      CheckSensoryMotor(out_phrase, annabell, Display);
+    }
 
     return 0;
   }
@@ -1066,6 +1072,24 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     else if (input_token.size()==2 && input_token[1]=="off") {
       YarpOutputClose(Display);
       annabell->flags->YarpOutputFlag = false;
+      return 0;
+    }
+    else {
+      Display->Warning("on or off should be provided as argument.");
+      return 1;
+    }
+  }
+  ////////////////////////////////////////
+  // Set automatic exploitation after every input phrase
+  ////////////////////////////////////////
+  else if (buf == AUTO_EXPLOIT_CMD_LONG || buf == AUTO_EXPLOIT_CMD) {
+    if (input_token.size()==1 ||
+	(input_token.size()==2 && input_token[1]=="on")) {
+      annabell->flags->AutoExploitFlag=true;
+      return 0;
+    }
+    else if (input_token.size()==2 && input_token[1]=="off") {
+      annabell->flags->AutoExploitFlag=false;
       return 0;
     }
     else {

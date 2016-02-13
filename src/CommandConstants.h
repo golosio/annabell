@@ -252,4 +252,10 @@ const string YARP_INPUT_CMD_LONG = ".yarp_input";
 const string YARP_OUTPUT_CMD = ".yo";
 const string YARP_OUTPUT_CMD_LONG = ".yarp_output";
 
+/**
+ * Sets automatic exploitation after every input phrase
+ */
+const string AUTO_EXPLOIT_CMD = ".ax";
+const string AUTO_EXPLOIT_CMD_LONG = ".auto_exploit";
+
 #endif /* SRC_COMMANDCONSTANTS_H_ */
