@@ -32,6 +32,7 @@
 #include <sys/time.h>
 #include "gettime.h" 
 #include "AnnabellFlags.h"
+#include "AnnabellParams.h"
 #include "CommandFactory.h"
 #include "Command.h"
 #include "ParseCommandTests.h"
@@ -43,47 +44,57 @@ int LastGB;
 int StoredStActI;
 
 int Interface(Annabell *annabell, Monitor *Mon);
-int annabellMain();
+int annabellMain(string param_file);
 
-int main(int argc, char** argv) {
+int ReadArg(int argc, char** argv, bool &isTestMode, string &param_file);
 
-	bool isTestMode = false;
+int main(int argc, char** argv)
+{
+	bool isTestMode;
+	string param_file;
 
-	for (int i = 0; i < argc; i++) {
-		if (argv[i] == string("test")) {
-			isTestMode = true;
-			break;
-		}
-	}
+	if (ReadArg(argc, argv, isTestMode, param_file)!=0) return 1;
 
 	if (isTestMode) {
 		return runAllTests(argc, argv);
 	} else {
-		return annabellMain();
+		return annabellMain(param_file);
 	}
 }
 
-int annabellMain() {
-	try {
-		init_randmt(12345);
-
-		Annabell *annabell = new Annabell();
-		Monitor *Mon = new Monitor(annabell);
-
-		Interface(annabell, Mon);
-
-		return 0;
-	} catch (ann_exception &e) {
-		cerr << "Error: " << e.what() << "\n";
-		return 1;
-	} catch (bad_alloc&) {
-		cerr << "Error allocating memory.\n";
-		return 1;
-	} catch (...) {
-		cerr << "Unrecognized error.\n";
-		return 1;
-	}
-
+int annabellMain(string param_file) {
+  try {
+    AnnabellParams prm;
+    Annabell *annabell;
+    if (param_file=="") {
+      init_randmt(prm.seed);
+      annabell = new Annabell();
+    }
+    else {
+      if (prm.LoadFromFile(param_file)!=0) {
+	return 1;
+      }
+      init_randmt(prm.seed);
+      annabell = new Annabell(prm);
+    }
+    Monitor *Mon = new Monitor(annabell);
+    annabell->param.Display();
+    
+    Interface(annabell, Mon);
+    
+    return 0;
+  } catch (ann_exception &e) {
+    cerr << "Error: " << e.what() << "\n";
+    return 1;
+  } catch (bad_alloc&) {
+    cerr << "Error allocating memory.\n";
+    return 1;
+  } catch (...) {
+    cerr << "Unrecognized error.\n";
+    return 1;
+  }
+ 
+  return 0;
 }
 
 int Interface(Annabell *annabell, Monitor *mon) {
@@ -118,4 +129,33 @@ int Interface(Annabell *annabell, Monitor *mon) {
 	}
 
 	return 0;
+}
+
+int ReadArg(int argc, char** argv, bool &isTestMode, string &param_file)
+{
+  // Check command line input arguments
+  isTestMode = false;
+  param_file = "";
+
+  int par=1;
+  while(par<argc) {
+    string str(argv[par]);
+    if (str=="-pf" && par+1<argc) {
+      par++;
+      param_file=string(argv[par]);
+    }
+    else if (str=="test") {
+      isTestMode = true;
+    }
+    else {
+      cerr << "Wrong input arguments. Usage : " << argv[0] << " [arguments]\n";
+      cerr << "Arguments:\n";
+      cerr << "  test\t\trun test mode\n";
+      cerr << "  -pf filename\tload free parameters from file\n";
+      return 1;
+    }
+    par++;
+  }
+    
+    return 0;
 }

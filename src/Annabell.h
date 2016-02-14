@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef SLLMH
 #define SLLMH
 #include "AnnabellFlags.h"
+#include "AnnabellParams.h"
 #include "fssm.h"
 #define FAST_SSM       // Comment to use slow version.
 //#define FAST_SSM_AS    // Comment to use slow version.
@@ -122,10 +123,11 @@ const int v_rwd_act[RwdActSize+1][RwdActSize] = {
 };
 
 class Annabell {
-public:
-	/** general behaviour and configuration flags */
-	AnnabellFlags* flags;
+ public:
+  /** general behaviour and configuration flags */
+  AnnabellFlags* flags;
 
+  AnnabellParams param; // free parameters 
   bool CudaFlag;
   static const float BIGWG=1e20;
   ssm *W;
@@ -638,8 +640,14 @@ public:
   ssm *BuildGoal;
   ssm_as *GoalMem;
   //
+  
+  // constructor with specified values for free parameters
+  Annabell(AnnabellParams prm) {Init(prm);}
 
-  Annabell();
+  // constructor with default values for free parameters
+  Annabell() {AnnabellParams prm; Init(prm);}
+
+  int Init(AnnabellParams prm);
   int AddRef();
   int SetMode(int imode);
   int In(int *w, int *phi);

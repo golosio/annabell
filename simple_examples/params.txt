@@ -1,0 +1,10 @@
+# default values for free parameters
+seed 12345
+CW 1
+InPhB 3
+WkPhB 1
+WkEqWG 3
+WkEqGoalWG 5
+GoalPhEqGoalWG 1
+OutPhB 1
+MaxDynamicBias 500
