@@ -253,6 +253,12 @@ const string YARP_OUTPUT_CMD = ".yo";
 const string YARP_OUTPUT_CMD_LONG = ".yarp_output";
 
 /**
+ * Sends a command to a sensorymotor device
+ */
+const string SENSORYMOTOR_CMD = ".sm";
+const string SENSORYMOTOR_CMD_LONG = ".sensorymotor";
+
+/**
  * Sets automatic exploitation after every input phrase
  */
 const string AUTO_EXPLOIT_CMD = ".ax";

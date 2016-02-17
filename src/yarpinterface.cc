@@ -26,8 +26,10 @@ using namespace std;
 #include <yarp/os/Time.h>
 
 using namespace yarp::os;
-
-BufferedPort<Bottle> AnnOutput;
+BufferedPort<Bottle> AnnDevInput;  // make a port for reading from yarp device
+BufferedPort<Bottle> AnnDevOutput;  // make a port for writing to a yarp device
+BufferedPort<Bottle> AnnOutput;  // port for sending output to yarp 
+BufferedPort<Bottle> AnnInput; // port for reading from annabell
 
 //////////////////////////////////////////////////////////////////////////////
 // Execute sensorymotor command
@@ -53,31 +55,34 @@ int YarpInterface(vector <string> phrase_token, stringstream &ss,
     ss << "[===============]" << endl;
   }
   else if (phrase_token[0]=="[yarp:interface]") { 
-    Display->Print("yarp test device: "+phrase_token[0]+"\n");
-    Display->Print("command:");
+    Display->Print("yarp interface command:");
     for (int i=1; i<phrase_token.size(); i++) {
       Display->Print(" "+phrase_token[i]);
     }
     Display->Print("\n");
 
-    BufferedPort<Bottle> ann_input;  // make a port for reading from yarp
-    ann_input.open("/annabell/dev/input");  // give the port a name
-    Network::connect("/ann_interface/output","/annabell/dev/input");
-  
-    BufferedPort<Bottle> ann_output;  // make a port for writing to yarp
-    ann_output.open("/annabell/dev/output");  // give the port a name
-    Network::connect("/annabell/dev/output","/ann_interface/input");
-  
-    Bottle &out_bot = ann_output.prepare(); //
+    if (phrase_token[1]=="_open") { 
+      AnnDevInput.open("/annabell/dev/input");  // give the port a name
+      Network::connect("/ann_interface/output","/annabell/dev/input");      
+      AnnDevOutput.open("/annabell/dev/output");  // give the port a name
+      Network::connect("/annabell/dev/output","/ann_interface/input");
+
+      return 0;
+    }
+    else if (phrase_token[1]=="_close") { 
+      AnnDevInput.close();
+      AnnDevOutput.close();
+    }
+
+    Bottle &out_bot = AnnDevOutput.prepare(); //
     out_bot.clear();
     for (int i=1; i<phrase_token.size(); i++) {
-      if (i>1) out_bot.addString(" ");
+      // cout << "-" << phrase_token[i] << "-" << endl;
       out_bot.addString(phrase_token[i]);
     }
-    out_bot.addString("\n");
-    ann_output.write();
+    AnnDevOutput.write();
     
-    Bottle *in_bot = ann_input.read(true);
+    Bottle *in_bot = AnnDevInput.read(true);
     
     for (int i=0; i<in_bot->size(); i++) {
       string in_str=in_bot->get(i).toString().c_str();
@@ -85,8 +90,6 @@ int YarpInterface(vector <string> phrase_token, stringstream &ss,
       //-------------------------------------------------send a message
       ss << in_str;
     }
-    ann_input.close();
-    ann_output.close();
   }
   else {
     Display->Warning("Unrecognized sensorymotor device: " + phrase_token[0]
@@ -104,21 +107,19 @@ int YarpInput(display* Display)
   Network yarp;
 
   // prepare port
-  BufferedPort<Bottle> ann_input;  // port for reading from annabell
-  ann_input.open("/annabell/input");  // give the port a name
+
+  AnnInput.open("/annabell/input");  // give the port a name
   
   do {
-    Bottle *in_bot = ann_input.read(true);
+    Bottle *in_bot = AnnInput.read(true);
 
     string in_phrase="";
     for (int i=0; i<in_bot->size(); i++) {
       string in_str=in_bot->get(i).toString().c_str();
       if (i>0) in_phrase=in_phrase+" ";
       in_phrase=in_phrase+in_str;
-      //-------------------------------------------------send a message
-      //cout << in_str;
-      // parse and process yarp input
     }
+    // parse and process yarp input
     Command* c = CommandFactory::newCommand(in_phrase);
     int commandResult = c->execute();
     delete c;
@@ -126,7 +127,7 @@ int YarpInput(display* Display)
 
   } while(true);
 
-  ann_input.close();
+  AnnInput.close();
 
   return 0;	
 }
