@@ -11,6 +11,7 @@
 #include <CommentCommand.h>
 #include <EmptyCommand.h>
 #include <FileCommand.h>
+#include <QuitCommand.h>
 
 struct timespec;
 
@@ -40,12 +41,15 @@ Command* CommandFactory::newCommand(string input) {
 	} else if (CommandUtils::startsWith(input, FILE_CMD) || CommandUtils::startsWith(input, FILE_CMD_LONG)) {
 		newCommand = new FileCommand();
 
+	} else if (CommandUtils::startsWith(input, QUIT_CMD) || CommandUtils::startsWith(input, QUIT_CMD_LONG)) {
+		newCommand = new QuitCommand();
+
 	} else {
 		newCommand = new Command();
 	}
 
-	newCommand->init(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
-			CommandFactory::clk0, CommandFactory::clk1, input);
+	newCommand->init(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay, CommandFactory::clk0,
+			CommandFactory::clk1, input);
 
 	return newCommand;
 }

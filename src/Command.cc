@@ -152,11 +152,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   }
   Display->Print(input_line+"\n");
   ////////////////////////////////////////
-  // Exits the program or the current input file
-  ////////////////////////////////////////
-  if (buf == QUIT_CMD_LONG || buf == QUIT_CMD) return 2; // quit
-  ////////////////////////////////////////
-  else if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
+  if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
