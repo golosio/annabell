@@ -5,7 +5,10 @@
  *      Author: jpp
  */
 
+#include <CommandConstants.h>
 #include <CommandFactory.h>
+#include <CommandUtils.h>
+#include <CommentCommand.h>
 #include <EmptyCommand.h>
 #include <string>
 
@@ -25,16 +28,21 @@ void CommandFactory::init(Annabell* annabell, Monitor* monitor, display* aDispla
 	CommandFactory::clk1 = clk1;
 }
 
-void CommandFactory::pepe() {};
-
 Command* CommandFactory::newCommand(string input) {
+	Command* newCommand;
+
 	if (input.empty()) {
-		//aDisplay->Println("Creating EmptyCommand");
-		return new EmptyCommand(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
-				CommandFactory::clk0, CommandFactory::clk1, input);
+		newCommand = new EmptyCommand();
+
+	} else if (CommandUtils::startsWith(input, COMMENT_CMD)) {
+		newCommand = new CommentCommand();
+
 	} else {
-		//aDisplay->Println("Creating base Command");
-		return new Command(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
-				CommandFactory::clk0, CommandFactory::clk1, input);
+		newCommand = new Command();
 	}
+
+	newCommand->init(CommandFactory::annabell, CommandFactory::monitor, CommandFactory::aDisplay,
+			CommandFactory::clk0, CommandFactory::clk1, input);
+
+	return newCommand;
 }

@@ -23,11 +23,9 @@ int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
 int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act);
 string Exploitation(Annabell *annabell, Monitor *Mon, display* Display, int n_iter);
 
-EmptyCommand::EmptyCommand(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1,
-		string input_line) :
-		Command(annabell, monitor, aDisplay, clk0, clk1, input_line) {
+EmptyCommand::EmptyCommand() :
+		Command() {
 }
-;
 
 int EmptyCommand::execute() {
 	string target_phrase;

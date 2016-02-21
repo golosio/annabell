@@ -121,6 +121,7 @@ int Interface(Annabell *annabell, Monitor *mon) {
 		if (lineRead) {
 			Command* c = CommandFactory::newCommand(input_line);
 			commandResult = c->execute();
+			delete c;
 		}
 	}
 

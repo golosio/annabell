@@ -25,7 +25,8 @@ protected:
 	string input_line;
 
 public:
-	Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1, string input_line);
+	Command();
+	void init(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1, string input_line);
 	virtual int execute();
 	virtual ~Command();
 };

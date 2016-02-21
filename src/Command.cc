@@ -65,8 +65,10 @@ string to_string(T const& value) {
     return sstr.str();
 }
 
+Command::Command() {
+}
 
-Command::Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
+void Command::init(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
 	this->annabell = annabell;
 	this->Mon = monitor;
 	this->Display = aDisplay;
@@ -135,11 +137,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
   string target_phrase;
   buf = input_token[0];
-  ////////////////////////////////////////
-  if (buf[0] == COMMENT_CMD) { // input line is a comment
-    Display->Print(input_line+"\n");
-    return 0;
-  }
   ////////////////////////////////////////
   if (buf[0]!='.' || (buf[1]=='.' && buf[2]=='.')) {
     // if token does not start with "." or if token is "..."
