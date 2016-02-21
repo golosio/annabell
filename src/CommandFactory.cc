@@ -10,7 +10,7 @@
 #include <CommandUtils.h>
 #include <CommentCommand.h>
 #include <EmptyCommand.h>
-#include <string>
+#include <FileCommand.h>
 
 struct timespec;
 
@@ -36,6 +36,9 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, COMMENT_CMD)) {
 		newCommand = new CommentCommand();
+
+	} else if (CommandUtils::startsWith(input, FILE_CMD) || CommandUtils::startsWith(input, FILE_CMD_LONG)) {
+		newCommand = new FileCommand();
 
 	} else {
 		newCommand = new Command();

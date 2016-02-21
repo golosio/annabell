@@ -112,13 +112,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 		input_token.push_back(buf);
 		buf = "";
 	}
-	if (buf != "") {
-		int l = buf.size() - 1;
-		if (buf[l] == ' ') {
-			buf.erase(l);
-		}
-		input_token.push_back(buf);
-	}
 
 	if (input_token.size() >= 2
 			&& (CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD)
@@ -608,36 +601,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
     return 0;
   }
-
-  ////////////////////////////////////////
-  // Loads phrases and/or commands from the file file_name.
-  ////////////////////////////////////////
-	else if (buf == FILE_CMD_LONG || buf == FILE_CMD) { // read phrases/commands from file
-
-		if (input_token.size() < 2) {
-			Display->Warning("a file name should be provided as argument.");
-			return 1;
-		}
-
-		ifstream fs(input_token[1].c_str());
-		if (!fs) {
-			Display->Warning("Input file not found.");
-			return 1;
-		}
-
-		while (getline(fs, buf)) {
-
-			//Display->Print(buf+"\n");
-			Command* c = CommandFactory::newCommand(buf);
-			int	commandResult = c->execute();
-			delete c;
-			if(commandResult == 2) {
-				break;
-			}
-		}
-		return 0;
-	}
-
   ////////////////////////////////////////
   // Gets the input phrase provided as argument without building the
   // associations between the word groups and the phrase.
