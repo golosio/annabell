@@ -15,8 +15,7 @@
  */
 class EmptyCommand: public Command {
 public:
-	EmptyCommand(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1,
-			string input_line);
+	EmptyCommand();
 	int execute();
 };
 

@@ -65,8 +65,10 @@ string to_string(T const& value) {
     return sstr.str();
 }
 
+Command::Command() {
+}
 
-Command::Command(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
+void Command::init(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clock0, timespec* clock1, string input_line) {
 	this->annabell = annabell;
 	this->Mon = monitor;
 	this->Display = aDisplay;
@@ -110,13 +112,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 		input_token.push_back(buf);
 		buf = "";
 	}
-	if (buf != "") {
-		int l = buf.size() - 1;
-		if (buf[l] == ' ') {
-			buf.erase(l);
-		}
-		input_token.push_back(buf);
-	}
 
 	if (input_token.size() >= 2
 			&& (CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD)
@@ -135,11 +130,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
   string target_phrase;
   buf = input_token[0];
-  ////////////////////////////////////////
-  if (buf[0] == COMMENT_CMD) { // input line is a comment
-    Display->Print(input_line+"\n");
-    return 0;
-  }
   ////////////////////////////////////////
   if (buf[0]!='.' || (buf[1]=='.' && buf[2]=='.')) {
     // if token does not start with "." or if token is "..."
@@ -162,11 +152,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   }
   Display->Print(input_line+"\n");
   ////////////////////////////////////////
-  // Exits the program or the current input file
-  ////////////////////////////////////////
-  if (buf == QUIT_CMD_LONG || buf == QUIT_CMD) return 2; // quit
-  ////////////////////////////////////////
-  else if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
+  if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
@@ -611,36 +597,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
     return 0;
   }
-
-  ////////////////////////////////////////
-  // Loads phrases and/or commands from the file file_name.
-  ////////////////////////////////////////
-	else if (buf == FILE_CMD_LONG || buf == FILE_CMD) { // read phrases/commands from file
-
-		if (input_token.size() < 2) {
-			Display->Warning("a file name should be provided as argument.");
-			return 1;
-		}
-
-		ifstream fs(input_token[1].c_str());
-		if (!fs) {
-			Display->Warning("Input file not found.");
-			return 1;
-		}
-
-		while (getline(fs, buf)) {
-
-			//Display->Print(buf+"\n");
-			Command* c = CommandFactory::newCommand(buf);
-			int	commandResult = c->execute();
-			delete c;
-			if(commandResult == 2) {
-				break;
-			}
-		}
-		return 0;
-	}
-
   ////////////////////////////////////////
   // Gets the input phrase provided as argument without building the
   // associations between the word groups and the phrase.

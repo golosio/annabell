@@ -1,3 +1,4 @@
+#Example 1
 the turtle is a reptile
 the eagle is a bird
 the dog is a mammal

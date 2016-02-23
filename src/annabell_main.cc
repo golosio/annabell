@@ -121,6 +121,7 @@ int Interface(Annabell *annabell, Monitor *mon) {
 		if (lineRead) {
 			Command* c = CommandFactory::newCommand(input_line);
 			commandResult = c->execute();
+			delete c;
 		}
 	}
 
@@ -146,6 +147,7 @@ int ReadArg(int argc, char** argv, bool &isTestMode, string &param_file)
     }
     else if (str=="test") {
       isTestMode = true;
+      break;
     }
     else {
       cerr << "Wrong input arguments. Usage : " << argv[0] << " [arguments]\n";
