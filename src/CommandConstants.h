@@ -263,5 +263,10 @@ const string SENSORYMOTOR_CMD_LONG = ".sensorymotor";
  */
 const string AUTO_EXPLOIT_CMD = ".ax";
 const string AUTO_EXPLOIT_CMD_LONG = ".auto_exploit";
+/**
+ * Resets the system activation state
+ */
+const string RESET_CMD = ".rs";
+const string RESET_CMD_LONG = ".reset";
 
 #endif /* SRC_COMMANDCONSTANTS_H_ */

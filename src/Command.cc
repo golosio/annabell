@@ -1127,6 +1127,8 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     stringstream in_ss("");
     SensoryMotor(input_token, in_ss, Display); // execute sensorymotor command
 
+    bool ax_tmp=annabell->flags->AutoExploitFlag;
+    annabell->flags->AutoExploitFlag=false;
     // parse and process sensorymotor response
     while(getline (in_ss, buf))  {
       //Display->Print(buf+"\n");
@@ -1135,6 +1137,19 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       delete c;
       if(commandResult == 2) break;
     }
+    annabell->flags->AutoExploitFlag=ax_tmp;
+
+    return 0;
+  }
+  ////////////////////////////////////////
+  // Reset the system activation state
+  ////////////////////////////////////////
+  else if (buf == RESET_CMD_LONG || buf == RESET_CMD) {
+    if (input_token.size()>1) {
+      Display->Warning("syntax error.");
+      return 1;
+    }
+    Reset(annabell, Mon);
 
     return 0;
   }
@@ -2124,6 +2139,8 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display)
 
   SensoryMotor(phrase_token, in_ss, Display); // execute sensorymotor command
 
+  bool ax_tmp=annabell->flags->AutoExploitFlag;
+  annabell->flags->AutoExploitFlag=false;
   // parse and process sensorymotor response
   while(getline (in_ss, buf))  {
     //Display->Print(buf+"\n");
@@ -2132,6 +2149,7 @@ int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display)
     delete c;
     if(commandResult == 2) break;
   }
+  annabell->flags->AutoExploitFlag=ax_tmp;
   
   return 0;
 }
