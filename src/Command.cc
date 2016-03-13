@@ -86,6 +86,40 @@ int Command::execute() {
 }
 
 /**
+ * @returns true is specified command supports macro form
+ * (doesn't mean the input line is actually a macro, just that there is a possibility that it is one.
+ */
+bool isPossibleMacroCommand(const vector<string>& input_token) {
+	return CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD)
+			|| CommandUtils::startsWith(input_token[0], REWARD_CMD)
+			|| CommandUtils::startsWith(input_token[0], PARTIAL_REWARD_CMD)
+			|| CommandUtils::startsWith(input_token[0], PUSH_GOAL_CMD)
+			|| CommandUtils::startsWith(input_token[0], PHRASE_CMD);
+}
+
+/**
+ * @returns true if this input is possibly a macro command
+ */
+bool isPossibleMacro(const vector<string>& input_token) {
+	return input_token.size() >= 2 && isPossibleMacroCommand(input_token);
+}
+
+/**
+ * @returns true is this input is a simple macro command (ie. it is a macro composed by two tokens)
+ */
+bool isSimpleMacroCommand(const vector<string>& input_token) {
+	return input_token.size() == 2 && CommandUtils::startsWith(input_token[1], '/');
+}
+
+/**
+ * @returns true is this input does not correspond to neither a PHRASE command, nor to a WORD_GROUP command.
+ */
+bool isNotPhraseOrWordGroup(const vector<string>& input_token) {
+	return !CommandUtils::startsWith(input_token[0], PHRASE_CMD)
+			&& !CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD);
+}
+
+/**
  * Read command or input phrase from command line.
  * @returns 2 for .quit command.
  */
@@ -113,19 +147,10 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 		buf = "";
 	}
 
-	if (input_token.size() >= 2
-			&& (CommandUtils::startsWith(input_token[0], WORD_GROUP_CMD)
-					|| CommandUtils::startsWith(input_token[0], REWARD_CMD)
-					|| CommandUtils::startsWith(input_token[0], PARTIAL_REWARD_CMD)
-					|| CommandUtils::startsWith(input_token[0], PUSH_GOAL_CMD)
-					|| CommandUtils::startsWith(input_token[0], PHRASE_CMD))) {
+	if (isPossibleMacro(input_token) && (isSimpleMacroCommand(input_token) || isNotPhraseOrWordGroup(input_token))) {
 
-		bool endProcessing;
-		endProcessing = simplify(annabell, Mon, Display, clk0, clk1, input_token);
-
-		if (endProcessing) {
-			return 0;
-		}
+		simplify(annabell, Mon, Display, clk0, clk1, input_token);
+		return 0;
 	}
 
   string target_phrase;
