@@ -13,4 +13,4 @@ public:
 	int execute();
 };
 
-#endif /* SRC_COMMENTCOMMAND_H_ */
+#endif /* SRC_MACROCOMMAND_H_ */

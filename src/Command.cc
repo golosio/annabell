@@ -27,15 +27,8 @@
 
 using namespace sizes;
 
-int ExplorationPhaseIdx=0;
-string OutPhrase="";
-bool CompleteOutputFlag=true;
-
 int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line);
-int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
-int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act);
-string Exploitation(Annabell *annabell, Monitor *Mon, display* Display, int n_iter);
-int BuildAs(Annabell *annabell, Monitor *Mon);
+
 int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
 int SearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
 int ContinueSearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
@@ -44,7 +37,7 @@ string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
 string WorkingPhraseOut(Annabell *annabell, Monitor *Mon);
 string SentenceOut(Annabell *annabell, Monitor *Mon, display* Display);
 int Reset(Annabell *annabell, Monitor *Mon);
-int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display);
+
 int SensoryMotor(vector <string> phrase_token, stringstream &ss, display* Display);
 
 /** TEST functions - start */
@@ -106,26 +99,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 
   string target_phrase;
   buf = input_token[0];
-  ////////////////////////////////////////
-  if (buf[0]!='.' || (buf[1]=='.' && buf[2]=='.')) {
-    // if token does not start with "." or if token is "..."
-    // input line is a phrase, not a command
-    if (annabell->flags->SpeakerFlag) Display->Print("*" + annabell->flags->SpeakerName + ":\t"); //("*TEA:\t");
-    Display->Print(input_line+"\n");
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(annabell, Mon, input_line);
-    BuildAs(annabell, Mon);
-    //BuildAsTest(annabell, Mon);
-    // check if automatic-exploitation flag is ON
-    if (annabell->flags->AutoExploitFlag) {
-      OutPhrase=Exploitation(annabell, Mon, Display, 1);
-      CompleteOutputFlag=true;
-      // check if the output is a sensorymotor command
-      CheckSensoryMotor(OutPhrase, annabell, Display);
-    }
 
-    return 0;
-  }
   Display->Print(input_line+"\n");
   ////////////////////////////////////////
   if (buf == CONTINUE_CONTEXT_CMD_LONG || buf == CONTINUE_CONTEXT_CMD) { // continue context
@@ -234,7 +208,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     //Mon->PrintPhM("WkPhB", annabell->WkPhB);
     //Mon->PrintSSMidx("RemPh", annabell->RemPh);
     //Mon->PrintSSMidx("MemPh", annabell->MemPh);
-    ExplorationPhaseIdx=1;
+    annabell->flags->ExplorationPhaseIdx = 1;
     //annabell->EPhaseI->Clear();
 
     return 0;
@@ -257,12 +231,19 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 	Display->Warning("Cannot convert token to integer.");
       }
     }
-    if (CompleteOutputFlag==true) OutPhrase="";
+    if (annabell->flags->CompleteOutputFlag == true) {
+    	annabell->flags->OutPhrase = "";
+    }
     //int ex_ph = ExplorationPhaseIdx;
     string out_phrase=Reward(annabell, Mon, 0, n_iter);
-    if (OutPhrase!="" && out_phrase!="") OutPhrase=OutPhrase+" "+out_phrase;
-    else OutPhrase=OutPhrase+out_phrase;
-    CompleteOutputFlag=true;
+    if (annabell->flags->OutPhrase != "" && out_phrase != "") {
+    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + " " + out_phrase;
+    }
+    else {
+    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + out_phrase;
+    }
+
+    annabell->flags->CompleteOutputFlag = true;
     //ExplorationPhaseIdx=ex_ph;
     //ExplorationPhaseIdx=0;
     //annabell->EPhaseI->Clear();
@@ -274,10 +255,10 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     annabell->Update();
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx=0;
+    annabell->flags->ExplorationPhaseIdx = 0;
     annabell->flags->AnswerTimeUpdate=true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -299,12 +280,19 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 	Display->Warning("Cannot convert token to integer.");
       }
     }
-    if (CompleteOutputFlag==true) OutPhrase="";
+    if (annabell->flags->CompleteOutputFlag == true) {
+    	annabell->flags->OutPhrase = "";
+    }
     //int ex_ph = ExplorationPhaseIdx;
     string out_phrase=Reward(annabell, Mon, 1, n_iter);
-    if (OutPhrase!="" && out_phrase!="") OutPhrase=OutPhrase+" "+out_phrase;
-    else OutPhrase=OutPhrase+out_phrase;
-    CompleteOutputFlag=false;
+    if (annabell->flags->OutPhrase != "" && out_phrase != "") {
+    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + " " + out_phrase;
+    }
+    else {
+    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + out_phrase;
+    }
+
+    annabell->flags->CompleteOutputFlag = false;
     //ExplorationPhaseIdx=ex_ph;
     //annabell->EPhaseI->Clear();
 
@@ -315,7 +303,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     annabell->Update();
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx=1; //ex_ph;
+    annabell->flags->ExplorationPhaseIdx = 1; //ex_ph;
 
     return 0;
   }
@@ -337,11 +325,11 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     }
     //VerboseFlag = true;
     //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    OutPhrase=Exploitation(annabell, Mon, Display, 1);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
+    annabell->flags->CompleteOutputFlag = true;
     //VerboseFlag = false;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -366,11 +354,11 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     }
     //VerboseFlag = true;
     //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    OutPhrase=Exploitation(annabell, Mon, Display, 1);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
+    annabell->flags->CompleteOutputFlag = true;
     //VerboseFlag = false;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -392,12 +380,12 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     annabell->RemPhfWG->OrderedWnnFlag = false;
     //VerboseFlag = true;
     //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    OutPhrase=Exploitation(annabell, Mon, Display, 1);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
+    annabell->flags->CompleteOutputFlag = true;
     //VerboseFlag = false;
     annabell->RemPhfWG->OrderedWnnFlag = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -416,14 +404,14 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     }
     //VerboseFlag = true;
     //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    OutPhrase=Exploitation(annabell, Mon, Display, 1);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
+    annabell->flags->CompleteOutputFlag = true;
     //VerboseFlag = false;
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(annabell, Mon, OutPhrase);
+    GetInputPhrase(annabell, Mon, annabell->flags->OutPhrase);
     BuildAs(annabell, Mon);
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -460,12 +448,12 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     //BestExploitation(annabell, Mon, n_iter, target_phrase);
     //BestExploitation2(annabell, Mon, n_iter, target_phrase);
     //string out_phrase=ExploitationTest(annabell, Mon, n_iter);
-    OutPhrase=Exploitation(annabell, Mon, Display, n_iter);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, n_iter);
+    annabell->flags->CompleteOutputFlag = true;
     //VerboseFlag = false;
     annabell->RemPhfWG->OrderedWnnFlag = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -478,15 +466,15 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("syntax error.");
       return 1;
     }
-    if (ExplorationPhaseIdx==0) {
+    if (annabell->flags->ExplorationPhaseIdx == 0) {
       ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
-      ExplorationPhaseIdx++;
+      annabell->flags->ExplorationPhaseIdx++;
     }
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, PUSH_GL);
-    int ex_ph = ExplorationPhaseIdx;
+    int ex_ph = annabell->flags->ExplorationPhaseIdx;
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx = ex_ph;
+    annabell->flags->ExplorationPhaseIdx = ex_ph;
     //ExplorationPhaseIdx=0;
     //annabell->EPhaseI->Clear();
 
@@ -502,9 +490,9 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       return 1;
     }
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
-    int ex_ph = ExplorationPhaseIdx;
+    int ex_ph = annabell->flags->ExplorationPhaseIdx;
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx = ex_ph;
+    annabell->flags->ExplorationPhaseIdx = ex_ph;
     //ExplorationPhaseIdx=0;
     //annabell->EPhaseI->Clear();
 
@@ -522,7 +510,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_GL_PH);
     ExplorationApprove(annabell, Mon);
 
-    ExplorationPhaseIdx=1;
+    annabell->flags->ExplorationPhaseIdx = 1;
     //annabell->EPhaseI->Clear();
 
     return 0;
@@ -534,10 +522,10 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("syntax error.");
       return 1;
     }
-    OutPhrase=WorkingPhraseOut(annabell, Mon);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = WorkingPhraseOut(annabell, Mon);
+    annabell->flags->CompleteOutputFlag = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -552,8 +540,8 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("syntax error.");
       return 1;
     }
-    OutPhrase=SentenceOut(annabell, Mon, Display);
-    CompleteOutputFlag=true;
+    annabell->flags->OutPhrase = SentenceOut(annabell, Mon, Display);
+    annabell->flags->CompleteOutputFlag = true;
 
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
     ExplorationApprove(annabell, Mon);
@@ -566,10 +554,10 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
     annabell->Update();
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx=0;
-    annabell->flags->AnswerTimeUpdate=true;
+    annabell->flags->ExplorationPhaseIdx = 0;
+    annabell->flags->AnswerTimeUpdate = true;
     // check if the output is a sensorymotor command
-    CheckSensoryMotor(OutPhrase, annabell, Display);
+    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
 
     return 0;
   }
@@ -1136,7 +1124,7 @@ int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase)
     annabell->Update();
   } while (annabell->EndAcquireFlag->Nr[0]->O==0);
 
-  ExplorationPhaseIdx=0;
+  annabell->flags->ExplorationPhaseIdx = 0;
   annabell->EPhaseI->Clear();
 
   annabell->AcquireUpdate();
@@ -1288,7 +1276,7 @@ int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string targ
 
   // temp1 start here
   annabell->EPhaseI->Clear();
-  annabell->EPhaseI->Nr[ExplorationPhaseIdx]->O = 1;
+  annabell->EPhaseI->Nr[annabell->flags->ExplorationPhaseIdx]->O = 1;
   // temp1 end here
 
   if (name=="WGB") annabell->WGTargetFlag->Nr[0]->O = 1;
@@ -1346,7 +1334,7 @@ int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string targ
   // temp2 start here
   for (int i=0; i<5; i++) {
     if (annabell->EPhaseI->Nr[i]->O>0.5) {
-      ExplorationPhaseIdx = i;
+      annabell->flags->ExplorationPhaseIdx = i;
       break;
     }
   }
@@ -1360,17 +1348,17 @@ int SearchContext(Annabell *annabell, Monitor *Mon, display* Display, string tar
   //cout << "\nSearch context\n";
   annabell->SetMode(EXPLORE);
 
-  if (ExplorationPhaseIdx==0) {
+  if (annabell->flags->ExplorationPhaseIdx == 0) {
     ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
   }
   ExplorationApprove(annabell, Mon);
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
-  ExplorationPhaseIdx = 3;
+  annabell->flags->ExplorationPhaseIdx = 3;
   Mon->GetPhM("WkPhB", annabell->WkPhB);
   cout << " ... " << Mon->OutPhrase << endl;
   if (target_phrase!=Mon->OutPhrase) {
-    ExplorationPhaseIdx = 4;
+	annabell->flags->ExplorationPhaseIdx = 4;
     while(Mon->OutPhrase!=".end_context" && Mon->OutPhrase!="") {
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
       Mon->GetPhM("WkPhB", annabell->WkPhB);
@@ -1398,13 +1386,13 @@ int ContinueSearchContext(Annabell *annabell, Monitor *Mon, display* Display, st
   //cout << "\nSearch context\n";
   annabell->SetMode(EXPLORE);
 
-  if (ExplorationPhaseIdx==0) {
+  if (annabell->flags->ExplorationPhaseIdx == 0) {
     ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
   }
   ExplorationApprove(annabell, Mon);
 
-  ExplorationPhaseIdx = 4;
+  annabell->flags->ExplorationPhaseIdx = 4;
   do {
     ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
     Mon->GetPhM("WkPhB", annabell->WkPhB);
@@ -1430,7 +1418,9 @@ int ExplorationApprove(Annabell *annabell, Monitor *Mon)
 {
   ExecuteAct(annabell, Mon, STORE_SAI, NULL_ACT, NULL_ACT);
 
-  if (ExplorationPhaseIdx!=4) ExplorationPhaseIdx++;
+  if (annabell->flags->ExplorationPhaseIdx != 4) {
+	  annabell->flags->ExplorationPhaseIdx++;
+  }
 
   return 0;
 }
@@ -1487,7 +1477,7 @@ string WorkingPhraseOut(Annabell *annabell, Monitor *Mon)
   Mon->GetPhM("OutPhB", annabell->OutPhB);
   string out_phrase = Mon->OutPhrase;
 
-  ExplorationPhaseIdx = 2;
+  annabell->flags->ExplorationPhaseIdx = 2;
   ExplorationApprove(annabell, Mon);
 
   annabell->SetMode(NULL_MODE);
@@ -1503,7 +1493,7 @@ string SentenceOut(Annabell *annabell, Monitor *Mon, display* Display)
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, SNT_OUT);
   if (annabell->ModeFlags->Nr[EXPLORE]->O>0.5) {
     ExplorationApprove(annabell, Mon);
-    ExplorationPhaseIdx = 2;
+    annabell->flags->ExplorationPhaseIdx = 2;
   }
   //ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, FLUSH_WG);
 
@@ -1561,7 +1551,7 @@ int Reset(Annabell *annabell, Monitor *Mon)
 
   ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
   ExplorationApprove(annabell, Mon);
-  ExplorationPhaseIdx=0;
+  annabell->flags->ExplorationPhaseIdx=0;
 
   return 0;
 }
@@ -1656,7 +1646,7 @@ int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase)
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
   ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_WG);
 
-  ExplorationPhaseIdx=0;
+  annabell->flags->ExplorationPhaseIdx=0;
   annabell->EPhaseI->Clear();
 
   annabell->SetMode(NULL_MODE);
@@ -1672,19 +1662,22 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
   annabell->SetMode(EXPLORE);
 
   ExecuteAct(annabell, Mon, NULL_ACT, NULL_ACT, NULL_ACT);
-  if (name=="WGB" && (ExplorationPhaseIdx==3 || ExplorationPhaseIdx==4))
-    ExplorationPhaseIdx = 1;
-  int StartExplorationPhaseIdx = ExplorationPhaseIdx;
-  if (ExplorationPhaseIdx==0) StartExplorationPhaseIdx = 1;
+  if (name == "WGB" && (annabell->flags->ExplorationPhaseIdx == 3 || annabell->flags->ExplorationPhaseIdx == 4)) {
+	  annabell->flags->ExplorationPhaseIdx = 1;
+  }
+  int StartExplorationPhaseIdx = annabell->flags->ExplorationPhaseIdx;
+  if (annabell->flags->ExplorationPhaseIdx == 0) {
+	  StartExplorationPhaseIdx = 1;
+  }
   int i = 0;
-  while (i<TRYLIMIT) {
-    if (ExplorationPhaseIdx==0) {
+  while (i < TRYLIMIT) {
+    if (annabell->flags->ExplorationPhaseIdx == 0) {
       ExecuteAct(annabell, Mon, START_ST_A, NULL_ACT, NULL_ACT);
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
       ExplorationApprove(annabell, Mon);
-      ExplorationPhaseIdx=1;
+      annabell->flags->ExplorationPhaseIdx = 1;
     }
-    if (ExplorationPhaseIdx==1) {
+    if (annabell->flags->ExplorationPhaseIdx==1) {
       int N1, N2;
       N1=1+rnd_int()%10;
       N2=1+rnd_int()%6;
@@ -1706,14 +1699,14 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
 	//else cout << "exp WBG: " << Mon->OutPhrase << endl;
       }
       else { // (name=="WkPhB")
-	ExplorationPhaseIdx = 2;
+    annabell->flags->ExplorationPhaseIdx = 2;
 	continue;
       }
     }
-    else if (ExplorationPhaseIdx==2) {
+    else if (annabell->flags->ExplorationPhaseIdx == 2) {
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, RETR_AS);
       if (name=="WGB") {
-	ExplorationPhaseIdx = 1;
+    	  annabell->flags->ExplorationPhaseIdx = 1;
 	continue;
       }
       else { // (name=="WkPhB")
@@ -1721,19 +1714,23 @@ int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string 
 	if (target_phrase==Mon->OutPhrase) break;
       }
     }
-    else if (ExplorationPhaseIdx==3) {
+    else if (annabell->flags->ExplorationPhaseIdx == 3) {
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_START_PH);
       Mon->GetPhM(name, annabell->WkPhB);
       if (target_phrase==Mon->OutPhrase) break;
     }
-    else if (ExplorationPhaseIdx==4) {
+    else if (annabell->flags->ExplorationPhaseIdx == 4) {
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, GET_NEXT_PH);
       Mon->GetPhM(name, annabell->WkPhB);
       if (target_phrase==Mon->OutPhrase) break;
     }
-    ExplorationPhaseIdx = StartExplorationPhaseIdx;
-    if (ExplorationPhaseIdx==3) StartExplorationPhaseIdx=4;
-    if (ExplorationPhaseIdx==4) StartExplorationPhaseIdx=1;
+    annabell->flags->ExplorationPhaseIdx = StartExplorationPhaseIdx;
+    if (annabell->flags->ExplorationPhaseIdx == 3) {
+    	StartExplorationPhaseIdx = 4;
+    }
+    if (annabell->flags->ExplorationPhaseIdx == 4) {
+    	StartExplorationPhaseIdx = 1;
+    }
     ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
     ExecuteAct(annabell, Mon, RETR_ST, NULL_ACT, NULL_ACT);
     ExecuteAct(annabell, Mon, RETR_SAI, NULL_ACT, NULL_ACT);
@@ -2021,8 +2018,12 @@ int ExplorationRetry(Annabell *annabell, Monitor *Mon)
 {
   //cout << "\nExplorationRetry (RetrieveStActIdx)\n";
 
-  if (ExplorationPhaseIdx==3) ExplorationPhaseIdx=4;
-  else if (ExplorationPhaseIdx==4) ExplorationPhaseIdx=1;
+  if (annabell->flags->ExplorationPhaseIdx == 3) {
+	  annabell->flags->ExplorationPhaseIdx = 4;
+  }
+  else if (annabell->flags->ExplorationPhaseIdx == 4) {
+	  annabell->flags->ExplorationPhaseIdx = 1;
+  }
 
   //cout << "StoredStActI: " << annabell->StoredStActI->HighVect[0] << endl;
   //cout << "StActI before: " << annabell->StActI->HighVect[0] << endl;

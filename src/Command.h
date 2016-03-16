@@ -15,6 +15,12 @@
 
 using namespace std;
 
+int ExecuteAct(Annabell *annabell, Monitor *Mon, int rwd_act, int acq_act, int el_act);
+int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
+int BuildAs(Annabell *annabell, Monitor *Mon);
+string Exploitation(Annabell *annabell, Monitor *Mon, display* Display, int n_iter);
+int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display);
+
 class Command {
 protected:
 	Annabell* annabell;

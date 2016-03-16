@@ -84,7 +84,13 @@ bool CommandUtils::isMacroCommand(string inputString) {
 
 		//TODO: replace with exception thrown
 		exit(matchesCount);
+
 	}
+}
+
+
+bool CommandUtils::isInputPhrase(string input) {
+	return !CommandUtils::startsWith(input, '.') || CommandUtils::startsWith(input, "...");
 }
 
 /**

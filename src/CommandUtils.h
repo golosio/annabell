@@ -27,7 +27,15 @@ public:
 	 */
 	static void compileRegex(const char* regexString);
 
+	/**
+	 * @returns true is the input corresponds to a command in macro form
+	 */
 	static bool isMacroCommand(string input);
+
+	/**
+	 * @returns true if the input corresponds to a input phrase (ie. is not a "command" per se)
+	 */
+	static bool isInputPhrase(string input);
 
 	/**
 	 * This function takes care of plural suffix.

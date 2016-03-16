@@ -16,9 +16,12 @@ AnnabellFlags::AnnabellFlags() {
 
 	AnswerTimePhrase = "? do you have any friend -s";
 	SpeakerName = "HUM";
+
+	ExplorationPhaseIdx = 0;
+	OutPhrase = "";
+	CompleteOutputFlag = true;
 }
 
 AnnabellFlags::~AnnabellFlags() {
-	// TODO Auto-generated destructor stub
 }
 
