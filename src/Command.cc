@@ -93,23 +93,15 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 	vector<string> input_token;
 
 	stringstream ss(input_line); // Insert the line into a stream
-	string buf, buf1; // buffer strings
+	string buf;
 
-	buf = "";
-	while (ss >> buf1) { // split line in string tokens
-		buf1 = CommandUtils::processArticle(buf1);
+	string parsedToken;
+	while (ss >> parsedToken) {
 
-		buf1 = CommandUtils::processPlural(buf1);
+		parsedToken = CommandUtils::processArticle(parsedToken);
+		parsedToken = CommandUtils::processPlural(parsedToken);
 
-		buf = buf + buf1;
-
-		if (CommandUtils::startsWith(buf, '/') && !CommandUtils::endsWith(buf, '/')) {
-			buf = buf + " ";
-			continue;
-		}
-
-		input_token.push_back(buf);
-		buf = "";
+		input_token.push_back(parsedToken);
 	}
 
   string target_phrase;
