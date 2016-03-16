@@ -12,6 +12,7 @@
 #include <EmptyCommand.h>
 #include <FileCommand.h>
 #include <QuitCommand.h>
+#include <MacroCommand.h>
 
 struct timespec;
 
@@ -43,7 +44,8 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, QUIT_CMD) || CommandUtils::startsWith(input, QUIT_CMD_LONG)) {
 		newCommand = new QuitCommand();
-
+	} else if (CommandUtils::isMacroCommand(input)) {
+		newCommand = new MacroCommand();
 	} else {
 		newCommand = new Command();
 	}
