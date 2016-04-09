@@ -97,7 +97,6 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
 		input_token.push_back(parsedToken);
 	}
 
-  string target_phrase;
   stringCommand = input_token[0];
 
   Display->Print(input_line+"\n");
@@ -119,6 +118,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("a phrase should be provided as argument.");
       return 1;
     }
+    string target_phrase;
     target_phrase = input_token[1];
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
@@ -141,6 +141,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_WK);
       return 0;
     }
+    string target_phrase;
     target_phrase = input_token[1];
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
@@ -162,6 +163,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("a phrase should be provided as argument.");
       return 1;
     }
+    string target_phrase;
     target_phrase = input_token[1];
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
@@ -183,6 +185,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("a phrase should be provided as argument.");
       return 1;
     }
+    string target_phrase;
     target_phrase = input_token[1];
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
@@ -315,6 +318,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   else if (stringCommand == EXPLOIT_CMD_LONG || stringCommand == EXPLOIT_CMD) { // exploitation
     if (input_token.size()>1) {
+    	string target_phrase;
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
@@ -344,6 +348,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
 
     if (input_token.size()>1) {
+    	string target_phrase;
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
@@ -370,6 +375,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   else if (stringCommand == EXPLOIT_RANDOM_CMD_LONG || stringCommand == EXPLOIT_RANDOM_CMD) { // random exploitation
     if (input_token.size()>1) {
+    	string target_phrase;
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
@@ -395,6 +401,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
   ////////////////////////////////////////
   else if (stringCommand == EXPLOIT_MEMORIZE_CMD_LONG || stringCommand == EXPLOIT_MEMORIZE_CMD) { //exploitation-memorization
     if (input_token.size()>1) {
+    	string target_phrase;
       target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
@@ -436,6 +443,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       }
     }
     if (input_token.size()>2) { // would not be necessary in curr. vers.
+    	string target_phrase;
       target_phrase = input_token[2];
       for(unsigned int itk=3; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
@@ -570,6 +578,7 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("a phrase should be provided as argument.");
       return 1;
     }
+    string target_phrase;
     target_phrase = input_token[1];
     for(unsigned int itk=2; itk<input_token.size(); itk++) {
       target_phrase = target_phrase + " " + input_token[itk];
@@ -621,7 +630,8 @@ int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* c
       Display->Warning("a monitor command should be provided as argument.");
       return 1;
     }
-      target_phrase = input_token[1];
+    string target_phrase;
+    target_phrase = input_token[1];
       for(unsigned int itk=2; itk<input_token.size(); itk++) {
 	target_phrase = target_phrase + " " + input_token[itk];
       }
