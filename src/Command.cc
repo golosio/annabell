@@ -27,8 +27,6 @@
 
 using namespace sizes;
 
-int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line);
-
 int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
 int SearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
 int ContinueSearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
@@ -74,6 +72,28 @@ Command::~Command() {
 }
 
 int Command::execute() {
+
+	stringstream ss(input_line);
+	string parsedToken;
+
+	while (ss >> parsedToken) {
+
+		parsedToken = CommandUtils::processArticle(parsedToken);
+		parsedToken = CommandUtils::processPlural(parsedToken);
+
+		this->input_token.push_back(parsedToken);
+	}
+
+	this->stringCommand = input_token[0];
+
+	Display->Print(input_line+"\n");
+
+	return this->doExecute();
+}
+
+int Command::doExecute() {
+	// default behaviour, while the refactor is in progress.
+	// This will disappear and default to a dummy method to be overriden by subclasses.
 	return ParseCommand(this->annabell, this->Mon, this->Display, this->clk0, this->clk1, this->input_line);
 }
 
@@ -81,39 +101,11 @@ int Command::execute() {
  * Read command or input phrase from command line.
  * @returns 2 for .quit command.
  */
-int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
-
-	vector<string> input_token;
-
-	stringstream ss(input_line); // Insert the line into a stream
-	string stringCommand;
-
-	string parsedToken;
-	while (ss >> parsedToken) {
-
-		parsedToken = CommandUtils::processArticle(parsedToken);
-		parsedToken = CommandUtils::processPlural(parsedToken);
-
-		input_token.push_back(parsedToken);
-	}
-
-  stringCommand = input_token[0];
-
-  Display->Print(input_line+"\n");
-  ////////////////////////////////////////
-  if (stringCommand == CONTINUE_CONTEXT_CMD_LONG || stringCommand == CONTINUE_CONTEXT_CMD) { // continue context
-    if (input_token.size()>2) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    annabell->flags->StartContextFlag=false;
-
-    return 0;
-  }
+int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
   // Suggests a phrase to be retrieved by the association process.
   ////////////////////////////////////////
- else if (stringCommand == PHRASE_CMD_LONG || stringCommand == PHRASE_CMD) { // suggest a phrase
+ if (stringCommand == PHRASE_CMD_LONG || stringCommand == PHRASE_CMD) { // suggest a phrase
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
       return 1;

@@ -40,6 +40,12 @@ public:
 	 * @return an instance of the sub-type of Command corresponding to the issued string line command.
 	 */
 	static Command* newCommand(string input);
+
+	/**
+	 * Convenience method for simple command executions that do not use the return value.
+	 * It encapsulates the creation of the command instance, calling the execute method and deleting the command instance to free up memory.
+	 */
+	static void execute(string input);
 };
 
 #endif /* SRC_COMMANDFACTORY_H_ */

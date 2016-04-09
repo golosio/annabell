@@ -9,6 +9,7 @@
 #include <CommandFactory.h>
 #include <CommandUtils.h>
 #include <CommentCommand.h>
+#include <ContinueContextCommand.h>
 #include <EmptyCommand.h>
 #include <FileCommand.h>
 #include <QuitCommand.h>
@@ -31,6 +32,12 @@ void CommandFactory::init(Annabell* annabell, Monitor* monitor, display* aDispla
 	CommandFactory::clk1 = clk1;
 }
 
+void CommandFactory::execute(string input) {
+	Command* c = CommandFactory::newCommand(input);
+	c->execute();
+	delete c;
+}
+
 Command* CommandFactory::newCommand(string input) {
 	Command* newCommand;
 
@@ -51,6 +58,11 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::isInputPhrase(input)) {
 		newCommand = new InputPhraseCommand();
+
+	} else if (CommandUtils::startsWith(input, CONTINUE_CONTEXT_CMD)
+			|| CommandUtils::startsWith(input, CONTINUE_CONTEXT_CMD_LONG)) {
+		newCommand = new ContinueContextCommand();
+
 	} else {
 		newCommand = new Command();
 	}

@@ -27,10 +27,10 @@
 #include "display.h" 
 #include "CommandUtils.h"
 #include "CommandConstants.h"
+#include "CommandFactory.h"
+#include "Command.h"
 
 using namespace std;
-
-int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line);
 
 void simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* clk0, timespec* clk1,
 		vector<string> input_token) {
@@ -120,18 +120,18 @@ void simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 
 		// if working phrase must be stored and retrieved at the end
 		if (push_flag) {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
-			ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD);
+			CommandFactory::execute(PUSH_GOAL_CMD_LONG);
+			CommandFactory::execute(GET_GOAL_PHRASE_CMD);
 		}
 
 		if (s1b != "") { // if there is a second cue
-			ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s1b);
-			ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
-			ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD);
+			CommandFactory::execute(string(WORD_GROUP_CMD + " ") + s1b);
+			CommandFactory::execute(PUSH_GOAL_CMD_LONG);
+			CommandFactory::execute(GET_GOAL_PHRASE_CMD);
 		}
 
 		if (s1 != "") {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s1);
+			CommandFactory::execute(string(WORD_GROUP_CMD + " ") + s1);
 		} else {
 			monitor->GetPhM("WGB", annabell->WGB);
 			s1 = monitor->OutPhrase;
@@ -145,19 +145,20 @@ void simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 			cmd_line = cmd_line + ph;
 		}
 
-		ParseCommand(annabell, monitor, Display, clk0, clk1, cmd_line);
+		CommandFactory::execute(cmd_line);
+
 		if (s2 != "") {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, string(WORD_GROUP_CMD + " ") + s2);
+			CommandFactory::execute(string(WORD_GROUP_CMD + " ") + s2);
 		}
 
 		if (s1b != "") { // drop goal if there was a second cue
-			ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG);
+			CommandFactory::execute(DROP_GOAL_CMD_LONG);
 		}
 
 		// retrieve working phrase if necessary
 		if (push_flag) {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD);
-			ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG);
+			CommandFactory::execute(GET_GOAL_PHRASE_CMD);
+			CommandFactory::execute(DROP_GOAL_CMD_LONG);
 		}
 
 	} else {
@@ -168,10 +169,10 @@ void simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 
 		if (push_flag) {
 			//if push flag was true (.ie the abreviated form of command ending in asterisk was used), lets push the goal
-			ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
+			CommandFactory::execute(PUSH_GOAL_CMD_LONG);
 
 			//get the goal phrase and use it as a working phrase
-			ParseCommand(annabell, monitor, Display, clk0, clk1, GET_GOAL_PHRASE_CMD);
+			CommandFactory::execute(GET_GOAL_PHRASE_CMD);
 		}
 
 		//automatically suggest extracting all tokens from the working phrase
@@ -183,22 +184,21 @@ void simplify(Annabell *annabell, Monitor *monitor, display* Display, timespec* 
 		}
 
 		//execute the word group command
-		ParseCommand(annabell, monitor, Display, clk0, clk1, cmd_line);
-
+		CommandFactory::execute(cmd_line);
 		//if push flasg was true that means the goal was pushed, so remove it from the top of the goal stack
 		if (push_flag) {
-			ParseCommand(annabell, monitor, Display, clk0, clk1, DROP_GOAL_CMD_LONG);
+			CommandFactory::execute(DROP_GOAL_CMD_LONG);
 		}
 	}
 
 	if (cmd == PARTIAL_REWARD_CMD) {
 		//if it was a partial reward, lets execute it
-		ParseCommand(annabell, monitor, Display, clk0, clk1, PARTIAL_REWARD_CMD2);
+		CommandFactory::execute(PARTIAL_REWARD_CMD2);
 	} else if (cmd == REWARD_CMD) {
 		//if it was a reward, lets execute it
-		ParseCommand(annabell, monitor, Display, clk0, clk1, REWARD_CMD2);
+		CommandFactory::execute(REWARD_CMD2);
 	} else if (cmd == PUSH_GOAL_CMD) {
 		//if it was a push goal (not an abbreviated one like ".ph*" because that would have lead to push flag being true before), lets execute it
-		ParseCommand(annabell, monitor, Display, clk0, clk1, PUSH_GOAL_CMD_LONG);
+		CommandFactory::execute(PUSH_GOAL_CMD_LONG);
 	}
 }

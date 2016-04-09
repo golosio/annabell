@@ -30,11 +30,17 @@ protected:
 	timespec* clk1;
 	string input_line;
 
+	vector<string> input_token;
+	string stringCommand;
+
 public:
 	Command();
 	void init(Annabell* annabell, Monitor* monitor, display* aDisplay, timespec* clk0, timespec* clk1, string input_line);
 	virtual int execute();
+	virtual int doExecute();
 	virtual ~Command();
+
+	int ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line);
 };
 
 #endif /* SRC_COMMAND_H_ */
