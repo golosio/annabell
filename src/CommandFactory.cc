@@ -20,6 +20,7 @@
 #include <SearchPhraseCommand.h>
 #include <ContinueSearchPhraseCommand.h>
 #include <CopyInputPhraseToWorkingPhraseCommand.h>
+#include <RewardCommand.h>
 
 struct timespec;
 
@@ -82,6 +83,9 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, RETRIEVE_INPUT_PHRASE_CMD_LONG) || CommandUtils::startsWith(input, RETRIEVE_INPUT_PHRASE_CMD)) {
 		newCommand = new CopyInputPhraseToWorkingPhraseCommand();
+
+	} else if (CommandUtils::startsWith(input, REWARD_CMD_LONG) || CommandUtils::startsWith(input, REWARD_CMD2)) {
+		newCommand = new RewardCommand();
 
 	}
 	else {

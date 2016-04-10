@@ -101,59 +101,10 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
-  // Sends the word group to output and produces a (conclusive) reward
-  // for the past state-action sequence.
-  ////////////////////////////////////////
-  if (stringCommand == REWARD_CMD_LONG || stringCommand == REWARD_CMD2) { // reward
-    if (input_token.size()>2) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    int n_iter;
-    if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
-    else {
-      stringstream ss1(input_token[1]);
-      ss1 >> n_iter;
-      if (!ss1) {
-	Display->Warning("Cannot convert token to integer.");
-      }
-    }
-    if (annabell->flags->CompleteOutputFlag == true) {
-    	annabell->flags->OutPhrase = "";
-    }
-    //int ex_ph = ExplorationPhaseIdx;
-    string out_phrase=Reward(annabell, Mon, 0, n_iter);
-    if (annabell->flags->OutPhrase != "" && out_phrase != "") {
-    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + " " + out_phrase;
-    }
-    else {
-    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + out_phrase;
-    }
-
-    annabell->flags->CompleteOutputFlag = true;
-    //ExplorationPhaseIdx=ex_ph;
-    //ExplorationPhaseIdx=0;
-    //annabell->EPhaseI->Clear();
-
-    // added 5/01/2013
-    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
-    annabell->StActRwdUpdate();
-    Mon->Print();
-    annabell->Update();
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    ExplorationApprove(annabell, Mon);
-    annabell->flags->ExplorationPhaseIdx = 0;
-    annabell->flags->AnswerTimeUpdate=true;
-    // check if the output is a sensorymotor command
-    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
-
-    return 0;
-  }
-  ////////////////////////////////////////
   // Sends the word group to output and produces a partial reward
   // for the past state-action sequence.
   ////////////////////////////////////////
-  else if (stringCommand == PARTIAL_REWARD_CMD_LONG || stringCommand == PARTIAL_REWARD_CMD2) { // partial reward
+  if (stringCommand == PARTIAL_REWARD_CMD_LONG || stringCommand == PARTIAL_REWARD_CMD2) { // partial reward
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;
