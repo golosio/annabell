@@ -101,29 +101,10 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
-  // Copies the input phrase to the working phrase.
-  ////////////////////////////////////////
-  if (stringCommand == RETRIEVE_INPUT_PHRASE_CMD_LONG || stringCommand == RETRIEVE_INPUT_PHRASE_CMD) { // back to input
-    if (input_token.size()>1) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, W_FROM_IN);
-    //ExecuteAct(annabell, Mon, STORE_ST_A, MEM_PH, NULL_ACT); // dummy
-    ExplorationApprove(annabell, Mon);
-    //Mon->PrintPhM("WkPhB", annabell->WkPhB);
-    //Mon->PrintSSMidx("RemPh", annabell->RemPh);
-    //Mon->PrintSSMidx("MemPh", annabell->MemPh);
-    annabell->flags->ExplorationPhaseIdx = 1;
-    //annabell->EPhaseI->Clear();
-
-    return 0;
-  }
-  ////////////////////////////////////////
   // Sends the word group to output and produces a (conclusive) reward
   // for the past state-action sequence.
   ////////////////////////////////////////
-  else if (stringCommand == REWARD_CMD_LONG || stringCommand == REWARD_CMD2) { // reward
+  if (stringCommand == REWARD_CMD_LONG || stringCommand == REWARD_CMD2) { // reward
     if (input_token.size()>2) {
       Display->Warning("syntax error.");
       return 1;

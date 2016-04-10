@@ -19,6 +19,7 @@
 #include <ExtractWordGroupCommand.h>
 #include <SearchPhraseCommand.h>
 #include <ContinueSearchPhraseCommand.h>
+#include <CopyInputPhraseToWorkingPhraseCommand.h>
 
 struct timespec;
 
@@ -72,11 +73,16 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, WORD_GROUP_CMD_LONG) || CommandUtils::startsWith(input, WORD_GROUP_CMD)) {
 		newCommand = new ExtractWordGroupCommand();
+
 	} else if(CommandUtils::startsWith(input, SEARCH_CONTEXT_CMD_LONG) || CommandUtils::startsWith(input, SEARCH_CONTEXT_CMD)) {
 		newCommand = new SearchPhraseCommand();
 
 	} else if (CommandUtils::startsWith(input, CONTINUE_SEARCH_CONTEXT_CMD_LONG) || CommandUtils::startsWith(input, CONTINUE_SEARCH_CONTEXT_CMD)) {
 		newCommand = new ContinueSearchPhraseCommand();
+
+	} else if (CommandUtils::startsWith(input, RETRIEVE_INPUT_PHRASE_CMD_LONG) || CommandUtils::startsWith(input, RETRIEVE_INPUT_PHRASE_CMD)) {
+		newCommand = new CopyInputPhraseToWorkingPhraseCommand();
+
 	}
 	else {
 		newCommand = new Command();
