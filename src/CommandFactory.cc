@@ -17,6 +17,7 @@
 #include <MacroCommand.h>
 #include <InputPhraseCommand.h>
 #include <ExtractWordGroupCommand.h>
+#include <SearchPhraseCommand.h>
 
 struct timespec;
 
@@ -70,6 +71,8 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, WORD_GROUP_CMD_LONG) || CommandUtils::startsWith(input, WORD_GROUP_CMD)) {
 		newCommand = new ExtractWordGroupCommand();
+	} else if(CommandUtils::startsWith(input, SEARCH_CONTEXT_CMD_LONG) || CommandUtils::startsWith(input, SEARCH_CONTEXT_CMD)) {
+		newCommand = new SearchPhraseCommand();
 	}
 	else {
 		newCommand = new Command();

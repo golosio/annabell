@@ -28,7 +28,7 @@
 using namespace sizes;
 
 int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
-int SearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
+
 int ContinueSearchContext(Annabell *annabell, Monitor *Mon, display* Display, string target_phrase);
 int ExplorationApprove(Annabell *annabell, Monitor *Mon);
 string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
@@ -104,30 +104,9 @@ int Command::doExecute() {
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
   // Searches a phrase in the current context of the working phrase
-  // starting from the beginning of the context
-  ////////////////////////////////////////
-  if (stringCommand == SEARCH_CONTEXT_CMD_LONG || stringCommand == SEARCH_CONTEXT_CMD) { //search phrase in context
-    if (input_token.size()<2) {
-      Display->Warning("a phrase should be provided as argument.");
-      return 1;
-    }
-    string target_phrase;
-    target_phrase = input_token[1];
-    for(unsigned int itk=2; itk<input_token.size(); itk++) {
-      target_phrase = target_phrase + " " + input_token[itk];
-    }
-    //VerboseFlag=true;
-    SearchContext(annabell, Mon, Display, target_phrase);
-    //cout << "target_phrase: " << target_phrase << endl;
-    //VerboseFlag=false;
-
-    return 0;
-  }
-  ////////////////////////////////////////
-  // Searches a phrase in the current context of the working phrase
   // starting from the phrase next to the working phrase
   ////////////////////////////////////////
-  else if (stringCommand == CONTINUE_SEARCH_CONTEXT_CMD_LONG || stringCommand == CONTINUE_SEARCH_CONTEXT_CMD) {
+  if (stringCommand == CONTINUE_SEARCH_CONTEXT_CMD_LONG || stringCommand == CONTINUE_SEARCH_CONTEXT_CMD) {
     //search phrase in context
     if (input_token.size()<2) {
       Display->Warning("a phrase should be provided as argument.");
