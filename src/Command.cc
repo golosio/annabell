@@ -101,39 +101,12 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
-  // Starts an exploitation phase. At the end of this phase, the system
-  // is expected to respond to the input phrase with an appropriate output
-  // phrase. Without argument, the exploitation is related to the previous
-  // input phrase.
-  ////////////////////////////////////////
-  if (stringCommand == EXPLOIT_CMD_LONG || stringCommand == EXPLOIT_CMD) { // exploitation
-    if (input_token.size()>1) {
-    	string target_phrase;
-      target_phrase = input_token[1];
-      for(unsigned int itk=2; itk<input_token.size(); itk++) {
-	target_phrase = target_phrase + " " + input_token[itk];
-      }
-      if (annabell->flags->AnswerTimePhrase=="")  annabell->flags->AnswerTimePhrase = target_phrase;
-      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(annabell, Mon, target_phrase);
-    }
-    //VerboseFlag = true;
-    //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
-    annabell->flags->CompleteOutputFlag = true;
-    //VerboseFlag = false;
-    // check if the output is a sensorymotor command
-    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
-
-    return 0;
-  }
-  ////////////////////////////////////////
   // Clear the goal stack and starts an exploitation phase. At the end of
   // this phase, the system is expected to respond to the input phrase with
   // an appropriate output phrase. Without argument, the exploitation is
   // related to the previous input phrase.
   ////////////////////////////////////////
-  else if (stringCommand == CLEAN_EXPLOIT_CMD_LONG || stringCommand == CLEAN_EXPLOIT_CMD) { // clean exploitation
+  if (stringCommand == CLEAN_EXPLOIT_CMD_LONG || stringCommand == CLEAN_EXPLOIT_CMD) { // clean exploitation
     for (int i=0; i<5; i++)
       ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
 

@@ -22,6 +22,7 @@
 #include <CopyInputPhraseToWorkingPhraseCommand.h>
 #include <RewardCommand.h>
 #include <PartialRewardCommand.h>
+#include <ExploitCommand.h>
 
 struct timespec;
 
@@ -90,6 +91,10 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, PARTIAL_REWARD_CMD_LONG) || CommandUtils::startsWith(input, PARTIAL_REWARD_CMD2)) {
 		newCommand = new PartialRewardCommand();
+
+	} else if (CommandUtils::startsWith(input, EXPLOIT_CMD_LONG) || CommandUtils::startsWith(input, EXPLOIT_CMD)) {
+		newCommand = new ExploitCommand();
+
 	}
 	else {
 		newCommand = new Command();
