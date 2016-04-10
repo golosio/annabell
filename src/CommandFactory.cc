@@ -24,6 +24,7 @@
 #include <PartialRewardCommand.h>
 #include <ExploitCommand.h>
 #include <CleanExploitCommand.h>
+#include <ExploitRandomCommand.h>
 
 struct timespec;
 
@@ -98,6 +99,9 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, CLEAN_EXPLOIT_CMD_LONG) || CommandUtils::startsWith(input, CLEAN_EXPLOIT_CMD)) {
 		newCommand = new CleanExploitCommand();
+
+	} else if (CommandUtils::startsWith(input, EXPLOIT_RANDOM_CMD_LONG) || CommandUtils::startsWith(input, EXPLOIT_RANDOM_CMD)) {
+		newCommand = new ExploitRandomCommand();
 
 	}
 	else {
