@@ -3,14 +3,17 @@ annabellincludedir = ${includedir}/annabell
 annabellinclude_HEADERS = CommandConstants.h CommandUtils.h AnnabellParams.h AnnabellFlags.h \
 Command.h EmptyCommand.h CommentCommand.h ContinueContextCommand.h RetrievePhraseCommand.h \
 ExtractWordGroupCommand.h MacroCommand.h InputPhraseCommand.h FileCommand.h \
-QuitCommand.h SearchPhraseCommand.h CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  \
+QuitCommand.h SearchPhraseCommand.h ContinueSearchPhraseCommand.h \
+CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  \
 sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h ParseCommandTests.h sensorymotor.h
 
 bin_PROGRAMS = annabell
 
 annabell_SOURCES = AnnabellFlags.cc AnnabellParams.cc CommandUtils.cc Command.cc EmptyCommand.cc \
 CommentCommand.cc ContinueContextCommand.cc RetrievePhraseCommand.cc MacroCommand.cc InputPhraseCommand.cc \
-ExtractWordGroupCommand.cc FileCommand.cc QuitCommand.cc SearchPhraseCommand.cc CommandFactory.cc \
+ExtractWordGroupCommand.cc FileCommand.cc QuitCommand.cc SearchPhraseCommand.cc \
+ContinueSearchPhraseCommand.cc \
+CommandFactory.cc \
 annabell_main.cc Annabell.cc ssm.cc interface.cc Monitor.cc rnd.cc addref.cc fssm.cc display.cc modes.cc \
 goals.cc ssm_omp.cc ssm_file.cc simplify.cc gettime.cc ParseCommandTests.cc sensorymotor.cc yarpinterface.cc
 
