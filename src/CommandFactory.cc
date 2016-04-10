@@ -10,6 +10,7 @@
 #include <CommandUtils.h>
 #include <CommentCommand.h>
 #include <ContinueContextCommand.h>
+#include <RetrievePhraseCommand.h>
 #include <EmptyCommand.h>
 #include <FileCommand.h>
 #include <QuitCommand.h>
@@ -63,7 +64,10 @@ Command* CommandFactory::newCommand(string input) {
 			|| CommandUtils::startsWith(input, CONTINUE_CONTEXT_CMD_LONG)) {
 		newCommand = new ContinueContextCommand();
 
-	} else {
+	} else if (CommandUtils::startsWith(input, PHRASE_CMD_LONG) || CommandUtils::startsWith(input, PHRASE_CMD)) {
+		newCommand = new RetrievePhraseCommand();
+	}
+	else {
 		newCommand = new Command();
 	}
 

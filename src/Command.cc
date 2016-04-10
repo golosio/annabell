@@ -103,29 +103,9 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
-  // Suggests a phrase to be retrieved by the association process.
-  ////////////////////////////////////////
- if (stringCommand == PHRASE_CMD_LONG || stringCommand == PHRASE_CMD) { // suggest a phrase
-    if (input_token.size()<2) {
-      Display->Warning("a phrase should be provided as argument.");
-      return 1;
-    }
-    string target_phrase;
-    target_phrase = input_token[1];
-    for(unsigned int itk=2; itk<input_token.size(); itk++) {
-      target_phrase = target_phrase + " " + input_token[itk];
-    }
-    //VerboseFlag=true;
-    //TargetExplorationTest(annabell, Mon, "WkPhB", target_phrase);
-    TargetExploration(annabell, Mon, "WkPhB", target_phrase);
-    //cout << "target_phrase: " << target_phrase << endl;
-    //VerboseFlag=false;
-    return 0;
-  }
-  ////////////////////////////////////////
   // Suggests a word group to be extracted from the working phrase.
   ////////////////////////////////////////
-  else if (stringCommand == WORD_GROUP_CMD_LONG || stringCommand == WORD_GROUP_CMD) { // suggest a group of words
+  if (stringCommand == WORD_GROUP_CMD_LONG || stringCommand == WORD_GROUP_CMD) { // suggest a group of words
     if (input_token.size()<2) {
       //Display->Warning("a word group should be provided as argument.");
       //return 1;
