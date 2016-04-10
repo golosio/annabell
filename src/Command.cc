@@ -101,57 +101,12 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
   ////////////////////////////////////////
-  // Sends the word group to output and produces a partial reward
-  // for the past state-action sequence.
-  ////////////////////////////////////////
-  if (stringCommand == PARTIAL_REWARD_CMD_LONG || stringCommand == PARTIAL_REWARD_CMD2) { // partial reward
-    if (input_token.size()>2) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    int n_iter;
-    if (input_token.size()==1) n_iter=annabell->ElActfSt->K;
-    else {
-      stringstream ss1(input_token[1]);
-      ss1 >> n_iter;
-      if (!ss1) {
-	Display->Warning("Cannot convert token to integer.");
-      }
-    }
-    if (annabell->flags->CompleteOutputFlag == true) {
-    	annabell->flags->OutPhrase = "";
-    }
-    //int ex_ph = ExplorationPhaseIdx;
-    string out_phrase=Reward(annabell, Mon, 1, n_iter);
-    if (annabell->flags->OutPhrase != "" && out_phrase != "") {
-    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + " " + out_phrase;
-    }
-    else {
-    	annabell->flags->OutPhrase = annabell->flags->OutPhrase + out_phrase;
-    }
-
-    annabell->flags->CompleteOutputFlag = false;
-    //ExplorationPhaseIdx=ex_ph;
-    //annabell->EPhaseI->Clear();
-
-    // added 5/01/2013
-    annabell->SetAct(START_ST_A, NULL_ACT, NULL_ACT);
-    annabell->StActRwdUpdate();
-    Mon->Print();
-    annabell->Update();
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, NULL_ACT);
-    ExplorationApprove(annabell, Mon);
-    annabell->flags->ExplorationPhaseIdx = 1; //ex_ph;
-
-    return 0;
-  }
-  ////////////////////////////////////////
   // Starts an exploitation phase. At the end of this phase, the system
   // is expected to respond to the input phrase with an appropriate output
   // phrase. Without argument, the exploitation is related to the previous
   // input phrase.
   ////////////////////////////////////////
-  else if (stringCommand == EXPLOIT_CMD_LONG || stringCommand == EXPLOIT_CMD) { // exploitation
+  if (stringCommand == EXPLOIT_CMD_LONG || stringCommand == EXPLOIT_CMD) { // exploitation
     if (input_token.size()>1) {
     	string target_phrase;
       target_phrase = input_token[1];

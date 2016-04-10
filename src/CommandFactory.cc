@@ -21,6 +21,7 @@
 #include <ContinueSearchPhraseCommand.h>
 #include <CopyInputPhraseToWorkingPhraseCommand.h>
 #include <RewardCommand.h>
+#include <PartialRewardCommand.h>
 
 struct timespec;
 
@@ -87,6 +88,8 @@ Command* CommandFactory::newCommand(string input) {
 	} else if (CommandUtils::startsWith(input, REWARD_CMD_LONG) || CommandUtils::startsWith(input, REWARD_CMD2)) {
 		newCommand = new RewardCommand();
 
+	} else if (CommandUtils::startsWith(input, PARTIAL_REWARD_CMD_LONG) || CommandUtils::startsWith(input, PARTIAL_REWARD_CMD2)) {
+		newCommand = new PartialRewardCommand();
 	}
 	else {
 		newCommand = new Command();
