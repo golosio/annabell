@@ -30,6 +30,7 @@
 #include <PushGoalCommand.h>
 #include <DropGoalCommand.h>
 #include <GetGoalPhraseCommand.h>
+#include <WorkingPhraseOutCommand.h>
 
 struct timespec;
 
@@ -122,6 +123,9 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, GET_GOAL_PHRASE_CMD_LONG) || CommandUtils::startsWith(input, GET_GOAL_PHRASE_CMD)) {
 		newCommand = new GetGoalPhraseCommand();
+
+	} else if (CommandUtils::startsWith(input,  WORKING_PHRASE_OUT_CMD_LONG) || CommandUtils::startsWith(input, WORKING_PHRASE_OUT_CMD)) {
+		newCommand = new WorkingPhraseOutCommand();
 
 	}
 	else {

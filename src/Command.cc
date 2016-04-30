@@ -27,25 +27,6 @@
 
 using namespace sizes;
 
-int TargetExploration(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
-int ExplorationApprove(Annabell *annabell, Monitor *Mon);
-string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
-string WorkingPhraseOut(Annabell *annabell, Monitor *Mon);
-string SentenceOut(Annabell *annabell, Monitor *Mon, display* Display);
-int Reset(Annabell *annabell, Monitor *Mon);
-
-int SensoryMotor(vector <string> phrase_token, stringstream &ss, display* Display);
-
-/** TEST functions - start */
-int BuildAsTest(Annabell *annabell, Monitor *Mon);
-int GetInputPhraseTest(Annabell *annabell, Monitor *Mon, string input_phrase);
-int TargetExplorationTest(Annabell *annabell, Monitor *Mon, string name, string target_phrase);
-string RewardTest(Annabell *annabell, Monitor *Mon, int partial_flag,
-		  int n_iter);
-int GetStActIdx(Annabell *annabell, Monitor *Mon);
-int ExplorationRetry(Annabell *annabell, Monitor *Mon);
-/** TEST functions - end */
-
 template <typename T>
 string to_string(T const& value) {
     stringstream sstr;
@@ -101,25 +82,12 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
 
-  if (stringCommand == WORKING_PHRASE_OUT_CMD_LONG || stringCommand == WORKING_PHRASE_OUT_CMD) { // working phrase out
-    if (input_token.size()>1) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    annabell->flags->OutPhrase = WorkingPhraseOut(annabell, Mon);
-    annabell->flags->CompleteOutputFlag = true;
-    // check if the output is a sensorymotor command
-    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
-
-    return 0;
-  }
-
   ////////////////////////////////////////
   // Sends to the output the next part of the working phrase, after the
   // current word, and all subsequent phrases of the same context until the
   // end of the context itself.
   ////////////////////////////////////////
-  else if (stringCommand == SENTENCE_OUT_CMD_LONG || stringCommand == SENTENCE_OUT_CMD) { // sentence out
+  if (stringCommand == SENTENCE_OUT_CMD_LONG || stringCommand == SENTENCE_OUT_CMD) { // sentence out
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
