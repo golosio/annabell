@@ -102,28 +102,10 @@ int Command::doExecute() {
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
 
   ////////////////////////////////////////
-  // Removes the goal phrase and the goal word group from the top
-  // of the goal stack
-  ////////////////////////////////////////
-  if (stringCommand == DROP_GOAL_CMD_LONG || stringCommand == DROP_GOAL_CMD) { // drop goal
-    if (input_token.size()>1) {
-      Display->Warning("syntax error.");
-      return 1;
-    }
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, DROP_GL);
-    int ex_ph = annabell->flags->ExplorationPhaseIdx;
-    ExplorationApprove(annabell, Mon);
-    annabell->flags->ExplorationPhaseIdx = ex_ph;
-    //ExplorationPhaseIdx=0;
-    //annabell->EPhaseI->Clear();
-
-    return 0;
-  }
-  ////////////////////////////////////////
   // Copies the goal phrase from the top of the goal stack to the
   // working phrase
   ////////////////////////////////////////
-  else if (stringCommand == GET_GOAL_PHRASE_CMD_LONG || stringCommand == GET_GOAL_PHRASE_CMD) { // get goal phrase
+  if (stringCommand == GET_GOAL_PHRASE_CMD_LONG || stringCommand == GET_GOAL_PHRASE_CMD) { // get goal phrase
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;
