@@ -7,14 +7,15 @@ RewardCommand::RewardCommand() :
 int ExplorationApprove(Annabell *annabell, Monitor *Mon);
 string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
 
-int RewardCommand::execute() {
+int RewardCommand::doExecute() {
 	if (input_token.size() > 2) {
 		Display->Warning("syntax error.");
 		return 1;
 	}
 	int n_iter;
-	if (input_token.size() == 1)
+	if (input_token.size() == 1) {
 		n_iter = annabell->ElActfSt->K;
+	}
 	else {
 		stringstream ss1(input_token[1]);
 		ss1 >> n_iter;

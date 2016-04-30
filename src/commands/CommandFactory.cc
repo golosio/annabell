@@ -5,32 +5,32 @@
  *      Author: jpp
  */
 
-#include <CommandConstants.h>
-#include <CommandFactory.h>
-#include <CommandUtils.h>
+#include <commands/CommandConstants.h>
+#include <commands/CommandFactory.h>
+#include <commands/CommandUtils.h>
 #include <commands/CommentCommand.h>
-#include <ContinueContextCommand.h>
-#include <RetrievePhraseCommand.h>
-#include <EmptyCommand.h>
-#include <FileCommand.h>
-#include <QuitCommand.h>
-#include <MacroCommand.h>
-#include <InputPhraseCommand.h>
-#include <ExtractWordGroupCommand.h>
-#include <SearchPhraseCommand.h>
-#include <ContinueSearchPhraseCommand.h>
-#include <CopyInputPhraseToWorkingPhraseCommand.h>
-#include <RewardCommand.h>
-#include <PartialRewardCommand.h>
-#include <ExploitCommand.h>
-#include <CleanExploitCommand.h>
-#include <ExploitRandomCommand.h>
-#include <ExploitMemorizeCommand.h>
-#include <BestExploitCommand.h>
-#include <PushGoalCommand.h>
-#include <DropGoalCommand.h>
-#include <GetGoalPhraseCommand.h>
-#include <WorkingPhraseOutCommand.h>
+#include <commands/ContinueContextCommand.h>
+#include <commands/RetrievePhraseCommand.h>
+#include <commands/EmptyCommand.h>
+#include <commands/FileCommand.h>
+#include <commands/QuitCommand.h>
+#include <commands/MacroCommand.h>
+#include <commands/InputPhraseCommand.h>
+#include <commands/ExtractWordGroupCommand.h>
+#include <commands/SearchPhraseCommand.h>
+#include <commands/ContinueSearchPhraseCommand.h>
+#include <commands/CopyInputPhraseToWorkingPhraseCommand.h>
+#include <commands/RewardCommand.h>
+#include <commands/PartialRewardCommand.h>
+#include <commands/ExploitCommand.h>
+#include <commands/CleanExploitCommand.h>
+#include <commands/ExploitRandomCommand.h>
+#include <commands/ExploitMemorizeCommand.h>
+#include <commands/BestExploitCommand.h>
+#include <commands/PushGoalCommand.h>
+#include <commands/DropGoalCommand.h>
+#include <commands/GetGoalPhraseCommand.h>
+#include <commands/WorkingPhraseOutCommand.h>
 
 struct timespec;
 

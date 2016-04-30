@@ -10,7 +10,7 @@
 class RewardCommand: public Command {
 public:
 	RewardCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_REWARDCOMMAND_H_ */

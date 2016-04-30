@@ -9,7 +9,7 @@
 class DropGoalCommand: public Command {
 public:
 	DropGoalCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_DROPGOALCOMMAND_H_ */

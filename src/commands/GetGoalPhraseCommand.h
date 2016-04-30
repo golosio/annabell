@@ -9,7 +9,7 @@
 class GetGoalPhraseCommand: public Command {
 public:
 	GetGoalPhraseCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_GETGOALPHRASECOMMAND_H_ */

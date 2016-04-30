@@ -4,7 +4,7 @@ WorkingPhraseOutCommand::WorkingPhraseOutCommand() :
 		Command() {
 }
 
-int WorkingPhraseOutCommand::execute() {
+int WorkingPhraseOutCommand::doExecute() {
 	if (input_token.size() > 1) {
 		Display->Warning("syntax error.");
 		return 1;

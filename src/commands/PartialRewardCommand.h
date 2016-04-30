@@ -10,7 +10,7 @@
 class PartialRewardCommand: public Command {
 public:
 	PartialRewardCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_PARTIALREWARDCOMMAND_H_ */

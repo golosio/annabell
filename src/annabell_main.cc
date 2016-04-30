@@ -33,9 +33,9 @@
 #include "gettime.h" 
 #include "AnnabellFlags.h"
 #include "AnnabellParams.h"
-#include "CommandFactory.h"
-#include "Command.h"
-#include "ParseCommandTests.h"
+#include "commands/CommandFactory.h"
+#include "commands/Command.h"
+#include "commands/ParseCommandTests.h"
 
 using namespace std;
 using namespace sizes;

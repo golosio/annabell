@@ -7,8 +7,8 @@
 
 #include <ann_exception.h>
 #include <AnnabellFlags.h>
-#include <Command.h>
-#include <CommandUtils.h>
+#include <commands/Command.h>
+#include <commands/CommandUtils.h>
 #include <fssm.h>
 #include <gettime.h>
 #include <interface.h>
@@ -21,8 +21,8 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include "CommandConstants.h"
-#include "CommandFactory.h"
+#include "commands/CommandConstants.h"
+#include "commands/CommandFactory.h"
 #include "sensorymotor.h"
 
 using namespace sizes;

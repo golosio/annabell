@@ -4,7 +4,7 @@ GetGoalPhraseCommand::GetGoalPhraseCommand() :
 		Command() {
 }
 
-int GetGoalPhraseCommand::execute() {
+int GetGoalPhraseCommand::doExecute() {
 	if (input_token.size() > 1) {
 		Display->Warning("syntax error.");
 		return 1;

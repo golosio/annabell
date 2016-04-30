@@ -1,6 +1,6 @@
 #include "ParseCommandTests.h"
 
-#include <CommandUtils.h>
+#include <commands/CommandUtils.h>
 #include <gtest/gtest.h>
 #include <string.h>
 

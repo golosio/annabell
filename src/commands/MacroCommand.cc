@@ -1,6 +1,6 @@
-#include <Command.h>
-#include <CommandUtils.h>
-#include <MacroCommand.h>
+#include <commands/Command.h>
+#include <commands/CommandUtils.h>
+#include <commands/MacroCommand.h>
 #include <string>
 #include <vector>
 

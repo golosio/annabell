@@ -25,10 +25,10 @@
 #include <stdlib.h>
 #include "interface.h"
 #include "display.h" 
-#include "CommandUtils.h"
-#include "CommandConstants.h"
-#include "CommandFactory.h"
-#include "Command.h"
+#include "commands/CommandUtils.h"
+#include "commands/CommandConstants.h"
+#include "commands/CommandFactory.h"
+#include "commands/Command.h"
 
 using namespace std;
 

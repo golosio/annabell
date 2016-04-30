@@ -1,26 +1,28 @@
 annabellincludedir = ${includedir}/annabell
 
-annabellinclude_HEADERS = CommandConstants.h CommandUtils.h AnnabellParams.h AnnabellFlags.h \
-Command.h EmptyCommand.h commands/CommentCommand.h ContinueContextCommand.h RetrievePhraseCommand.h \
-ExtractWordGroupCommand.h MacroCommand.h InputPhraseCommand.h FileCommand.h \
-QuitCommand.h SearchPhraseCommand.h ContinueSearchPhraseCommand.h ExploitCommand.h \
-CopyInputPhraseToWorkingPhraseCommand.h RewardCommand.h PartialRewardCommand.h \
-CleanExploitCommand.h ExploitRandomCommand.h ExploitMemorizeCommand.h BestExploitCommand.h \
-PushGoalCommand.h DropGoalCommand.h GetGoalPhraseCommand.h WorkingPhraseOutCommand.h \
-CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  \
-sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h ParseCommandTests.h sensorymotor.h
+annabellinclude_HEADERS = \
+commands/CommandConstants.h commands/CommandUtils.h AnnabellParams.h AnnabellFlags.h \
+commands/Command.h commands/EmptyCommand.h commands/CommentCommand.h commands/ContinueContextCommand.h commands/RetrievePhraseCommand.h \
+commands/ExtractWordGroupCommand.h commands/MacroCommand.h commands/InputPhraseCommand.h commands/FileCommand.h \
+commands/QuitCommand.h commands/SearchPhraseCommand.h commands/ContinueSearchPhraseCommand.h commands/ExploitCommand.h \
+commands/CopyInputPhraseToWorkingPhraseCommand.h commands/RewardCommand.h commands/PartialRewardCommand.h \
+commands/CleanExploitCommand.h commands/ExploitRandomCommand.h commands/ExploitMemorizeCommand.h commands/BestExploitCommand.h \
+commands/PushGoalCommand.h commands/DropGoalCommand.h commands/GetGoalPhraseCommand.h commands/WorkingPhraseOutCommand.h \
+commands/CommandFactory.h display.h  enum_ssm.h  fssm.h  interface.h  Monitor.h  rnd.h  \
+sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h commands/ParseCommandTests.h sensorymotor.h
 
 bin_PROGRAMS = annabell
 
-annabell_SOURCES = AnnabellFlags.cc AnnabellParams.cc CommandUtils.cc Command.cc EmptyCommand.cc \
-commands/CommentCommand.cc ContinueContextCommand.cc RetrievePhraseCommand.cc MacroCommand.cc InputPhraseCommand.cc \
-ExtractWordGroupCommand.cc FileCommand.cc QuitCommand.cc SearchPhraseCommand.cc \
-ContinueSearchPhraseCommand.cc CopyInputPhraseToWorkingPhraseCommand.cc RewardCommand.cc PartialRewardCommand.cc \
-ExploitCommand.cc CleanExploitCommand.cc ExploitRandomCommand.cc ExploitMemorizeCommand.cc BestExploitCommand.cc \
-PushGoalCommand.cc DropGoalCommand.cc GetGoalPhraseCommand.cc WorkingPhraseOutCommand.cc \
-CommandFactory.cc \
+annabell_SOURCES = \
+AnnabellFlags.cc AnnabellParams.cc commands/CommandUtils.cc commands/Command.cc commands/EmptyCommand.cc \
+commands/CommentCommand.cc commands/ContinueContextCommand.cc commands/RetrievePhraseCommand.cc commands/MacroCommand.cc commands/InputPhraseCommand.cc \
+commands/ExtractWordGroupCommand.cc commands/FileCommand.cc commands/QuitCommand.cc commands/SearchPhraseCommand.cc \
+commands/ContinueSearchPhraseCommand.cc commands/CopyInputPhraseToWorkingPhraseCommand.cc commands/RewardCommand.cc commands/PartialRewardCommand.cc \
+commands/ExploitCommand.cc commands/CleanExploitCommand.cc commands/ExploitRandomCommand.cc commands/ExploitMemorizeCommand.cc commands/BestExploitCommand.cc \
+commands/PushGoalCommand.cc commands/DropGoalCommand.cc commands/GetGoalPhraseCommand.cc commands/WorkingPhraseOutCommand.cc \
+commands/CommandFactory.cc \
 annabell_main.cc Annabell.cc ssm.cc interface.cc Monitor.cc rnd.cc addref.cc fssm.cc display.cc modes.cc \
-goals.cc ssm_omp.cc ssm_file.cc simplify.cc gettime.cc ParseCommandTests.cc sensorymotor.cc yarpinterface.cc
+goals.cc ssm_omp.cc ssm_file.cc simplify.cc gettime.cc commands/ParseCommandTests.cc sensorymotor.cc yarpinterface.cc
 
 
 annabell_CPPFLAGS = @OPENMP_CXXFLAGS@

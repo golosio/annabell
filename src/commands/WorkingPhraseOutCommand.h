@@ -6,7 +6,7 @@
 class WorkingPhraseOutCommand: public Command {
 public:
 	WorkingPhraseOutCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_WORKINGPHRASEOUTCOMMAND_H_ */

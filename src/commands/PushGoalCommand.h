@@ -9,7 +9,7 @@
 class PushGoalCommand: public Command {
 public:
 	PushGoalCommand();
-	int execute();
+	int doExecute();
 };
 
 #endif /* SRC_PUSHGOALCOMMAND_H_ */

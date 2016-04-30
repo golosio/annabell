@@ -4,7 +4,7 @@ DropGoalCommand::DropGoalCommand() :
 		Command() {
 }
 
-int DropGoalCommand::execute() {
+int DropGoalCommand::doExecute() {
 	if (input_token.size() > 1) {
 		Display->Warning("syntax error.");
 		return 1;

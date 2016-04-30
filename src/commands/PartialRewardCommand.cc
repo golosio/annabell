@@ -7,7 +7,7 @@ PartialRewardCommand::PartialRewardCommand() :
 int ExplorationApprove(Annabell *annabell, Monitor *Mon);
 string Reward(Annabell *annabell, Monitor *Mon, int partial_flag, int n_iter);
 
-int PartialRewardCommand::execute() {
+int PartialRewardCommand::doExecute() {
 	if (input_token.size() > 2) {
 		Display->Warning("syntax error.");
 		return 1;

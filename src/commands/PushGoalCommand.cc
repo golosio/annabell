@@ -4,7 +4,7 @@ PushGoalCommand::PushGoalCommand() :
 		Command() {
 }
 
-int PushGoalCommand::execute() {
+int PushGoalCommand::doExecute() {
 	if (input_token.size() > 1) {
 		Display->Warning("syntax error.");
 		return 1;
