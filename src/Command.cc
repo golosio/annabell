@@ -101,53 +101,11 @@ int Command::doExecute() {
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
 
- ////////////////////////////////////////
- // Analogous to .x, but it iterates the exploitation process n_iter times
- // and selects the best output phrase.
- ////////////////////////////////////////
-  if (stringCommand == BEST_EXPLOIT_CMD_LONG|| stringCommand == BEST_EXPLOIT_CMD) { // best exploitation
-    if (input_token.size()<3) {
-      Display->Warning("n. of iterations and a phrase should be provided");
-      Display->Warning("as argument in the current version.");
-      return 1;
-    }
-    int n_iter;
-    if (input_token.size()==1) n_iter=20; // will never be exec in curr. vers.
-    else {
-      stringstream ss1(input_token[1]);
-      ss1 >> n_iter;
-      if (!ss1) {
-	Display->Warning("Cannot convert token to integer.");
-      }
-    }
-    if (input_token.size()>2) { // would not be necessary in curr. vers.
-    	string target_phrase;
-      target_phrase = input_token[2];
-      for(unsigned int itk=3; itk<input_token.size(); itk++) {
-	target_phrase = target_phrase + " " + input_token[itk];
-      }
-      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(annabell, Mon, target_phrase);
-    }
-    annabell->RemPhfWG->OrderedWnnFlag = false;
-    //VerboseFlag = true;
-    //BestExploitation(annabell, Mon, n_iter, target_phrase);
-    //BestExploitation2(annabell, Mon, n_iter, target_phrase);
-    //string out_phrase=ExploitationTest(annabell, Mon, n_iter);
-    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, n_iter);
-    annabell->flags->CompleteOutputFlag = true;
-    //VerboseFlag = false;
-    annabell->RemPhfWG->OrderedWnnFlag = true;
-    // check if the output is a sensorymotor command
-    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
-
-    return 0;
-  }
   ////////////////////////////////////////
   // Insert the working phrase and the current word group in the top of the
   // goal stack
   ////////////////////////////////////////
-  else if (stringCommand == PUSH_GOAL_CMD_LONG || stringCommand == PUSH_GOAL_CMD) { // push goal
+  if (stringCommand == PUSH_GOAL_CMD_LONG || stringCommand == PUSH_GOAL_CMD) { // push goal
     if (input_token.size()>1) {
       Display->Warning("syntax error.");
       return 1;

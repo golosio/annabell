@@ -26,6 +26,7 @@
 #include <CleanExploitCommand.h>
 #include <ExploitRandomCommand.h>
 #include <ExploitMemorizeCommand.h>
+#include <BestExploitCommand.h>
 
 struct timespec;
 
@@ -106,6 +107,10 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, EXPLOIT_MEMORIZE_CMD_LONG) || CommandUtils::startsWith(input, EXPLOIT_MEMORIZE_CMD)) {
 		newCommand = new ExploitMemorizeCommand();
+
+	} else if (CommandUtils::startsWith(input, BEST_EXPLOIT_CMD_LONG) || CommandUtils::startsWith(input, BEST_EXPLOIT_CMD)) {
+		newCommand = new BestExploitCommand();
+
 	}
 	else {
 		newCommand = new Command();
