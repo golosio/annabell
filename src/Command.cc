@@ -100,39 +100,12 @@ int Command::doExecute() {
  * @returns 2 for .quit command.
  */
 int Command::ParseCommand(Annabell *annabell, Monitor *Mon, display* Display, timespec* clk0, timespec* clk1, string input_line) {
-  ////////////////////////////////////////
-  // Starts an exploitation phase.
-  // The output phrase is memorized by the system.
-  ////////////////////////////////////////
-  if (stringCommand == EXPLOIT_MEMORIZE_CMD_LONG || stringCommand == EXPLOIT_MEMORIZE_CMD) { //exploitation-memorization
-    if (input_token.size()>1) {
-    	string target_phrase;
-      target_phrase = input_token[1];
-      for(unsigned int itk=2; itk<input_token.size(); itk++) {
-	target_phrase = target_phrase + " " + input_token[itk];
-      }
-      ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-      GetInputPhrase(annabell, Mon, target_phrase);
-    }
-    //VerboseFlag = true;
-    //string out_phrase=ExploitationTest(annabell, Mon, 1);
-    annabell->flags->OutPhrase = Exploitation(annabell, Mon, Display, 1);
-    annabell->flags->CompleteOutputFlag = true;
-    //VerboseFlag = false;
-    ExecuteAct(annabell, Mon, STORE_ST_A, NULL_ACT, FLUSH_OUT);
-    GetInputPhrase(annabell, Mon, annabell->flags->OutPhrase);
-    BuildAs(annabell, Mon);
-    // check if the output is a sensorymotor command
-    CheckSensoryMotor(annabell->flags->OutPhrase, annabell, Display);
-
-    return 0;
-  }
 
  ////////////////////////////////////////
  // Analogous to .x, but it iterates the exploitation process n_iter times
  // and selects the best output phrase.
  ////////////////////////////////////////
-  else if (stringCommand == BEST_EXPLOIT_CMD_LONG|| stringCommand == BEST_EXPLOIT_CMD) { // best exploitation
+  if (stringCommand == BEST_EXPLOIT_CMD_LONG|| stringCommand == BEST_EXPLOIT_CMD) { // best exploitation
     if (input_token.size()<3) {
       Display->Warning("n. of iterations and a phrase should be provided");
       Display->Warning("as argument in the current version.");
