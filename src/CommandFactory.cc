@@ -29,6 +29,7 @@
 #include <BestExploitCommand.h>
 #include <PushGoalCommand.h>
 #include <DropGoalCommand.h>
+#include <GetGoalPhraseCommand.h>
 
 struct timespec;
 
@@ -118,6 +119,9 @@ Command* CommandFactory::newCommand(string input) {
 
 	} else if (CommandUtils::startsWith(input, DROP_GOAL_CMD_LONG) || CommandUtils::startsWith(input, DROP_GOAL_CMD)) {
 		newCommand = new DropGoalCommand();
+
+	} else if (CommandUtils::startsWith(input, GET_GOAL_PHRASE_CMD_LONG) || CommandUtils::startsWith(input, GET_GOAL_PHRASE_CMD)) {
+		newCommand = new GetGoalPhraseCommand();
 
 	}
 	else {

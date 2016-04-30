@@ -20,6 +20,7 @@ int GetInputPhrase(Annabell *annabell, Monitor *Mon, string input_phrase);
 int BuildAs(Annabell *annabell, Monitor *Mon);
 string Exploitation(Annabell *annabell, Monitor *Mon, display* Display, int n_iter);
 int CheckSensoryMotor(string out_phrase, Annabell *annabell, display* Display);
+int ExplorationApprove(Annabell *annabell, Monitor *Mon);
 
 class Command {
 protected:

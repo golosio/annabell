@@ -1,7 +1,5 @@
 #include "DropGoalCommand.h"
 
-int ExplorationApprove(Annabell *annabell, Monitor *Mon);
-
 DropGoalCommand::DropGoalCommand() :
 		Command() {
 }

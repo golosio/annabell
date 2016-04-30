@@ -1,7 +1,5 @@
 #include "PushGoalCommand.h"
 
-int ExplorationApprove(Annabell *annabell, Monitor *Mon);
-
 PushGoalCommand::PushGoalCommand() :
 		Command() {
 }
