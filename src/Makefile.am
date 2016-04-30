@@ -1,7 +1,7 @@
 annabellincludedir = ${includedir}/annabell
 
 annabellinclude_HEADERS = CommandConstants.h CommandUtils.h AnnabellParams.h AnnabellFlags.h \
-Command.h EmptyCommand.h CommentCommand.h ContinueContextCommand.h RetrievePhraseCommand.h \
+Command.h EmptyCommand.h commands/CommentCommand.h ContinueContextCommand.h RetrievePhraseCommand.h \
 ExtractWordGroupCommand.h MacroCommand.h InputPhraseCommand.h FileCommand.h \
 QuitCommand.h SearchPhraseCommand.h ContinueSearchPhraseCommand.h ExploitCommand.h \
 CopyInputPhraseToWorkingPhraseCommand.h RewardCommand.h PartialRewardCommand.h \
@@ -13,7 +13,7 @@ sizes.h  Annabell.h  ssm.h  ann_exception.h gettime.h ParseCommandTests.h sensor
 bin_PROGRAMS = annabell
 
 annabell_SOURCES = AnnabellFlags.cc AnnabellParams.cc CommandUtils.cc Command.cc EmptyCommand.cc \
-CommentCommand.cc ContinueContextCommand.cc RetrievePhraseCommand.cc MacroCommand.cc InputPhraseCommand.cc \
+commands/CommentCommand.cc ContinueContextCommand.cc RetrievePhraseCommand.cc MacroCommand.cc InputPhraseCommand.cc \
 ExtractWordGroupCommand.cc FileCommand.cc QuitCommand.cc SearchPhraseCommand.cc \
 ContinueSearchPhraseCommand.cc CopyInputPhraseToWorkingPhraseCommand.cc RewardCommand.cc PartialRewardCommand.cc \
 ExploitCommand.cc CleanExploitCommand.cc ExploitRandomCommand.cc ExploitMemorizeCommand.cc BestExploitCommand.cc \

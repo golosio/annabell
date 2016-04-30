@@ -8,7 +8,7 @@
 #include <CommandConstants.h>
 #include <CommandFactory.h>
 #include <CommandUtils.h>
-#include <CommentCommand.h>
+#include <commands/CommentCommand.h>
 #include <ContinueContextCommand.h>
 #include <RetrievePhraseCommand.h>
 #include <EmptyCommand.h>
