@@ -6,6 +6,8 @@ A cognitive neural architecture able to learn and communicate through natural la
 Installation and usage
 ----------------------
 
+**Note:** For an easy way of setting up a development environment for annabell using **Vagrant**, please refer to [this instructions](vagrant/Vagrant.md).
+
 In order to build the project the following libraries are needed:
 
  - **pthread** and **gtest**: [Download from GoogleTest project](https://github.com/google/googletest)
