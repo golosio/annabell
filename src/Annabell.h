@@ -129,7 +129,7 @@ class Annabell {
 
   AnnabellParams param; // free parameters 
   bool CudaFlag;
-  static const float BIGWG=1e20;
+  static constexpr float BIGWG=1e20;
   ssm *W;
   ssm *IW;
   XSSM *CW;

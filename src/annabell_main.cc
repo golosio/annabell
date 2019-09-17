@@ -116,7 +116,7 @@ int Interface(Annabell *annabell, Monitor *mon) {
 	while (lineRead && (commandResult != 2)) {
 		cout << "Enter command: ";
 
-		lineRead = getline(cin, input_line);
+		lineRead = (bool)getline(cin, input_line);
 
 		if (lineRead) {
 			Command* c = CommandFactory::newCommand(input_line);
